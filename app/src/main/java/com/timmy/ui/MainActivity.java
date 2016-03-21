@@ -29,6 +29,7 @@ public class MainActivity extends BaseActivity {
     DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mActionBarDrawerToggle;
 
+    //测试
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
