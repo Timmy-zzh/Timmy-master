@@ -1,17 +1,15 @@
 package com.timmy.ui;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ActionMenuView;
-import android.widget.Adapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import com.timmy.R;
 
@@ -20,7 +18,6 @@ import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by Administrator on 2016/3/23.
@@ -30,6 +27,7 @@ import butterknife.OnClick;
  */
 public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
 
+    private static final String TAG = "AutoPlayPicturesActivity";
     //    @Bind(R.id.toolbar)
 //    Toolbar toolbar;
     @Bind(R.id.vp_viewPage)
@@ -44,6 +42,7 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
             R.drawable.e};
     //图片数据放到List中,-->可以使用imageData进行数据的存放
     private List<Integer> mData;
+    private AutoSwitchPicTask mAutoSwitchTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,6 +86,38 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
         int extra = middle % mData.size();
         int currentPoint = middle - extra;
         vp_viewPager.setCurrentItem(currentPoint);
+
+        //设置自动轮播功能
+        if (mAutoSwitchTask == null)
+        {
+            mAutoSwitchTask = new AutoSwitchPicTask();
+        }
+        mAutoSwitchTask.start();
+
+        //设置ViewPage的滑动监听-->当手放上去的时候,由手势控制自动轮播
+        vp_viewPager.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction())
+                {
+                    case MotionEvent.ACTION_DOWN:
+                        // 如果手指按下去时，希望轮播停止，
+                        mAutoSwitchTask.stop();
+                        break;
+                    case MotionEvent.ACTION_UP:
+                    case MotionEvent.ACTION_CANCEL:
+                        // 如果手指抬起时，图片进行轮播
+                        mAutoSwitchTask.start();
+                        break;
+                    default:
+                        break;
+                }
+
+                return false;
+            }
+        });
+
+
     }
 
 
@@ -124,6 +155,48 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
         public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView((View) object);
         }
+    }
+
+    class AutoSwitchPicTask extends Handler implements Runnable
+    {
+        /**
+         * 开启任务
+         */
+        public void start()
+        {
+            stop();
+            postDelayed(this, 2000);
+        }
+
+        /**
+         * 关闭任务
+         */
+        public void stop()
+        {
+            removeCallbacks(this);
+        }
+
+        @Override
+        public void run()
+        {
+            // ViewPager选中下一个，如果是最后一个就选中第一个
+
+            int position = vp_viewPager.getCurrentItem();
+            if (position != vp_viewPager.getAdapter().getCount() - 1)
+            {
+                // 选中下一个
+                vp_viewPager.setCurrentItem(++position);
+            }
+            else
+            {
+                // 如果是最后一个就选中第一个
+                vp_viewPager.setCurrentItem(0);
+            }
+
+            // 发送延时任务
+            postDelayed(this, 2000);
+        }
+
     }
 
 
