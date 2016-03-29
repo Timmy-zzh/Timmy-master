@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:text="Android技术点"
             android:padding="6dp"
-            android:textColor="@color/Black"
+            android:textColor="@color/actionbar_title"
             android:textSize="16sp" />
 
 

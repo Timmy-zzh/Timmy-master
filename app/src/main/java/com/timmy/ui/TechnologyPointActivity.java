@@ -17,8 +17,8 @@ import butterknife.OnClick;
  */
 public class TechnologyPointActivity extends BaseActivity {
 
-//    @Bind(R.id.toolbar)
-//    Toolbar toolbar;
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
     @Bind(R.id.btn_auto_images)
     Button btn_autoImg;
 

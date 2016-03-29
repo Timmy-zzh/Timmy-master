@@ -8,7 +8,7 @@
 
     <!-- 颜色:白色 -->
     <solid android:color="#ff0000" />
-    <!--<size-->
-        <!--android:width="10dp"-->
-        <!--android:height="10dp" />-->
+    <size
+        android:width="10dp"
+        android:height="10dp" />
 </shape>

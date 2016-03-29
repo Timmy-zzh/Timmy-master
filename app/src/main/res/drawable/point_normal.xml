@@ -9,8 +9,8 @@
     <!-- 颜色:白色 -->
     <solid android:color="@android:color/white" />
 
-    <!--<size-->
-        <!--android:width="10dp"-->
-        <!--android:height="10dp" />-->
+    <size
+        android:width="10dp"
+        android:height="10dp" />
 
 </shape>

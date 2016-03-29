@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -28,8 +29,8 @@ import butterknife.ButterKnife;
 public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
 
     private static final String TAG = "AutoPlayPicturesActivity";
-    //    @Bind(R.id.toolbar)
-//    Toolbar toolbar;
+    @Bind(R.id.toolbar)
+    Toolbar toolbar;
     @Bind(R.id.vp_viewPage)
     ViewPager vp_viewPager;
     @Bind(R.id.ll_point_container)
@@ -63,15 +64,15 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
             point.setBackgroundResource(R.drawable.point_normal);
 
             //设置单个点的属性-->使用LinearLayout作为点容器的属性-->设置左右间隔
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(10, 10);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(20, 20);
 
             if (i != 0) {
-                params.leftMargin = 10;//除了第一个其他点容器间隔10
+                params.leftMargin = 20;//除了第一个其他点容器间隔10
             } else {
                 //默认第一个选中
                 point.setBackgroundResource(R.drawable.point_selected);
             }
-            ll_pointCon.addView(point,params);
+            ll_pointCon.addView(point, params);
         }
 
         //为ViewPager设置适配器
@@ -80,16 +81,8 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
         //给ViewPager设置滑动监听
         vp_viewPager.addOnPageChangeListener(this);
 
-        //设置当前选中的页码-->为实现无限轮播,当前位置需要一个很大的数字
-        //当时第一个还是要默认是第一个的
-        int middle = Integer.MAX_VALUE / 2;
-        int extra = middle % mData.size();
-        int currentPoint = middle - extra;
-        vp_viewPager.setCurrentItem(currentPoint);
-
         //设置自动轮播功能
-        if (mAutoSwitchTask == null)
-        {
+        if (mAutoSwitchTask == null) {
             mAutoSwitchTask = new AutoSwitchPicTask();
         }
         mAutoSwitchTask.start();
@@ -98,8 +91,7 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
         vp_viewPager.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction())
-                {
+                switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         // 如果手指按下去时，希望轮播停止，
                         mAutoSwitchTask.stop();
@@ -112,12 +104,9 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
                     default:
                         break;
                 }
-
                 return false;
             }
         });
-
-
     }
 
 
@@ -125,7 +114,7 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
 
         @Override
         public int getCount() {
-            return mData != null ? Integer.MAX_VALUE : 0;
+            return mData.size();
         }
 
         //用来判断是否有预加载
@@ -138,7 +127,7 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
 
-            position = position % mData.size();
+//            position = position % mData.size();
 
             ImageView imageView = new ImageView(AutoPlayPicturesActivity.this);
             imageView.setImageResource(mData.get(position));
@@ -157,13 +146,11 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
         }
     }
 
-    class AutoSwitchPicTask extends Handler implements Runnable
-    {
+    class AutoSwitchPicTask extends Handler implements Runnable {
         /**
          * 开启任务
          */
-        public void start()
-        {
+        public void start() {
             stop();
             postDelayed(this, 2000);
         }
@@ -171,32 +158,26 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
         /**
          * 关闭任务
          */
-        public void stop()
-        {
+        public void stop() {
             removeCallbacks(this);
         }
 
         @Override
-        public void run()
-        {
+        public void run() {
             // ViewPager选中下一个，如果是最后一个就选中第一个
 
             int position = vp_viewPager.getCurrentItem();
-            if (position != vp_viewPager.getAdapter().getCount() - 1)
-            {
+            Log.d(TAG, "position22-" + vp_viewPager.getAdapter().getCount());
+            if (position != vp_viewPager.getAdapter().getCount() - 1) {
                 // 选中下一个
                 vp_viewPager.setCurrentItem(++position);
-            }
-            else
-            {
+            } else {
                 // 如果是最后一个就选中第一个
                 vp_viewPager.setCurrentItem(0);
             }
-
             // 发送延时任务
             postDelayed(this, 2000);
         }
-
     }
 
 
@@ -214,6 +195,7 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
     @Override
     public void onPageSelected(int position) {
 
+        Log.d(TAG, "position11-" + position);
         //获取点容器的数据
         int childCount = ll_pointCon.getChildCount();
         for (int i = 0; i < childCount; i++) {
