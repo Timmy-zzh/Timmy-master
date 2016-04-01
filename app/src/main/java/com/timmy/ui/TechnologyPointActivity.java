@@ -27,6 +27,7 @@ public class TechnologyPointActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_technology_point);
         ButterKnife.bind(this);
+        initToolBar();
     }
 
     @OnClick(R.id.btn_auto_images)

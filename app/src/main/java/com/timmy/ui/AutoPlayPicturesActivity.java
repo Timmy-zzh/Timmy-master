@@ -50,6 +50,7 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auto_pictures);
         ButterKnife.bind(this);
+        initToolBar();
         initData();
     }
 

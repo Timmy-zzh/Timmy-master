@@ -3,5 +3,18 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="@color/colorPrimary" />
-    <!--?attr/actionBarSize ToolBar的高度-->
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/tv_toolbar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:text="Timmy"
+        android:visibility="gone"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+
+</android.support.v7.widget.Toolbar>
