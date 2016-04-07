@@ -5,7 +5,6 @@ import android.os.Handler;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -169,7 +168,6 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
             // ViewPager选中下一个，如果是最后一个就选中第一个
 
             int position = vp_viewPager.getCurrentItem();
-            Log.d(TAG, "position22-" + vp_viewPager.getAdapter().getCount());
             if (position != vp_viewPager.getAdapter().getCount() - 1) {
                 // 选中下一个
                 vp_viewPager.setCurrentItem(++position);
@@ -197,7 +195,6 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
     @Override
     public void onPageSelected(int position) {
 
-        Log.d(TAG, "position11-" + position);
         //获取点容器的数据
         int childCount = ll_pointCon.getChildCount();
         for (int i = 0; i < childCount; i++) {
