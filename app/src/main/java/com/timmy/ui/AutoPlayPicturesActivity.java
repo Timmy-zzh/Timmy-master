@@ -60,6 +60,7 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
         for (int i = 0; i < imageData.length; i++) {
             mData.add(imageData[i]);
 
+
             //添加点的容器
             View point = new View(this);
             point.setBackgroundResource(R.drawable.point_normal);
