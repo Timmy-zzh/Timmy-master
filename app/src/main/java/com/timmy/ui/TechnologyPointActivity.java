@@ -14,6 +14,7 @@ import butterknife.OnClick;
 
 /**
  * Created by Administrator on 2016/3/23.
+ * 测试提交
  */
 public class TechnologyPointActivity extends BaseActivity {
 
