@@ -1,6 +1,5 @@
 package com.timmy.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -31,11 +30,14 @@ public class TechnologyPointActivity extends BaseActivity {
         initToolBar();
     }
 
-    @OnClick(R.id.btn_auto_images)
+    @OnClick({R.id.btn_auto_images,R.id.btn_camera_picture})
     public void onClick(View v){
         switch (v.getId()){
             case R.id.btn_auto_images:
-                startActivity(new Intent(this,AutoPlayPicturesActivity.class));
+                openActivity(AutoPlayPicturesActivity.class);
+                break;
+            case R.id.btn_camera_picture:
+                openActivity(CameraPictureActivity.class);
                 break;
             default:
                 break;

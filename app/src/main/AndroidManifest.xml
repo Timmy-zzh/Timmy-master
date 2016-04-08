@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.timmy">
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,7 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.TechnologyPointActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -35,6 +39,15 @@
             android:launchMode="singleTop"
             android:parentActivityName=".ui.TechnologyPointActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.CameraPictureActivity"
+            android:label="@string/title_activity_camera_picture"
+            android:parentActivityName=".ui.BaseActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.timmy.ui.BaseActivity" />
+        </activity>
     </application>
 
 </manifest>

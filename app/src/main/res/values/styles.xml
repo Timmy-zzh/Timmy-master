@@ -49,6 +49,25 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <color name="actionbar_title">#ffffff</color>
-    <color name="primary_text">#212121</color>
+    <!--界面地图弹出Dialog-->
+    <style name="BottomSelectDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <!--界面地图弹出Dialog动画设置-->
+    <style name="BottomSelectDialogAnimation" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/push_bottom_in</item>
+        <item name="@android:windowExitAnimation">@anim/push_bottom_out</item>
+    </style>
+
+
+    <style name="Line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">#aae0e0e0</item>
+    </style>
+
 </resources>

@@ -3,7 +3,7 @@ package com.timmy.util;
 import android.util.Log;
 
 public class Logger {
-	public static String TAG = "JLSQ";
+	public static String TAG = "Timmy";
 
 	public static void info(String msg) {
 		Log.i(TAG, msg);
