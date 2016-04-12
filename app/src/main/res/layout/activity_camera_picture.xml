@@ -6,7 +6,7 @@
     android:fitsSystemWindows="true"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context="com.timmy.ui.CameraPictureActivity">
+    tools:context=".ui.technologypoint.CameraPictureActivity">
 
     <include layout="@layout/common_toolbar"/>
 

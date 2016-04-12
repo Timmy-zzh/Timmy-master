@@ -1,4 +1,4 @@
-package com.timmy.ui;
+package com.timmy.ui.technologypoint;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.timmy.R;
+import com.timmy.ui.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -212,5 +213,12 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
     }
 }

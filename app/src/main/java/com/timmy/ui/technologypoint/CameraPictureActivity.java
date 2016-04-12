@@ -1,4 +1,4 @@
-package com.timmy.ui;
+package com.timmy.ui.technologypoint;
 
 import android.app.Activity;
 import android.content.ContentValues;
@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.timmy.R;
 import com.timmy.Util;
+import com.timmy.ui.BaseActivity;
 import com.timmy.view.BottomSelectDialog;
 
 import java.io.File;

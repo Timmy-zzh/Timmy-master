@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.timmy.R;
+import com.timmy.ui.technologypoint.AnimationActivity;
+import com.timmy.ui.technologypoint.AutoPlayPicturesActivity;
+import com.timmy.ui.technologypoint.CameraPictureActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -30,14 +33,18 @@ public class TechnologyPointActivity extends BaseActivity {
         initToolBar();
     }
 
-    @OnClick({R.id.btn_auto_images,R.id.btn_camera_picture})
-    public void onClick(View v){
-        switch (v.getId()){
+    @OnClick({R.id.btn_auto_images, R.id.btn_camera_picture, R.id.btn_animation})
+    public void onClick(View v) {
+        switch (v.getId()) {
             case R.id.btn_auto_images:
                 openActivity(AutoPlayPicturesActivity.class);
                 break;
             case R.id.btn_camera_picture:
                 openActivity(CameraPictureActivity.class);
+                break;
+
+            case R.id.btn_animation:
+                openActivity(AnimationActivity.class);
                 break;
             default:
                 break;
@@ -45,4 +52,9 @@ public class TechnologyPointActivity extends BaseActivity {
     }
 
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
+    }
 }

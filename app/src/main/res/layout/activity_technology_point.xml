@@ -29,6 +29,11 @@
                 android:text="调用照相机或者使用本地图片展示"
                 android:layout_height="wrap_content" />
 
+            <Button
+                android:id="@+id/btn_animation"
+                android:layout_width="wrap_content"
+                android:text="动画"
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
 
