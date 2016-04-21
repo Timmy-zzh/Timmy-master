@@ -35,6 +35,12 @@
                 android:text="动画"
                 android:layout_height="wrap_content" />
 
+            <Button
+                android:id="@+id/btn_glide"
+                android:layout_width="wrap_content"
+                android:text="Glide"
+                android:layout_height="wrap_content" />
+
         </LinearLayout>
 
     </ScrollView>

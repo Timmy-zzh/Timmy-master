@@ -9,6 +9,7 @@ import com.timmy.R;
 import com.timmy.ui.technologypoint.AnimationActivity;
 import com.timmy.ui.technologypoint.AutoPlayPicturesActivity;
 import com.timmy.ui.technologypoint.CameraPictureActivity;
+import com.timmy.ui.technologypoint.GlideImageActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -33,7 +34,7 @@ public class TechnologyPointActivity extends BaseActivity {
         initToolBar();
     }
 
-    @OnClick({R.id.btn_auto_images, R.id.btn_camera_picture, R.id.btn_animation})
+    @OnClick({R.id.btn_auto_images, R.id.btn_camera_picture, R.id.btn_animation,R.id.btn_glide})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_auto_images:
@@ -42,9 +43,11 @@ public class TechnologyPointActivity extends BaseActivity {
             case R.id.btn_camera_picture:
                 openActivity(CameraPictureActivity.class);
                 break;
-
             case R.id.btn_animation:
                 openActivity(AnimationActivity.class);
+                break;
+            case R.id.btn_glide:
+                openActivity(GlideImageActivity.class);
                 break;
             default:
                 break;
