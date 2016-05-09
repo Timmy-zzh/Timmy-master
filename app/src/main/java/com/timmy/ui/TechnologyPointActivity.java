@@ -9,6 +9,8 @@ import com.timmy.R;
 import com.timmy.ui.technologypoint.AnimationActivity;
 import com.timmy.ui.technologypoint.AutoPlayPicturesActivity;
 import com.timmy.ui.technologypoint.CameraPictureActivity;
+import com.timmy.ui.technologypoint.ClipToOutlineActivity;
+import com.timmy.ui.technologypoint.DialogActivity;
 import com.timmy.ui.technologypoint.GlideImageActivity;
 
 import butterknife.Bind;
@@ -34,8 +36,10 @@ public class TechnologyPointActivity extends BaseActivity {
         initToolBar();
     }
 
-    @OnClick({R.id.btn_auto_images, R.id.btn_camera_picture, R.id.btn_animation,R.id.btn_glide})
-    public void onClick(View v) {
+    @OnClick({R.id.btn_auto_images, R.id.btn_camera_picture,
+            R.id.btn_animation, R.id.btn_glide, R.id.btn_clip,
+            R.id.btn_dialog})
+    public void technology(View v) {
         switch (v.getId()) {
             case R.id.btn_auto_images:
                 openActivity(AutoPlayPicturesActivity.class);
@@ -48,6 +52,12 @@ public class TechnologyPointActivity extends BaseActivity {
                 break;
             case R.id.btn_glide:
                 openActivity(GlideImageActivity.class);
+                break;
+            case R.id.btn_clip:
+                openActivity(ClipToOutlineActivity.class);
+                break;
+            case R.id.btn_dialog:
+                openActivity(DialogActivity.class);
                 break;
             default:
                 break;

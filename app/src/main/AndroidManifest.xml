@@ -8,7 +8,7 @@
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -47,23 +47,31 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_camera_picture"
             android:parentActivityName=".ui.TechnologyPointActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.technologypoint.AnimationActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_animation"
             android:parentActivityName=".ui.TechnologyPointActivity"
-            android:screenOrientation="portrait"/>
-
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.technologypoint.GlideImageActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Glide"
             android:parentActivityName=".ui.TechnologyPointActivity"
-            android:screenOrientation="portrait"/>
-
-
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.technologypoint.ClipToOutlineActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="setClipToOutline"
+            android:parentActivityName=".ui.TechnologyPointActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.technologypoint.DialogActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="Dialog"
+            android:parentActivityName=".ui.TechnologyPointActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
