@@ -103,8 +103,11 @@ public class MainActivity extends BaseActivity {
         if (id == R.id.action_settings) {
             com.timmy.util.Toast.toastShort("Setting");
             return true;
-        }
+        }else if(id ==R.id.action_about){
 
+            openActivity(AboutActivity.class);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 

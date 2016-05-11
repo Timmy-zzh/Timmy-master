@@ -1,37 +1,32 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme.Base" parent="Theme.AppCompat.Light">
-        <!--没有actionBar和标题&ndash;&gt;使用ToolBar-->
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
         <!--action bar color-->
         <item name="colorPrimary">@color/colorPrimary</item>
         <!--status bar color-->
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <!--window background-->
         <item name="colorAccent">@color/colorAccent</item>
+        <!--toolbar text color-->
+        <item name="android:textColorPrimary">@color/white</item>
     </style>
 
     <!--普通应用主题-->
     <style name="AppTheme" parent="AppTheme.Base">
-
-        <item name="actionBarStyle">@style/TimmyActionBarStyle</item>
         <item name="drawerArrowStyle">@style/AppTheme.TimmyDrawerArrowStyle</item>
-        <!--actionbar text color-->
-        <item name="android:textColorPrimary">@color/actionbar_title</item>
     </style>
 
 
-    <!--设置标题栏样式-->
-    <style name="TimmyActionBarStyle" parent="Widget.AppCompat.Light.ActionBar">
-        <item name="titleTextStyle">@style/ActionBarTitleStyle</item>
+    <!--Toolbar菜单样式-->
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
+        <!--toolbar菜单文字为黑色-->
+        <item name="android:actionMenuTextColor">@color/white</item>
     </style>
 
-    <!-- 标题栏文字样式 -->
-    <style name="ActionBarTitleStyle" parent="Base.TextAppearance.AppCompat.Widget.ActionBar.Title">
-        <item name="android:textSize">16sp</item>
-        <item name="android:textColor">@color/actionbar_title</item>
+    <!--ToolBarMenu 背景色-->
+    <style name="ToolBarPopupTheme" parent="@style/ThemeOverlay.AppCompat">
+        <item name="android:colorBackground">@color/Black</item>
     </style>
 
     <style name="AppTheme.TimmyDrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
@@ -40,9 +35,9 @@
         <item name="color">@android:color/white</item>
     </style>
 
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+    <!--Toolbar标题文字大小-->
+    <style name="ToolbarTitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -69,5 +64,8 @@
         <item name="android:layout_height">1px</item>
         <item name="android:background">#aae0e0e0</item>
     </style>
+
+
+
 
 </resources>
