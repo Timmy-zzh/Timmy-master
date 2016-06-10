@@ -14,6 +14,9 @@ import com.timmy.R;
 import com.timmy.ui.fragment.DrawerFragment;
 import com.timmy.ui.fragment.MainFragment;
 
+import java.util.Formatter;
+import java.util.StringTokenizer;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -60,7 +63,7 @@ public class MainActivity extends BaseActivity {
         //toolBar设置导航栏功能
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        mActionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.app_name, R.string.app_name){
+        mActionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, toolbar, R.string.app_name, R.string.app_name) {
             @Override
             public void onDrawerClosed(View drawerView) {
                 invalidateOptionsMenu();
@@ -76,11 +79,20 @@ public class MainActivity extends BaseActivity {
         mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
 
         replaceFragment(R.id.frame_container, new MainFragment());
-        replaceFragment(R.id.drawer_container,new DrawerFragment());
+        replaceFragment(R.id.drawer_container, new DrawerFragment());
 
     }
 
     private void initData() {
+
+//        String a = "abc";
+//        String b = a + "def";
+//        String.format(a, "");
+//        a.split("");
+//
+//        Formatter formatter = new Formatter();
+//
+//        StringTokenizer
 
     }
 
@@ -112,6 +124,7 @@ public class MainActivity extends BaseActivity {
     }
 
     private long exitTime;
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK
