@@ -1,4 +1,4 @@
-package com.timmy.ui;
+package com.timmy.ui.base;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -32,12 +32,13 @@ public class BaseActivity extends AppCompatActivity {
      */
     public void initToolBar() {
         Toolbar mToolbar = (Toolbar) findViewById(R.id.toolbar);
-        mToolbarTitle = (TextView) findViewById(R.id.tv_toolbar_title);
         mToolbar.setTitleTextColor(Color.WHITE);
         mToolbar.setSubtitleTextColor(Color.WHITE);
-//        mToolbar.setTitle("");
         setSupportActionBar(mToolbar);
-        mToolbar.setNavigationIcon(R.mipmap.icon_back);
+        //设置返回箭头
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //自定义
+//        mToolbar.setNavigationIcon(R.mipmap.icon_back);
     }
 
     /**

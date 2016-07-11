@@ -3,7 +3,7 @@ package com.timmy.ui.technologypoint;
 import android.os.Bundle;
 
 import com.timmy.R;
-import com.timmy.ui.BaseActivity;
+import com.timmy.ui.base.BaseActivity;
 import com.timmy.widget.TimmyHealthView;
 
 /**

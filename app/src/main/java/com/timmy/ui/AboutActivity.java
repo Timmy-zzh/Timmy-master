@@ -10,6 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.timmy.R;
+import com.timmy.ui.adapter.CustomAdapter;
+import com.timmy.ui.base.BaseActivity;
 
 import java.util.ArrayList;
 
@@ -43,7 +45,7 @@ public class AboutActivity extends BaseActivity {
         for (int i = 0; i < 100; i++) {
             dataList.add("Timmy:" + i);
         }
-        RecyclerAdapter adapter = new RecyclerAdapter(dataList);
+        CustomAdapter adapter = new CustomAdapter(dataList);
         mContentRV.setAdapter(adapter);
     }
 

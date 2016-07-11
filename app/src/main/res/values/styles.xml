@@ -10,6 +10,10 @@
         <item name="colorAccent">@color/colorAccent</item>
         <!--toolbar text color-->
         <item name="android:textColorPrimary">@color/white</item>
+        <!--toolbar menu text color-->
+        <item name="android:actionMenuTextColor">@android:color/black</item>
+        <!--window background-->
+        <item name="android:windowBackground">@android:color/white</item>
     </style>
 
     <!--普通应用主题-->
@@ -18,15 +22,12 @@
     </style>
 
 
-    <!--Toolbar菜单样式-->
-    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.ActionBar">
-        <!--toolbar菜单文字为黑色-->
-        <item name="android:actionMenuTextColor">@color/white</item>
+    <style name="ToolbarTheme" parent="Base.ThemeOverlay.AppCompat.ActionBar">
+        <item name="actionMenuTextColor">@color/white</item>
     </style>
 
-    <!--ToolBarMenu 背景色-->
-    <style name="ToolBarPopupTheme" parent="@style/ThemeOverlay.AppCompat">
-        <item name="android:colorBackground">@color/Black</item>
+    <style name="ToolbarPopupTheme" parent="Theme.AppCompat.Light">
+        <item name="actionMenuTextColor">@color/Black</item>
     </style>
 
     <style name="AppTheme.TimmyDrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
@@ -44,7 +45,7 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <!--界面地图弹出Dialog-->
+    <!--界面底部弹出Dialog-->
     <style name="BottomSelectDialog" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:windowFrame">@null</item>
         <item name="android:windowNoTitle">true</item>

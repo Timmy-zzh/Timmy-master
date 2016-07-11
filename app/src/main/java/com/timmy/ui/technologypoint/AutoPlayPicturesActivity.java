@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.timmy.R;
-import com.timmy.ui.BaseActivity;
+import com.timmy.ui.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;

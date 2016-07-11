@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <!--使用LinearLayout就是为了使得ToolBar一直显示,不会让侧滑界面挡住-->
-    <include layout="@layout/common_toolbar"></include>
+    <include layout="@layout/common_toolbar"/>
 
     <!--V4容器,装载左侧滑动界面-->
     <android.support.v4.widget.DrawerLayout

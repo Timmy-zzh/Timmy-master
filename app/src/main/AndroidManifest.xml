@@ -85,6 +85,18 @@
             android:label="自定义View"
             android:parentActivityName=".ui.TechnologyPointActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.technologypoint.RecycleHeaderViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="RecycleHeaderViewActivity"
+            android:parentActivityName=".ui.TechnologyPointActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.technologypoint.ToolBarActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="ToolBarActivity"
+            android:parentActivityName=".ui.TechnologyPointActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

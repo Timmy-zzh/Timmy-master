@@ -1,4 +1,4 @@
-package com.timmy.ui;
+package com.timmy.ui.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -7,11 +7,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
 
     private List<String> mDataList;
 
-    public RecyclerAdapter(List<String> dataList) {
+    public CustomAdapter(List<String> dataList) {
         mDataList = dataList;
     }
 

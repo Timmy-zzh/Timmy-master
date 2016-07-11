@@ -65,6 +65,20 @@
                 android:text="自定义View"
                 android:textAllCaps="false" />
 
+            <Button
+                android:id="@+id/btn_recycleview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="为RecycleView添加头文件"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn_toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ToolBar"
+                android:textAllCaps="false" />
+
         </LinearLayout>
 
     </ScrollView>

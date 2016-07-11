@@ -6,13 +6,16 @@ import android.view.View;
 import android.widget.Button;
 
 import com.timmy.R;
+import com.timmy.ui.base.BaseActivity;
 import com.timmy.ui.technologypoint.AnimationActivity;
 import com.timmy.ui.technologypoint.AutoPlayPicturesActivity;
 import com.timmy.ui.technologypoint.CameraPictureActivity;
 import com.timmy.ui.technologypoint.ClipToOutlineActivity;
 import com.timmy.ui.technologypoint.DialogActivity;
 import com.timmy.ui.technologypoint.GlideImageActivity;
+import com.timmy.ui.technologypoint.RecycleHeaderViewActivity;
 import com.timmy.ui.technologypoint.TimmyHealthActivity;
+import com.timmy.ui.technologypoint.ToolBarActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -39,7 +42,8 @@ public class TechnologyPointActivity extends BaseActivity {
 
     @OnClick({R.id.btn_auto_images, R.id.btn_camera_picture,
             R.id.btn_animation, R.id.btn_glide, R.id.btn_clip,
-            R.id.btn_dialog,R.id.btn_view})
+            R.id.btn_dialog, R.id.btn_view, R.id.btn_recycleview,
+            R.id.btn_toolbar})
     public void technology(View v) {
         switch (v.getId()) {
             case R.id.btn_auto_images:
@@ -62,6 +66,12 @@ public class TechnologyPointActivity extends BaseActivity {
                 break;
             case R.id.btn_view:
                 openActivity(TimmyHealthActivity.class);
+                break;
+            case R.id.btn_recycleview:
+                openActivity(RecycleHeaderViewActivity.class);
+                break;
+            case R.id.btn_toolbar:
+                openActivity(ToolBarActivity.class);
                 break;
             default:
                 break;

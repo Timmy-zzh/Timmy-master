@@ -11,11 +11,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.timmy.R;
+import com.timmy.ui.base.BaseActivity;
 import com.timmy.ui.fragment.DrawerFragment;
 import com.timmy.ui.fragment.MainFragment;
-
-import java.util.Formatter;
-import java.util.StringTokenizer;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -39,22 +37,6 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         initView();
         initData();
-
-
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", new View.OnClickListener() {
-//
-//                            @Override
-//                            public void onClick(View v) {
-//                                Log.d("Timmy", "sjkdh");
-//                            }
-//                        }).show();
-//            }
-//        });
     }
 
     private void initView() {
@@ -85,15 +67,6 @@ public class MainActivity extends BaseActivity {
 
     private void initData() {
 
-//        String a = "abc";
-//        String b = a + "def";
-//        String.format(a, "");
-//        a.split("");
-//
-//        Formatter formatter = new Formatter();
-//
-//        StringTokenizer
-
     }
 
 
@@ -115,7 +88,7 @@ public class MainActivity extends BaseActivity {
         if (id == R.id.action_settings) {
             com.timmy.util.Toast.toastShort("Setting");
             return true;
-        }else if(id ==R.id.action_about){
+        } else if (id == R.id.action_about) {
 
             openActivity(AboutActivity.class);
             return true;
@@ -138,7 +111,6 @@ public class MainActivity extends BaseActivity {
             }
             return true;
         }
-
         return super.onKeyDown(keyCode, event);
     }
 

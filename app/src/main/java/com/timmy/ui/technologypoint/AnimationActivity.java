@@ -7,7 +7,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
 import com.timmy.R;
-import com.timmy.ui.BaseActivity;
+import com.timmy.ui.base.BaseActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

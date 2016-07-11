@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.timmy.R;
-import com.timmy.ui.BaseActivity;
+import com.timmy.ui.base.BaseActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -22,6 +22,12 @@ public class DialogActivity extends BaseActivity {
     @OnClick({R.id.tv_date})
     public void onDialog(View view){
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
     }
 
 }
