@@ -1,4 +1,4 @@
-package com.timmy.view;
+package com.timmy.widget;
 
 import android.app.Dialog;
 import android.content.Context;

@@ -14,7 +14,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import com.timmy.view.BottomSelectDialog;
+import com.timmy.widget.BottomSelectDialog;
 
 /**
  * Created by Administrator on 2016/4/8 0008.

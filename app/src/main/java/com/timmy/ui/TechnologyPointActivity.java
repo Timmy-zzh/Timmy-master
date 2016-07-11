@@ -12,6 +12,7 @@ import com.timmy.ui.technologypoint.CameraPictureActivity;
 import com.timmy.ui.technologypoint.ClipToOutlineActivity;
 import com.timmy.ui.technologypoint.DialogActivity;
 import com.timmy.ui.technologypoint.GlideImageActivity;
+import com.timmy.ui.technologypoint.TimmyHealthActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -38,7 +39,7 @@ public class TechnologyPointActivity extends BaseActivity {
 
     @OnClick({R.id.btn_auto_images, R.id.btn_camera_picture,
             R.id.btn_animation, R.id.btn_glide, R.id.btn_clip,
-            R.id.btn_dialog})
+            R.id.btn_dialog,R.id.btn_view})
     public void technology(View v) {
         switch (v.getId()) {
             case R.id.btn_auto_images:
@@ -58,6 +59,9 @@ public class TechnologyPointActivity extends BaseActivity {
                 break;
             case R.id.btn_dialog:
                 openActivity(DialogActivity.class);
+                break;
+            case R.id.btn_view:
+                openActivity(TimmyHealthActivity.class);
                 break;
             default:
                 break;

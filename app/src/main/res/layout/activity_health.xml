@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:timmy="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.technologypoint.TimmyHealthActivity">
+
+    <include layout="@layout/common_toolbar" />
+
+    <com.timmy.widget.TimmyHealthView
+        android:id="@+id/health_view"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:layout_margin="15dp"
+        timmy:lineColor="@color/Gray_e"
+        timmy:titleColor="@color/blue_light"
+        timmy:titleSize="16sp" />
+
+</LinearLayout>

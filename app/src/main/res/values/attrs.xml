@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义公共属性-->
+    <attr name="titleSize" format="dimension"/>
+    <attr name="titlText" format="string"/>
+    <attr name="titleColor" format="color"/>
+    <attr name="outCircleColor" format="color"/>
+    <attr name="inCircleColor" format="color"/>
+    <attr name="lineColor" format="color"/>
+    <!--自定义view的属性-->
+    <declare-styleable name="TimmyHealthView">
+        <attr name="titleColor"></attr>
+        <attr name="lineColor"></attr>
+    </declare-styleable>
+
+</resources>

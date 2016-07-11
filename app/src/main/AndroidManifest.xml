@@ -79,6 +79,12 @@
             android:label="关于"
             android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.technologypoint.TimmyHealthActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="自定义View"
+            android:parentActivityName=".ui.TechnologyPointActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

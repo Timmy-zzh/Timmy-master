@@ -18,7 +18,7 @@ import android.widget.Toast;
 import com.timmy.R;
 import com.timmy.Util;
 import com.timmy.ui.BaseActivity;
-import com.timmy.view.BottomSelectDialog;
+import com.timmy.widget.BottomSelectDialog;
 
 import java.io.File;
 import java.io.IOException;

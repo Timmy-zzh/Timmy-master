@@ -88,6 +88,8 @@ public class MainFragment extends Fragment {
             }
         });
 
+//        tl_tab.setupWithViewPager(vp_viewPager);
+
 //        for (int i = 0;i<tabSize;i++){
 //            TabLayout.Tab tab = tl_tab.getTabAt(i);
 //            if (tab!= null){
