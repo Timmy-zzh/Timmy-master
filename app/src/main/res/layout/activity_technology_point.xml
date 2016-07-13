@@ -79,6 +79,13 @@
                 android:text="ToolBar"
                 android:textAllCaps="false" />
 
+            <Button
+                android:id="@+id/btn_coordi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CoordinatorLayout"
+                android:textAllCaps="false" />
+
         </LinearLayout>
 
     </ScrollView>

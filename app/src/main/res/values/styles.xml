@@ -23,7 +23,8 @@
 
 
     <style name="ToolbarTheme" parent="Base.ThemeOverlay.AppCompat.ActionBar">
-        <item name="actionMenuTextColor">@color/white</item>
+        <item name="actionMenuTextColor">@color/Black</item>
+
     </style>
 
     <style name="ToolbarPopupTheme" parent="Theme.AppCompat.Light">
