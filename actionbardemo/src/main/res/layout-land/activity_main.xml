@@ -13,20 +13,14 @@
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/btn_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="nextActivity"
-        android:textAllCaps="false"
-        android:text="NextActivity" />
+        android:text="NextActivity"
+        android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btn_fragments"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="nextActivity"
-        android:textAllCaps="false"
-        android:text="Fragments Interactive" />
-
-
+        android:text="alsjdflajdlkjalkdj" />
 </LinearLayout>

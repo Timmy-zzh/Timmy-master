@@ -22,7 +22,16 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void nextActivity(View view) {
-        startActivity(new Intent(this, SecondActivity.class));
+        switch (view.getId()){
+            case R.id.btn_next:
+                startActivity(new Intent(this, SecondActivity.class));
+
+                break;
+            case R.id.btn_fragments:
+                startActivity(new Intent(this, FragmentsActivity.class));
+
+                break;
+        }
     }
 
 
