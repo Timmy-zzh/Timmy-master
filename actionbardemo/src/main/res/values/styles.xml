@@ -13,20 +13,30 @@
         <item name="actionBarStyle">@style/MyActionBar</item>
         <item name="actionBarTabTextStyle">@style/MyActionBarTabText</item>
         <item name="actionMenuTextColor">@color/actionbar_text</item>
-        <item name="actionBarTabStyle">@style/MyActionBarTabs</item>
 
-        <!--使ActionBar覆盖在界面上-->
+    </style>
+
+    <!--为界面添加Tab选项-->
+    <style name="TabTheme" parent="CustomActionBarTheme">
+        <item name="actionBarTabStyle">@style/MyActionBarTabs</item>
+    </style>
+
+    <!--使ActionBar覆盖在界面上-->
+    <style name="OverlayTheme" parent="CustomActionBarTheme">
         <item name="windowActionBarOverlay">true</item>
     </style>
 
+    <!--设置ActionBar背景-->
     <style name="MyActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="background">@drawable/actionbar_bg</item>
     </style>
 
+    <!--Tab文字颜色-->
     <style name="MyActionBarTabText" parent="@style/Widget.AppCompat.ActionBar.TabText">
         <item name="android:textColor">@color/white</item>
     </style>
 
+    <!--设置ActionBar左侧文字颜色-->
     <style name="MyActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
         <item name="android:textColor">@color/green</item>
     </style>

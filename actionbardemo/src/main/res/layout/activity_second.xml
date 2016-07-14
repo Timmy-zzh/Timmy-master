@@ -3,13 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="?attr/actionBarSize"
-    tools:context="com.timmy.actionbar.ui.SecondActivity">
 
+    tools:context=".ui.activity.SecondActivity">
+    <!--android:paddingTop="?attr/actionBarSize"-->
 
     <ImageView
+        android:id="@+id/iv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@mipmap/img_beauti" />
+        android:background="@mipmap/img_beauti"
+        android:clickable="true"
+        android:onClick="nextActivity" />
 
 </RelativeLayout>
