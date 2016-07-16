@@ -1,7 +1,8 @@
 package com.timmy.rxjava.ui;
 
-import android.content.Intent;
-import android.content.pm.ResolveInfo;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     SwipeRefreshLayout mSwipeRefreshLayout;
     @Bind(R.id.rv_recycle_view)
     RecyclerView mRecyclerView;
-    private List<AppInfo> apps = new ArrayList<>();
+    private ArrayList<AppInfo> apps = new ArrayList<>();
     private List<AppInfo> listData = new ArrayList<>();
     private AppInfoAdapter adapter;
 
@@ -57,9 +58,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
                 android.R.color.holo_purple,
                 android.R.color.holo_red_light);
         mSwipeRefreshLayout.setOnRefreshListener(this);
-        //显示刷新进度条
-        mSwipeRefreshLayout.setRefreshing(true);
-
     }
 
     private void initRecycleView() {
@@ -70,56 +68,65 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     }
 
     private void initData() {
-        AppInfo appInfo = null;
-        for (int i = 0; i < 10; i++) {
-            appInfo = new AppInfo("AppName" + i, "", 90);
-            listData.add(appInfo);
-        }
-        adapter.setData(listData);
-        mRecyclerView.setVisibility(View.VISIBLE);
+        //显示刷新进度条
+        mSwipeRefreshLayout.setRefreshing(true);
+        //将应用信息放到一个集合中
+        Observable<List<AppInfo>> listObservable = getApps().toSortedList();
+        //通过被观察者,使被观察者被订阅出去,生成观察者
+        listObservable.subscribe(new Observer<List<AppInfo>>() {
+            @Override
+            public void onCompleted() {
+                LogUtil.d("onCompleted--观察者收到通知");
+            }
 
-//        createObservable();
+            @Override
+            public void onError(Throwable e) {
+                LogUtil.d("onError--出错");
+            }
 
-        getApps();
-
+            @Override
+            public void onNext(List<AppInfo> appInfos) {
+                adapter.setData(appInfos);
+                mRecyclerView.setVisibility(View.VISIBLE);
+                mSwipeRefreshLayout.setRefreshing(false);
+            }
+        });
     }
 
-    //获取手机安装的所有应用数据
+    //获取手机安装的所有应用数据-将这些数据放在一个被观察者中
     private Observable<AppInfo> getApps() {
-//        return Observable.create(new Observable.OnSubscribe<AppInfo>() {
-//
-//            @Override
-//            public void call(Subscriber<? super AppInfo> subscriber) {
-//
-//                List<AppInfoRich> apps = new ArrayList<AppInfoRich>();
-//                Intent mainIntent = new Intent(Intent.ACTION_MAIN,null);
-//                mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-//                //根据Intent的条件搜索Activity
-//                List<ResolveInfo> infos = getPackageManager().queryIntentActivities(mainIntent, 0);
-//                for (ResolveInfo info :infos){
-//                    apps.add(new AppInfoRich(MainActivity.this,info));
-//                }
-//
-//                for (ResolveInfo info :infos){
-//                    info.icon;
-//                }
-//
-//            }
-//        });
+        Observable<AppInfo> appInfoObservable = Observable.create(new Observable.OnSubscribe<AppInfo>() {
 
-        Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
-        mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-        //根据Intent的条件搜索Activity
-        List<ResolveInfo> infos = getPackageManager().queryIntentActivities(mainIntent, 0);
-        for (ResolveInfo info : infos) {
-           LogUtil.d("icon--"+info.icon);
-           LogUtil.d("getIconResource--"+info.getIconResource());
-           LogUtil.d("activityInfo.name--"+info.activityInfo.name);
-           LogUtil.d("resolvePackageName--"+info.resolvePackageName);
-        }
-
-
-        return null;
+            @Override
+            public void call(Subscriber<? super AppInfo> subscriber) {
+                List<PackageInfo> packages = getPackageManager().getInstalledPackages(0);
+                //解析单个应用信息
+                for (PackageInfo packageInfo : packages) {
+                    AppInfo appInfo = new AppInfo();
+                    //拿到Application的Name
+                    String appName = packageInfo.applicationInfo.loadLabel(getPackageManager()).toString();
+                    appInfo.setAppName(appName);
+                    appInfo.setPackageName(packageInfo.packageName);
+                    appInfo.setVersionName(packageInfo.versionName);
+                    appInfo.setVersionCode(packageInfo.versionCode);
+                    Drawable appIcon = packageInfo.applicationInfo.loadIcon(getPackageManager());
+                    appInfo.setAppIcon(appIcon);
+                    //apps 中获取的手机上安装的所有应用信息,可以通过方法判断该应用是否是系统应用
+                    if ((packageInfo.applicationInfo.flags & ApplicationInfo.FLAG_SYSTEM) == 0) {
+                        //非系统应用
+                        appInfo.setSystem(false);
+                    } else {
+                        appInfo.setSystem(true);
+                    }
+                    //获取到一个应用的数据了,就去调用通知观察者
+                    subscriber.onNext(appInfo);
+                }
+                //获取应用数据完成,通知
+                if (!subscriber.isUnsubscribed())
+                    subscriber.onCompleted();
+            }
+        });
+        return appInfoObservable;
     }
 
 
@@ -130,7 +137,6 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
             @Override
             public void run() {
                 initData();
-                mSwipeRefreshLayout.setRefreshing(false);
             }
         }, 3000);
 
@@ -149,9 +155,46 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
 
     /**
      * 创建一个Observable被观察者--在有观察者订阅我们的Observable时,执行call方法.
-     * <p/>
+     * <p>
      * OnSubscribe是一个接口,继承自Aciton1--内部定义了call回调方法
      * call方法传入了参数-Subscriber消费者
+     *
+     * *******************操作符:**********************
+     * from();从一个列表中创建一个Observable,这个Observable会发射每一个元素
+     * just(xxx);有多少个参数,发射多少次
+     * repeat(),重复发射
+     * defer();延迟创建
+     * range(a,b);从位置a开发发射b个数量的
+     * interval(i,second);轮询,两次发射中间相隔i时间,second是单位
+     * timer();在一定的时间间隔后发射
+     *
+     * *************过滤Observables************
+     * filter()->fun通过条件过滤
+     * take(2);获取我们需要的部分数据,最前面的2个
+     * takeLast(3);获取最后的3个元素
+     * distinct();去重数据,有重复发射--就有去重发射
+     *
+     * first(),last();发射第一个和最后一个数据
+     * skip();skipLast();跳过开头的n个元素,或者跳过结束的n个元素
+     * elementAt();只发射第n个元素
+     * sample(30,Seconds);每隔30秒发射一次
+     * Timeout();时间约束;每两秒获取一个值
+     *
+     * *****************转换Observables*****************
+     * Map家族
+     * map()-Func1();可在func1方法中处理数据
+     *FlatMap();
+     *Scan()
+     * GroupBy();
+     * buffer();
+     * Cast();
+     *
+     * *****************组合Observables****************
+     * merger();合并两个Oservable
+     * Zip();将两个或两个以上的Observables发射的item合并.
+     * Join();关注时间因素
+     *
+     *
      */
     public void createObservable() {
 
@@ -179,7 +222,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
         items.add(100);
         items.add(200);
 
-        //创建观察者--被观察者发射这些值,一个一个的发射
+        //创建观察者--被观察者发射这些值,一个一个的发射--操作符from
         Observable<Integer> observableInt = Observable.from(items);
         //订阅
         Subscription subscription = observableInt.subscribe(new Observer<Integer>() {

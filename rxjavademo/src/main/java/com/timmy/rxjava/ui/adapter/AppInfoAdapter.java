@@ -10,7 +10,6 @@ import android.widget.TextView;
 
 import com.timmy.rxjava.R;
 import com.timmy.rxjava.model.AppInfo;
-import com.timmy.rxjava.util.ImageUtil;
 
 import java.util.List;
 
@@ -39,8 +38,11 @@ public class AppInfoAdapter extends RecyclerView.Adapter<AppInfoAdapter.AppHolde
     @Override
     public void onBindViewHolder(AppHolder holder, int position) {
         AppInfo appInfo = mData.get(position);
-        ImageUtil.load(holder.mAppIcon, appInfo.getIcon());
-        holder.mAppName.setText(appInfo.getName());
+        holder.mAppIcon.setImageDrawable(appInfo.getAppIcon());
+//        ImageUtil.load(holder.mAppIcon, appInfo.getIcon());
+        holder.mAppName.setText(appInfo.getAppName());
+        holder.mAppInfo.setText(appInfo.getPackageName() + "-" + appInfo.getVersionName());
+        holder.mIsSystem.setText(appInfo.isSystem() ? "系统应用" : "普通应用");
     }
 
     @Override
@@ -51,12 +53,15 @@ public class AppInfoAdapter extends RecyclerView.Adapter<AppInfoAdapter.AppHolde
     public class AppHolder extends RecyclerView.ViewHolder {
         private ImageView mAppIcon;
         private TextView mAppName;
+        private TextView mAppInfo;
+        private TextView mIsSystem;
 
         public AppHolder(View itemView) {
             super(itemView);
             mAppIcon = (ImageView) itemView.findViewById(R.id.iv_icon);
             mAppName = (TextView) itemView.findViewById(R.id.tv_name);
-
+            mAppInfo = (TextView) itemView.findViewById(R.id.tv_app_info);
+            mIsSystem = (TextView) itemView.findViewById(R.id.tv_system);
         }
     }
 }

@@ -7,26 +7,47 @@
     android:layout_marginTop="10dp"
     android:elevation="5dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:padding="5dp">
 
         <ImageView
             android:id="@+id/iv_icon"
-            android:layout_width="80dp"
-            android:layout_height="80dp" />
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="10dp"
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/iv_icon"
             android:text="app name "
             android:textColor="@color/black"
             android:textSize="18sp" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tv_system"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:text="系统应用" />
+
+        <TextView
+            android:id="@+id/tv_app_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toLeftOf="@+id/tv_system"
+            android:layout_toRightOf="@+id/iv_icon"
+            android:text="packageName" />
+
+
+    </RelativeLayout>
 
 </android.support.v7.widget.CardView>
