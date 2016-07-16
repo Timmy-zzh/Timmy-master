@@ -10,6 +10,15 @@ import android.widget.Toast;
 
 import com.timmy.actionbar.R;
 
+/**
+ * ActionBar遮罩效果
+ * Tab实现
+ * 二级界面返回箭头问题
+ *
+ * *******单元测试*******
+ * 进行函数级别的测试
+ *
+ */
 public class MainActivity extends AppCompatActivity {
 
 

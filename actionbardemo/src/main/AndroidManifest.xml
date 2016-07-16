@@ -3,6 +3,7 @@
     package="com.timmy.actionbar">
 
     <application
+        android:name=".TimmyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,8 +17,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:label="ActionBar遮罩效果"
             android:name=".ui.activity.SecondActivity"
+            android:label="ActionBar遮罩效果"
             android:parentActivityName=".ui.activity.MainActivity"
             android:theme="@style/OverlayTheme" />
         <activity
