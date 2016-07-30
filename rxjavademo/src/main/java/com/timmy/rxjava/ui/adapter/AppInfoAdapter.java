@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.timmy.rxjava.R;
 import com.timmy.rxjava.model.AppInfo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,7 +20,7 @@ import java.util.List;
 public class AppInfoAdapter extends RecyclerView.Adapter<AppInfoAdapter.AppHolder> {
 
     private Context mContext;
-    private List<AppInfo> mData;
+    private List<AppInfo> mData = new ArrayList<>();
 
     public AppInfoAdapter(Context context) {
         this.mContext = context;
