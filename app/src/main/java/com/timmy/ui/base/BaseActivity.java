@@ -45,7 +45,7 @@ public class BaseActivity extends AppCompatActivity {
      * 设置Toolbar文字居中
      * @param title
      */
-    protected void setmToolbarTitle(String title){
+    protected void setToolbarTitle(String title){
         if (mToolbarTitle!= null){
             mToolbarTitle.setText(title);
         }

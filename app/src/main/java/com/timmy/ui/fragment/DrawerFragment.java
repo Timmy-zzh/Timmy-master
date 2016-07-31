@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.timmy.R;
+import com.timmy.advance.AdvanceActivity;
 import com.timmy.ui.TechnologyPointActivity;
 
 import butterknife.Bind;
@@ -21,23 +22,23 @@ import butterknife.OnClick;
  */
 public class DrawerFragment extends Fragment {
 
-    @Bind(R.id.tv_technology)
-    TextView technology;
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_drawer, container, false);
-        ButterKnife.bind(this,rootView);
+        ButterKnife.bind(this, rootView);
         return rootView;
     }
 
-    @OnClick(R.id.tv_technology)
-    public void Click(View v){
-        switch (v.getId()){
+    @OnClick({R.id.tv_technology,R.id.tv_advance})
+    public void drawerClick(View v) {
+        switch (v.getId()) {
             case R.id.tv_technology:
-                getActivity().startActivity(new Intent(getActivity(),TechnologyPointActivity.class));
+                getActivity().startActivity(new Intent(getActivity(), TechnologyPointActivity.class));
+                break;
+            case R.id.tv_advance:
+//                getActivity().startActivity(new Intent(getActivity(), AdvanceActivity.class));
+                startActivity(new Intent(getActivity(), AdvanceActivity.class));
                 break;
             default:
                 break;

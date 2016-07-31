@@ -8,7 +8,6 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/DialogDemo" />
             <option value="$PROJECT_DIR$/actionbardemo" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/rxjavademo" />
@@ -17,7 +16,6 @@
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/DialogDemo" />
             <option value="$PROJECT_DIR$/actionbardemo" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/rxjavademo" />

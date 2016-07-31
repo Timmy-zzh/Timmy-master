@@ -97,11 +97,24 @@
             android:label="ToolBarActivity"
             android:parentActivityName=".ui.TechnologyPointActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.technologypoint.CoordinatorLayoutActivity"
+        <activity
+            android:name=".ui.technologypoint.CoordinatorLayoutActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="CoordinatorLayoutActivity"
             android:parentActivityName=".ui.TechnologyPointActivity"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".advance.AdvanceActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="鸿神进阶之路"
+            android:parentActivityName=".ui.MainActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".advance.slidelist.FollowSlideListActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="高仿腾讯ListView滑动删除"
+            android:parentActivityName=".advance.AdvanceActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

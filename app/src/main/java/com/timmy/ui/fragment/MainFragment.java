@@ -51,32 +51,7 @@ public class MainFragment extends Fragment {
 
         adapter = new TabPagerAdapter(getActivity().getSupportFragmentManager(), getActivity());
         vp_viewPager.setAdapter(adapter);
-        //给viewPager添加监听
-//        vp_viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tl_tab));
-
         tl_tab.setupWithViewPager(vp_viewPager);
-//        tl_tab.setTabMode(TabLayout.MODE_FIXED);
-//        tl_tab.setTabMode(TabLayout.MODE_SCROLLABLE);单个Tab会挤到一块去
-
-
-        //TabLayout添加监听
-//        tl_tab.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-//
-//            @Override
-//            public void onTabSelected(TabLayout.Tab tab) {
-//                vp_viewPager.setCurrentItem(tab.getPosition());
-//            }
-//
-//            @Override
-//            public void onTabUnselected(TabLayout.Tab tab) {
-//
-//            }
-//
-//            @Override
-//            public void onTabReselected(TabLayout.Tab tab) {
-//
-//            }
-//        });
     }
 
     class TabPagerAdapter extends FragmentPagerAdapter {
