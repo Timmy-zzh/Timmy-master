@@ -1,10 +1,13 @@
 package com.timmy.advance;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 
 import com.timmy.R;
@@ -47,8 +50,25 @@ public class AdvanceActivity extends BaseActivity {
 
     private void initData() {
         mData.add("仿腾讯List滑动删除");
+        mData.add("使用Activity作为Dialog来展示");
+
 
         adapter.setData(mData);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_advance, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.menu_dialog) {
+            startActivity(new Intent(this, DialogActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     class AdvanceAdapter extends BaseRecyclerViewAdapter<String> {
@@ -73,7 +93,9 @@ public class AdvanceActivity extends BaseActivity {
                 case 0:
                     AdvanceActivity.this.openActivity(FollowSlideListActivity.class);
                     break;
-
+                case 1:
+                    AdvanceActivity.this.openActivity(DialogActivity.class);
+                    break;
             }
         }
     }

@@ -50,7 +50,7 @@ public class SlideDeleteListView extends ListView {
      */
     public SlideDeleteListView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        Logger.d("SlideDeleteListView");
+        Logger.d(TAG, "SlideDeleteListView");
 
         layoutInflater = LayoutInflater.from(context);
         touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
@@ -64,30 +64,34 @@ public class SlideDeleteListView extends ListView {
 
         int mPwHeightPre = mPopupWindow.getContentView().getMeasuredHeight();
         int mPwWidthPre = mPopupWindow.getContentView().getMeasuredWidth();
-        Logger.d("测量前的宽高--" + mPwWidthPre + "--" + mPwHeightPre);
+        Logger.d(TAG, "测量前的宽高--" + mPwWidthPre + "--" + mPwHeightPre);
         //测量
         mPopupWindow.getContentView().measure(0, 0);
         mPwHeight = mPopupWindow.getContentView().getMeasuredHeight();
         mPwWidth = mPopupWindow.getContentView().getMeasuredWidth();
-        Logger.d("测量后的宽高--" + mPwWidth + "--" + mPwHeight);
+        Logger.d(TAG, "测量后的宽高--" + mPwWidth + "--" + mPwHeight);
     }
 
 
     /**
-     * 事件分发
+     * 事件分发--通过测试发现
+     * int x = (int) ev.getX();
+     * int y = (int) ev.getY();
+     * (x,y)原点的坐标位置在屏幕的左上角
      *
      * @param ev
      * @return
      */
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Logger.d("SlideDeleteListView--dispatchTouchEvent");
+        Logger.d(TAG, "--dispatchTouchEvent");
         int action = ev.getAction();
         int x = (int) ev.getX();
         int y = (int) ev.getY();
-        Logger.d("ev--x--" + x + "--y--" + y);
+        Logger.d(TAG, "ev--x--" + x + "--y--" + y);
         switch (action) {
             case MotionEvent.ACTION_DOWN:
+                Logger.d(TAG, "按下时的坐标--xDown--" + xDown + "--yDown--" + yDown);
                 //按下
                 xDown = x;
                 yDown = y;
@@ -102,6 +106,7 @@ public class SlideDeleteListView extends ListView {
                 mCurrItemView = itemView;
                 break;
             case MotionEvent.ACTION_MOVE:
+                Logger.d(TAG, "移动时的坐标--xMove--" + xMove + "--yMove--" + yMove);
                 xMove = x;
                 yMove = y;
                 //手指移动的距离
@@ -110,6 +115,7 @@ public class SlideDeleteListView extends ListView {
                 //判断是否是从右向左滑动
                 if (xMove < xDown && Math.abs(dx) > touchSlop && Math.abs(dy) < touchSlop) {
                     isSlideing = true;
+                    Logger.d(TAG, "isSlideing--" + isSlideing);
                 }
                 break;
         }
@@ -125,11 +131,12 @@ public class SlideDeleteListView extends ListView {
      */
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        Logger.d("--onTouchEvent");
+        Logger.d(TAG,"--onTouchEvent");
         int action = ev.getAction();
         if (isSlideing) {
             switch (action) {
                 case MotionEvent.ACTION_MOVE:
+                    Logger.d(TAG,"--onTouchEvent--ACTION_MOVE");
                     int[] location = new int[2];
                     //获取ListView当前Item的位置x-y
                     mCurrItemView.getLocationOnScreen(location);
@@ -149,6 +156,7 @@ public class SlideDeleteListView extends ListView {
                     break;
                 case MotionEvent.ACTION_UP:
                     isSlideing = false;
+                    Logger.d(TAG,"--onTouchEvent--ACTION_UP");
             }
             //相应滑动期间屏幕ItemClick事件,避免发生冲突
             return true;

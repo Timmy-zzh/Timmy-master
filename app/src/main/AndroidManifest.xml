@@ -115,6 +115,12 @@
             android:label="高仿腾讯ListView滑动删除"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".advance.DialogActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:parentActivityName=".advance.AdvanceActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogTopRight" />
     </application>
 
 </manifest>

@@ -68,6 +68,17 @@
     </style>
 
 
+    <!--Activity启动和销毁的界面动画效果-淡入淡出-->
+    <style name="fade" parent="Animation.AppCompat.Dialog">
+        <item name="android:activityOpenEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/push_bottom_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/fade_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/fade_out</item>
+    </style>
 
+    <style name="MyDialogTopRight" parent="@style/AppTheme.Base">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 
 </resources>
