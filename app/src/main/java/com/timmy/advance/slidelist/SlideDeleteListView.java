@@ -146,7 +146,12 @@ public class SlideDeleteListView extends ListView {
                             mPopupWindow.dismiss();
                         }
                     });
+                    break;
+                case MotionEvent.ACTION_UP:
+                    isSlideing = false;
             }
+            //相应滑动期间屏幕ItemClick事件,避免发生冲突
+            return true;
         }
         return super.onTouchEvent(ev);
     }
