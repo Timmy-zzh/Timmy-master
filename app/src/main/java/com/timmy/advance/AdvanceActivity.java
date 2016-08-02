@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.timmy.R;
+import com.timmy.advance.scrollvertical.VerticalScrollActivity;
 import com.timmy.advance.slidelist.FollowSlideListActivity;
 import com.timmy.ui.base.BaseActivity;
 import com.timmy.ui.base.BaseRecyclerViewAdapter;
@@ -51,6 +52,7 @@ public class AdvanceActivity extends BaseActivity {
     private void initData() {
         mData.add("仿腾讯List滑动删除");
         mData.add("使用Activity作为Dialog来展示");
+        mData.add("Android自定义ViewGroup实现竖向引导界面");
 
 
         adapter.setData(mData);
@@ -95,6 +97,9 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 1:
                     AdvanceActivity.this.openActivity(DialogActivity.class);
+                    break;
+                case 2:
+                    AdvanceActivity.this.openActivity(VerticalScrollActivity.class);
                     break;
             }
         }
