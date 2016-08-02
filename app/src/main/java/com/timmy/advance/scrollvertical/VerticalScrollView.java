@@ -42,7 +42,14 @@ public class VerticalScrollView extends ViewGroup {
         DisplayMetrics outMetrics = new DisplayMetrics();
         windowManager.getDefaultDisplay().getMetrics(outMetrics);
         mScreenHeight = outMetrics.heightPixels;
-        Logger.d(TAG, "--mScreenHeight-" + mScreenHeight);
+        Logger.d(TAG, "--toStrng-" + outMetrics.toString());
+        Logger.d(TAG, "--mScreenHeight-" + outMetrics.heightPixels);
+        Logger.d(TAG, "--mScreenWidth-" + outMetrics.widthPixels);
+        Logger.d(TAG, "--scaledDensity-" + outMetrics.scaledDensity);
+        Logger.d(TAG, "--density-" + outMetrics.density);
+        Logger.d(TAG, "--densityDpi-" + outMetrics.densityDpi);
+        Logger.d(TAG, "--xdpi-" + outMetrics.xdpi);
+        Logger.d(TAG, "--ydpi-" + outMetrics.ydpi);
 
         //初始化
         mScroller = new Scroller(context);

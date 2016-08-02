@@ -2,7 +2,6 @@ package com.timmy.advance;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -11,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.timmy.R;
+import com.timmy.advance.customView.MyToggleButtonActivity;
 import com.timmy.advance.scrollvertical.VerticalScrollActivity;
 import com.timmy.advance.slidelist.FollowSlideListActivity;
 import com.timmy.ui.base.BaseActivity;
@@ -53,6 +53,7 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("仿腾讯List滑动删除");
         mData.add("使用Activity作为Dialog来展示");
         mData.add("Android自定义ViewGroup实现竖向引导界面");
+        mData.add("自定义View(一)--开关按钮");
 
 
         adapter.setData(mData);
@@ -100,6 +101,9 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 2:
                     AdvanceActivity.this.openActivity(VerticalScrollActivity.class);
+                    break;
+                case 3:
+                    AdvanceActivity.this.openActivity(MyToggleButtonActivity.class);
                     break;
             }
         }

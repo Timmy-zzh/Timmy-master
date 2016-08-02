@@ -127,6 +127,12 @@
             android:label="Android自定义ViewGroup实现竖向引导界面"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".advance.customView.MyToggleButtonActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="自定义View(一)--开关按钮"
+            android:parentActivityName=".advance.AdvanceActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
