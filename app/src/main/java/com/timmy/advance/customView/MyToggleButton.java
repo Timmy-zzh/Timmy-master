@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.timmy.R;
 import com.timmy.util.Logger;
+import com.timmy.util.Toast;
 
 /**
  * 自定义View开关按钮,搞明白自定义View中的各个方法的使用和含义
@@ -103,6 +104,7 @@ public class MyToggleButton extends View {
             @Override
             public void onClick(View v) {
                 currentState = !currentState;
+                Toast.toastShort("开关状态:" + currentState);
                 flashState();
                 flushView();
             }
@@ -120,8 +122,8 @@ public class MyToggleButton extends View {
 
     private void flashState() {
         if (currentState) {
-            slideBtnWidth =switchBackground.getWidth()-slideButton.getWidth();
-        }else{
+            slideBtnWidth = switchBackground.getWidth() - slideButton.getWidth();
+        } else {
             slideBtnWidth = 0;
         }
     }

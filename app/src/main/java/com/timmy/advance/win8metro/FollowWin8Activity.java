@@ -21,6 +21,7 @@ public class FollowWin8Activity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_follow_win8);
+        initToolBar();
 //        test();
 
         Win8ImageView mFour = (Win8ImageView) findViewById(R.id.wiv_four);

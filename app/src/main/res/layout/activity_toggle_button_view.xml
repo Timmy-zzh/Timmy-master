@@ -8,6 +8,7 @@
     <include layout="@layout/common_toolbar" />
 
     <com.timmy.advance.customView.MyToggleButton
+        android:id="@+id/tbtn_toggle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
