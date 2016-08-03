@@ -13,6 +13,7 @@ import com.timmy.R;
 import com.timmy.advance.customView.MyToggleButtonActivity;
 import com.timmy.advance.scrollvertical.VerticalScrollActivity;
 import com.timmy.advance.slidelist.FollowSlideListActivity;
+import com.timmy.advance.win8metro.FollowWin8Activity;
 import com.timmy.ui.base.BaseActivity;
 import com.timmy.ui.base.BaseRecyclerViewAdapter;
 import com.timmy.ui.base.BaseViewHolder;
@@ -52,6 +53,7 @@ public class AdvanceActivity extends BaseActivity {
     private void initData() {
         mData.add("仿腾讯List滑动删除");
         mData.add("使用Activity作为Dialog来展示");
+        mData.add("高仿win8效果的界面展示");
         mData.add("Android自定义ViewGroup实现竖向引导界面");
         mData.add("自定义View(一)--开关按钮");
 
@@ -100,9 +102,12 @@ public class AdvanceActivity extends BaseActivity {
                     AdvanceActivity.this.openActivity(DialogActivity.class);
                     break;
                 case 2:
-                    AdvanceActivity.this.openActivity(VerticalScrollActivity.class);
+                    AdvanceActivity.this.openActivity(FollowWin8Activity.class);
                     break;
                 case 3:
+                    AdvanceActivity.this.openActivity(VerticalScrollActivity.class);
+                    break;
+                case 4:
                     AdvanceActivity.this.openActivity(MyToggleButtonActivity.class);
                     break;
             }

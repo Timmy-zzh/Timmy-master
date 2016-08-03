@@ -122,6 +122,13 @@
             android:screenOrientation="portrait"
             android:theme="@style/MyDialogTopRight" />
         <activity
+            android:name=".advance.win8metro.FollowWin8Activity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="高仿Win8效果点击界面"
+            android:parentActivityName=".advance.AdvanceActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".advance.viewpagerindicator.ViewPagerIndicatiorActivity"></activity>
+        <activity
             android:name=".advance.scrollvertical.VerticalScrollActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Android自定义ViewGroup实现竖向引导界面"

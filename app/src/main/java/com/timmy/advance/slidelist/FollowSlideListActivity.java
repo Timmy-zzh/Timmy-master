@@ -1,11 +1,8 @@
 package com.timmy.advance.slidelist;
 
-import android.support.annotation.BinderThread;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 
 import com.timmy.R;
 import com.timmy.ui.base.BaseActivity;
@@ -48,7 +45,6 @@ public class FollowSlideListActivity extends BaseActivity {
 
 //        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mDatas);
 //        mListView.setAdapter(adapter);
-//        adapter.notifyDataSetChanged();
 
         adapter = new ListAdapter(this);
         adapter.setData(mDatas);
@@ -60,7 +56,7 @@ public class FollowSlideListActivity extends BaseActivity {
             public void deleteBtn(int position) {
                 Toast.toastShort("deleteBtn--" + position);
                 adapter.remove(adapter.getItem(position));
-                adapter.notifyDataSetChanged();
+//                adapter.notifyDataSetChanged();
             }
         });
 
