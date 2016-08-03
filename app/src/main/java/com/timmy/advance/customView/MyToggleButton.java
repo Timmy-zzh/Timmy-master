@@ -29,7 +29,7 @@ public class MyToggleButton extends View {
     private final String TAG = this.getClass().getSimpleName();
     private Bitmap switchBackground;//滑动开关的背景
     private Bitmap slideButton;//滑动按钮
-    private boolean currentState = false;//当前开关的按钮
+    private boolean currentState = false;//当前开关按钮的状态
     private float slideBtnWidth;
 
 
@@ -85,7 +85,6 @@ public class MyToggleButton extends View {
         Paint paint = new Paint();
         //打开抗据此
         paint.setAntiAlias(true);
-
         //画背景
         canvas.drawBitmap(switchBackground, 0, 0, paint);
         //画滑动开关按钮
