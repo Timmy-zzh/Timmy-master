@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--自定义公共属性-->
-    <attr name="titleSize" format="dimension"/>
-    <attr name="titlText" format="string"/>
-    <attr name="titleColor" format="color"/>
-    <attr name="outCircleColor" format="color"/>
-    <attr name="inCircleColor" format="color"/>
-    <attr name="lineColor" format="color"/>
+    <attr name="titleSize" format="dimension" />
+    <attr name="titlText" format="string" />
+    <attr name="titleColor" format="color" />
+    <attr name="outCircleColor" format="color" />
+    <attr name="inCircleColor" format="color" />
+    <attr name="lineColor" format="color" />
     <!--自定义view的属性-->
     <declare-styleable name="TimmyHealthView">
         <attr name="titleColor"></attr>
         <attr name="lineColor"></attr>
+    </declare-styleable>
+
+    <!--自定义开关按钮,定义三个属性,背景图片,滑动按钮图片,当前开关的状态-->
+    <declare-styleable name="MyToggleButton">
+        <attr name="current_state" format="boolean" />
+        <attr name="background_bitmap" format="reference" />
+        <attr name="slide_button" format="reference" />
     </declare-styleable>
 
 </resources>
