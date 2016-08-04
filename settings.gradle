@@ -1,1 +1,1 @@
-include ':app', ':actionbardemo', ':rxjavademo', ':databasedemo'
+include ':app', ':actionbardemo', ':rxjavademo', ':databasedemo', ':library_timmy'
