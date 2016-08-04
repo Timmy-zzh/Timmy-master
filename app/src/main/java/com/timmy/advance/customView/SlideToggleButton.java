@@ -19,7 +19,7 @@ import com.timmy.util.Toast;
  * 2.在手指滑动时记录滑动距离;根据滑动距离更新控件的位置.
  * 3.另外还要响应控件的点击事件
  */
-public class SlideToggleButton extends View {
+public class SlideToggleButton extends View implements View.OnClickListener {
 
     private final String TAG = this.getClass().getSimpleName();
     private Bitmap switchBackground;//滑动开关的背景
@@ -30,6 +30,7 @@ public class SlideToggleButton extends View {
     private int moveX;
     private int lastX;//标记手指最后的位置
     private int SLIDE_MAX_VALUE;//手指滑动的最大距离
+    private boolean clickTag;//标记点击事件
 
 
     public SlideToggleButton(Context context) {
@@ -51,16 +52,17 @@ public class SlideToggleButton extends View {
 
         SLIDE_MAX_VALUE = switchBackground.getWidth() - slideButton.getWidth();
         Logger.d(TAG, "switchBackground.getWidth()--" + switchBackground.getWidth() + "-slideButton.getWidth()-" + slideButton.getWidth());
+        setOnClickListener(this);
         //点击事件--状态改变/控件滑动,从新进行绘制
-        setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                currentState = !currentState;
-                Toast.toastShort("开关状态:" + currentState);
-                flashState();
-                flushView();
-            }
-        });
+//        setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                currentState = !currentState;
+//                Toast.toastShort("开关状态:" + currentState);
+//                flashState();
+//                flushView();
+//            }
+//        });
     }
 
     /**
@@ -121,14 +123,17 @@ public class SlideToggleButton extends View {
      */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        super.onTouchEvent(event);//触发点击事件
         Logger.d(TAG, "--onTouchEvent");
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN://手指按下,记录按下时的位置
+                clickTag = true;
                 downX = (int) event.getX();
                 lastX = downX;
                 Logger.d(TAG, "--ACTION_DOWN--downX-" + downX);
                 break;
             case MotionEvent.ACTION_MOVE://手指滑动,记录滑动的距离,注意边界值
+                clickTag = false;
                 moveX = (int) event.getX();
                 Logger.d(TAG, "--ACTION_MOVE--moveX-" + moveX);
                 int offset = moveX - lastX;
@@ -140,7 +145,7 @@ public class SlideToggleButton extends View {
 
                 if (slideBtnXLocation > SLIDE_MAX_VALUE) {//边界处理,右滑到最右边,滑动值设为最大值
                     slideBtnXLocation = SLIDE_MAX_VALUE;
-                } else if (slideBtnXLocation < 0 ) {//往左滑动,且超过最大距离
+                } else if (slideBtnXLocation < 0) {//往左滑动,且超过最大距离
                     slideBtnXLocation = 0;
                 }
                 Logger.d(TAG, "--ACTION_MOVE--slideBtnXLocation-" + slideBtnXLocation);
@@ -148,12 +153,13 @@ public class SlideToggleButton extends View {
             case MotionEvent.ACTION_UP://当手指抬起时,需要判断滑动的距离的大小是否大于滑动距离的一半,大于的话,需要设置滑动按钮的值
 
                 if (slideBtnXLocation <= SLIDE_MAX_VALUE / 2) {//滑动距离小于最大值一半
-                    slideBtnXLocation = 0; //状态为关闭
-//                    currentState = false;
+//                    slideBtnXLocation = 0; //状态为关闭
+                    currentState = false;
                 } else {
-                    slideBtnXLocation = SLIDE_MAX_VALUE; //状态为开启
-//                    currentState = true;
+//                    slideBtnXLocation = SLIDE_MAX_VALUE; //状态为开启
+                    currentState = true;
                 }
+                flashState();
                 Logger.d(TAG, "--ACTION_UP--slideBtnXLocation-" + slideBtnXLocation);
                 break;
         }
@@ -176,6 +182,18 @@ public class SlideToggleButton extends View {
             slideBtnXLocation = switchBackground.getWidth() - slideButton.getWidth();
         } else {
             slideBtnXLocation = 0;
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (clickTag) {//点击事件处理
+            currentState = !currentState;
+            Toast.toastShort("开关状态:" + currentState);
+            flashState();
+            flushView();
+        } else {
+            //拖动处理
         }
     }
 }
