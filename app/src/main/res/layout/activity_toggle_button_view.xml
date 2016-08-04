@@ -12,6 +12,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="150dp" />
+        android:layout_marginTop="100dp" />
+
+
+    <com.timmy.advance.customView.SlideToggleButton
+        android:id="@+id/slide_toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp" />
 
 </LinearLayout>
