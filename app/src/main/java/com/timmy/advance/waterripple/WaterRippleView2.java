@@ -67,7 +67,7 @@ public class WaterRippleView2 extends View {
                 isEmpty = false;
             }
             ripple.alpha -= 10;
-            ripple.radius += 5;
+            ripple.radius += rippleList.size() - i;
             if (ripple.alpha < 0)
                 ripple.alpha = 0;
             ripple.width = ripple.radius / 4;
