@@ -116,7 +116,7 @@
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".advance.DialogActivity"
+            android:name=".advance.dialog.DialogActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait"
@@ -127,7 +127,7 @@
             android:label="高仿Win8效果点击界面"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".advance.viewpagerindicator.ViewPagerIndicatiorActivity"></activity>
+        <activity android:name=".advance.viewpagerindicator.ViewPagerIndicatiorActivity" />
         <activity
             android:name=".advance.scrollvertical.VerticalScrollActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -137,7 +137,13 @@
         <activity
             android:name=".advance.customView.MyToggleButtonActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="自定义View(一)--开关按钮"
+            android:label="自定义View(一)开关按钮"
+            android:parentActivityName=".advance.AdvanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".advance.waterripple.WaterRippleActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="定义View(二)水波纹效果"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
     </application>

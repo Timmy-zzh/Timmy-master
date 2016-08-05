@@ -1,4 +1,4 @@
-package com.timmy.advance;
+package com.timmy.advance.dialog;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
