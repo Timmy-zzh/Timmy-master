@@ -14,9 +14,12 @@ import com.timmy.util.Logger;
 
 /**
  * 自定义View实现水波纹效果
- * 一,实现点击就出现水波纹效果
+ * 一:实现点击就出现水波纹效果--界面上只有一小圆环
  * 实现步骤:初始化画笔->测量(宽高为屏幕宽高,使用默认测量方法)->布局(用不上)-->
  * 绘制(在画布上绘制水波纹)->点击事件处理(获取点击的位置,在该位置绘制波纹效果,并且随着时间波纹变大,透明度变淡)
+ *
+ * 二:界面上有多个圆环
+ *
  */
 public class WaterRippleView extends View {
     private final String TAG = this.getClass().getSimpleName();
@@ -76,9 +79,9 @@ public class WaterRippleView extends View {
     private void initPaint() {
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
-        //设置线宽
+        //设置圆环宽度
         mPaint.setStrokeWidth(width);
-        //设置绘制环形方式绘制
+        //设置画笔空心绘制
         mPaint.setStyle(Paint.Style.STROKE);
         //设置画笔透明度
         mPaint.setAlpha(alpha);
