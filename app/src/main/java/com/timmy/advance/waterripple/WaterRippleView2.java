@@ -32,6 +32,7 @@ public class WaterRippleView2 extends View {
     private List<Ripple> rippleList;
     private int MAX_ALPHA = 255;
     private boolean isEmpty = true;//标记波纹列表是否为空,
+    private int[] colors = new int[]{Color.RED, Color.BLUE, Color.DKGRAY, Color.GREEN, Color.YELLOW, Color.MAGENTA, Color.BLACK};
 
     Handler handler = new Handler() {
         @Override
@@ -103,7 +104,7 @@ public class WaterRippleView2 extends View {
         //设置画笔透明度
         paint.setAlpha(alpha);
         //设置画笔颜色
-        paint.setColor(Color.RED);
+        paint.setColor(colors[(int) (Math.random() * (colors.length - 1))]);
         return paint;
     }
 
@@ -134,6 +135,8 @@ public class WaterRippleView2 extends View {
         super.onTouchEvent(event);
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN://每次点击都需要创建一个新的波纹对象,并且不能一直发送消息
+
+            case MotionEvent.ACTION_MOVE:
                 Ripple ripple = new Ripple();
 
                 ripple.radius = 0;
@@ -151,9 +154,6 @@ public class WaterRippleView2 extends View {
 
                 if (isEmpty)//波纹列表为空,需要发送通知,不为空,Hnadler自动发送通知
                     handler.sendEmptyMessage(0);
-
-                break;
-            case MotionEvent.ACTION_MOVE:
 
                 break;
             case MotionEvent.ACTION_UP:
