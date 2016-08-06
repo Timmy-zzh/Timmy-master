@@ -1,4 +1,4 @@
-package com.timmy.advance.scrollvertical;
+package com.timmy.advance.scrollVertical;
 
 import android.os.Bundle;
 

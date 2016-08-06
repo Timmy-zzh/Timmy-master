@@ -1,4 +1,4 @@
-package com.timmy.advance.scrollvertical;
+package com.timmy.advance.scrollVertical;
 
 import android.content.Context;
 import android.util.AttributeSet;

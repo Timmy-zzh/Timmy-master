@@ -1,4 +1,4 @@
-package com.timmy.advance.waterripple;
+package com.timmy.advance.waterRipple;
 
 import android.graphics.Paint;
 

@@ -1,4 +1,4 @@
-package com.timmy.advance.slidelist;
+package com.timmy.advance.slideList;
 
 import android.os.Bundle;
 import android.view.View;

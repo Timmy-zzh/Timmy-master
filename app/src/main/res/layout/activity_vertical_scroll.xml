@@ -7,7 +7,7 @@
 
     <include layout="@layout/common_toolbar" />
 
-    <com.timmy.advance.scrollvertical.VerticalScrollView
+    <com.timmy.advance.scrollVertical.VerticalScrollView
         android:id="@+id/vs_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -50,6 +50,6 @@
         </RelativeLayout>
 
 
-    </com.timmy.advance.scrollvertical.VerticalScrollView>
+    </com.timmy.advance.scrollVertical.VerticalScrollView>
 
 </LinearLayout>

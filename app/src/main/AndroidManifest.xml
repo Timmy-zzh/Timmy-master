@@ -110,7 +110,7 @@
             android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".advance.slidelist.FollowSlideListActivity"
+            android:name=".advance.slideList.FollowSlideListActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="高仿腾讯ListView滑动删除"
             android:parentActivityName=".advance.AdvanceActivity"
@@ -127,9 +127,9 @@
             android:label="高仿Win8效果点击界面"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".advance.viewpagerindicator.ViewPagerIndicatiorActivity" />
+        <activity android:name=".advance.viewpagerIndicator.ViewPagerIndicatiorActivity" />
         <activity
-            android:name=".advance.scrollvertical.VerticalScrollActivity"
+            android:name=".advance.scrollVertical.VerticalScrollActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Android自定义ViewGroup实现竖向引导界面"
             android:parentActivityName=".advance.AdvanceActivity"
@@ -141,11 +141,12 @@
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".advance.waterripple.WaterRippleActivity"
+            android:name=".advance.waterRipple.WaterRippleActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="定义View(二)水波纹效果"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".advance.customViewGroup.CustomViewPagerActivity"></activity>
     </application>
 
 </manifest>

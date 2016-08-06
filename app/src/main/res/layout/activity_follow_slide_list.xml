@@ -7,7 +7,7 @@
 
     <include layout="@layout/common_toolbar" />
 
-    <com.timmy.advance.slidelist.SlideDeleteListView
+    <com.timmy.advance.slideList.SlideDeleteListView
         android:id="@+id/slide_listview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

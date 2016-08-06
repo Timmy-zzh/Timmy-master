@@ -11,10 +11,11 @@ import android.view.View;
 
 import com.timmy.R;
 import com.timmy.advance.customView.MyToggleButtonActivity;
+import com.timmy.advance.customViewGroup.CustomViewPagerActivity;
 import com.timmy.advance.dialog.DialogActivity;
-import com.timmy.advance.scrollvertical.VerticalScrollActivity;
-import com.timmy.advance.slidelist.FollowSlideListActivity;
-import com.timmy.advance.waterripple.WaterRippleActivity;
+import com.timmy.advance.scrollVertical.VerticalScrollActivity;
+import com.timmy.advance.slideList.FollowSlideListActivity;
+import com.timmy.advance.waterRipple.WaterRippleActivity;
 import com.timmy.advance.win8metro.FollowWin8Activity;
 import com.timmy.ui.base.BaseActivity;
 import com.timmy.ui.base.BaseRecyclerViewAdapter;
@@ -59,6 +60,7 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("Android自定义ViewGroup实现竖向引导界面");
         mData.add("自定义View(一)--开关按钮");
         mData.add("自定义View(二)--水波纹效果");
+        mData.add("自定义ViewGroup(三)--实现ViewPager效果");
 
 
         adapter.setData(mData);
@@ -115,6 +117,9 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 5:
                     AdvanceActivity.this.openActivity(WaterRippleActivity.class);
+                    break;
+                case 6:
+                    AdvanceActivity.this.openActivity(CustomViewPagerActivity.class);
                     break;
             }
         }

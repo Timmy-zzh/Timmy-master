@@ -1,4 +1,4 @@
-package com.timmy.advance.viewpagerindicator;
+package com.timmy.advance.viewpagerIndicator;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
