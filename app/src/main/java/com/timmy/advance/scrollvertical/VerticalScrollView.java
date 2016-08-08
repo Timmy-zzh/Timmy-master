@@ -10,7 +10,8 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Scroller;
 
-import com.timmy.util.Logger;
+import com.timmy.library.util.Logger;
+
 
 /**
  * 实现垂直滚动效果的自定义View

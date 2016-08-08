@@ -10,8 +10,8 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import com.timmy.R;
-import com.timmy.util.Logger;
-import com.timmy.util.Toast;
+import com.timmy.library.util.Logger;
+import com.timmy.library.util.Toast;
 
 /**
  * 滑动开关:需要处理控件的onTouchEvent()事件;

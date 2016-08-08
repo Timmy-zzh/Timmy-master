@@ -4,8 +4,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.timmy.R;
+import com.timmy.library.util.ImageUtil;
 import com.timmy.ui.base.BaseActivity;
-import com.timmy.util.ImageUtil;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

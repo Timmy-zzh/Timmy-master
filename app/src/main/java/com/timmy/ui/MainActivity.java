@@ -8,9 +8,9 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.timmy.R;
+import com.timmy.library.util.Toast;
 import com.timmy.ui.base.BaseActivity;
 import com.timmy.ui.fragment.DrawerFragment;
 import com.timmy.ui.fragment.MainFragment;
@@ -86,7 +86,7 @@ public class MainActivity extends BaseActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            com.timmy.util.Toast.toastShort("Setting");
+            Toast.toastShort("Setting");
             return true;
         } else if (id == R.id.action_about) {
 
@@ -103,8 +103,7 @@ public class MainActivity extends BaseActivity {
         if (keyCode == KeyEvent.KEYCODE_BACK
                 && event.getAction() == KeyEvent.ACTION_DOWN) {
             if ((System.currentTimeMillis() - exitTime) > 2000) {
-//                ShowToast.Short("再按一次退出程序");
-                Toast.makeText(MainActivity.this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                Toast.toastShort("再按一次退出程序");
                 exitTime = System.currentTimeMillis();
             } else {
                 finish();

@@ -3,9 +3,9 @@ package com.timmy.advance.win8metro;
 import android.os.Bundle;
 
 import com.timmy.R;
+import com.timmy.library.util.Logger;
+import com.timmy.library.util.Toast;
 import com.timmy.ui.base.BaseActivity;
-import com.timmy.util.Logger;
-import com.timmy.util.Toast;
 
 
 /**

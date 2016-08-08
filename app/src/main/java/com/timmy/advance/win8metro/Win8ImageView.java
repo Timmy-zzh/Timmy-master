@@ -10,7 +10,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 
-import com.timmy.util.Logger;
+import com.timmy.library.util.Logger;
+
 
 /**
  * 本自定义View主要实现的功能是,获取控件设置的图片数据,进行缩放

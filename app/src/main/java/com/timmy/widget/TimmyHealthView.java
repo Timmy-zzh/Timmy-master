@@ -14,7 +14,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.timmy.R;
-import com.timmy.util.Logger;
+import com.timmy.library.util.Logger;
 
 import java.util.ArrayList;
 import java.util.List;

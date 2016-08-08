@@ -10,7 +10,8 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.timmy.util.Logger;
+import com.timmy.library.util.Logger;
+
 
 /**
  * 自定义View实现水波纹效果

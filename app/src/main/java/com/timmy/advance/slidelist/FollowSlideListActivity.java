@@ -5,8 +5,8 @@ import android.view.View;
 import android.widget.AdapterView;
 
 import com.timmy.R;
+import com.timmy.library.util.Toast;
 import com.timmy.ui.base.BaseActivity;
-import com.timmy.util.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;

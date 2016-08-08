@@ -10,7 +10,7 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.timmy.util.Logger;
+import com.timmy.library.util.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;

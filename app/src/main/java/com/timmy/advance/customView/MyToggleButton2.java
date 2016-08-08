@@ -3,7 +3,6 @@ package com.timmy.advance.customView;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
@@ -11,8 +10,8 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.timmy.R;
-import com.timmy.util.Logger;
-import com.timmy.util.Toast;
+import com.timmy.library.util.Logger;
+import com.timmy.library.util.Toast;
 
 /**
  * 自定义View,图片资源和开关状态从xml文件中获取

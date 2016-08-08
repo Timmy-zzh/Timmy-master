@@ -13,7 +13,7 @@ import android.widget.ListView;
 import android.widget.PopupWindow;
 
 import com.timmy.R;
-import com.timmy.util.Logger;
+import com.timmy.library.util.Logger;
 
 /**
  * 自定义向右滑动删除Item的ListView

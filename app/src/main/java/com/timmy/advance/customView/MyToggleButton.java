@@ -9,8 +9,8 @@ import android.util.AttributeSet;
 import android.view.View;
 
 import com.timmy.R;
-import com.timmy.util.Logger;
-import com.timmy.util.Toast;
+import com.timmy.library.util.Logger;
+import com.timmy.library.util.Toast;
 
 /**
  * 自定义View开关按钮,搞明白自定义View中的各个方法的使用和含义
