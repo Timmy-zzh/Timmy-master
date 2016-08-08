@@ -13,7 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp" />
+        android:layout_marginTop="100dp"
+        android:visibility="gone" />
 
 
     <com.timmy.advance.customView.SlideToggleButton
@@ -28,6 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="50dp"
+        android:visibility="gone"
         timmy:background_bitmap="@mipmap/switch_background"
         timmy:current_state="false"
         timmy:slide_button="@mipmap/slide_button_background" />

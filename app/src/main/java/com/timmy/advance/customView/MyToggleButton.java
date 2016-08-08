@@ -43,6 +43,10 @@ public class MyToggleButton extends View {
         init();
     }
 
+//    public MyToggleButton(Context context, AttributeSet attrs, int defStyleAttr) {
+//        super(context, attrs, defStyleAttr);
+//    }
+
     /**
      * 测量
      *
@@ -53,9 +57,24 @@ public class MyToggleButton extends View {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 //        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         //设置控件的大小
+        int widthSpec = MeasureSpec.getMode(widthMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        Logger.d(TAG, "---------------onMeasure--widthSpec-" + widthSpec + "-widthSize-" + widthSize);
+        int heightSpec = MeasureSpec.getMode(heightMeasureSpec);
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+        Logger.d(TAG, "----------------onMeasure--heightSpec-" + heightSpec + "-heightSize-" + heightSize);
+        Logger.d(TAG, "----------------onMeasure--MeasureSpec.AT_MOST-" + MeasureSpec.AT_MOST);
+
+        int suggestedMinimumWidth = getSuggestedMinimumWidth();
+        Logger.d(TAG, "----------------onMeasure--suggestedMinimumWidth-" + suggestedMinimumWidth);
+
+        if (widthSize == MeasureSpec.AT_MOST) {
+
+        }
+
         int width = switchBackground.getWidth();
         int height = switchBackground.getHeight();
-        Logger.d(TAG, "--onMeasure--width-" + width + "-height-" + height);
+        Logger.d(TAG, "------------------onMeasure--width-" + width + "-height-" + height);
         setMeasuredDimension(width, height);
     }
 
@@ -71,6 +90,7 @@ public class MyToggleButton extends View {
      */
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
+        Logger.d(TAG, "-----------------MyToggleButton--onLayout");
         super.onLayout(changed, left, top, right, bottom);
     }
 
@@ -82,6 +102,7 @@ public class MyToggleButton extends View {
     @Override
     protected void onDraw(Canvas canvas) {
 //        super.onDraw(canvas);
+        Logger.d(TAG, "-----------------MyToggleButton--onDraw");
         Paint paint = new Paint();
         //打开抗据此
         paint.setAntiAlias(true);

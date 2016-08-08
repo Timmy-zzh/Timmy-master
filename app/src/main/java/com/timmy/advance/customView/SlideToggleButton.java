@@ -131,6 +131,7 @@ public class SlideToggleButton extends View implements View.OnClickListener {
                 downX = (int) event.getX();
                 lastX = downX;
                 Logger.d(TAG, "--ACTION_DOWN--downX-" + downX);
+//                Logger.d(TAG, "--ACTION_DOWN--getRawX-" + event.getRawX() + "--getRawY--" + event.getRawY());
                 break;
             case MotionEvent.ACTION_MOVE://手指滑动,记录滑动的距离,注意边界值
                 clickTag = false;
@@ -151,6 +152,8 @@ public class SlideToggleButton extends View implements View.OnClickListener {
                 Logger.d(TAG, "--ACTION_MOVE--slideBtnXLocation-" + slideBtnXLocation);
                 break;
             case MotionEvent.ACTION_UP://当手指抬起时,需要判断滑动的距离的大小是否大于滑动距离的一半,大于的话,需要设置滑动按钮的值
+                //手指抬起的时候,需要标记点击事件触发
+//                clickTag = true;
 
                 if (slideBtnXLocation <= SLIDE_MAX_VALUE / 2) {//滑动距离小于最大值一半
 //                    slideBtnXLocation = 0; //状态为关闭
@@ -161,6 +164,7 @@ public class SlideToggleButton extends View implements View.OnClickListener {
                 }
                 flashState();
                 Logger.d(TAG, "--ACTION_UP--slideBtnXLocation-" + slideBtnXLocation);
+                Logger.d(TAG, "--ACTION_UP--clickTag-" + clickTag);
                 break;
         }
         //根据滑动按钮x方向的位置,去重新绘制控件
