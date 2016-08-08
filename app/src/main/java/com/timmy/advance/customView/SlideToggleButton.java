@@ -166,6 +166,9 @@ public class SlideToggleButton extends View implements View.OnClickListener {
                 Logger.d(TAG, "--ACTION_UP--slideBtnXLocation-" + slideBtnXLocation);
                 Logger.d(TAG, "--ACTION_UP--clickTag-" + clickTag);
                 break;
+            case MotionEvent.ACTION_CANCEL:
+                Logger.d(TAG, "--ACTION_CANCEL--" + slideBtnXLocation);
+                break;
         }
         //根据滑动按钮x方向的位置,去重新绘制控件
         flushView();
@@ -191,6 +194,7 @@ public class SlideToggleButton extends View implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+        Logger.d(TAG,"--clickTag--"+clickTag);
         if (clickTag) {//点击事件处理
             currentState = !currentState;
             Toast.toastShort("开关状态:" + currentState);
