@@ -1,9 +1,6 @@
 package com.timmy.library.util;
 
-import android.view.Gravity;
-import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 
 
 /**
@@ -15,21 +12,21 @@ public class Toast {
 
 
     private static void toast(int time, String s) {
-        if (toast == null) {
+//        if (toast == null) {
 //            toast = android.widget.Toast.makeText(TimmyApp.getInstance(), s, time);
-        } else {
-            toast.setText(s);
-        }
-        toast.show();
+//        } else {
+//            toast.setText(s);
+//        }
+//        toast.show();
     }
 
     private static void toast(int time, int resId) {
-        if (toast == null) {
+//        if (toast == null) {
 //            toast = android.widget.Toast.makeText(TimmyApp.getInstance(), resId, time);
-        } else {
-            toast.setText(resId);
-        }
-        toast.show();
+//        } else {
+//            toast.setText(resId);
+//        }
+//        toast.show();
     }
 
     public static void toastLong(String s) {
@@ -57,43 +54,43 @@ public class Toast {
     }
 
     public static void toastCenter(String s, int time) {
-        if (toast == null) {
+//        if (toast == null) {
 //            toast = android.widget.Toast.makeText(TimmyApp.getInstance(), s, time);
-        } else {
-            toast.setText(s);
-        }
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        toast.show();
+//        } else {
+//            toast.setText(s);
+//        }
+//        toast.setGravity(Gravity.CENTER, 0, 0);
+//        toast.show();
     }
 
 
     public static void toastCenterWithImg(String s, int time, ImageView view) {
-        if (toast == null) {
+//        if (toast == null) {
 //            toast = android.widget.Toast.makeText(TimmyApp.getInstance(), s, time);
-        } else {
-            toast.cancel();
+//        } else {
+//            toast.cancel();
 //            toast = android.widget.Toast.makeText(TimmyApp.getInstance(), s, time);
-            toast.setText(s);
-        }
-        toast.setGravity(Gravity.CENTER, 0, 0);
-        ((LinearLayout) toast.getView()).addView(view, 0);
-
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        lp.gravity = Gravity.CENTER;
-        view.setLayoutParams(lp);
-
-        toast.show();
+//            toast.setText(s);
+//        }
+//        toast.setGravity(Gravity.CENTER, 0, 0);
+//        ((LinearLayout) toast.getView()).addView(view, 0);
+//
+//        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//        lp.gravity = Gravity.CENTER;
+//        view.setLayoutParams(lp);
+//
+//        toast.show();
     }
 
     public static void toastCenterWithImg(String s, int time, int viewId) {
-        if (toast == null) {
+//        if (toast == null) {
 //            toast = android.widget.Toast.makeText(TimmyApp.getInstance(), s, time);
-        } else {
-            toast.cancel();
+//        } else {
+//            toast.cancel();
 //            toast = android.widget.Toast.makeText(TimmyApp.getInstance(), s, time);
-            toast.setText(s);
-        }
-        toast.setGravity(Gravity.CENTER, 0, 0);
+//            toast.setText(s);
+//        }
+//        toast.setGravity(Gravity.CENTER, 0, 0);
 //        ImageView iv = new ImageView(TimmyApp.getInstance());
 
 //        iv.setBackgroundResource(viewId);
@@ -102,7 +99,7 @@ public class Toast {
 //        iv.setLayoutParams(lp);
 //        ((LinearLayout) toast.getView()).addView(iv, 0);
 
-        toast.show();
+//        toast.show();
     }
 
     public static void toastLongCenterWithImg(String s, int viewId) {

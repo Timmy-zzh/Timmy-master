@@ -10,17 +10,16 @@
     <com.timmy.advance.customViewGroup.MyViewPager
         android:id="@+id/vp_viewPage"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone" />
+        android:layout_height="match_parent" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitXY"
-        android:src="@mipmap/ic_5" />
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:scaleType="fitXY"-->
+    <!--android:src="@mipmap/ic_5" />-->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="adk;afkd;lakf;akdf;lkaladklfaj垃圾快点放辣椒" />
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="adk;afkd;lakf;akdf;lkaladklfaj垃圾快点放辣椒" />-->
 </LinearLayout>

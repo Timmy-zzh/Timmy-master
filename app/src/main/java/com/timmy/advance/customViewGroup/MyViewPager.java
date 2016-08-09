@@ -14,6 +14,14 @@ public class MyViewPager extends ViewGroup {
         super(context, attrs);
     }
 
+    /**
+     * 指定组件位置,给ViewGroup中的子View确定位置
+     * @param changed
+     * @param l
+     * @param t
+     * @param r
+     * @param b
+     */
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
 
