@@ -146,7 +146,8 @@
             android:label="定义View(二)水波纹效果"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".advance.customViewGroup.CustomViewPagerActivity"></activity>
+        <activity android:name=".advance.customViewGroup.CustomViewPagerActivity" />
+        <activity android:name=".advance.screenAdapter.ImageAdapterActivity"></activity>
     </application>
 
 </manifest>

@@ -13,6 +13,7 @@ import com.timmy.R;
 import com.timmy.advance.customView.MyToggleButtonActivity;
 import com.timmy.advance.customViewGroup.CustomViewPagerActivity;
 import com.timmy.advance.dialog.DialogActivity;
+import com.timmy.advance.screenAdapter.ImageAdapterActivity;
 import com.timmy.advance.scrollVertical.VerticalScrollActivity;
 import com.timmy.advance.slideList.FollowSlideListActivity;
 import com.timmy.advance.waterRipple.WaterRippleActivity;
@@ -61,6 +62,7 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("自定义View(一)--开关按钮");
         mData.add("自定义View(二)--水波纹效果");
         mData.add("自定义ViewGroup(三)--实现ViewPager效果");
+        mData.add("自定义View(四)--图片适配");
 
 
         adapter.setData(mData);
@@ -120,6 +122,9 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 6:
                     AdvanceActivity.this.openActivity(CustomViewPagerActivity.class);
+                    break;
+                case 7:
+                    AdvanceActivity.this.openActivity(ImageAdapterActivity.class);
                     break;
             }
         }
