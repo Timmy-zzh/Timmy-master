@@ -29,4 +29,5 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.android.support:support-v4:23.4.0'
     compile project(':library_timmy')
+    compile project(':viewpagerindicator')
 }

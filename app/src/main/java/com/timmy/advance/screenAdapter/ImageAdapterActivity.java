@@ -15,5 +15,10 @@ public class ImageAdapterActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_adapter);
         initToolBar();
+
+        AdapterImagerView adapterImagerView = (AdapterImagerView) findViewById(R.id.iv_adapter);
+        //设置图片宽高比: 900 / 569
+        adapterImagerView.setRatio(1.58f);
+
     }
 }

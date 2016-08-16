@@ -7,5 +7,16 @@
 
     <include layout="@layout/common_toolbar" />
 
+    <com.timmy.viewpagerindicator.TabPageIndicator
+        android:id="@+id/pi_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/blue_light" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_viewPage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
 </LinearLayout>

@@ -16,6 +16,7 @@ import com.timmy.advance.dialog.DialogActivity;
 import com.timmy.advance.screenAdapter.ImageAdapterActivity;
 import com.timmy.advance.scrollVertical.VerticalScrollActivity;
 import com.timmy.advance.slideList.FollowSlideListActivity;
+import com.timmy.advance.viewpagerIndicator.ViewPagerIndicatiorActivity;
 import com.timmy.advance.waterRipple.WaterRippleActivity;
 import com.timmy.advance.win8metro.FollowWin8Activity;
 import com.timmy.ui.base.BaseActivity;
@@ -63,6 +64,7 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("自定义View(二)--水波纹效果");
         mData.add("自定义ViewGroup(三)--实现ViewPager效果");
         mData.add("自定义View(四)--图片适配");
+        mData.add("ViewPager指示器");
 
 
         adapter.setData(mData);
@@ -125,6 +127,9 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 7:
                     AdvanceActivity.this.openActivity(ImageAdapterActivity.class);
+                    break;
+                case 8:
+                    AdvanceActivity.this.openActivity(ViewPagerIndicatiorActivity.class);
                     break;
             }
         }
