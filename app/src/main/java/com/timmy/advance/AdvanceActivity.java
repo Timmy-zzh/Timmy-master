@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.timmy.R;
+import com.timmy.advance.citySelect.CitySelectActivity;
 import com.timmy.advance.customView.MyToggleButtonActivity;
 import com.timmy.advance.customViewGroup.CustomViewPagerActivity;
 import com.timmy.advance.dialog.DialogActivity;
@@ -65,6 +66,7 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("自定义ViewGroup(三)--实现ViewPager效果");
         mData.add("自定义View(四)--图片适配");
         mData.add("ViewPager指示器");
+        mData.add("城市列表选择");
 
 
         adapter.setData(mData);
@@ -130,6 +132,9 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 8:
                     AdvanceActivity.this.openActivity(ViewPagerIndicatiorActivity.class);
+                    break;
+                case 9:
+                    AdvanceActivity.this.openActivity(CitySelectActivity.class);
                     break;
             }
         }
