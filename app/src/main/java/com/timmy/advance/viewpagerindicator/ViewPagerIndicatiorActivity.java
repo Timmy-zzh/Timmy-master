@@ -2,8 +2,6 @@ package com.timmy.advance.viewpagerIndicator;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-
 import com.timmy.R;
 import com.timmy.ui.base.BaseActivity;
 import com.timmy.viewpagerindicator.TabPageIndicator;

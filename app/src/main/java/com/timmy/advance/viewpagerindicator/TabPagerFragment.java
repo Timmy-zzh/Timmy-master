@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import com.timmy.R;
 
 /**
- * Created by Administrator on 2016/8/16.
+ *
  */
 public class TabPagerFragment extends Fragment {
 

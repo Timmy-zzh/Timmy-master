@@ -2,7 +2,7 @@
 <resources>
     <!--自定义公共属性-->
     <attr name="titleSize" format="dimension" />
-    <attr name="titlText" format="string" />
+    <attr name="titleText" format="string" />
     <attr name="titleColor" format="color" />
     <attr name="outCircleColor" format="color" />
     <attr name="inCircleColor" format="color" />
@@ -18,6 +18,12 @@
         <attr name="current_state" format="boolean" />
         <attr name="background_bitmap" format="reference" />
         <attr name="slide_button" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="VerificaCodeView">
+        <attr name="titleText" />
+        <attr name="titleColor" />
+        <attr name="titleSize" />
     </declare-styleable>
 
 </resources>
