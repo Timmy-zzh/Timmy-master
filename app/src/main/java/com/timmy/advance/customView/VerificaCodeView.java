@@ -55,10 +55,11 @@ public class VerificaCodeView extends View {
         TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.VerificaCodeView);
         //获取该自定义控件包含自定义属性的个数
         int indexCount = ta.getIndexCount();
-        Logger.d(TAG, "--indexCount--" + indexCount);
+        Logger.d(TAG, "VerificaCodeView--indexCount--" + indexCount);
         for (int i = 0; i < indexCount; i++) {
             //获取第i个属性值
             int attr = ta.getIndex(i);
+            Logger.d(TAG, "VerificaCodeView--attr--" + attr);
             switch (attr) {
                 case R.styleable.VerificaCodeView_titleColor:
                     //文字颜色->获取文字颜色
@@ -70,14 +71,14 @@ public class VerificaCodeView extends View {
                      * TypedValue.COMPLEX_UNIT_SP 为自己设置的单位
                      */
                     int defauleSize = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16, getResources().getDisplayMetrics());
-                    Logger.d(TAG, "--defauleSize--" + defauleSize);
+                    Logger.d(TAG, "VerificaCodeView--defauleSize--" + defauleSize);
                     textSize = ta.getDimensionPixelSize(attr, defauleSize);
                     Logger.d(TAG, "--textSize--" + textSize);
                     break;
                 case R.styleable.VerificaCodeView_titleText:
                     //文字内容
                     textContent = ta.getString(attr);
-                    Logger.d(TAG, "--textContent--" + textContent);
+                    Logger.d(TAG, "VerificaCodeView--textContent--" + textContent);
                     break;
             }
         }
@@ -116,13 +117,52 @@ public class VerificaCodeView extends View {
         //设置画笔文字大小
         mPaint.setTextSize(textSize);
         mBound = new Rect();
-        //暂时没有搞明白这个方法的用途
+        //为text设置区域
         mPaint.getTextBounds(textContent, 0, textContent.length(), mBound);
     }
 
+    /**
+     * onMeasure方法,最后调用的是setMeasureDimeasure方法
+     * 处理当控件是warp_content包裹宽高时,显示问题
+     */
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        int width = 0;
+        int height = 0;
+
+        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+
+        int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+        int heightSize = MeasureSpec.getSize(heightMeasureSpec);
+
+        Logger.d(TAG, "onMeasure--widthSize--" + widthSize + "--heightSize--" + heightSize);
+        Logger.d(TAG, "-onMeasure-getPaddingLeft()--" + getPaddingLeft() + "--getPaddingRight()--" + getPaddingRight());
+
+        //设置宽度
+        switch (widthMode) {
+            case MeasureSpec.EXACTLY:
+                width = widthSize + getPaddingLeft() + getPaddingRight();
+                break;
+            case MeasureSpec.AT_MOST://包裹
+                width = mBound.width() + getPaddingLeft() + getPaddingRight();
+                break;
+        }
+
+        //设置高度
+        switch (heightMode) {
+            case MeasureSpec.EXACTLY:
+                height = heightSize + getPaddingTop() + getPaddingBottom();
+                break;
+            case MeasureSpec.AT_MOST://包裹
+                height = mBound.height() + getPaddingTop() + getPaddingBottom();
+                break;
+        }
+
+        Logger.d(TAG, "onMeasure--mBound.width()--" + mBound.width() + "--mBound.height()--" + mBound.height());
+
+        Logger.d(TAG, "onMeasure--width--" + width + "--height--" + height);
+        setMeasuredDimension(width, height);
     }
 
     /**
@@ -144,8 +184,8 @@ public class VerificaCodeView extends View {
         int xPos = getWidth() / 2 - mBound.width() / 2;
         int yPos = getHeight() / 2 + mBound.height() / 2;
         mPaint.setColor(textColor);
-        Logger.d(TAG, "--getWidth--" + getWidth() + "--getHeight()--" + getHeight());
-        Logger.d(TAG, "--mBound.width()--" + mBound.width() + "--mBound.height()--" + mBound.height());
+        Logger.d(TAG, "onDraw--getWidth--" + getWidth() + "--getHeight()--" + getHeight());
+        Logger.d(TAG, "onDraw--mBound.width()--" + mBound.width() + "--mBound.height()--" + mBound.height());
         canvas.drawText(textContent, xPos, yPos, mPaint);
     }
 }

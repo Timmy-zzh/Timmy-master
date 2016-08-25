@@ -8,10 +8,27 @@
 
     <include layout="@layout/common_toolbar" />
 
-    <com.timmy.advance.customView.VerificaCodeView
-        android:layout_width="200dp"
-        android:layout_height="100dp"
-        app:titleColor="@color/red"
-        app:titleSize="20sp"
-        app:titleText="5485" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<com.timmy.advance.customView.VerificaCodeView-->
+            <!--android:id="@+id/vc_one"-->
+            <!--android:layout_width="200dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--app:titleColor="@color/red"-->
+            <!--app:titleSize="20sp"-->
+            <!--app:titleText="5485" />-->
+
+        <com.timmy.advance.customView.VerificaCodeView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            app:titleColor="@color/red"
+            android:padding="10dp"
+            app:titleSize="20sp"
+            app:titleText="5485" />
+    </RelativeLayout>
 </LinearLayout>
