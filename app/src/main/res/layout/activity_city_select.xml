@@ -16,22 +16,33 @@
             android:id="@+id/my_slide_view"
             android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:layout_alignParentRight="true" />
+            android:layout_alignParentRight="true"
+            android:visibility="gone" />
 
 
-        <FrameLayout
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/my_slide_view">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_hot_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                android:visibility="gone" />
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_recycleView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rv_hot_city"
                 android:scrollbars="none" />
 
-            <include layout="@layout/layout_sticky_header_view" />
-        </FrameLayout>
+            <include
+
+                layout="@layout/layout_sticky_header_view" />
+        </RelativeLayout>
 
         <com.timmy.advance.citySelect.CircleTextView
             android:id="@+id/my_circle_view"

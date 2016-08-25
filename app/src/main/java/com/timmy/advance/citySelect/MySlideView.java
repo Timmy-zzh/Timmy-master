@@ -63,15 +63,15 @@ public class MySlideView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         paint.setColor(backgroundColor);
-        canvas.drawRect(0, 0, (float) mWidth, mHeight, paint);
+        canvas.drawRect(0, 0, (float) mWidth, mHeight, paint);//绘制背景
         for (int i = 0; i < CitySelectActivity.pinyinList.size(); i++) {
             String textView = CitySelectActivity.pinyinList.get(i);
             if (i == position - 1) {
-                paint.setColor(getResources().getColor(R.color.colorPrimary));
+                paint.setColor(getResources().getColor(R.color.colorAccent));
                 selectTxt = CitySelectActivity.pinyinList.get(i);
                 listener.showTextView(selectTxt, false);
             } else {
-                paint.setColor(getResources().getColor(R.color.Black));
+                paint.setColor(getResources().getColor(R.color.colorAccent));
             }
             paint.setTextSize(40);
             paint.getTextBounds(textView, 0, textView.length(), mBound);
@@ -110,21 +110,18 @@ public class MySlideView extends View {
         int y = (int) event.getY();
         switch (action) {
             case MotionEvent.ACTION_DOWN:
-                backgroundColor = getResources().getColor(R.color.Black);
                 mTextHeight = mHeight / CitySelectActivity.pinyinList.size();
                 position = y / (mHeight / (CitySelectActivity.pinyinList.size() + 1));
                 invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
                 if (isSlide) {
-                    backgroundColor = getResources().getColor(R.color.Black);
                     mTextHeight = mHeight / CitySelectActivity.pinyinList.size();
                     position = y / (mHeight / CitySelectActivity.pinyinList.size() + 1) + 1;
                     invalidate();
                 }
                 break;
             case MotionEvent.ACTION_UP:
-                backgroundColor = getResources().getColor(R.color.Black);
                 mTextHeight = mHeight / CitySelectActivity.pinyinList.size();
                 position = 0;
                 invalidate();

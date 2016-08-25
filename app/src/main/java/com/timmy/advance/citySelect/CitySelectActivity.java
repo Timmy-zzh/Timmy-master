@@ -21,10 +21,20 @@ import java.util.Set;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
+/**
+ * 城市选择界面--功能包括
+ * 1.定位的城市
+ * 2.热门城市
+ * 3.全国城市
+ * 4.悬浮字母
+ * 5.右侧点击功能
+ */
 public class CitySelectActivity extends BaseActivity implements CityAdapter.onItemClickListener, MySlideView.onTouchListener {
 
     @Bind(R.id.rv_recycleView)
     RecyclerView recyclerView;
+    @Bind(R.id.rv_hot_city)
+    RecyclerView mHotCity;
     @Bind(R.id.my_slide_view)
     MySlideView slideView;
     @Bind(R.id.tv_sticky_header_view)
@@ -97,6 +107,9 @@ public class CitySelectActivity extends BaseActivity implements CityAdapter.onIt
 
     //获取本地保存的市的数据
     private void initData() {
+        firstPinYin.clear();
+        pinyinList.clear();
+
         pinyinComparator = new PinyinComparator();
 
         List<String> cityNames = CityDao.getInstance(this).getCityNames();
