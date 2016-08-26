@@ -13,6 +13,7 @@ import com.timmy.R;
 import com.timmy.advance.citySelect.CitySelectActivity;
 import com.timmy.advance.citySelect.HotCityActivity;
 import com.timmy.advance.customView.MyToggleButtonActivity;
+import com.timmy.advance.customView.TextImageViewActivity;
 import com.timmy.advance.customView.VerificationCodeActivity;
 import com.timmy.advance.customViewGroup.CustomViewPagerActivity;
 import com.timmy.advance.dialog.DialogActivity;
@@ -70,7 +71,8 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("ViewPager指示器");
         mData.add("城市列表选择");
         mData.add("城市列表选择--带热门城市");
-        mData.add("自定义View--随机数验证码");
+        mData.add("自定义View(五)--随机数验证码");
+        mData.add("自定义View(六)--带文字的图片");
 
 
         adapter.setData(mData);
@@ -145,6 +147,10 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 11:
                     AdvanceActivity.this.openActivity(VerificationCodeActivity.class);
+                    break;
+                case 12:
+                    AdvanceActivity.this.openActivity(TextImageViewActivity.class);
+
                     break;
             }
         }

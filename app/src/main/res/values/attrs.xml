@@ -7,6 +7,14 @@
     <attr name="outCircleColor" format="color" />
     <attr name="inCircleColor" format="color" />
     <attr name="lineColor" format="color" />
+    <attr name="image" format="reference" />
+
+    <!--图片缩放类型-->
+    <attr name="imageScaleType">
+        <enum name="fitXY" value="0" />
+        <enum name="center" value="1" />
+    </attr>
+
     <!--自定义view的属性-->
     <declare-styleable name="TimmyHealthView">
         <attr name="titleColor"></attr>
@@ -20,10 +28,20 @@
         <attr name="slide_button" format="reference" />
     </declare-styleable>
 
+    <!--验证码自定义属性-->
     <declare-styleable name="VerificaCodeView">
         <attr name="titleText" />
         <attr name="titleColor" />
         <attr name="titleSize" />
+    </declare-styleable>
+
+    <!--带文字的图片-->
+    <declare-styleable name="TextImageView">
+        <attr name="titleText" />
+        <attr name="titleSize" />
+        <attr name="titleColor" />
+        <attr name="image" />
+        <attr name="imageScaleType" />
     </declare-styleable>
 
 </resources>
