@@ -13,8 +13,10 @@ import com.timmy.R;
 import com.timmy.advance.citySelect.CitySelectActivity;
 import com.timmy.advance.citySelect.HotCityActivity;
 import com.timmy.advance.customView.MyToggleButtonActivity;
+import com.timmy.advance.customView.RingViewActivity;
 import com.timmy.advance.customView.TextImageViewActivity;
 import com.timmy.advance.customView.VerificationCodeActivity;
+import com.timmy.advance.customView.VolumeViewActivity;
 import com.timmy.advance.customViewGroup.CustomViewPagerActivity;
 import com.timmy.advance.dialog.DialogActivity;
 import com.timmy.advance.screenAdapter.ImageAdapterActivity;
@@ -73,6 +75,8 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("城市列表选择--带热门城市");
         mData.add("自定义View(五)--随机数验证码");
         mData.add("自定义View(六)--带文字的图片");
+        mData.add("自定义View(七)--圆环交替");
+        mData.add("自定义View(八)--音量控件");
 
 
         adapter.setData(mData);
@@ -150,7 +154,12 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 12:
                     AdvanceActivity.this.openActivity(TextImageViewActivity.class);
-
+                    break;
+                case 13:
+                    AdvanceActivity.this.openActivity(RingViewActivity.class);
+                    break;
+                case 14:
+                    AdvanceActivity.this.openActivity(VolumeViewActivity.class);
                     break;
             }
         }

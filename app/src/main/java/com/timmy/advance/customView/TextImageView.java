@@ -180,7 +180,8 @@ public class TextImageView extends View {
             //大于,文字不全部显示出来,用三个点结尾
             TextPaint textPaint = new TextPaint(mPaint);
             String msg = TextUtils.ellipsize(titleText, textPaint,
-                    mTextBound.width() - getPaddingLeft() - getPaddingRight(), TextUtils.TruncateAt.END).toString();
+                    mWidth - getPaddingLeft() - getPaddingRight(), TextUtils.TruncateAt.END).toString();
+            Logger.d(TAG, "--msg-------" + msg);
             canvas.drawText(msg, getPaddingLeft(), mHeight - getPaddingBottom(), mPaint);
         } else {
             //文字内容小于控件宽度,文字绘制居中

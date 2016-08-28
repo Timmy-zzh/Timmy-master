@@ -169,25 +169,34 @@
             android:label="城市列表选择"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".advance.citySelect.HotCityActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="城市列表选择--带热门城市"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".advance.customView.VerificationCodeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="自定义View(五)--随机数验证码"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
-
         <activity
             android:name=".advance.customView.TextImageViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="自定义View(六)--带文字的图片"
+            android:parentActivityName=".advance.AdvanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".advance.customView.RingViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="自定义View(七)--圆环交替"
+            android:parentActivityName=".advance.AdvanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".advance.customView.VolumeViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="自定义View(八)--音量控件"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
     </application>

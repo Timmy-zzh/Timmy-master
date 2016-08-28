@@ -15,7 +15,7 @@
         android:layout_marginTop="10dp"
         android:padding="10dp"
         app:image="@mipmap/ic_launcher"
-        app:imageScaleType="center"
+        app:imageScaleType="fitXY"
         app:titleText="图片一名称"
         app:titleColor="@color/blue_light"
         app:titleSize="20sp" />
@@ -28,7 +28,7 @@
         android:padding="10dp"
         app:image="@mipmap/ic_launcher"
         app:imageScaleType="center"
-        app:titleText="图片一名第三方公司公司法称"
+        app:titleText="是分公司公司发给很讨厌"
         app:titleColor="@color/blue_light"
         app:titleSize="20sp" />
 

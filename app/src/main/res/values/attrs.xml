@@ -8,6 +8,8 @@
     <attr name="inCircleColor" format="color" />
     <attr name="lineColor" format="color" />
     <attr name="image" format="reference" />
+    <attr name="firstColor" format="color" />
+    <attr name="secondColor" format="color" />
 
     <!--图片缩放类型-->
     <attr name="imageScaleType">
@@ -42,6 +44,31 @@
         <attr name="titleColor" />
         <attr name="image" />
         <attr name="imageScaleType" />
+    </declare-styleable>
+
+    <!--圆环自定义属性-->
+    <declare-styleable name="RingView">
+        <!--圆环的第一,第二个颜色-->
+        <attr name="firstColor" />
+        <attr name="secondColor" />
+        <!--圆环的宽度-->
+        <attr name="circleWidth" format="dimension" />
+        <!--圆环变化的速度-->
+        <attr name="speed" format="integer" />
+    </declare-styleable>
+
+    <!--音量控件自定义属性-->
+    <declare-styleable name="VolumeView">
+        <attr name="firstColor" />
+        <attr name="secondColor" />
+        <!--间隔多少度-->
+        <attr name="interval" format="integer" />
+        <!--圆环宽度-->
+        <attr name="ringWidth" format="dimension" />
+        <!--音量中点的个数-->
+        <attr name="pointCount" format="integer" />
+        <!--中间的音量图标?????图片适配时,系统是根据什么来决定拿哪种分辨率的图片-->
+        <attr name="image"/>
     </declare-styleable>
 
 </resources>
