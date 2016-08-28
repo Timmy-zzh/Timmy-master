@@ -12,5 +12,6 @@ public class RingViewActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ring_view);
         initToolBar();
+
     }
 }
