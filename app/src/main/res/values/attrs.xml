@@ -71,4 +71,15 @@
         <attr name="image"/>
     </declare-styleable>
 
+    <!--圆角图片-->
+    <declare-styleable name="CustomImageView">
+        <!--图片类型-->
+        <attr name="imageType">
+            <enum name="normal" value="0"/>
+            <enum name="circle" value="1"/>
+            <enum name="round" value="2"/>
+        </attr>
+        <attr name="roundRadius" format="dimension" />
+        <attr name="image"/>
+    </declare-styleable>
 </resources>

@@ -12,6 +12,7 @@ import android.view.View;
 import com.timmy.R;
 import com.timmy.advance.citySelect.CitySelectActivity;
 import com.timmy.advance.citySelect.HotCityActivity;
+import com.timmy.advance.customView.CustomImageViewActicity;
 import com.timmy.advance.customView.MyToggleButtonActivity;
 import com.timmy.advance.customView.RingViewActivity;
 import com.timmy.advance.customView.TextImageViewActivity;
@@ -77,6 +78,7 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("自定义View(六)--带文字的图片");
         mData.add("自定义View(七)--圆环交替");
         mData.add("自定义View(八)--音量控件");
+        mData.add("自定义View(九)--带圆角ImageView");
 
 
         adapter.setData(mData);
@@ -160,6 +162,9 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 14:
                     AdvanceActivity.this.openActivity(VolumeViewActivity.class);
+                    break;
+                case 15:
+                    AdvanceActivity.this.openActivity(CustomImageViewActicity.class);
                     break;
             }
         }
