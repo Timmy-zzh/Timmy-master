@@ -5,6 +5,8 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.ScrollView;
 
 import com.timmy.library.util.Logger;
@@ -23,6 +25,7 @@ public class ReboundScrollView extends ScrollView {
     private boolean isFirst = true;
     private Rect mRect = new Rect();
     private OnSlideHalfListener mListener;
+    private boolean isCalling = false;//标记是否正在回调
 
     public ReboundScrollView(Context context) {
         super(context);
@@ -65,7 +68,6 @@ public class ReboundScrollView extends ScrollView {
             Logger.d(TAG, "--onTouchEvent--touchY:" + touchY);
             switch (ev.getAction()) {
                 case MotionEvent.ACTION_DOWN:
-
                     break;
                 case MotionEvent.ACTION_MOVE:
                     //滑动的距离
@@ -74,10 +76,10 @@ public class ReboundScrollView extends ScrollView {
                         dy = 0;
                         isFirst = false;
                     }
-                    Logger.d(TAG, "--onTouchEvent--lastY:" + lastY);
+                    Logger.d(TAG, "--onTouchEvent--touchY:" + touchY + "--lastY:" + lastY + "--dy:" + dy);
                     lastY = touchY;
 
-                    if (dy == 0) {//dy=0的时候可以滑动
+                    if (isCanMove()) {//dy=0的时候可以滑动
                         if (mRect.isEmpty()) {
                             //记录ListView原始位置,用于返回回去
                             mRect.set(mView.getLeft(), mView.getTop(),
@@ -90,7 +92,8 @@ public class ReboundScrollView extends ScrollView {
                         Logger.d(TAG, "--left:" + mView.getLeft() + "" + "--top:" + mView.getTop() +
                                 "--right:" + mView.getRight() + "--bottom:" + mView.getBottom());
                         //当滑动距离超过一半时,回调接口函数
-                        if (isExceedHalf(dy) && mListener != null) {
+                        if (isExceedHalf(dy) && !isCalling && mListener != null) {
+                            isCalling = true;
                             resetPostion();
                             mListener.onSlideHalf();
                         }
@@ -105,14 +108,36 @@ public class ReboundScrollView extends ScrollView {
     }
 
     /**
+     *
+     * @return
+     */
+    private boolean isCanMove() {
+        int offset = mView.getMeasuredHeight() - getHeight();
+        Logger.d(TAG, "--mView--getMeasuredHeight:" + mView.getMeasuredHeight() + "--getHeight:" + mView.getHeight());
+        int scrollY = getScrollY();//滑动距离
+        Logger.d(TAG, "--ScrollView--getHeight:" + getHeight() + "--滑动距离getScrollY:" + scrollY);
+
+        if (scrollY == 0 || scrollY == offset)
+            return true;
+        return false;
+    }
+
+    /**
      * 反弹--ListView恢复到原始位置
      */
     private void resetPostion() {
+        Animation animation = new TranslateAnimation(0f, 0f, mView.getTop(), mRect.top);
+        animation.setDuration(300);
+        animation.setFillAfter(true);
+        mView.startAnimation(animation);
         mView.layout(mRect.left, mRect.top, mRect.right, mRect.bottom);
+        mRect.setEmpty();
+        isCalling = false;
+        isFirst = true;
     }
 
     private boolean isExceedHalf(int dy) {
-        if (dy > getHeight() / 2)
+        if (dy > 0 && mView.getTop() > getHeight() / 2)
             return true;
         return false;
     }

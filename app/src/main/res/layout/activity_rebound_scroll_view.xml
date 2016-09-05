@@ -10,17 +10,19 @@
     <com.timmy.advance.customViewGroup.ReboundScrollView
         android:id="@+id/bound_scroll_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/Gray_e">
 
-        <TextView
+        <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:background="@color/Gray_e"-->
+        <!--android:text="拉空间的联发科建档立卡解放路看得见啦空间的离开房间啊看方" />-->
+        <com.timmy.advance.customViewGroup.MyListView
+            android:id="@+id/listview"
             android:layout_width="match_parent"
-            android:text="拉空间的联发科建档立卡解放路看得见啦空间的离开房间啊看方"
-            android:layout_height="match_parent" />
-        <!--<com.timmy.advance.customViewGroup.MyListView-->
-            <!--android:id="@+id/listview"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:background="@color/white" />-->
+            android:layout_height="match_parent"
+            android:background="@color/white" />
     </com.timmy.advance.customViewGroup.ReboundScrollView>
 
 </LinearLayout>
