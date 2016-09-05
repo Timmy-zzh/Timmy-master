@@ -205,6 +205,13 @@
             android:label="自定义View(九)--带圆角ImageView"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".advance.customViewGroup.ArcMenuActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="自定义ViewGroup--圆形菜单"
+            android:parentActivityName=".advance.AdvanceActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".advance.customViewGroup.ReboundScrollViewActivity"></activity>
     </application>
 
 </manifest>

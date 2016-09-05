@@ -18,7 +18,9 @@ import com.timmy.advance.customView.RingViewActivity;
 import com.timmy.advance.customView.TextImageViewActivity;
 import com.timmy.advance.customView.VerificationCodeActivity;
 import com.timmy.advance.customView.VolumeViewActivity;
+import com.timmy.advance.customViewGroup.ArcMenuActivity;
 import com.timmy.advance.customViewGroup.CustomViewPagerActivity;
+import com.timmy.advance.customViewGroup.ReboundScrollViewActivity;
 import com.timmy.advance.dialog.DialogActivity;
 import com.timmy.advance.screenAdapter.ImageAdapterActivity;
 import com.timmy.advance.scrollVertical.VerticalScrollActivity;
@@ -79,6 +81,8 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("自定义View(七)--圆环交替");
         mData.add("自定义View(八)--音量控件");
         mData.add("自定义View(九)--带圆角ImageView");
+        mData.add("自定义ViewGroup--圆形菜单");
+        mData.add("自定义ViewGroup--反弹ScrollView");
 
 
         adapter.setData(mData);
@@ -165,6 +169,12 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 15:
                     AdvanceActivity.this.openActivity(CustomImageViewActicity.class);
+                    break;
+                case 16:
+                    AdvanceActivity.this.openActivity(ArcMenuActivity.class);
+                    break;
+                case 17:
+                    AdvanceActivity.this.openActivity(ReboundScrollViewActivity.class);
                     break;
             }
         }

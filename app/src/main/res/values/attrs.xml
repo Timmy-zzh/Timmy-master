@@ -68,18 +68,30 @@
         <!--音量中点的个数-->
         <attr name="pointCount" format="integer" />
         <!--中间的音量图标?????图片适配时,系统是根据什么来决定拿哪种分辨率的图片-->
-        <attr name="image"/>
+        <attr name="image" />
     </declare-styleable>
 
     <!--圆角图片-->
     <declare-styleable name="CustomImageView">
         <!--图片类型-->
         <attr name="imageType">
-            <enum name="normal" value="0"/>
-            <enum name="circle" value="1"/>
-            <enum name="round" value="2"/>
+            <enum name="normal" value="0" />
+            <enum name="circle" value="1" />
+            <enum name="round" value="2" />
         </attr>
         <attr name="roundRadius" format="dimension" />
-        <attr name="image"/>
+        <attr name="image" />
     </declare-styleable>
+
+    <!--圆形菜单控件-->
+    <declare-styleable name="ArcMenu">
+        <attr name="position" format="integer">
+            <enum name="left_top" value="0" />
+            <enum name="right_top" value="1" />
+            <enum name="right_bottom" value="2" />
+            <enum name="left_bottom" value="3" />
+        </attr>
+        <attr name="arcRadius" format="dimension" />
+    </declare-styleable>
+
 </resources>
