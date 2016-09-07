@@ -15,14 +15,14 @@ public class ArcMenuActivity extends BaseActivity {
         setContentView(R.layout.activity_arc_menu);
         initToolBar();
 
-        ArcMenu arcMenu = (ArcMenu) findViewById(R.id.arc_menu);
+        ArcMenu01 arcMenu = (ArcMenu01) findViewById(R.id.arc_menu);
 
 
-        arcMenu.setOnItemMenuClickListener(new ArcMenu.OnItemMenuClickListener() {
-            @Override
-            public void onItemMenuClick(View view, int position) {
-                Toast.makeText(ArcMenuActivity.this, "position--" + position + "--" + view.getTag(), Toast.LENGTH_SHORT).show();
-            }
-        });
+//        arcMenu.setOnItemMenuClickListener(new ArcMenu.OnItemMenuClickListener() {
+//            @Override
+//            public void onItemMenuClick(View view, int position) {
+//                Toast.makeText(ArcMenuActivity.this, "position--" + position + "--" + view.getTag(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 }

@@ -131,11 +131,13 @@ public class ArcMenu extends ViewGroup implements View.OnClickListener {
                 int cWidth = childView.getMeasuredWidth();
                 int cHeight = childView.getMeasuredHeight();
                 //右上,右下
-                if (position == Position.RIGHT_TOP || position == Position.RIGHT_BOTTOM) {
+                if (position == Position.RIGHT_TOP ||
+                        position == Position.RIGHT_BOTTOM) {
                     cl = getMeasuredWidth() - cl - cWidth;
                 }
 
-                if (position == Position.LEFT_BOTTOM || position == Position.RIGHT_BOTTOM) {
+                if (position == Position.LEFT_BOTTOM ||
+                        position == Position.RIGHT_BOTTOM) {
                     ct = getMeasuredHeight() - ct - cHeight;
                 }
                 childView.layout(cl, ct, cl + cWidth, ct + cHeight);
@@ -187,8 +189,8 @@ public class ArcMenu extends ViewGroup implements View.OnClickListener {
         if (mButton == null) {
             mButton = getChildAt(0);
         }
-        rotateCenter(mButton, 0f, 270f, 3000);
-        toggleMenus(3000);
+        rotateCenter(mButton, 0f, 270f, 300);
+        toggleMenus(300);
     }
 
     /**
@@ -219,9 +221,11 @@ public class ArcMenu extends ViewGroup implements View.OnClickListener {
         for (int i = 0; i < childCount - 1; i++) {
             final View childView = getChildAt(i + 1);
             childView.setVisibility(View.VISIBLE);
+
             int xFlag = 1;
             int yFlag = 1;
-            if (position == Position.LEFT_TOP || position == Position.LEFT_BOTTOM)
+            if (position == Position.LEFT_TOP ||
+                    position == Position.LEFT_BOTTOM)
                 xFlag = -1;
             if (position == Position.LEFT_TOP || position == Position.RIGHT_TOP)
                 yFlag = -1;
@@ -273,8 +277,11 @@ public class ArcMenu extends ViewGroup implements View.OnClickListener {
             rotateAnimation.setDuration(durationMills);
             rotateAnimation.setFillAfter(true);
 
-            animationSet.addAnimation(translateAnimation);
+            /**
+             * 注意这两行代码的位置,先添加旋转动画,再添加位移动画,否则动画执行不正常
+             */
             animationSet.addAnimation(rotateAnimation);
+            animationSet.addAnimation(translateAnimation);
 
 //            animationSet.setDuration(durationMills);
 //            animationSet.setFillAfter(true);

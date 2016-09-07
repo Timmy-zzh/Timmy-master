@@ -3,6 +3,7 @@ package com.timmy.advance.dialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.view.View;
 
 import com.timmy.R;
 
@@ -16,6 +17,15 @@ public class DialogActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dialog2);
+
+        findViewById(R.id.tv_talk).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                LoginFragment loginFragment = new LoginFragment();
+                loginFragment.show(getFragmentManager(), "Login");
+            }
+        });
     }
 
     @Override
