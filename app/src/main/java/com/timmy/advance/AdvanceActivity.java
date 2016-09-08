@@ -25,7 +25,8 @@ import com.timmy.advance.dialog.DialogActivity;
 import com.timmy.advance.screenAdapter.ImageAdapterActivity;
 import com.timmy.advance.scrollVertical.VerticalScrollActivity;
 import com.timmy.advance.slideList.FollowSlideListActivity;
-import com.timmy.advance.viewpagerIndicator.ViewPagerIndicatiorActivity;
+import com.timmy.advance.viewpager.AnimationViewPagerActivity;
+import com.timmy.advance.viewpager.ViewPagerIndicatiorActivity;
 import com.timmy.advance.waterRipple.WaterRippleActivity;
 import com.timmy.advance.win8metro.FollowWin8Activity;
 import com.timmy.ui.base.BaseActivity;
@@ -83,6 +84,7 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("自定义View(九)--带圆角ImageView");
         mData.add("自定义ViewGroup--圆形菜单");
         mData.add("自定义ViewGroup--反弹ScrollView");
+        mData.add("自定义ViewPager--不一样的ViewPager滑动效果");
 
 
         adapter.setData(mData);
@@ -175,6 +177,9 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 17:
                     AdvanceActivity.this.openActivity(ReboundScrollViewActivity.class);
+                    break;
+                case 18:
+                    AdvanceActivity.this.openActivity(AnimationViewPagerActivity.class);
                     break;
             }
         }

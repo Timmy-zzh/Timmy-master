@@ -1,4 +1,4 @@
-package com.timmy.advance.viewpagerIndicator;
+package com.timmy.advance.viewpager;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

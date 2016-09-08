@@ -128,7 +128,7 @@
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".advance.viewpagerIndicator.ViewPagerIndicatiorActivity"
+            android:name=".advance.viewpager.ViewPagerIndicatiorActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="ViewPager指示器"
             android:parentActivityName=".advance.AdvanceActivity"
@@ -215,6 +215,12 @@
             android:name=".advance.customViewGroup.ReboundScrollViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="反弹ScrollView"
+            android:parentActivityName=".advance.AdvanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".advance.viewpager.AnimationViewPagerActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label=" 不一样的ViewPager滑动效果"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
     </application>
