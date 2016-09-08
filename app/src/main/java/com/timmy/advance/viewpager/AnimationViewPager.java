@@ -3,10 +3,10 @@ package com.timmy.advance.viewpager;
 import android.content.Context;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
-import android.view.animation.ScaleAnimation;
-import android.widget.ImageView;
 
+import com.nineoldandroids.view.ViewHelper;
 import com.timmy.library.util.Logger;
 
 import java.util.HashMap;
@@ -40,20 +40,20 @@ public class AnimationViewPager extends ViewPager {
      */
     @Override
     protected void onPageScrolled(int position, float offset, int offsetPixels) {
-        super.onPageScrolled(position, offset, offsetPixels);
         Logger.d(TAG, "--onPageScrolled--position:" + position + "--offset" + offset + "--offsetPixels" + offsetPixels);
-
         //获取左右ItemPager的实例
         View leftView = pagerItems.get(position);
         View rightView = pagerItems.get(position + 1);
 
         //为左右的Pager做动画
-        pagerAnimation(leftView,rightView,offset,offsetPixels);
+        pagerAnimation(leftView, rightView, offset, offsetPixels);
 
+        super.onPageScrolled(position, offset, offsetPixels);
     }
 
     /**
      * 做右边pager的缩放和位移动画
+     *
      * @param leftView
      * @param rightView
      * @param offset
@@ -61,13 +61,20 @@ public class AnimationViewPager extends ViewPager {
      */
     private void pagerAnimation(View leftView, View rightView,
                                 float offset, int offsetPixels) {
-        if (rightView!= null){
-            //到下一页offset(0->1) 右边的pager应该放大(0.5->1)
-            float scale = (1- SCALE_MAX)*offset + SCALE_MAX;
+        if (rightView != null) {
+            //到下一页offset(0->1) 右边的pager应该放大(0.5->1) 到上一页(1->0)
+            float scale = (1 - SCALE_MAX) * offset + SCALE_MAX;
+
+            ViewHelper.setScaleX(rightView, scale);
+            ViewHelper.setScaleY(rightView, scale);
+
+            Logger.d(TAG, "--pagerAnimation--width:" + getWidth() + "--pagerMargin:" + getPageMargin());
+            int transX = -getWidth() - getPageMargin() + offsetPixels;
+            ViewHelper.setTranslationX(rightView, transX);
 
         }
 
-        if (leftView!=null){
+        if (leftView != null) {
             leftView.bringToFront();
         }
     }
