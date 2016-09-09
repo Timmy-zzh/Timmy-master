@@ -92,14 +92,24 @@
     <attr name="arcRadius" format="dimension" />
     <!--圆形菜单控件-->
     <declare-styleable name="ArcMenu">
-        <attr name="position"/>
-        <attr name="arcRadius"/>
+        <attr name="position" />
+        <attr name="arcRadius" />
     </declare-styleable>
 
 
     <declare-styleable name="ArcMenu01">
-        <attr name="position"/>
-        <attr name="arcRadius"/>
+        <attr name="position" />
+        <attr name="arcRadius" />
+    </declare-styleable>
+
+    <!--手势应用锁-->
+    <declare-styleable name="GestureLockViewGroup">
+        <attr name="noFingerOutterColor" format="color" />
+        <attr name="noFingerInnerColor" format="color" />
+        <attr name="fingerOnColor" format="color" />
+        <attr name="fingerUpColor" format="color" />
+        <attr name="rawCount" format="integer" />
+        <attr name="tryTime" format="integer" />
     </declare-styleable>
 
 </resources>

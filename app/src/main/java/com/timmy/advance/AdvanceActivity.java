@@ -20,6 +20,7 @@ import com.timmy.advance.customView.VerificationCodeActivity;
 import com.timmy.advance.customView.VolumeViewActivity;
 import com.timmy.advance.customViewGroup.ArcMenuActivity;
 import com.timmy.advance.customViewGroup.CustomViewPagerActivity;
+import com.timmy.advance.customViewGroup.GestureLockViewActivity;
 import com.timmy.advance.customViewGroup.ReboundScrollViewActivity;
 import com.timmy.advance.dialog.DialogActivity;
 import com.timmy.advance.screenAdapter.ImageAdapterActivity;
@@ -85,6 +86,7 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("自定义ViewGroup--圆形菜单");
         mData.add("自定义ViewGroup--反弹ScrollView");
         mData.add("自定义ViewPager--不一样的ViewPager滑动效果");
+        mData.add("自定义ViewGroup--应用手势锁");
 
 
         adapter.setData(mData);
@@ -180,6 +182,9 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 18:
                     AdvanceActivity.this.openActivity(AnimationViewPagerActivity.class);
+                    break;
+                case 19:
+                    AdvanceActivity.this.openActivity(GestureLockViewActivity.class);
                     break;
             }
         }
