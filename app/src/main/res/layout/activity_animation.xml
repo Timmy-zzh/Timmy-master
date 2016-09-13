@@ -6,7 +6,7 @@
     android:fitsSystemWindows="true"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".ui.technologypoint.AnimationActivity">
+    tools:context=".advance.animation.AnimationActivity">
 
     <include layout="@layout/common_toolbar" />
 

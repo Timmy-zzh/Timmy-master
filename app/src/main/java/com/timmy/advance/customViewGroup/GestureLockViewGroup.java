@@ -207,8 +207,7 @@ public class GestureLockViewGroup extends RelativeLayout {
                 }
 
                 if (handler != null) {
-//                    handler.sendEmptyMessageAtTime(0,2);
-                    handler.sendMessageDelayed(Message.obtain(), 600);
+                    handler.sendEmptyMessageDelayed(0,600);
                 }
 
                 changeItemStatus();

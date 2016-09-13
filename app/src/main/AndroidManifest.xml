@@ -50,7 +50,7 @@
             android:parentActivityName=".ui.TechnologyPointActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.technologypoint.AnimationActivity"
+            android:name=".advance.animation.AnimationActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_animation"
             android:parentActivityName=".ui.TechnologyPointActivity"

@@ -33,6 +33,7 @@ import com.timmy.advance.win8metro.FollowWin8Activity;
 import com.timmy.ui.base.BaseActivity;
 import com.timmy.ui.base.BaseRecyclerViewAdapter;
 import com.timmy.ui.base.BaseViewHolder;
+import com.timmy.advance.animation.AnimationActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,6 +88,7 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("自定义ViewGroup--反弹ScrollView");
         mData.add("自定义ViewPager--不一样的ViewPager滑动效果");
         mData.add("自定义ViewGroup--应用手势锁");
+        mData.add("Android属性动画");
 
 
         adapter.setData(mData);
@@ -185,6 +187,9 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 19:
                     AdvanceActivity.this.openActivity(GestureLockViewActivity.class);
+                    break;
+                case 20:
+                    AdvanceActivity.this.openActivity(AnimationActivity.class);
                     break;
             }
         }

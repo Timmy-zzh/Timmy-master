@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import com.timmy.R;
 import com.timmy.ui.base.BaseActivity;
-import com.timmy.ui.technologypoint.AnimationActivity;
+import com.timmy.advance.animation.AnimationActivity;
 import com.timmy.ui.technologypoint.AutoPlayPicturesActivity;
 import com.timmy.ui.technologypoint.CameraPictureActivity;
 import com.timmy.ui.technologypoint.ClipToOutlineActivity;

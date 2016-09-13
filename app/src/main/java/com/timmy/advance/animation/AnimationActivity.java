@@ -1,4 +1,4 @@
-package com.timmy.ui.technologypoint;
+package com.timmy.advance.animation;
 
 import android.os.Bundle;
 import android.view.View;
