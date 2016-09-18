@@ -229,6 +229,12 @@
             android:label=" 应用手势锁"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".advance.customViewGroup.FlowLayoutActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="流式布局"
+            android:parentActivityName=".advance.AdvanceActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

@@ -112,4 +112,10 @@
         <attr name="tryTime" format="integer" />
     </declare-styleable>
 
+    <!--流式布局-->
+    <declare-styleable name="FlowLayout">
+        <attr name="verticalMargin" format="dimension" />
+        <attr name="horizontalMargin" format="dimension" />
+    </declare-styleable>
+
 </resources>

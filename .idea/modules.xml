@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Timmy-master.iml" filepath="$PROJECT_DIR$/Timmy-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/actionbardemo/actionbardemo.iml" filepath="$PROJECT_DIR$/actionbardemo/actionbardemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aidl_server/aidl_server.iml" filepath="$PROJECT_DIR$/aidl_server/aidl_server.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/databasedemo/databasedemo.iml" filepath="$PROJECT_DIR$/databasedemo/databasedemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/library_timmy/library_timmy.iml" filepath="$PROJECT_DIR$/library_timmy/library_timmy.iml" />

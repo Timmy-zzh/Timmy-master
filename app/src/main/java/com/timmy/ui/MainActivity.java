@@ -1,5 +1,6 @@
 package com.timmy.ui;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -67,7 +68,33 @@ public class MainActivity extends BaseActivity {
 
     private void initData() {
 
+        AsyncTask<String, Void, String> execute = new MyAsyncTask().execute();
+        execute.cancel(true);
     }
+
+    private class MyAsyncTask extends AsyncTask<String,Void,String>{
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            return null;
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+        }
+    }
+
 
 
     @Override

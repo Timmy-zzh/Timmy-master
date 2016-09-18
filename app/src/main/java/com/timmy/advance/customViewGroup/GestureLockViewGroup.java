@@ -137,9 +137,7 @@ public class GestureLockViewGroup extends RelativeLayout {
 
                 lockParams.setMargins(leftMargin, topMargin, rightMargin, bottomMargin);
                 gestureLockViews[i].setStatus(GestureLockView.Status.STATUS_NO_FINGER);
-//                gestureLockViews[i].setStatus(GestureLockView.Status.STATUS_FINGER_ON);
                 addView(gestureLockViews[i], lockParams);
-
             }
         }
     }
