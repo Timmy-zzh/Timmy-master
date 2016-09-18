@@ -79,6 +79,7 @@ public class AnimationActivity extends BaseActivity {
     private void initAnimationConfi() {
 
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();

@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.timmy.R;
+import com.timmy.advance.animation.RubberIndicatiorActivity;
 import com.timmy.advance.citySelect.CitySelectActivity;
 import com.timmy.advance.citySelect.HotCityActivity;
 import com.timmy.advance.customView.CustomImageViewActicity;
@@ -90,6 +91,7 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("自定义ViewPager--不一样的ViewPager滑动效果");
         mData.add("自定义ViewGroup--应用手势锁");
         mData.add("Android属性动画");
+        mData.add("自定义动画指示器-RubberIndicatior");
         mData.add("自定义ViewGroup--流式布局");
 
 
@@ -194,6 +196,9 @@ public class AdvanceActivity extends BaseActivity {
                     AdvanceActivity.this.openActivity(AnimationActivity.class);
                     break;
                 case 21:
+                    AdvanceActivity.this.openActivity(RubberIndicatiorActivity.class);
+                    break;
+                case 22:
                     AdvanceActivity.this.openActivity(FlowLayoutActivity.class);
                     break;
             }

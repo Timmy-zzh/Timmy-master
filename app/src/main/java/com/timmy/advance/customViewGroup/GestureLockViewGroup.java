@@ -81,6 +81,7 @@ public class GestureLockViewGroup extends RelativeLayout {
 
         //初始化画笔
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
+//        mPaint.setFlags(Paint.ANTI_ALIAS_FLAG);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeCap(Paint.Cap.ROUND);
         mPaint.setStrokeJoin(Paint.Join.ROUND);

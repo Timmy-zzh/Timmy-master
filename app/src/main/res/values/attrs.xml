@@ -118,4 +118,9 @@
         <attr name="horizontalMargin" format="dimension" />
     </declare-styleable>
 
+    <declare-styleable name="CircleView">
+        <attr name="bg_color" format="color" />
+    </declare-styleable>
+
+
 </resources>
