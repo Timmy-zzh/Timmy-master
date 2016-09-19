@@ -57,11 +57,11 @@ public class FlowLayout extends ViewGroup {
 
         Log.d(TAG, "--onMeasure--widthSize:" + widthSize + "--heightSize:" + heightSize);
 
+        mWidth = widthSize;
         //每行的宽度,子View累加
         int lineWidht = horizontalMargin;
         //每行的高度,累加,当 mode为Wrap_content时,使用累加的高度
         int lineHeigh = verticalMargin;
-
 
         int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
@@ -70,7 +70,9 @@ public class FlowLayout extends ViewGroup {
 //            int childWidth = childView.getMeasuredWidth();
 //            Log.d(TAG, "--onMeasure--childHeight:" + childHeight + "--childWidth:" + childWidth);-->结果为0
 
-            LayoutParams chileLp = childView.getLayoutParams();
+//            MarginLayoutParams chileLp = (MarginLayoutParams) childView.getLayoutParams();
+            //通过LayoutParams可以获取子View的margin数值
+//            chileLp.bottomMargin
 
             //获取子View的宽高前,需要先进行测量
             measureChild(childView, widthMeasureSpec, heightMeasureSpec);
@@ -78,35 +80,90 @@ public class FlowLayout extends ViewGroup {
             int childWidth = childView.getMeasuredWidth();
             Log.d(TAG, "--onMeasure2222--childHeight:" + childHeight + "--childWidth:" + childWidth);
 
-            if (lineWidht + childWidth + horizontalMargin > widthSize) {
+            if (lineWidht + childWidth + 2*horizontalMargin > widthSize) {
                 //超过最大宽度(屏幕宽度),宽度等于当前子View的宽度,高度累加
                 lineWidht = childWidth + horizontalMargin;
                 lineHeigh = lineHeigh + verticalMargin + childHeight;
 
             } else {
                 //未超过最大宽度,宽度累加
-                lineWidht += childWidth + horizontalMargin;
-                lineHeigh = Math.max(childHeight, lineHeigh);
+                lineWidht = lineWidht + childWidth + horizontalMargin;
+//                lineHeigh = Math.max(childHeight, lineHeigh);
             }
 
             //最后一个view,高度加上间隔
             if (i == childCount - 1) {
-                lineHeigh += verticalMargin;
+                lineHeigh = lineHeigh + verticalMargin + childHeight;
             }
-
-
         }
         //如果mode为Exactly,则使用widthSize;
-        setMeasuredDimension(mWidth, mHeight);
+        mHeight = heightMode == MeasureSpec.EXACTLY ? heightSize : lineHeigh;
+        Log.d(TAG, "--onMeasure3333--mWidth:" + mWidth + "--mHeight:" + mHeight);
+        Log.d(TAG, "--onMeasure444--lineWidht:" + lineWidht + "--lineHeigh:" + lineHeigh);
+        setMeasuredDimension(widthSize, mHeight);
     }
 
+    /**
+     * 为每个子View设置位置
+     *
+     * @param changed
+     * @param l
+     * @param t
+     * @param r
+     * @param b
+     */
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
 
+        //每行的宽度,子View累加
+        int lineWidht = 0;
+        //每行的高度,累加,当 mode为Wrap_content时,使用累加的高度
+        int lineHeigh = 0;
+
+        int childCount = getChildCount();
+        int cl = 0;
+        int ct = 0;
+        int cr = 0;
+        int cb = 0;
+        for (int i = 0; i < childCount; i++) {
+            View childView = getChildAt(i);
+
+            int childHeight = childView.getMeasuredHeight();
+            int childWidth = childView.getMeasuredWidth();
+            Log.d(TAG, "--onLayout--childHeight:" + childHeight + "--childWidth:" + childWidth);
+
+            if (lineWidht + childWidth + 2*horizontalMargin > mWidth) {
+                //超过最大宽度(屏幕宽度),宽度等于当前子View的宽度,高度累加
+                lineWidht = childWidth + horizontalMargin;
+                lineHeigh = lineHeigh + verticalMargin + childHeight;
+                cl = horizontalMargin;
+                ct = lineHeigh + verticalMargin;
+                cr = cl + childWidth;
+                cb = ct + childHeight;
+
+            } else {
+                cl = lineWidht + horizontalMargin;
+                ct = lineHeigh + verticalMargin;
+                cr = cl + childWidth;
+                cb = ct + childHeight;
+                //未超过最大宽度,宽度累加
+//                lineHeigh = Math.max(childHeight, lineHeigh);
+                lineWidht = lineWidht + childWidth + horizontalMargin;
+            }
+            Log.d(TAG, "--onLayout222--cl:" + cl + "--ct:" + ct);
+            childView.layout(cl, ct, cr, cb);
+        }
+    }
+
+    @Override
+    protected LayoutParams generateLayoutParams(LayoutParams p) {
+        return new MarginLayoutParams(p);
     }
 
     @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
-        return super.generateLayoutParams(attrs);
+        return new MarginLayoutParams(getContext(), attrs);
     }
+
+
 }

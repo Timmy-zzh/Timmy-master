@@ -12,7 +12,7 @@
         android:id="@+id/flow_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:horizontalMargin="20dp"
-        app:verticalMargin="20dp" />
+        app:horizontalMargin="10dp"
+        app:verticalMargin="10dp" />
 
 </LinearLayout>

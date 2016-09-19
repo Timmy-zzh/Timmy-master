@@ -1,6 +1,7 @@
 package com.timmy.advance.customViewGroup;
 
 import android.os.Bundle;
+import android.view.Gravity;
 import android.widget.TextView;
 
 import com.timmy.R;
@@ -11,7 +12,7 @@ import com.timmy.ui.base.BaseActivity;
  */
 public class FlowLayoutActivity extends BaseActivity {
 
-    private String[] mTags = new String[]{"Android", "IOS", "Python", "Java", "Kotlin", "RxJava", "RxAndroid", "Spark","React Native"};
+    private String[] mTags = new String[]{"Android", "孙子兵法","IOS", "Python", "Java", "Kotlin", "RxJava", "RxAndroid", "Spark","React Native"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class FlowLayoutActivity extends BaseActivity {
         for (String mTag : mTags) {
             TextView textView = new TextView(this);
             textView.setText(mTag);
+            textView.setGravity(Gravity.CENTER);
             textView.setBackgroundResource(R.drawable.flow_text_bg);
             textView.setTextColor(getResources().getColor(R.color.colorAccent));
             mFlowLayout.addView(textView);

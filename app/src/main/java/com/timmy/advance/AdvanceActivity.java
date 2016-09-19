@@ -50,6 +50,7 @@ public class AdvanceActivity extends BaseActivity {
     private RecyclerView.LayoutManager layoutManager;
     private BaseRecyclerViewAdapter adapter;
     private List<String> mData = new ArrayList<>();
+//    private static Context mContext;
 
 
     @Override
@@ -57,6 +58,7 @@ public class AdvanceActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advance);
         ButterKnife.bind(this);
+//        mContext = this;
         initToolBar();
         initView();
         initData();
