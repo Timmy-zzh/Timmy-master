@@ -19,6 +19,7 @@ import com.timmy.advance.customView.RingViewActivity;
 import com.timmy.advance.customView.TextImageViewActivity;
 import com.timmy.advance.customView.VerificationCodeActivity;
 import com.timmy.advance.customView.VolumeViewActivity;
+import com.timmy.advance.customViewGroup.AdapterScrollViewActivity;
 import com.timmy.advance.customViewGroup.ArcMenuActivity;
 import com.timmy.advance.customViewGroup.CustomViewPagerActivity;
 import com.timmy.advance.customViewGroup.FlowLayoutActivity;
@@ -95,6 +96,7 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("Android属性动画");
         mData.add("自定义动画指示器-RubberIndicatior");
         mData.add("自定义ViewGroup--流式布局");
+        mData.add("自定义ScrollView--显示完成内部的ItemView");
 
 
         adapter.setData(mData);
@@ -202,6 +204,9 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 22:
                     AdvanceActivity.this.openActivity(FlowLayoutActivity.class);
+                    break;
+                case 23:
+                    AdvanceActivity.this.openActivity(AdapterScrollViewActivity.class);
                     break;
             }
         }

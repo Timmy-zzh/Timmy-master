@@ -80,7 +80,7 @@ public class FlowLayout extends ViewGroup {
             int childWidth = childView.getMeasuredWidth();
             Log.d(TAG, "--onMeasure2222--childHeight:" + childHeight + "--childWidth:" + childWidth);
 
-            if (lineWidht + childWidth + 2*horizontalMargin > widthSize) {
+            if (lineWidht + childWidth + 2 * horizontalMargin > widthSize) {
                 //超过最大宽度(屏幕宽度),宽度等于当前子View的宽度,高度累加
                 lineWidht = childWidth + horizontalMargin;
                 lineHeigh = lineHeigh + verticalMargin + childHeight;
@@ -132,24 +132,22 @@ public class FlowLayout extends ViewGroup {
             int childWidth = childView.getMeasuredWidth();
             Log.d(TAG, "--onLayout--childHeight:" + childHeight + "--childWidth:" + childWidth);
 
-            if (lineWidht + childWidth + 2*horizontalMargin > mWidth) {
+            if (lineWidht + childWidth + 2 * horizontalMargin > mWidth) {
                 //超过最大宽度(屏幕宽度),宽度等于当前子View的宽度,高度累加
                 lineWidht = childWidth + horizontalMargin;
                 lineHeigh = lineHeigh + verticalMargin + childHeight;
                 cl = horizontalMargin;
                 ct = lineHeigh + verticalMargin;
-                cr = cl + childWidth;
-                cb = ct + childHeight;
-
             } else {
                 cl = lineWidht + horizontalMargin;
                 ct = lineHeigh + verticalMargin;
-                cr = cl + childWidth;
-                cb = ct + childHeight;
                 //未超过最大宽度,宽度累加
 //                lineHeigh = Math.max(childHeight, lineHeigh);
                 lineWidht = lineWidht + childWidth + horizontalMargin;
             }
+            cr = cl + childWidth;
+            cb = ct + childHeight;
+
             Log.d(TAG, "--onLayout222--cl:" + cl + "--ct:" + ct);
             childView.layout(cl, ct, cr, cb);
         }
