@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_toolbar" />
+
+    <com.timmy.advance.motionEvent.MyButton
+        android:id="@+id/my_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="MyButton" />
+
+
+    <com.timmy.advance.motionEvent.MyTextView
+        android:id="@+id/my_textView"
+        android:layout_width="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+        android:text="MyTextView" />
+
+    <com.timmy.advance.motionEvent.MyLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center_horizontal">
+
+        <com.timmy.advance.motionEvent.MyButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="inner_button" />
+
+    </com.timmy.advance.motionEvent.MyLinearLayout>
+
+</LinearLayout>

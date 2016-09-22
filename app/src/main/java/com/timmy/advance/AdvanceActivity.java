@@ -26,6 +26,7 @@ import com.timmy.advance.customViewGroup.FlowLayoutActivity;
 import com.timmy.advance.customViewGroup.GestureLockViewActivity;
 import com.timmy.advance.customViewGroup.ReboundScrollViewActivity;
 import com.timmy.advance.dialog.DialogActivity;
+import com.timmy.advance.motionEvent.MotionEventActivity;
 import com.timmy.advance.screenAdapter.ImageAdapterActivity;
 import com.timmy.advance.scrollVertical.VerticalScrollActivity;
 import com.timmy.advance.slideList.FollowSlideListActivity;
@@ -97,6 +98,7 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("自定义动画指示器-RubberIndicatior");
         mData.add("自定义ViewGroup--流式布局");
         mData.add("自定义ScrollView--显示完成内部的ItemView");
+        mData.add("从源码分析事件分发机制");
 
 
         adapter.setData(mData);
@@ -207,6 +209,9 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 23:
                     AdvanceActivity.this.openActivity(AdapterScrollViewActivity.class);
+                    break;
+                case 24:
+                    AdvanceActivity.this.openActivity(MotionEventActivity.class);
                     break;
             }
         }
