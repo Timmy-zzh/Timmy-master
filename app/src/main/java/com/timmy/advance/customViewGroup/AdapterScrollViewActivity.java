@@ -12,12 +12,7 @@ import com.timmy.ui.base.BaseActivity;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * 自定义ScrollView实现的效果为ScrollView内部有很多Item,item的个数由用户决定,高度平均分配屏幕高度.
- * 当Item滑动时判断滑动高度是否超过item高度一半,未超过一半,重置为0
- * <p>
- * 实现原理:ScrollView内部保持一个LinearLayout容器,保持Item+1个,并且动态的增加减少Item.
- */
+
 public class AdapterScrollViewActivity extends BaseActivity {
 
     private LayoutInflater mInflater;

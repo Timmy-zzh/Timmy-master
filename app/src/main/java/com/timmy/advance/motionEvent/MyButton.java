@@ -10,7 +10,6 @@ import com.timmy.library.util.Logger;
 /**
  * Created by Administrator on 2016/9/22.
  */
-
 public class MyButton extends Button {
 
     private static final java.lang.String TAG = MyButton.class.getSimpleName();
