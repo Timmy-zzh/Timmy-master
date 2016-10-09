@@ -253,6 +253,12 @@
             android:label="从源码分析事件分发机制"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".advance.customView.FloatWindowActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="悬浮窗-随手指移动"
+            android:parentActivityName=".advance.AdvanceActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

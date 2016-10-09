@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_float_window"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.timmy.advance.customView.FloatWindowActivity">
+
+    <include layout="@layout/common_toolbar" />
+
+    <com.timmy.advance.customView.FloatWindowView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/toolbar"
+        android:background="@color/blue_light"
+        android:visibility="gone" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"></android.support.v7.widget.RecyclerView>
+
+    <ImageView
+        android:id="@+id/float_window"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:src="@mipmap/ic_launcher" />
+
+
+</RelativeLayout>

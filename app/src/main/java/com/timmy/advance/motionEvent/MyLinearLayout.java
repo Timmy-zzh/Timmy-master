@@ -8,9 +8,8 @@ import android.widget.LinearLayout;
 import com.timmy.library.util.Logger;
 
 /**
- * Created by Administrator on 2016/9/22.
+ * ViewGroup事件分发过程:
  */
-
 public class MyLinearLayout extends LinearLayout {
 
     private static final java.lang.String TAG = MyLinearLayout.class.getSimpleName();
@@ -70,14 +69,14 @@ public class MyLinearLayout extends LinearLayout {
                 Logger.d(TAG, "--onInterceptTouchEvent--ACTION_UP");
                 break;
         }
-        Logger.d(TAG, "--super.onInterceptTouchEvent(event):" + super.onInterceptTouchEvent(event));
+        Logger.d(TAG, "--ViewGroup默认不拦截事件--super.onInterceptTouchEvent(event):" + super.onInterceptTouchEvent(event));
         return super.onInterceptTouchEvent(event);
     }
 
     /**
      * 设置事件拦截
      *
-     * @param disallowIntercept
+     * @param disallowIntercept true为不拦截
      */
     @Override
     public void requestDisallowInterceptTouchEvent(boolean disallowIntercept) {

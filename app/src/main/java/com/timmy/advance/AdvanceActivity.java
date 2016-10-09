@@ -14,6 +14,7 @@ import com.timmy.advance.animation.RubberIndicatiorActivity;
 import com.timmy.advance.citySelect.CitySelectActivity;
 import com.timmy.advance.citySelect.HotCityActivity;
 import com.timmy.advance.customView.CustomImageViewActicity;
+import com.timmy.advance.customView.FloatWindowActivity;
 import com.timmy.advance.customView.MyToggleButtonActivity;
 import com.timmy.advance.customView.RingViewActivity;
 import com.timmy.advance.customView.TextImageViewActivity;
@@ -99,6 +100,7 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("自定义ViewGroup--流式布局");
         mData.add("自定义ScrollView--显示完成内部的ItemView");
         mData.add("从源码分析事件分发机制");
+        mData.add("自定义View--悬浮窗");
 
 
         adapter.setData(mData);
@@ -212,6 +214,9 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 24:
                     AdvanceActivity.this.openActivity(MotionEventActivity.class);
+                    break;
+                case 25:
+                    AdvanceActivity.this.openActivity(FloatWindowActivity.class);
                     break;
             }
         }
