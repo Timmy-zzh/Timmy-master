@@ -23,6 +23,7 @@ import com.timmy.advance.customView.VolumeViewActivity;
 import com.timmy.advance.customViewGroup.AdapterScrollViewActivity;
 import com.timmy.advance.customViewGroup.ArcMenuActivity;
 import com.timmy.advance.customViewGroup.CustomViewPagerActivity;
+import com.timmy.advance.customViewGroup.DragViewActivity;
 import com.timmy.advance.customViewGroup.FlowLayoutActivity;
 import com.timmy.advance.customViewGroup.GestureLockViewActivity;
 import com.timmy.advance.customViewGroup.ReboundScrollViewActivity;
@@ -101,6 +102,7 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("自定义ScrollView--显示完成内部的ItemView");
         mData.add("从源码分析事件分发机制");
         mData.add("自定义View--悬浮窗");
+        mData.add("自定义ViewGroup--可拖拽控件");
 
 
         adapter.setData(mData);
@@ -218,6 +220,10 @@ public class AdvanceActivity extends BaseActivity {
                 case 25:
                     AdvanceActivity.this.openActivity(FloatWindowActivity.class);
                     break;
+                case 26:
+                    AdvanceActivity.this.openActivity(DragViewActivity.class);
+                    break;
+
             }
         }
     }

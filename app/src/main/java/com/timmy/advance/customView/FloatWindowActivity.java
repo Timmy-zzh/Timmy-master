@@ -49,8 +49,8 @@ public class FloatWindowActivity extends BaseActivity implements View.OnTouchLis
         initToolBar();
 
         ImageView floatWindow = (ImageView) findViewById(R.id.float_window);
-        floatWindow.setOnTouchListener(this);
-        floatWindow.setOnClickListener(this);
+//        floatWindow.setOnTouchListener(this);
+//        floatWindow.setOnClickListener(this);
         initView();
         initData();
     }

@@ -259,6 +259,12 @@
             android:label="悬浮窗-随手指移动"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".advance.customViewGroup.DragViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="可拖拽控件"
+            android:parentActivityName=".advance.AdvanceActivity"
+            android:screenOrientation="portrait"
+            />
     </application>
 
 </manifest>
