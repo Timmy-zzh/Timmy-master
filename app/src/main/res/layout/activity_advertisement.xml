@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_advertisement"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/common_toolbar"/>
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:src="@mipmap/img_beauti"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tv_countdown"
+        android:layout_width="wrap_content"
+        android:layout_alignTop="@+id/iv_image"
+        android:layout_alignRight="@+id/iv_image"
+        android:layout_marginRight="30dp"
+        android:background="@color/blue_light"
+        android:padding="20dp"
+        android:layout_marginTop="20dp"
+        android:text="跳过(3s)"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

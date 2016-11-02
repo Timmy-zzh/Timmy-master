@@ -37,7 +37,7 @@
         android:background="@color/white"
         android:gravity="center"
         android:text="取消"
-        android:textColor="@color/primary"
+        android:textColor="@color/colorPrimary"
         android:textSize="18sp" />
 
 </LinearLayout>

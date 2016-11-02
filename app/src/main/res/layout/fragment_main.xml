@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         app:tabBackground="@color/white"
         app:tabContentStart="20dp"
-        app:tabIndicatorColor="@color/primary"
+        app:tabIndicatorColor="@color/colorPrimary"
         app:tabIndicatorHeight="3dp"
         app:tabMode="fixed"
         app:tabMinWidth="20dp"

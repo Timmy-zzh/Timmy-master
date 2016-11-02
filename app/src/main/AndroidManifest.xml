@@ -3,10 +3,8 @@
     package="com.timmy">
 
     <uses-permission android:name="android.permission.CAMERA" />
-
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -259,12 +257,24 @@
             android:label="悬浮窗-随手指移动"
             android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".advance.customViewGroup.DragViewActivity"
+        <activity
+            android:name=".advance.customViewGroup.DragViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="可拖拽控件"
             android:parentActivityName=".advance.AdvanceActivity"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".advance.AdvertisementActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="3秒倒计时广告位"
+            android:parentActivityName=".advance.AdvanceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".advance.NextActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="下个界面"
+            android:parentActivityName=".advance.AdvanceActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

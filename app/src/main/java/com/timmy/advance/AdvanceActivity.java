@@ -103,6 +103,7 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("从源码分析事件分发机制");
         mData.add("自定义View--悬浮窗");
         mData.add("自定义ViewGroup--可拖拽控件");
+        mData.add("3秒倒计时广告页面");
 
 
         adapter.setData(mData);
@@ -222,6 +223,9 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 26:
                     AdvanceActivity.this.openActivity(DragViewActivity.class);
+                    break;
+                case 27:
+                    AdvanceActivity.this.openActivity(AdvertisementActivity.class);
                     break;
 
             }
