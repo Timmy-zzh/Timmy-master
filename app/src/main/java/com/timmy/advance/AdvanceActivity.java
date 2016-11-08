@@ -20,6 +20,7 @@ import com.timmy.advance.customView.RingViewActivity;
 import com.timmy.advance.customView.TextImageViewActivity;
 import com.timmy.advance.customView.VerificationCodeActivity;
 import com.timmy.advance.customView.VolumeViewActivity;
+import com.timmy.advance.customView.XiuViewActivity;
 import com.timmy.advance.customViewGroup.AdapterScrollViewActivity;
 import com.timmy.advance.customViewGroup.ArcMenuActivity;
 import com.timmy.advance.customViewGroup.CustomViewPagerActivity;
@@ -104,6 +105,7 @@ public class AdvanceActivity extends BaseActivity {
         mData.add("自定义View--悬浮窗");
         mData.add("自定义ViewGroup--可拖拽控件");
         mData.add("3秒倒计时广告页面");
+        mData.add("自定义控件--支付宝咻一咻");
 
 
         adapter.setData(mData);
@@ -226,6 +228,9 @@ public class AdvanceActivity extends BaseActivity {
                     break;
                 case 27:
                     AdvanceActivity.this.openActivity(AdvertisementActivity.class);
+                    break;
+                case 28:
+                    AdvanceActivity.this.openActivity(XiuViewActivity.class);
                     break;
 
             }
