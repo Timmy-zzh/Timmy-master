@@ -8,6 +8,9 @@ import com.timmy.R;
 import com.timmy.library.util.Logger;
 import com.timmy.base.BaseActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MotionEventActivity extends BaseActivity {
 
     private static final java.lang.String TAG = MotionEventActivity.class.getSimpleName();
@@ -70,6 +73,9 @@ public class MotionEventActivity extends BaseActivity {
         for (int i : intArr2) {
             Logger.d(TAG,"INT22:"+i);
         }
+
+        List<String> list = new ArrayList<>();
+
 
 
     }

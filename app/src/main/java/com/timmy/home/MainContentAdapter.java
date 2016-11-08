@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.timmy.R;
+import com.timmy.home.model.MainModel;
+import com.timmy.library.util.Toast;
 
 import java.util.List;
 
@@ -15,27 +17,33 @@ import butterknife.ButterKnife;
 
 public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.TabHolder> {
 
-    private List<String> dataList;
+    private List<MainModel> dataList;
     private Context context;
 
     public MainContentAdapter(Context context) {
         this.context = context;
     }
 
-    public void setData(List<String> dataList) {
+    public void setData(List<MainModel> dataList) {
         this.dataList = dataList;
         notifyDataSetChanged();
     }
 
     @Override
     public TabHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = View.inflate(context, R.layout.item_tab_pager, null);
+        View view = View.inflate(context, R.layout.item_main_page, null);
         return new TabHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(TabHolder holder, int position) {
-        holder.mContent.setText(dataList.get(position));
+    public void onBindViewHolder(TabHolder holder, final int position) {
+        holder.mContent.setText(dataList.get(position).getDesc());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                android.widget.Toast.makeText(context,dataList.get(position).getDesc(), android.widget.Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -45,10 +53,8 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
 
     public static class TabHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.tv_content)
+        @Bind(R.id.tv_desc)
         TextView mContent;
-        @Bind(R.id.tv_type)
-        TextView mType;
 
         public TabHolder(View itemView) {
             super(itemView);

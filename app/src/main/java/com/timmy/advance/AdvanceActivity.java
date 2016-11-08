@@ -31,11 +31,9 @@ import com.timmy.advance.customViewGroup.ReboundScrollViewActivity;
 import com.timmy.advance.dialog.DialogActivity;
 import com.timmy.advance.motionEvent.MotionEventActivity;
 import com.timmy.advance.screenAdapter.ImageAdapterActivity;
-import com.timmy.advance.scrollVertical.VerticalScrollActivity;
 import com.timmy.advance.slideList.FollowSlideListActivity;
 import com.timmy.advance.viewpager.AnimationViewPagerActivity;
 import com.timmy.advance.viewpager.ViewPagerIndicatiorActivity;
-import com.timmy.advance.waterRipple.WaterRippleActivity;
 import com.timmy.advance.win8metro.FollowWin8Activity;
 import com.timmy.base.BaseActivity;
 import com.timmy.base.BaseRecyclerViewAdapter;
@@ -155,13 +153,13 @@ public class AdvanceActivity extends BaseActivity {
                     AdvanceActivity.this.openActivity(FollowWin8Activity.class);
                     break;
                 case 3:
-                    AdvanceActivity.this.openActivity(VerticalScrollActivity.class);
+                    AdvanceActivity.this.openActivity(com.timmy.advance.scrollVertical.VerticalScrollActivity.class);
                     break;
                 case 4:
                     AdvanceActivity.this.openActivity(MyToggleButtonActivity.class);
                     break;
                 case 5:
-                    AdvanceActivity.this.openActivity(WaterRippleActivity.class);
+                    AdvanceActivity.this.openActivity(com.timmy.advance.waterRipple.WaterRippleActivity.class);
                     break;
                 case 6:
                     AdvanceActivity.this.openActivity(CustomViewPagerActivity.class);

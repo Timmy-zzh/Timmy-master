@@ -61,7 +61,7 @@ public class RecycleHeaderViewActivity extends BaseActivity {
             str = "内容信息" + i;
             dataList.add(str);
         }
-        adapter.setData(dataList);
+//        adapter.setData(dataList);
     }
 
     @Override

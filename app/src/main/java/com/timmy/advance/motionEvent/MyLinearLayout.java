@@ -46,7 +46,7 @@ public class MyLinearLayout extends LinearLayout {
                 Logger.d(TAG, "--dispatchTouchEvent--ACTION_UP");
                 break;
         }
-        Logger.d(TAG, "--super.dispatchTouchEvent(event):" + super.dispatchTouchEvent(event));
+//        Logger.d(TAG, "--super.dispatchTouchEvent(event):" + super.dispatchTouchEvent(event));
         return super.dispatchTouchEvent(event);
     }
 
@@ -69,7 +69,7 @@ public class MyLinearLayout extends LinearLayout {
                 Logger.d(TAG, "--onInterceptTouchEvent--ACTION_UP");
                 break;
         }
-        Logger.d(TAG, "--ViewGroup默认不拦截事件--super.onInterceptTouchEvent(event):" + super.onInterceptTouchEvent(event));
+        Logger.d(TAG, "--super.onInterceptTouchEvent(event):" + super.onInterceptTouchEvent(event));
         return super.onInterceptTouchEvent(event);
     }
 
@@ -103,7 +103,7 @@ public class MyLinearLayout extends LinearLayout {
                 Logger.d(TAG, "--onTouchEvent--ACTION_UP");
                 break;
         }
-        Logger.d(TAG, "--super.onTouchEvent(event):" + super.onTouchEvent(event));
+//        Logger.d(TAG, "--super.onTouchEvent(event):" + super.onTouchEvent(event));
         return super.onTouchEvent(event);
     }
 

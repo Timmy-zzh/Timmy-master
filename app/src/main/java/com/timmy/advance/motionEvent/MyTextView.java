@@ -40,7 +40,7 @@ public class MyTextView extends TextView {
                 Logger.d(TAG, "--dispatchTouchEvent--ACTION_UP");
                 break;
         }
-        Logger.d(TAG, "--super.dispatchTouchEvent(event):" + super.dispatchTouchEvent(event));
+//        Logger.d(TAG, "--super.dispatchTouchEvent(event):" + super.dispatchTouchEvent(event));
         return super.dispatchTouchEvent(event);
     }
 
@@ -57,7 +57,7 @@ public class MyTextView extends TextView {
                 Logger.d(TAG, "--onTouchEvent--ACTION_UP");
                 break;
         }
-        Logger.d(TAG, "--super.onTouchEvent(event):" + super.onTouchEvent(event));
+//        Logger.d(TAG, "--super.onTouchEvent(event):" + super.onTouchEvent(event));
         return super.onTouchEvent(event);
     }
 }

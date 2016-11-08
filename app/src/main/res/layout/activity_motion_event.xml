@@ -36,4 +36,16 @@
 
     </com.timmy.advance.motionEvent.MyLinearLayout>
 
+    <com.timmy.advance.motionEvent.MyLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center_horizontal">
+
+        <com.timmy.advance.motionEvent.MyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="inner_textView" />
+
+    </com.timmy.advance.motionEvent.MyLinearLayout>
 </LinearLayout>
