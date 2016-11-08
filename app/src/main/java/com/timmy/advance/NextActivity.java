@@ -3,7 +3,7 @@ package com.timmy.advance;
 import android.os.Bundle;
 
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 public class NextActivity extends BaseActivity {
 

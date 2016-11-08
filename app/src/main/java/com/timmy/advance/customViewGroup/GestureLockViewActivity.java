@@ -1,12 +1,11 @@
 package com.timmy.advance.customViewGroup;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.timmy.R;
 import com.timmy.library.util.Logger;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 /**
  * 应用手势锁

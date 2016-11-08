@@ -1,4 +1,4 @@
-package com.timmy.ui.fragment;
+package com.timmy.home;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,13 +7,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.timmy.R;
 import com.timmy.advance.AdvanceActivity;
-import com.timmy.ui.TechnologyPointActivity;
+import com.timmy.other.TechnologyPointActivity;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 

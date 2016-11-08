@@ -1,10 +1,8 @@
-package com.timmy.ui.base;
+package com.timmy.base;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
@@ -37,8 +35,6 @@ public class BaseActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
         //设置返回箭头
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //自定义
-//        mToolbar.setNavigationIcon(R.mipmap.icon_back);
     }
 
     /**
@@ -135,9 +131,5 @@ public class BaseActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void replaceFragment(int id_content, Fragment fragment) {
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(id_content, fragment);
-        transaction.commit();
-    }
+
 }

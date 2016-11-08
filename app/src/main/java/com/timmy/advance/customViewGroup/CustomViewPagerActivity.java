@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 /**
  * 自定义ViewGroup实现ViewPager效果

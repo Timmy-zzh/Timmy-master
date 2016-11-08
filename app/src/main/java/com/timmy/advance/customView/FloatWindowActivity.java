@@ -4,19 +4,16 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.timmy.R;
-import com.timmy.advance.AdvanceActivity;
 import com.timmy.library.util.Logger;
 import com.timmy.library.util.ScreenUtils;
-import com.timmy.library.util.Toast;
-import com.timmy.ui.base.BaseActivity;
-import com.timmy.ui.base.BaseRecyclerViewAdapter;
-import com.timmy.ui.base.BaseViewHolder;
+import com.timmy.base.BaseActivity;
+import com.timmy.base.BaseRecyclerViewAdapter;
+import com.timmy.base.BaseViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;

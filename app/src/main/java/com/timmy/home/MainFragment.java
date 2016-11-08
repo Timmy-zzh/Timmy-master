@@ -1,18 +1,15 @@
-package com.timmy.ui.fragment;
+package com.timmy.home;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.timmy.R;
+import com.timmy.base.BaseFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -20,26 +17,29 @@ import butterknife.ButterKnife;
 /**
  * Created by Administrator on 2016/3/21 0021.
  */
-public class MainFragment extends Fragment {
+public class MainFragment extends BaseFragment {
 
     @Bind(R.id.tl_tab)
     TabLayout tl_tab;
     @Bind(R.id.vp_viewPage)
     ViewPager vp_viewPager;
-    private int tabSize = 3;
     private TabPagerAdapter adapter;
 
+//    @Nullable
+//    @Override
+//    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+//        View view = inflater.inflate(, container, false);
+//        ButterKnife.bind(this, view);
+//        return view;
+//    }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
-        ButterKnife.bind(this, view);
-        return view;
+    public int inflaterFragment() {
+        return R.layout.fragment_main;
     }
 
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(View view,  Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView();
     }
@@ -48,31 +48,25 @@ public class MainFragment extends Fragment {
      * 初始化TabLayout数据
      */
     private void initView() {
-
-        adapter = new TabPagerAdapter(getActivity().getSupportFragmentManager(), getActivity());
+        adapter = new TabPagerAdapter(getActivity().getSupportFragmentManager());
         vp_viewPager.setAdapter(adapter);
         tl_tab.setupWithViewPager(vp_viewPager);
     }
 
-    class TabPagerAdapter extends FragmentPagerAdapter {
-
-        final int PAGE_COUNT = 3;
-        private String tabTitles[] = new String[]{"技术点", "源码", "框架"};
-        private Context context;
-
-        public TabPagerAdapter(FragmentManager fm, Context context) {
+    class TabPagerAdapter extends FragmentStatePagerAdapter {
+        private String tabTitles[] = new String[]{"进阶","源码", "框架"};
+        public TabPagerAdapter(FragmentManager fm) {
             super(fm);
-            this.context = context;
         }
 
         @Override
         public Fragment getItem(int position) {
-            return TabPageFragment.newInstance(position + 1);
+            return MainPageFragment.newInstance(position + 1);
         }
 
         @Override
         public int getCount() {
-            return PAGE_COUNT;
+            return tabTitles.length;
         }
 
         @Override

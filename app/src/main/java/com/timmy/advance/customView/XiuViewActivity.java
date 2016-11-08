@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 public class XiuViewActivity extends BaseActivity {
 

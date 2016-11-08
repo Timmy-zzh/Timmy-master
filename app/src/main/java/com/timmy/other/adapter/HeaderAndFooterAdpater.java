@@ -1,4 +1,4 @@
-package com.timmy.ui.adapter;
+package com.timmy.other.adapter;
 
 import android.content.Context;
 import android.support.v4.util.SparseArrayCompat;

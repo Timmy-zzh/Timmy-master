@@ -1,4 +1,4 @@
-package com.timmy.ui.adapter;
+package com.timmy.home;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -13,12 +13,12 @@ import java.util.List;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class TabAdapter extends RecyclerView.Adapter<TabAdapter.TabHolder> {
+public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.TabHolder> {
 
     private List<String> dataList;
     private Context context;
 
-    public TabAdapter(Context context) {
+    public MainContentAdapter(Context context) {
         this.context = context;
     }
 

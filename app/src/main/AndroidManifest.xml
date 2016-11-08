@@ -3,10 +3,8 @@
     package="com.timmy">
 
     <uses-permission android:name="android.permission.CAMERA" />
-
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -18,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".home.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:launchMode="singleTop"
@@ -30,240 +28,201 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.TechnologyPointActivity"
+            android:name=".other.TechnologyPointActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Android技术点"
             android:launchMode="singleTop"
-            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.technologypoint.AutoPlayPicturesActivity"
+            android:name=".technologypoint.AutoPlayPicturesActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="自动轮播图"
             android:launchMode="singleTop"
-            android:parentActivityName=".ui.TechnologyPointActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.technologypoint.CameraPictureActivity"
+            android:name=".technologypoint.CameraPictureActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_camera_picture"
-            android:parentActivityName=".ui.TechnologyPointActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.animation.AnimationActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_animation"
-            android:parentActivityName=".ui.TechnologyPointActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.technologypoint.GlideImageActivity"
+            android:name=".technologypoint.GlideImageActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Glide"
-            android:parentActivityName=".ui.TechnologyPointActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.technologypoint.ClipToOutlineActivity"
+            android:name=".technologypoint.ClipToOutlineActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="setClipToOutline"
-            android:parentActivityName=".ui.TechnologyPointActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.technologypoint.DialogActivity"
+            android:name=".technologypoint.DialogActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Dialog"
-            android:parentActivityName=".ui.TechnologyPointActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.AboutActivity"
+            android:name=".other.AboutActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="关于"
-            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.technologypoint.TimmyHealthActivity"
+            android:name=".technologypoint.TimmyHealthActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="自定义View"
-            android:parentActivityName=".ui.TechnologyPointActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.technologypoint.RecycleHeaderViewActivity"
+            android:name=".technologypoint.RecycleHeaderViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="RecycleHeaderViewActivity"
-            android:parentActivityName=".ui.TechnologyPointActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.technologypoint.ToolBarActivity"
+            android:name=".technologypoint.ToolBarActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="ToolBarActivity"
-            android:parentActivityName=".ui.TechnologyPointActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ui.technologypoint.CoordinatorLayoutActivity"
+            android:name=".technologypoint.CoordinatorLayoutActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="CoordinatorLayoutActivity"
-            android:parentActivityName=".ui.TechnologyPointActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.AdvanceActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="鸿神进阶之路"
-            android:parentActivityName=".ui.MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.slideList.FollowSlideListActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="高仿腾讯ListView滑动删除"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.dialog.DialogActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MyDialogTopRight" />
         <activity
             android:name=".advance.win8metro.FollowWin8Activity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="高仿Win8效果点击界面"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.viewpager.ViewPagerIndicatiorActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="ViewPager指示器"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.scrollVertical.VerticalScrollActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Android自定义ViewGroup实现竖向引导界面"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.customView.MyToggleButtonActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="自定义View(一)开关按钮"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.waterRipple.WaterRippleActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="定义View(二)水波纹效果"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.customViewGroup.CustomViewPagerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="自定义ViewPager"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.screenAdapter.ImageAdapterActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="图片适配ImagerView"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.citySelect.CitySelectActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="城市列表选择"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.citySelect.HotCityActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="城市列表选择--带热门城市"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.customView.VerificationCodeActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="自定义View(五)--随机数验证码"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.customView.TextImageViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="自定义View(六)--带文字的图片"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.customView.RingViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="自定义View(七)--圆环交替"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.customView.VolumeViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="自定义View(八)--音量控件"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.customView.CustomImageViewActicity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="自定义View(九)--带圆角ImageView"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.customViewGroup.ArcMenuActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="自定义ViewGroup--圆形菜单"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.customViewGroup.ReboundScrollViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="反弹ScrollView"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.viewpager.AnimationViewPagerActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="不一样的ViewPager滑动效果"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.customViewGroup.GestureLockViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="应用手势锁"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.animation.RubberIndicatiorActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="自定义动画指示器-RubberIndicatior"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.customViewGroup.FlowLayoutActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="流式布局"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.customViewGroup.AdapterScrollViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="自定义ScrollView--显示完成内部的ItemView"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.motionEvent.MotionEventActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="从源码分析事件分发机制"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.customView.FloatWindowActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="悬浮窗-随手指移动"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.customViewGroup.DragViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="可拖拽控件"
-            android:parentActivityName=".advance.AdvanceActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".advance.AdvertisementActivity"

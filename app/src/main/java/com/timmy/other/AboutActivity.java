@@ -1,4 +1,4 @@
-package com.timmy.ui;
+package com.timmy.other;
 
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
@@ -10,8 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.timmy.R;
-import com.timmy.ui.adapter.CustomAdapter;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.other.adapter.CustomAdapter;
+import com.timmy.base.BaseActivity;
 
 import java.util.ArrayList;
 

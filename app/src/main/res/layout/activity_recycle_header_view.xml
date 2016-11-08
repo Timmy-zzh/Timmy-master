@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.timmy.ui.technologypoint.RecycleHeaderViewActivity">
+    tools:context=".technologypoint.RecycleHeaderViewActivity">
 
     <include layout="@layout/common_toolbar"/>
 

@@ -1,4 +1,4 @@
-package com.timmy.ui.base;
+package com.timmy.base;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

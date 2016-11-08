@@ -1,4 +1,4 @@
-package com.timmy.ui;
+package com.timmy.other;
 
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -6,16 +6,16 @@ import android.view.View;
 import android.widget.Button;
 
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 import com.timmy.advance.animation.AnimationActivity;
-import com.timmy.ui.technologypoint.AutoPlayPicturesActivity;
-import com.timmy.ui.technologypoint.CameraPictureActivity;
-import com.timmy.ui.technologypoint.ClipToOutlineActivity;
-import com.timmy.ui.technologypoint.DialogActivity;
-import com.timmy.ui.technologypoint.GlideImageActivity;
-import com.timmy.ui.technologypoint.RecycleHeaderViewActivity;
-import com.timmy.ui.technologypoint.TimmyHealthActivity;
-import com.timmy.ui.technologypoint.ToolBarActivity;
+import com.timmy.technologypoint.AutoPlayPicturesActivity;
+import com.timmy.technologypoint.CameraPictureActivity;
+import com.timmy.technologypoint.ClipToOutlineActivity;
+import com.timmy.technologypoint.DialogActivity;
+import com.timmy.technologypoint.GlideImageActivity;
+import com.timmy.technologypoint.RecycleHeaderViewActivity;
+import com.timmy.technologypoint.TimmyHealthActivity;
+import com.timmy.technologypoint.ToolBarActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

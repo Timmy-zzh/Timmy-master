@@ -8,7 +8,7 @@ import android.widget.ImageView;
 
 import com.timmy.R;
 import com.timmy.library.util.Logger;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 /**
  * 要实现ViewPager滑动时候的前后ItemView的滑动效果,

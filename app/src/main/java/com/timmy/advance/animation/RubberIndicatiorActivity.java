@@ -3,7 +3,7 @@ package com.timmy.advance.animation;
 import android.os.Bundle;
 
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 public class RubberIndicatiorActivity extends BaseActivity {
 

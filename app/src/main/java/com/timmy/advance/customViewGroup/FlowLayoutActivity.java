@@ -5,7 +5,7 @@ import android.view.Gravity;
 import android.widget.TextView;
 
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 /**
  * 流式布局实现:用于热门标签的展示

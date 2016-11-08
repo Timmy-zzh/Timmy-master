@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.github.promeg.pinyinhelper.Pinyin;
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.Collections;

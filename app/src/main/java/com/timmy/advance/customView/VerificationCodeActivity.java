@@ -3,7 +3,7 @@ package com.timmy.advance.customView;
 import android.os.Bundle;
 
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 public class VerificationCodeActivity extends BaseActivity {
 

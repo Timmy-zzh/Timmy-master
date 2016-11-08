@@ -3,7 +3,7 @@ package com.timmy.advance.screenAdapter;
 import android.os.Bundle;
 
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 /**
  * 图片适配问题处理

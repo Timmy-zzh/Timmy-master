@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 import java.util.Arrays;
 import java.util.List;

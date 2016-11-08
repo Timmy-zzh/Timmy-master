@@ -3,7 +3,7 @@ package com.timmy.advance.viewpager;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 import com.timmy.viewpagerindicator.TabPageIndicator;
 
 /**

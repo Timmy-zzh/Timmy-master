@@ -1,4 +1,4 @@
-package com.timmy.ui.technologypoint;
+package com.timmy.technologypoint;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;

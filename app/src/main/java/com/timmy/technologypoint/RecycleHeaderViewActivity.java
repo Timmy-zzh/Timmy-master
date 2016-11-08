@@ -1,4 +1,4 @@
-package com.timmy.ui.technologypoint;
+package com.timmy.technologypoint;
 
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
@@ -7,8 +7,8 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
 import com.timmy.R;
-import com.timmy.ui.adapter.TabAdapter;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.home.MainContentAdapter;
+import com.timmy.base.BaseActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class RecycleHeaderViewActivity extends BaseActivity {
     RecyclerView mRecyclerView;
     private int mPage = 1;
     private RecyclerView.LayoutManager layoutManager;
-    private TabAdapter adapter;
+    private MainContentAdapter adapter;
     private List<String> dataList = new ArrayList<String>();
 
     @Override
@@ -51,7 +51,7 @@ public class RecycleHeaderViewActivity extends BaseActivity {
                 break;
         }
         mRecyclerView.setLayoutManager(layoutManager);
-        adapter = new TabAdapter(this);
+        adapter = new MainContentAdapter(this);
         mRecyclerView.setAdapter(adapter);
     }
 

@@ -1,4 +1,4 @@
-package com.timmy.ui.adapter;
+package com.timmy.other.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

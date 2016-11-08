@@ -1,4 +1,4 @@
-package com.timmy.ui.technologypoint;
+package com.timmy.technologypoint;
 
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

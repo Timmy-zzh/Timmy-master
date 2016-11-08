@@ -1,9 +1,9 @@
-package com.timmy.ui.technologypoint;
+package com.timmy.technologypoint;
 
 import android.os.Bundle;
 
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 import com.timmy.widget.TimmyHealthView;
 
 /**

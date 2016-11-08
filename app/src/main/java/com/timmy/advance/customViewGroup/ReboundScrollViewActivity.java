@@ -5,7 +5,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 import java.util.Arrays;
 import java.util.List;

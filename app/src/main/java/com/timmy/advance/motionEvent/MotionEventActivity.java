@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.timmy.R;
 import com.timmy.library.util.Logger;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 public class MotionEventActivity extends BaseActivity {
 

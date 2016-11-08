@@ -1,4 +1,4 @@
-package com.timmy.ui.technologypoint;
+package com.timmy.technologypoint;
 
 import android.graphics.Outline;
 import android.os.Bundle;
@@ -7,7 +7,7 @@ import android.view.ViewOutlineProvider;
 import android.widget.ImageView;
 
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;

@@ -1,11 +1,9 @@
 package com.timmy.advance.customViewGroup;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
 
 import com.timmy.R;
-import com.timmy.ui.base.BaseActivity;
+import com.timmy.base.BaseActivity;
 
 public class ArcMenuActivity extends BaseActivity {
 
