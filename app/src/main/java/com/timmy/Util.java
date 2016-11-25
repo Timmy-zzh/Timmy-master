@@ -1,6 +1,8 @@
 package com.timmy;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -14,6 +16,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.timmy.highUI.stretchList.StretchListActivity;
 import com.timmy.widget.BottomSelectDialog;
 
 /**
@@ -62,4 +65,8 @@ public class Util {
         return output;
     }
 
+    public static void gotoNextActivity(Context context, Class<?> nextActivity) {
+        Intent intent = new Intent(context,nextActivity);
+        context.startActivity(intent);
+    }
 }

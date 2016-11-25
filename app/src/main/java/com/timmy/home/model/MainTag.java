@@ -6,6 +6,8 @@ package com.timmy.home.model;
 
 public class MainTag {
 
-    public static int TAG_XIUXIU = 0X000001;
+    public static final int TAG_XIUXIU = 0X000001;
+    public static final int TAG_QQ_ZONE_STRETCH = 0X000002;
+
 
 }

@@ -1,1 +1,1 @@
-include ':app', ':actionbardemo', ':rxjavademo', ':databasedemo', ':library_timmy', ':viewpagerindicator', ':aidl_server'
+include ':app', ':rxjavademo',':library_timmy'

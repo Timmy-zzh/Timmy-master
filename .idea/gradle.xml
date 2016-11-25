@@ -8,13 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/actionbardemo" />
-            <option value="$PROJECT_DIR$/aidl_server" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/databasedemo" />
             <option value="$PROJECT_DIR$/library_timmy" />
             <option value="$PROJECT_DIR$/rxjavademo" />
-            <option value="$PROJECT_DIR$/viewpagerindicator" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

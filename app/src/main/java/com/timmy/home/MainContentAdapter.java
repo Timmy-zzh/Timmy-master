@@ -7,7 +7,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.timmy.R;
+import com.timmy.Util;
+import com.timmy.highUI.stretchList.StretchListActivity;
 import com.timmy.home.model.MainModel;
+import com.timmy.home.model.MainTag;
 import com.timmy.library.util.Toast;
 
 import java.util.List;
@@ -37,11 +40,19 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
 
     @Override
     public void onBindViewHolder(TabHolder holder, final int position) {
-        holder.mContent.setText(dataList.get(position).getDesc());
+        final MainModel model = dataList.get(position);
+        holder.mContent.setText(model.getDesc());
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 android.widget.Toast.makeText(context,dataList.get(position).getDesc(), android.widget.Toast.LENGTH_SHORT).show();
+                switch (model.getTag()){
+                    case MainTag.TAG_QQ_ZONE_STRETCH:
+                        Util.gotoNextActivity(context,StretchListActivity.class);
+                        break;
+
+                }
+
             }
         });
     }

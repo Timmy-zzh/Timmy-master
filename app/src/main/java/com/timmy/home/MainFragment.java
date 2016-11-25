@@ -25,14 +25,6 @@ public class MainFragment extends BaseFragment {
     ViewPager vp_viewPager;
     private TabPagerAdapter adapter;
 
-//    @Nullable
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-//        View view = inflater.inflate(, container, false);
-//        ButterKnife.bind(this, view);
-//        return view;
-//    }
-
     @Override
     public int inflaterFragment() {
         return R.layout.fragment_main;
@@ -54,7 +46,7 @@ public class MainFragment extends BaseFragment {
     }
 
     class TabPagerAdapter extends FragmentStatePagerAdapter {
-        private String tabTitles[] = new String[]{"进阶","源码", "框架"};
+        private String tabTitles[] = new String[]{"高级ui","源码", "框架"};
         public TabPagerAdapter(FragmentManager fm) {
             super(fm);
         }
@@ -73,11 +65,5 @@ public class MainFragment extends BaseFragment {
         public CharSequence getPageTitle(int position) {
             return tabTitles[position];
         }
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }

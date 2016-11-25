@@ -8,6 +8,7 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 import com.timmy.R;
+import com.timmy.api.recyclerview.DividerItemDecoration;
 import com.timmy.base.BaseFragment;
 import com.timmy.home.model.MainModel;
 import com.timmy.home.model.MainTag;
@@ -74,6 +75,7 @@ public class MainPageFragment extends BaseFragment {
                 break;
         }
         mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL_LIST));
         adapter = new MainContentAdapter(getActivity());
         mRecyclerView.setAdapter(adapter);
     }
@@ -81,34 +83,7 @@ public class MainPageFragment extends BaseFragment {
     private void initData() {
         switch (mPage) {
             case 1:
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "仿腾讯List滑动删除"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "使用Activity作为Dialog来展示"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "高仿win8效果的界面展示"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "Android自定义ViewGroup实现竖向引导界面"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(一)--开关按钮"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(二)--水波纹效果"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义ViewGroup(三)--实现ViewPager效果"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(四)--图片适配"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "ViewPager指示器"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "城市列表选择"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "城市列表选择--带热门城市"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(五)--随机数验证码"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(六)--带文字的图片"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(七)--圆环交替"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(八)--音量控件"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(九)--带圆角ImageView"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义ViewGroup--圆形菜单"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义ViewGroup--反弹ScrollView"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义ViewPager--不一样的ViewPager滑动效果"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义ViewGroup--应用手势锁"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "Android属性动画"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义动画指示器-RubberIndicatior"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义ViewGroup--流式布局"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义ScrollView--显示完成内部的ItemView"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "从源码分析事件分发机制"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View--悬浮窗"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义ViewGroup--可拖拽控件"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "3秒倒计时广告页面"));
+                pageListOne.add(new MainModel(MainTag.TAG_QQ_ZONE_STRETCH, "QQ空间可拉伸头部ListView控件"));
                 pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义控件--支付宝咻一咻"));
                 adapter.setData(pageListOne);
                 break;
@@ -177,11 +152,5 @@ public class MainPageFragment extends BaseFragment {
                 adapter.setData(pageListThree);
                 break;
         }
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
     }
 }
