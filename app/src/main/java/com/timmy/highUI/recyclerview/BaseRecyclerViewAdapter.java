@@ -1,4 +1,4 @@
-package com.timmy.base;
+package com.timmy.highUI.recyclerview;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -90,6 +90,7 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
             };
         }
         holder.itemView.setOnClickListener(getOnClickListener(position));
+
         if (mCLickLongListener == null) {
             mCLickLongListener = new OnItemLongClickListener<T>() {
                 @Override
@@ -99,7 +100,6 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
             };
         }
         holder.itemView.setOnLongClickListener(getOnLongClickListener(position));
-
     }
 
 
@@ -120,22 +120,7 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
         return realDatas.size();
     }
 
-    /**
-     * RecyclerView的Adapter最后的底部类型
-     */
-//    public static class FooterViewHolder extends BaseViewHolder {
-//
-//        private ImageView mLoading;
-//        private final AnimationDrawable animator;
-//
-//        public FooterViewHolder(View itemView) {
-//            super(itemView);
-//            mLoading = (ImageView) itemView.findViewById(R.id.iv_loading);
-//            //拿到ImageView设置的背景动画
-//            animator = (AnimationDrawable) mLoading.getDrawable();
-//            animator.start();
-//        }
-//    }
+
     private View.OnClickListener getOnClickListener(final int position) {
         return new View.OnClickListener() {
             @Override

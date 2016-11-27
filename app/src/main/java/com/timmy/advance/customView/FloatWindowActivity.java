@@ -12,8 +12,8 @@ import com.timmy.R;
 import com.timmy.library.util.Logger;
 import com.timmy.library.util.ScreenUtils;
 import com.timmy.base.BaseActivity;
-import com.timmy.base.BaseRecyclerViewAdapter;
-import com.timmy.base.BaseViewHolder;
+import com.timmy.highUI.recyclerview.BaseRecyclerViewAdapter;
+import com.timmy.highUI.recyclerview.BaseViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.timmy.base;
+package com.timmy.highUI.recyclerview;
 
 import android.content.Context;
 import android.support.annotation.IdRes;
@@ -14,7 +14,6 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
 
     //创建View容器,根据key为控件id
     private SparseArray<View> viewArray;
-    private int viewType;
 
     public BaseViewHolder(View itemView) {
         super(itemView);
@@ -45,14 +44,6 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
         return findViewById(viewId);
     }
 
-    public void setViewTyep(int viewType) {
-        this.viewType = viewType;
-    }
-
-    public int getViewType() {
-        return viewType;
-    }
-
     public BaseViewHolder setText(int viewId, String s) {
         TextView textView = findViewById(viewId);
         textView.setText(s);
@@ -64,5 +55,4 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
         view.setVisibility(visibility);
         return this;
     }
-
 }

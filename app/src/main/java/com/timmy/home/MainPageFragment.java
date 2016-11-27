@@ -8,7 +8,8 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 import com.timmy.R;
-import com.timmy.api.recyclerview.DividerItemDecoration;
+import com.timmy.highUI.recyclerview.DividerGridItemDecoration;
+import com.timmy.highUI.recyclerview.DividerItemDecoration;
 import com.timmy.base.BaseFragment;
 import com.timmy.home.model.MainModel;
 import com.timmy.home.model.MainTag;
@@ -17,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * TabLayout+ViewPager+Fragment
@@ -34,6 +34,7 @@ public class MainPageFragment extends BaseFragment {
     private List<MainModel> pageListOne = new ArrayList<MainModel>();
     private List<MainModel> pageListTwo = new ArrayList<MainModel>();
     private List<MainModel> pageListThree = new ArrayList<MainModel>();
+    private RecyclerView.ItemDecoration mDivider;
 
     public static MainPageFragment newInstance(int page) {
         Bundle bundle = new Bundle();
@@ -66,16 +67,19 @@ public class MainPageFragment extends BaseFragment {
         switch (mPage) {
             case 1:
                 layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+                mDivider = new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL_LIST);
                 break;
             case 2:
                 layoutManager = new GridLayoutManager(getActivity(), 2);
+                mDivider = new DividerGridItemDecoration(getContext());
                 break;
             case 3:
                 layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+                mDivider = new DividerGridItemDecoration(getContext());
                 break;
         }
         mRecyclerView.setLayoutManager(layoutManager);
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL_LIST));
+        mRecyclerView.addItemDecoration(mDivider);
         adapter = new MainContentAdapter(getActivity());
         mRecyclerView.setAdapter(adapter);
     }
