@@ -18,6 +18,7 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.SimpleView
 
     private final Context mContext;
     private final List<String> mData;
+    private OnSimpleClickListener mListener;
 
     public SimpleAdapter(Context context, List<String> lists) {
         this.mContext = context;
@@ -50,6 +51,9 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.SimpleView
     public void onBindViewHolder(SimpleViewHolder holder, int position) {
         String data = mData.get(position);
         holder.tv.setText(data);
+
+        holder.itemView.setOnClickListener(new OnSimpleTestClick(position));
+
     }
 
     class SimpleViewHolder extends RecyclerView.ViewHolder {
@@ -59,6 +63,28 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.SimpleView
         public SimpleViewHolder(View itemView) {
             super(itemView);
             tv = (TextView) itemView.findViewById(R.id.tv_content);
+        }
+    }
+
+    public interface OnSimpleClickListener{
+        void onSimpleClick(String data,int position);
+    }
+
+    public void setOnSimpleClickListener(OnSimpleClickListener listener){
+        this.mListener = listener;
+    }
+
+    private class OnSimpleTestClick implements View.OnClickListener {
+
+        private final int position;
+
+        public OnSimpleTestClick(int position) {
+            this.position = position;
+        }
+
+        @Override
+        public void onClick(View v) {
+            mListener.onSimpleClick(mData.get(position),position);
         }
     }
 }
