@@ -6,4 +6,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add">添加</string>
+    <string name="remove">删除</string>
+    <string name="decora">分割线</string>
+    <string name="change_decora">切换分割线</string>
+    <string name="change_layout_manager">切换布局</string>
 </resources>

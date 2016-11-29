@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/menu_add"
+        android:orderInCategory="100"
+        android:title="@string/add"
+        app:showAsAction="always" />
+
+    <!--<item-->
+        <!--android:id="@+id/menu_decora"-->
+        <!--android:orderInCategory="102"-->
+        <!--android:title="@string/change_decora"-->
+        <!--app:showAsAction="never" />-->
+
+    <item
+        android:id="@+id/menu_layout_manager"
+        android:orderInCategory="103"
+        android:title="@string/change_layout_manager"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_remove"
+        android:orderInCategory="101"
+        android:title="@string/remove"
+        app:showAsAction="always" />
+</menu>

@@ -241,10 +241,16 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="支付宝咻一咻"
             android:screenOrientation="portrait" />
-        <activity android:name=".highUI.stretchList.StretchListActivity"
+        <activity
+            android:name=".highUI.stretchList.StretchListActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="可伸缩头部ListView"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".highUI.recyclerview.RecyclerViewActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="RecyclerView使用"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

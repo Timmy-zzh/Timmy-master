@@ -10,6 +10,8 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 
+import com.timmy.R;
+
 /**
  * RecyclerView的分割线，主要针对水平和垂直方向的布局管理器
  * Created by timmy1 on 16/11/23.
@@ -17,6 +19,7 @@ import android.view.View;
 public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
     private static final int[] ATTRS = new int[]{
+//            R.drawable.item_divide_decora
             android.R.attr.listDivider
     };
 

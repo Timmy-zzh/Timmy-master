@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.timmy.R;
 import com.timmy.Util;
+import com.timmy.highUI.recyclerview.RecyclerViewActivity;
 import com.timmy.highUI.stretchList.StretchListActivity;
 import com.timmy.home.model.MainModel;
 import com.timmy.home.model.MainTag;
@@ -49,6 +50,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                 switch (model.getTag()){
                     case MainTag.TAG_QQ_ZONE_STRETCH:
                         Util.gotoNextActivity(context,StretchListActivity.class);
+                        break;
+                    case MainTag.TAG_RECYCLER_VIEW:
+                        Util.gotoNextActivity(context,RecyclerViewActivity.class);
                         break;
 
                 }
