@@ -76,6 +76,7 @@ public class RecyclerViewActivity extends BaseActivity {
     }
 
     private void changeLayoutManager() {
+        mRecyclerView.removeItemDecoration(mDecoration);
         if (!isGrid) {
             mDecoration = new DividerGridItemDecoration(this);
             mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));

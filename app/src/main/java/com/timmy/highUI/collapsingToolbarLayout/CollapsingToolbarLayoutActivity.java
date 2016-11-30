@@ -1,23 +1,23 @@
-package com.timmy.home;
+package com.timmy.highUI.collapsingToolbarLayout;
 
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 
 import com.timmy.R;
-import com.timmy.base.BaseFragment;
+import com.timmy.base.BaseActivity;
+import com.timmy.home.MainFragment;
+import com.timmy.home.MainPageFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-/**
- * Created by Administrator on 2016/3/21 0021.
- */
-public class MainFragment extends BaseFragment {
+public class CollapsingToolbarLayoutActivity extends BaseActivity {
+
 
     @Bind(R.id.tl_tab)
     TabLayout tl_tab;
@@ -25,27 +25,31 @@ public class MainFragment extends BaseFragment {
     ViewPager vp_viewPager;
     private TabPagerAdapter adapter;
 
+
     @Override
-    public int inflaterFragment() {
-        return R.layout.fragment_main;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_collapsing_toolbar_layout);
+        ButterKnife.bind(this);
+        initView();
     }
 
     @Override
-    public void onViewCreated(View view,  Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        initView();
+    protected void onDestroy() {
+        super.onDestroy();
+        ButterKnife.unbind(this);
     }
 
     /**
      * 初始化TabLayout数据
      */
     private void initView() {
-        adapter = new TabPagerAdapter(getActivity().getSupportFragmentManager());
+        adapter = new TabPagerAdapter(getSupportFragmentManager());
         vp_viewPager.setAdapter(adapter);
         tl_tab.setupWithViewPager(vp_viewPager);
     }
 
-    public class TabPagerAdapter extends FragmentStatePagerAdapter {
+    class TabPagerAdapter extends FragmentStatePagerAdapter {
         private String tabTitles[] = new String[]{"高级ui","源码", "框架"};
         public TabPagerAdapter(FragmentManager fm) {
             super(fm);
