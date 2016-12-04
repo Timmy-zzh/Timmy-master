@@ -36,8 +36,8 @@ import com.timmy.advance.viewpager.AnimationViewPagerActivity;
 import com.timmy.advance.viewpager.ViewPagerIndicatiorActivity;
 import com.timmy.advance.win8metro.FollowWin8Activity;
 import com.timmy.base.BaseActivity;
-import com.timmy.highUI.recyclerview.BaseRecyclerViewAdapter;
-import com.timmy.highUI.recyclerview.BaseViewHolder;
+import com.timmy.highUI.recyclerview.adapter.BaseRecyclerViewAdapter;
+import com.timmy.highUI.recyclerview.adapter.BaseViewHolder;
 import com.timmy.advance.animation.AnimationActivity;
 
 import java.util.ArrayList;

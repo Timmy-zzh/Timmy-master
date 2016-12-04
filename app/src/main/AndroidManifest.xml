@@ -251,7 +251,8 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="RecyclerView使用"
             android:screenOrientation="portrait" />
-        <activity android:name=".highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity"></activity>
+        <activity android:name=".highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity" />
+        <activity android:name=".highUI.recyclerview.wrapRecyclerView.InteractiveRecyclerView"></activity>
     </application>
 
 </manifest>

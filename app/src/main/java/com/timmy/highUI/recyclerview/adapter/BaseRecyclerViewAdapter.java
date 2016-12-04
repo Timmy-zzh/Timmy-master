@@ -1,4 +1,4 @@
-package com.timmy.highUI.recyclerview;
+package com.timmy.highUI.recyclerview.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -11,13 +11,9 @@ import java.util.List;
 
 /**
  * Created by Administrator on 2016/7/25.
- * 该Adapter适合加载纯List数据界面进行展示
- * 并设置加载更多效果
+ * Adapter基类
  */
 public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<BaseViewHolder> {
-
-    private int TYPE_FOOTER = 0;//尾部
-    private int TYPE_LIST = 1;//数据类型
 
     private Context context;
     private List<T> realDatas;
@@ -29,6 +25,14 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
         realDatas = new ArrayList<>();
     }
 
+    public List<T> getRealDatas() {
+        return realDatas;
+    }
+
+    public void setRealDatas(List<T> realDatas) {
+        this.realDatas = realDatas;
+    }
+
     //设置数据
     public BaseRecyclerViewAdapter setData(List<T> realDatas) {
         this.realDatas = realDatas;
@@ -38,9 +42,6 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
 
     /**
      * 添加更多数据
-     *
-     * @param realDatas
-     * @return
      */
     public BaseRecyclerViewAdapter addMoreData(List<T> realDatas) {
         this.realDatas.addAll(realDatas);
@@ -53,31 +54,17 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
      */
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-//        if (viewType == TYPE_FOOTER) {
-//            View itemView = LayoutInflater.from(parent.getContext()).inflate(
-//                    R.layout.view_footer_loading, parent, false);
-//            return new FooterViewHolder(itemView);
-//        }
         LayoutInflater inflater = LayoutInflater.from(context);
         View itemView = inflater.inflate(inflaterItemLayout(viewType), parent, false);
         return new BaseViewHolder(itemView);
     }
 
-
     /**
      * 往控件中填充数据
-     *
-     * @param holder
-     * @param position
      */
     @Override
     public void onBindViewHolder(BaseViewHolder holder, int position) {
-        //底部加载更多动画
-//        if (holder instanceof FooterViewHolder) {
-//            FooterViewHolder footerViewHolder = (FooterViewHolder) holder;
-//            footerViewHolder.animator.start();
-//            return;
-//        }
+
         bindData(holder, position, realDatas.get(position));
         //在这里设置Item的点击事件
         if (mClickListener == null) {
@@ -85,34 +72,23 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
                 @Override
                 public void onItemClick(View itemView, int position, T t) {
                     //让子类去实现
-                    onItemClickListener(itemView, position, t);
+                    onItemClickListener(itemView,position,t);
                 }
             };
         }
-        holder.itemView.setOnClickListener(getOnClickListener(position));
-
+        holder.itemView.setOnClickListener(new TimmyItemClickListener(position));
         if (mCLickLongListener == null) {
             mCLickLongListener = new OnItemLongClickListener<T>() {
                 @Override
                 public void onItemLongClick(View itemView, int position, T t) {
-                    onItemLongClickListener(itemView, position, t);
+                    onItemLongClickListener(itemView,position,t);
                 }
             };
         }
-        holder.itemView.setOnLongClickListener(getOnLongClickListener(position));
+        holder.itemView.setOnLongClickListener(new TimmyItemLongClickListener(position));
+
     }
 
-
-    /**
-     * 获取Item的类型
-     *
-     * @param position
-     * @return
-     */
-    @Override
-    public int getItemViewType(int position) {
-        return realDatas.get(position) != null ? TYPE_LIST : TYPE_FOOTER;
-    }
 
     //获取Item数量
     @Override
@@ -121,28 +97,37 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
     }
 
 
-    private View.OnClickListener getOnClickListener(final int position) {
-        return new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (mClickListener != null && view != null) {
-                    mClickListener.onItemClick(view, position, realDatas.get(position));
-                }
+    private class TimmyItemClickListener implements View.OnClickListener {
+        private  int mPosition;
+
+        public TimmyItemClickListener(int position) {
+            this.mPosition = position;
+        }
+
+        @Override
+        public void onClick(View view) {
+            if (mClickListener != null&& view != null) {
+                mClickListener.onItemClick(view, mPosition, realDatas.get(mPosition));
             }
-        };
+        }
     }
 
-    private View.OnLongClickListener getOnLongClickListener(final int position) {
-        return new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View view) {
-                if (mCLickLongListener != null && view != null) {
-                    mCLickLongListener.onItemLongClick(view, position, realDatas.get(position));
-                    return true;
-                }
-                return false;
+
+    private class TimmyItemLongClickListener implements View.OnLongClickListener {
+        private  int mPosition;
+
+        public TimmyItemLongClickListener(int position) {
+            this.mPosition = position;
+        }
+
+        @Override
+        public boolean onLongClick(View view) {
+            if (mCLickLongListener != null&& view != null) {
+                mCLickLongListener.onItemLongClick(view, mPosition, realDatas.get(mPosition));
+                return true;
             }
-        };
+            return false;
+        }
     }
 
     /**
@@ -166,9 +151,6 @@ public abstract class BaseRecyclerViewAdapter<T> extends RecyclerView.Adapter<Ba
 
     /**
      * 交给子类自己去填充Item布局
-     *
-     * @param viewType
-     * @return
      */
     protected abstract int inflaterItemLayout(int viewType);
 

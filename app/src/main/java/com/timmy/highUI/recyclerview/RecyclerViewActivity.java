@@ -6,9 +6,15 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.timmy.R;
+import com.timmy.Util;
 import com.timmy.base.BaseActivity;
+import com.timmy.highUI.recyclerview.adapter.SimpleAdapter;
+import com.timmy.highUI.recyclerview.decoration.DividerGridItemDecoration;
+import com.timmy.highUI.recyclerview.decoration.DividerItemDecoration;
+import com.timmy.highUI.recyclerview.wrapRecyclerView.InteractiveRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +29,7 @@ public class RecyclerViewActivity extends BaseActivity {
 
     private RecyclerView mRecyclerView;
     private SimpleAdapter adapter;
-    private boolean isGrid;
+    private boolean isGrid = true;
     private RecyclerView.ItemDecoration mDecoration;
 
     @Override
@@ -44,13 +50,20 @@ public class RecyclerViewActivity extends BaseActivity {
         //2.设置分割线
         //3.setAdapter
         adapter = new SimpleAdapter(this, lists);
-//        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        mDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST);
-
-        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
-        mDecoration = new DividerGridItemDecoration(this);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST);
+//        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+//        mDecoration = new DividerGridItemDecoration(this);
         mRecyclerView.addItemDecoration(mDecoration);
+
         mRecyclerView.setAdapter(adapter);
+
+        adapter.setOnSimpleClickListener(new SimpleAdapter.OnSimpleClickListener() {
+            @Override
+            public void onSimpleClick(String data, int position) {
+                Toast.makeText(RecyclerViewActivity.this, "position:" + position + " " + data, Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -70,6 +83,9 @@ public class RecyclerViewActivity extends BaseActivity {
                 break;
             case R.id.menu_layout_manager:
                 changeLayoutManager();
+                break;
+            case R.id.menu_interactive:
+                Util.gotoNextActivity(this,InteractiveRecyclerView.class);
                 break;
         }
         return true;

@@ -1,4 +1,4 @@
-package com.timmy.highUI.recyclerview;
+package com.timmy.highUI.recyclerview.decoration;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -19,7 +19,6 @@ import com.timmy.R;
 public class DividerItemDecoration extends RecyclerView.ItemDecoration {
 
     private static final int[] ATTRS = new int[]{
-//            R.drawable.item_divide_decora
             android.R.attr.listDivider
     };
 

@@ -8,8 +8,8 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 import com.timmy.R;
-import com.timmy.highUI.recyclerview.DividerGridItemDecoration;
-import com.timmy.highUI.recyclerview.DividerItemDecoration;
+import com.timmy.highUI.recyclerview.decoration.DividerGridItemDecoration;
+import com.timmy.highUI.recyclerview.decoration.DividerItemDecoration;
 import com.timmy.base.BaseFragment;
 import com.timmy.home.model.MainModel;
 import com.timmy.home.model.MainTag;

@@ -1,10 +1,11 @@
-package com.timmy.highUI.recyclerview;
+package com.timmy.highUI.recyclerview.adapter;
 
 import android.content.Context;
 import android.support.annotation.IdRes;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -54,5 +55,15 @@ public class BaseViewHolder extends RecyclerView.ViewHolder {
         View view = findViewById(viewId);
         view.setVisibility(visibility);
         return this;
+    }
+
+    public BaseViewHolder setImageResource(int viewId, int imgResId) {
+        ImageView iv = getImageView(viewId);
+        iv.setImageResource(imgResId);
+        return this;
+    }
+
+    private ImageView getImageView(int viewId) {
+        return findViewById(viewId);
     }
 }

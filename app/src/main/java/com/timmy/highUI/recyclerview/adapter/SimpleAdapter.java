@@ -1,4 +1,4 @@
-package com.timmy.highUI.recyclerview;
+package com.timmy.highUI.recyclerview.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;

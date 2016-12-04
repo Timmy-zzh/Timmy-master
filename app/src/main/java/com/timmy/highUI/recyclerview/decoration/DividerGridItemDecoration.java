@@ -1,4 +1,4 @@
-package com.timmy.highUI.recyclerview;
+package com.timmy.highUI.recyclerview.decoration;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -65,11 +65,6 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
             mDivider.setBounds(left, top, right, bottom);
             mDivider.draw(c);
         }
-    }
-
-    @Override
-    public void getItemOffsets(Rect outRect, int itemPosition, RecyclerView parent) {
-        super.getItemOffsets(outRect, itemPosition, parent);
     }
 
     @Override
