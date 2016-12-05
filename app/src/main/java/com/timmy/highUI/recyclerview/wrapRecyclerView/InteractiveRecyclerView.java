@@ -3,6 +3,7 @@ package com.timmy.highUI.recyclerview.wrapRecyclerView;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 
 import com.timmy.R;
 import com.timmy.base.BaseActivity;
@@ -19,6 +20,7 @@ public class InteractiveRecyclerView extends BaseActivity {
     @Bind(R.id.rv_recycleView)
     RecyclerView mRecyclerView;
     private QQAdapter adapter;
+    private ItemTouchHelper touchHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,11 @@ public class InteractiveRecyclerView extends BaseActivity {
         adapter = new QQAdapter(this);
         adapter.setData(DataUtils.init());
         mRecyclerView.setAdapter(adapter);
+
+        //条目触摸辅助类
+        ItemTouchHelper.Callback callBack = new MyItemTouchHelpCallback();
+        touchHelper = new ItemTouchHelper(callBack);
+        touchHelper.attachToRecyclerView(mRecyclerView);
     }
 
 
