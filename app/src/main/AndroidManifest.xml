@@ -251,8 +251,15 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="RecyclerView使用"
             android:screenOrientation="portrait" />
-        <activity android:name=".highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity" />
-        <activity android:name=".highUI.recyclerview.wrapRecyclerView.InteractiveRecyclerView"></activity>
+        <activity
+            android:name=".highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity"
+            android:label="CollapsingToolbarLayout的使用" />
+        <activity
+            android:name=".highUI.recyclerview.wrapRecyclerView.InteractiveRecyclerView"
+            android:label="RecyclerView的item动画交互" />
+        <activity
+            android:name=".highUI.recyclerview.autoPoll.AutoPollRecyclerActivity"
+            android:label="自动轮询的ReyclerView" />
     </application>
 
 </manifest>

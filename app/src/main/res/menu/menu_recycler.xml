@@ -23,4 +23,10 @@
         android:orderInCategory="104"
         android:title="@string/interactive"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_auto_poll"
+        android:orderInCategory="99"
+        android:title="@string/auto_poll"
+        app:showAsAction="never" />
 </menu>

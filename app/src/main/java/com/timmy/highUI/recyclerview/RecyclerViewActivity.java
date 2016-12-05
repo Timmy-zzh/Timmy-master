@@ -12,6 +12,7 @@ import com.timmy.R;
 import com.timmy.Util;
 import com.timmy.base.BaseActivity;
 import com.timmy.highUI.recyclerview.adapter.SimpleAdapter;
+import com.timmy.highUI.recyclerview.autoPoll.AutoPollRecyclerActivity;
 import com.timmy.highUI.recyclerview.decoration.DividerGridItemDecoration;
 import com.timmy.highUI.recyclerview.decoration.DividerItemDecoration;
 import com.timmy.highUI.recyclerview.wrapRecyclerView.InteractiveRecyclerView;
@@ -86,6 +87,9 @@ public class RecyclerViewActivity extends BaseActivity {
                 break;
             case R.id.menu_interactive:
                 Util.gotoNextActivity(this,InteractiveRecyclerView.class);
+                break;
+            case R.id.menu_auto_poll:
+                Util.gotoNextActivity(this,AutoPollRecyclerActivity.class);
                 break;
         }
         return true;
