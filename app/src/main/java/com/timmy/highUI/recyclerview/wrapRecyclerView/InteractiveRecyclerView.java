@@ -38,7 +38,7 @@ public class InteractiveRecyclerView extends BaseActivity {
         mRecyclerView.setAdapter(adapter);
 
         //条目触摸辅助类
-        ItemTouchHelper.Callback callBack = new MyItemTouchHelpCallback();
+        ItemTouchHelper.Callback callBack = new MyItemTouchHelpCallback(adapter);
         touchHelper = new ItemTouchHelper(callBack);
         touchHelper.attachToRecyclerView(mRecyclerView);
     }
