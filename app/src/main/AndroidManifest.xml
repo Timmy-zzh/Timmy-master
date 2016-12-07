@@ -256,7 +256,7 @@
             android:label="CollapsingToolbarLayout的使用" />
         <activity
             android:name=".highUI.recyclerview.wrapRecyclerView.InteractiveRecyclerView"
-            android:label="RecyclerView的item动画交互" />
+            android:label="RecyclerView的item交互动画" />
         <activity
             android:name=".highUI.recyclerview.autoPoll.AutoPollRecyclerActivity"
             android:label="自动轮询的ReyclerView" />

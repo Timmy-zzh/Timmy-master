@@ -1,38 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:gravity="center_vertical"
+    android:layout_height="60dp"
+    android:layout_marginTop="8dp"
     android:background="#fff"
-    android:paddingLeft="5dip"
-    android:paddingRight="5dip"
-    android:paddingTop="8dip"
-    android:paddingBottom="8dip" >
-
-    <ImageView
-        android:id="@+id/iv_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/logo_1" />
+    android:gravity="center_vertical">
 
     <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginLeft="10dip" >
+        android:id="@+id/ll_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
         <RelativeLayout
-            android:layout_width="fill_parent"
+            android:id="@+id/rl_left_container"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical" >
+            android:padding="6dp">
+
+            <ImageView
+                android:id="@+id/iv_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/logo_1" />
 
             <TextView
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_logo"
                 android:text="动脑学院"
-                android:layout_alignParentLeft="true"
                 android:textColor="#000"
                 android:textSize="16sp" />
 
@@ -40,36 +38,30 @@
                 android:id="@+id/tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="14:31" 
                 android:layout_alignParentRight="true"
+                android:text="14:31"
                 android:textColor="#a6a6a6"
-                android:textSize="12sp"
-                android:layout_centerVertical="true"/>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginTop="5dip" >
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/tv_lastMsg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="晓敏老师:不对啊" 
-                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/tv_name"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@+id/iv_logo"
+                android:text="晓敏老师:不对啊"
                 android:textColor="#808080"
-                android:textSize="12sp"
-                android:layout_centerVertical="true"/>
+                android:textSize="12sp" />
 
-            <ImageView
-                android:id="@+id/iv_pop"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true" />
         </RelativeLayout>
-    </LinearLayout>
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/tv_delete"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:background="@color/green"
+            android:text="@string/delete"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</FrameLayout>

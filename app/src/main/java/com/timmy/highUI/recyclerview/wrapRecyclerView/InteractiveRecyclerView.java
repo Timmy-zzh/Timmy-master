@@ -15,7 +15,7 @@ import butterknife.ButterKnife;
  * RecyclerView的交互动画
  * ItemTouchHelper类的使用
  */
-public class InteractiveRecyclerView extends BaseActivity {
+public class InteractiveRecyclerView extends BaseActivity implements ItemDragListener {
 
     @Bind(R.id.rv_recycleView)
     RecyclerView mRecyclerView;
@@ -33,7 +33,7 @@ public class InteractiveRecyclerView extends BaseActivity {
 
     private void initRecyclerView() {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
-        adapter = new QQAdapter(this);
+        adapter = new QQAdapter(this,this);
         adapter.setData(DataUtils.init());
         mRecyclerView.setAdapter(adapter);
 
@@ -43,10 +43,18 @@ public class InteractiveRecyclerView extends BaseActivity {
         touchHelper.attachToRecyclerView(mRecyclerView);
     }
 
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
         ButterKnife.unbind(this);
+    }
+
+    /**
+     * Adapter中logo设置了拖拽监听,让ItemTouchHelper去处理
+     * @param viewHolder
+     */
+    @Override
+    public void onItemDrag(RecyclerView.ViewHolder viewHolder) {
+        touchHelper.startDrag(viewHolder);
     }
 }

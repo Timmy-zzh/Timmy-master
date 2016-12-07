@@ -13,7 +13,7 @@ public interface ItemTouchListener {
      * 左右滑动时，adapter回调该方法去删除该位置的item
      * @param position
      */
-    boolean onItemDismiss(int position);
+    boolean onItemRemove(int position);
 
     /**
      * 上下拖拽时回调方法，adpater将两个位置的item调换位置
