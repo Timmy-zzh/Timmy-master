@@ -7,15 +7,20 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
 import com.timmy.library.util.Logger;
 
+import static android.support.v7.widget.StaggeredGridLayoutManager.TAG;
+
 /**
  * RecyclerView网格布局的分割线－需要同时绘制水平和垂直方向的
+ * 网格布局包括Grid网格和瀑布流网格
  */
 public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
 
+    private String TAG = this.getClass().getSimpleName();
     private static final int[] ATTRS = new int[]{
             android.R.attr.listDivider
     };
@@ -35,7 +40,6 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
     }
 
     public void drawHorizontal(Canvas c, RecyclerView parent) {
-
         final int childCount = parent.getChildCount();
         for (int i = 0; i < childCount; i++) {
             final View child = parent.getChildAt(i);
@@ -51,7 +55,6 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
     }
 
     public void drawVertical(Canvas c, RecyclerView parent) {
-
         final int childCount = parent.getChildCount();
         for (int i = 0; i < childCount; i++) {
             final View child = parent.getChildAt(i);
@@ -72,47 +75,123 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
         //处理最后一列和最后一行的分割线问题-->不绘制出来
         int right = mDivider.getIntrinsicWidth();
         int bottom = mDivider.getIntrinsicHeight();
-        if (isLastColumn(parent, view)) {
-            right = 0;
-        }
-        if (isLastRow(parent, view)) {
+        int currChildPos = getCurrentChildPosition(parent, view);
+        int spanCount = getSpanCount(parent);
+        int itemCount = parent.getAdapter().getItemCount();
+        Logger.d(TAG, "currChildPos:" + currChildPos + " - spanCount:" + spanCount + " - itemCount:" + itemCount);
+        if (isLastRow(parent, currChildPos, spanCount, itemCount)) {
             bottom = 0;
+        }
+        if (isLastColumn(parent, currChildPos, spanCount, itemCount)) {
+            right = 0;
         }
         outRect.set(0, 0, right, bottom);
     }
 
-
-    //是否是最后一列
-    private boolean isLastColumn(RecyclerView parent, View view) {
+    /**
+     * 是否是最后一列
+     *
+     * @param parent
+     * @param currChildPos
+     * @param spanCount
+     * @param itemCount
+     * @return
+     */
+    private boolean isLastColumn(RecyclerView parent, int currChildPos, int spanCount, int itemCount) {
         RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
         if (layoutManager != null && layoutManager instanceof GridLayoutManager) {
-            GridLayoutManager gridLayoutManager = (GridLayoutManager) layoutManager;
-            int spanCount = gridLayoutManager.getSpanCount();//求出有多少列
-            //求出当前分割的item-和adapter的ItemCount
-            int itemCount = parent.getAdapter().getItemCount();
-            int childAdapterPosition = parent.getChildAdapterPosition(view)+1;
-            if (childAdapterPosition % spanCount == 0) {
+            if ((currChildPos + 1) % spanCount == 0) {
                 return true;
+            }
+        } else if (layoutManager != null && layoutManager instanceof StaggeredGridLayoutManager) {
+            //瀑布流也有两种方向
+            StaggeredGridLayoutManager staggeredGridLayoutManager = (StaggeredGridLayoutManager) layoutManager;
+            int orientation = staggeredGridLayoutManager.getOrientation();
+            if (orientation == StaggeredGridLayoutManager.VERTICAL) {//垂直
+                if ((currChildPos + 1) % spanCount == 0) {
+                    return true;
+                }
+            } else {
+                itemCount = itemCount - itemCount % spanCount;
+                if (spanCount >= itemCount) {
+                    return true;
+                }
             }
         }
         return false;
     }
 
-    //是否是最后一行
-    private boolean isLastRow(RecyclerView parent, View view) {
+    /**
+     * 是否是最后一行
+     *
+     * @param parent
+     * @param currChildPos
+     * @param spanCount
+     * @param itemCount
+     * @return
+     */
+    private boolean isLastRow(RecyclerView parent, int currChildPos, int spanCount, int itemCount) {
         RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
         if (layoutManager != null && layoutManager instanceof GridLayoutManager) {
-            GridLayoutManager gridLayoutManager = (GridLayoutManager) layoutManager;
-            int spanCount = gridLayoutManager.getSpanCount();//求出有多少列
-            //求出当前分割的item-和adapter的ItemCount
-            int itemCount = parent.getAdapter().getItemCount();
-            int childAdapterPosition = parent.getChildAdapterPosition(view);
-            int row = itemCount/spanCount;//一共有多少行
-            if (childAdapterPosition / spanCount >= row-1) {
+            itemCount = itemCount - itemCount % spanCount;
+            if (currChildPos >= itemCount) {
                 return true;
+            }
+
+//            currChildPos++;
+//            if (itemCount % spanCount == 0) {//最后一行填满
+//                int lastRow = itemCount / spanCount;//最后一行
+//                if (currChildPos > spanCount * (lastRow - 1)) {
+//                    return true;
+//                }
+//
+//            } else {//最后一行没填满
+//                int lastRow = itemCount / spanCount + 1;//最后一行
+//                if (currChildPos > spanCount * (lastRow - 1)) {
+//                    return true;
+//                }
+//            }
+        } else if (layoutManager != null && layoutManager instanceof StaggeredGridLayoutManager) {
+            //瀑布流也有两种方向
+            StaggeredGridLayoutManager staggeredGridLayoutManager = (StaggeredGridLayoutManager) layoutManager;
+            int orientation = staggeredGridLayoutManager.getOrientation();
+            if (orientation == StaggeredGridLayoutManager.VERTICAL) {//垂直
+
+                itemCount = itemCount - itemCount % spanCount;
+                if (currChildPos >= itemCount) {
+                    return true;
+                }
+            } else {
+                if (currChildPos % spanCount == 0) {
+                    return true;
+                }
             }
         }
         return false;
+    }
+
+    /**
+     * 获取当前item在recycler的adapter的位置
+     *
+     * @param parent
+     * @param view
+     * @return
+     */
+    private int getCurrentChildPosition(RecyclerView parent, View view) {
+        return parent.getChildAdapterPosition(view);
+    }
+
+    private int getSpanCount(RecyclerView parent) {
+        int spanCount = -1;
+        RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
+        if (layoutManager instanceof GridLayoutManager) {
+            GridLayoutManager gridLayoutManager = (GridLayoutManager) layoutManager;
+            spanCount = gridLayoutManager.getSpanCount();
+        } else if (layoutManager instanceof StaggeredGridLayoutManager) {
+            StaggeredGridLayoutManager staggeredGridLayoutManager = (StaggeredGridLayoutManager) layoutManager;
+            spanCount = staggeredGridLayoutManager.getSpanCount();
+        }
+        return spanCount;
     }
 }
 

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -19,6 +20,7 @@ import com.timmy.highUI.recyclerview.wrapRecyclerView.InteractiveRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * RecyclerView的使用:包括 动画方式添加条目,删除条目,
@@ -30,8 +32,10 @@ public class RecyclerViewActivity extends BaseActivity {
 
     private RecyclerView mRecyclerView;
     private SimpleAdapter adapter;
-    private boolean isGrid = true;
     private RecyclerView.ItemDecoration mDecoration;
+    int currLayout = 1;
+    int layoutTag = 1;
+    private String str = "群殴饿哦清洁燃料骄傲了对方尽快大u分配到了房间夸张了点OPADOIFPJDLF 啊地方看";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +45,10 @@ public class RecyclerViewActivity extends BaseActivity {
 
         mRecyclerView = (RecyclerView) findViewById(R.id.rv_recycleView);
 
+        Random random = new Random();
         List<String> lists = new ArrayList<>();
-        for (int i = 0; i < 61; i++) {
-            lists.add("Item " + i);
+        for (int i = 1; i <= 30; i++) {
+            lists.add("Item " + i + "-" + str.substring(random.nextInt(str.length())));
         }
 
         //recyclerView的使用步骤:
@@ -86,10 +91,10 @@ public class RecyclerViewActivity extends BaseActivity {
                 changeLayoutManager();
                 break;
             case R.id.menu_interactive:
-                Util.gotoNextActivity(this,InteractiveRecyclerView.class);
+                Util.gotoNextActivity(this, InteractiveRecyclerView.class);
                 break;
             case R.id.menu_auto_poll:
-                Util.gotoNextActivity(this,AutoPollRecyclerActivity.class);
+                Util.gotoNextActivity(this, AutoPollRecyclerActivity.class);
                 break;
         }
         return true;
@@ -97,15 +102,25 @@ public class RecyclerViewActivity extends BaseActivity {
 
     private void changeLayoutManager() {
         mRecyclerView.removeItemDecoration(mDecoration);
-        if (!isGrid) {
-            mDecoration = new DividerGridItemDecoration(this);
-            mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
-        } else {
-            mDecoration = new DividerItemDecoration(this,DividerItemDecoration.VERTICAL_LIST);
-            mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        layoutTag++;
+        currLayout = layoutTag % 3;
+        switch (currLayout) {
+            case 1:
+                mDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST);
+                mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+                break;
+            case 2:
+                mDecoration = new DividerGridItemDecoration(this);
+                mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+                break;
+            case 0:
+                mDecoration = new DividerGridItemDecoration(this);
+                mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+                break;
         }
         mRecyclerView.addItemDecoration(mDecoration);
-        isGrid = !isGrid;
+        adapter.notifyDataSetChanged();
     }
 
     private void removeItem() {
