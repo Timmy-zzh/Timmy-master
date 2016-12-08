@@ -66,10 +66,10 @@ public class MainPageFragment extends BaseFragment {
     private void initRecycleView() {
         switch (mPage) {
             case 1:
-//                layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-//                mDivider = new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL_LIST);
-                layoutManager = new GridLayoutManager(getActivity(), 2);
-                mDivider = new DividerGridItemDecoration(getContext());
+                layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+                mDivider = new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL_LIST);
+//                layoutManager = new GridLayoutManager(getActivity(), 2);
+//                mDivider = new DividerGridItemDecoration(getContext());
 
                 break;
             case 2:
@@ -82,6 +82,7 @@ public class MainPageFragment extends BaseFragment {
                 break;
         }
         mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.removeItemDecoration(mDivider);
         mRecyclerView.addItemDecoration(mDivider);
         adapter = new MainContentAdapter(getActivity());
         mRecyclerView.setAdapter(adapter);
@@ -93,9 +94,9 @@ public class MainPageFragment extends BaseFragment {
                 pageListOne.add(new MainModel(MainTag.TAG_QQ_ZONE_STRETCH, "QQ空间可拉伸头部ListView控件"));
                 pageListOne.add(new MainModel(MainTag.TAG_RECYCLER_VIEW, "RecyclerView使用"));
                 pageListOne.add(new MainModel(MainTag.TAG_COLLAPSING_TOOLBAR_LAYOUT, "CollapsingToolbarLayout使用"));
-
                 pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义控件--支付宝咻一咻"));
-                pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(二)--水波纹效果"));
+
+
                 adapter.setData(pageListOne);
                 break;
             case 2:
@@ -104,12 +105,12 @@ public class MainPageFragment extends BaseFragment {
                 pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "高仿win8效果的界面展示"));
                 pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "Android自定义ViewGroup实现竖向引导界面"));
                 pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(一)--开关按钮"));
-//                pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(二)--水波纹效果"));
-//                pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "自定义ViewGroup(三)--实现ViewPager效果"));
-//                pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(四)--图片适配"));
-//                pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "ViewPager指示器"));
-//                pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "城市列表选择"));
-//                pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "城市列表选择--带热门城市"));
+                pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(二)--水波纹效果"));
+                pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "自定义ViewGroup(三)--实现ViewPager效果"));
+                pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(四)--图片适配"));
+                pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "ViewPager指示器"));
+                pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "城市列表选择"));
+                pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "城市列表选择--带热门城市"));
 //                pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(五)--随机数验证码"));
 //                pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(六)--带文字的图片"));
 //                pageListTwo.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(七)--圆环交替"));

@@ -47,7 +47,7 @@ public class RecyclerViewActivity extends BaseActivity {
 
         Random random = new Random();
         List<String> lists = new ArrayList<>();
-        for (int i = 1; i <= 30; i++) {
+        for (int i = 1; i <= 9; i++) {
             lists.add("Item " + i + "-" + str.substring(random.nextInt(str.length())));
         }
 

@@ -133,24 +133,18 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
     private boolean isLastRow(RecyclerView parent, int currChildPos, int spanCount, int itemCount) {
         RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
         if (layoutManager != null && layoutManager instanceof GridLayoutManager) {
-            itemCount = itemCount - itemCount % spanCount;
-            if (currChildPos >= itemCount) {
-                return true;
+            if (itemCount%spanCount != 0) {
+                itemCount = itemCount - itemCount % spanCount;
+                if (currChildPos >= itemCount) {//这种判断方式在item最后一行未填满的情况下可行
+                    return true;
+                }
+            }else{//最后一行填满的情况处理
+                itemCount = itemCount - spanCount;
+                if (currChildPos >= itemCount) {
+                    return true;
+                }
             }
 
-//            currChildPos++;
-//            if (itemCount % spanCount == 0) {//最后一行填满
-//                int lastRow = itemCount / spanCount;//最后一行
-//                if (currChildPos > spanCount * (lastRow - 1)) {
-//                    return true;
-//                }
-//
-//            } else {//最后一行没填满
-//                int lastRow = itemCount / spanCount + 1;//最后一行
-//                if (currChildPos > spanCount * (lastRow - 1)) {
-//                    return true;
-//                }
-//            }
         } else if (layoutManager != null && layoutManager instanceof StaggeredGridLayoutManager) {
             //瀑布流也有两种方向
             StaggeredGridLayoutManager staggeredGridLayoutManager = (StaggeredGridLayoutManager) layoutManager;
