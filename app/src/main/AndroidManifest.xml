@@ -260,6 +260,9 @@
         <activity
             android:name=".highUI.recyclerview.autoPoll.AutoPollRecyclerActivity"
             android:label="自动轮询的ReyclerView" />
+        <activity
+            android:name=".highUI.slideslip.DrawerLayoutActivity"
+            android:label="MD侧滑" />
     </application>
 
 </manifest>

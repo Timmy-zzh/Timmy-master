@@ -15,4 +15,6 @@
     <string name="interactive">交互ItemTouchHelper</string>
     <string name="auto_poll">自动轮询</string>
     <string name="delete">删除</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
 </resources>

@@ -10,4 +10,5 @@ public class MainTag {
     public static final int TAG_QQ_ZONE_STRETCH = 1 << 1;
     public static final int TAG_RECYCLER_VIEW = 1 << 2;
     public static final int TAG_COLLAPSING_TOOLBAR_LAYOUT = 1 << 3;
+    public static final int TAG_SLIDESLIP = 1 << 4;
 }

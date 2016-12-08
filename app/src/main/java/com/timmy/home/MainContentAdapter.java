@@ -1,7 +1,6 @@
 package com.timmy.home;
 
 import android.content.Context;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +11,10 @@ import com.timmy.Util;
 import com.timmy.advance.customView.XiuViewActivity;
 import com.timmy.highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity;
 import com.timmy.highUI.recyclerview.RecyclerViewActivity;
+import com.timmy.highUI.slideslip.DrawerLayoutActivity;
 import com.timmy.highUI.stretchList.StretchListActivity;
 import com.timmy.home.model.MainModel;
 import com.timmy.home.model.MainTag;
-import com.timmy.library.util.Toast;
 
 import java.util.List;
 
@@ -49,19 +48,22 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                android.widget.Toast.makeText(context,dataList.get(position).getDesc(), android.widget.Toast.LENGTH_SHORT).show();
-                switch (model.getTag()){
+                android.widget.Toast.makeText(context, dataList.get(position).getDesc(), android.widget.Toast.LENGTH_SHORT).show();
+                switch (model.getTag()) {
                     case MainTag.TAG_XIUXIU:
-                        Util.gotoNextActivity(context,XiuViewActivity.class);
+                        Util.gotoNextActivity(context, XiuViewActivity.class);
                         break;
                     case MainTag.TAG_QQ_ZONE_STRETCH:
-                        Util.gotoNextActivity(context,StretchListActivity.class);
+                        Util.gotoNextActivity(context, StretchListActivity.class);
                         break;
                     case MainTag.TAG_RECYCLER_VIEW:
-                        Util.gotoNextActivity(context,RecyclerViewActivity.class);
+                        Util.gotoNextActivity(context, RecyclerViewActivity.class);
                         break;
                     case MainTag.TAG_COLLAPSING_TOOLBAR_LAYOUT:
-                        Util.gotoNextActivity(context,CollapsingToolbarLayoutActivity.class);
+                        Util.gotoNextActivity(context, CollapsingToolbarLayoutActivity.class);
+                        break;
+                    case MainTag.TAG_SLIDESLIP:
+                        Util.gotoNextActivity(context, DrawerLayoutActivity.class);
                         break;
 
                 }
