@@ -35,7 +35,7 @@ public class RecyclerViewActivity extends BaseActivity {
     private RecyclerView.ItemDecoration mDecoration;
     int currLayout = 1;
     int layoutTag = 1;
-    private String str = "群殴饿哦清洁燃料骄傲了对方尽快大u分配到了房间夸张了点OPADOIFPJDLF 啊地方看";
+//    private String str = "填充内容";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +47,8 @@ public class RecyclerViewActivity extends BaseActivity {
 
         Random random = new Random();
         List<String> lists = new ArrayList<>();
-        for (int i = 1; i <= 9; i++) {
-            lists.add("Item " + i + "-" + str.substring(random.nextInt(str.length())));
+        for (int i = 1; i <= 8; i++) {
+            lists.add("Item " + i);// + "-" + str.substring(random.nextInt(str.length())));
         }
 
         //recyclerView的使用步骤:
@@ -58,6 +58,7 @@ public class RecyclerViewActivity extends BaseActivity {
         adapter = new SimpleAdapter(this, lists);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST);
+
 //        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
 //        mDecoration = new DividerGridItemDecoration(this);
         mRecyclerView.addItemDecoration(mDecoration);
@@ -107,20 +108,21 @@ public class RecyclerViewActivity extends BaseActivity {
         currLayout = layoutTag % 3;
         switch (currLayout) {
             case 1:
-                mDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST);
                 mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+                mDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL_LIST);
                 break;
             case 2:
-                mDecoration = new DividerGridItemDecoration(this);
                 mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+                mDecoration = new DividerGridItemDecoration(this);
                 break;
             case 0:
-                mDecoration = new DividerGridItemDecoration(this);
                 mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+                mDecoration = new DividerGridItemDecoration(this);
                 break;
         }
         mRecyclerView.addItemDecoration(mDecoration);
-        adapter.notifyDataSetChanged();
+        mRecyclerView.requestLayout();
+//        adapter.notifyDataSetChanged();
     }
 
     private void removeItem() {

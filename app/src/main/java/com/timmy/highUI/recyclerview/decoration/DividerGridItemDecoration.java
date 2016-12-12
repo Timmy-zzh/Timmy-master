@@ -42,10 +42,13 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
     public void drawHorizontal(Canvas c, RecyclerView parent) {
         final int childCount = parent.getChildCount();
         for (int i = 0; i < childCount; i++) {
+            if(isLastRow(parent,i,getSpanCount(parent),childCount))
+                continue;
+
             final View child = parent.getChildAt(i);
             final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
                     .getLayoutParams();
-            final int left = child.getLeft() + params.leftMargin;
+            final int left = child.getLeft() - params.leftMargin;
             final int right = child.getRight() + params.rightMargin;
             final int top = child.getBottom() + params.bottomMargin;
             final int bottom = top + mDivider.getIntrinsicHeight();
@@ -58,10 +61,13 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
         final int childCount = parent.getChildCount();
         for (int i = 0; i < childCount; i++) {
             final View child = parent.getChildAt(i);
+            if(isLastColumn(parent,i,getSpanCount(parent),childCount))
+                continue;
+
             final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
                     .getLayoutParams();
 
-            final int top = child.getTop() + params.topMargin;
+            final int top = child.getTop() - params.topMargin;
             final int bottom = child.getBottom() + params.bottomMargin;
             final int left = child.getRight() + params.rightMargin;
             final int right = left + mDivider.getIntrinsicWidth();
@@ -75,16 +81,17 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
         //处理最后一列和最后一行的分割线问题-->不绘制出来
         int right = mDivider.getIntrinsicWidth();
         int bottom = mDivider.getIntrinsicHeight();
-        int currChildPos = getCurrentChildPosition(parent, view);
-        int spanCount = getSpanCount(parent);
-        int itemCount = parent.getAdapter().getItemCount();
-        Logger.d(TAG, "currChildPos:" + currChildPos + " - spanCount:" + spanCount + " - itemCount:" + itemCount);
-        if (isLastRow(parent, currChildPos, spanCount, itemCount)) {
-            bottom = 0;
-        }
-        if (isLastColumn(parent, currChildPos, spanCount, itemCount)) {
-            right = 0;
-        }
+//        int currChildPos = getCurrentChildPosition(parent, view);
+//        int spanCount = getSpanCount(parent);
+//        int itemCount = parent.getAdapter().getItemCount();
+//        Logger.d(TAG, "currChildPos:" + currChildPos + " - spanCount:" + spanCount + " - itemCount:" + itemCount);
+//        if (isLastRow(parent, currChildPos, spanCount, itemCount)) {
+//            bottom = 0;
+//        }
+//        if (isLastColumn(parent, currChildPos, spanCount, itemCount)) {
+//            right = 0;
+//        }
+//        Logger.d(TAG, "getItemOffsets:" + currChildPos + " - right:" + right + " - bottom:" + bottom);
         outRect.set(0, 0, right, bottom);
     }
 
@@ -121,6 +128,7 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
         return false;
     }
 
+
     /**
      * 是否是最后一行
      *
@@ -131,37 +139,49 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
      * @return
      */
     private boolean isLastRow(RecyclerView parent, int currChildPos, int spanCount, int itemCount) {
+        boolean result = false;
         RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
         if (layoutManager != null && layoutManager instanceof GridLayoutManager) {
             if (itemCount%spanCount != 0) {
                 itemCount = itemCount - itemCount % spanCount;
                 if (currChildPos >= itemCount) {//这种判断方式在item最后一行未填满的情况下可行
-                    return true;
+                    Logger.d(TAG,"最后一行:"+currChildPos);
+                    result =  true;
                 }
             }else{//最后一行填满的情况处理
                 itemCount = itemCount - spanCount;
                 if (currChildPos >= itemCount) {
-                    return true;
+                    Logger.d(TAG,"最后一行-----"+currChildPos);
+                    result = true;
                 }
             }
-
         } else if (layoutManager != null && layoutManager instanceof StaggeredGridLayoutManager) {
             //瀑布流也有两种方向
             StaggeredGridLayoutManager staggeredGridLayoutManager = (StaggeredGridLayoutManager) layoutManager;
             int orientation = staggeredGridLayoutManager.getOrientation();
             if (orientation == StaggeredGridLayoutManager.VERTICAL) {//垂直
 
-                itemCount = itemCount - itemCount % spanCount;
-                if (currChildPos >= itemCount) {
-                    return true;
+                if (itemCount%spanCount != 0) {
+                    itemCount = itemCount - itemCount % spanCount;
+                    if (currChildPos >= itemCount) {//这种判断方式在item最后一行未填满的情况下可行
+                        Logger.d(TAG,"最后一行:"+currChildPos);
+                        result =  true;
+                    }
+                }else{//最后一行填满的情况处理
+                    itemCount = itemCount - spanCount;
+                    if (currChildPos >= itemCount) {
+                        Logger.d(TAG,"最后一行-----"+currChildPos);
+                        result = true;
+                    }
                 }
             } else {
                 if (currChildPos % spanCount == 0) {
-                    return true;
+                    result =  true;
                 }
             }
         }
-        return false;
+        Logger.d(TAG,"Result:"+result);
+        return result;
     }
 
     /**

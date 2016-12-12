@@ -4,6 +4,11 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
 
+//    aaptOptions{
+//        cruncherEnabled = false
+//        useNewCruncher = fasle
+//    }
+
     defaultConfig {
         applicationId "com.timmy"
         minSdkVersion 11

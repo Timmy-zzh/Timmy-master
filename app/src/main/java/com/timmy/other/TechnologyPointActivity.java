@@ -13,6 +13,7 @@ import com.timmy.technologypoint.CameraPictureActivity;
 import com.timmy.technologypoint.ClipToOutlineActivity;
 import com.timmy.technologypoint.DialogActivity;
 import com.timmy.technologypoint.GlideImageActivity;
+import com.timmy.technologypoint.Picture9Activity;
 import com.timmy.technologypoint.RecycleHeaderViewActivity;
 import com.timmy.technologypoint.TimmyHealthActivity;
 import com.timmy.technologypoint.ToolBarActivity;
@@ -27,8 +28,8 @@ import butterknife.OnClick;
  */
 public class TechnologyPointActivity extends BaseActivity {
 
-    @Bind(R.id.toolbar)
-    Toolbar toolbar;
+//    @Bind(R.id.toolbar)
+//    Toolbar toolbar;
     @Bind(R.id.btn_auto_images)
     Button btn_autoImg;
 
@@ -37,13 +38,14 @@ public class TechnologyPointActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_technology_point);
         ButterKnife.bind(this);
-        initToolBar();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        initToolBar();
     }
 
     @OnClick({R.id.btn_auto_images, R.id.btn_camera_picture,
             R.id.btn_animation, R.id.btn_glide, R.id.btn_clip,
             R.id.btn_dialog, R.id.btn_view, R.id.btn_recycleview,
-            R.id.btn_toolbar,R.id.btn_coordi})
+            R.id.btn_toolbar,R.id.btn_coordi,R.id.btn_9pic})
     public void technology(View v) {
         switch (v.getId()) {
             case R.id.btn_auto_images:
@@ -75,6 +77,9 @@ public class TechnologyPointActivity extends BaseActivity {
                 break;
             case R.id.btn_coordi:
 
+                break;
+            case R.id.btn_9pic:
+                openActivity(Picture9Activity.class);
                 break;
             default:
                 break;

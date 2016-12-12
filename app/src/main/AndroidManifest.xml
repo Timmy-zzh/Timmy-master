@@ -34,7 +34,8 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Android技术点"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light" />
         <activity
             android:name=".technologypoint.AutoPlayPicturesActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -263,6 +264,8 @@
         <activity
             android:name=".highUI.slideslip.DrawerLayoutActivity"
             android:label="MD侧滑" />
+        <activity android:name=".technologypoint.Picture9Activity"
+            android:label=".9图片处理"/>
     </application>
 
 </manifest>
