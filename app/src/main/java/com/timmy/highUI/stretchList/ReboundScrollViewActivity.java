@@ -1,10 +1,11 @@
-package com.timmy.advance.customViewGroup;
+package com.timmy.highUI.stretchList;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.timmy.R;
+import com.timmy.advance.customViewGroup.MyListView;
 import com.timmy.base.BaseActivity;
 
 import java.util.Arrays;
@@ -28,9 +29,7 @@ public class ReboundScrollViewActivity extends BaseActivity {
             }
         });
 
-        String[] strArr = new String[]{"Hello", "World", "Welcome", "Java",
-                "Android", "Lucene", "C++", "C#", "HTML", "Welcome", "Java",
-                "Android", "Lucene", "C++", "C#", "HTML"};
+        String[] strArr = new String[]{"Hello", "World", "Welcome", "Java"};
         List<String> list = Arrays.asList(strArr);
         listView.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, strArr));
 

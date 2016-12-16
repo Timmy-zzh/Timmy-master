@@ -14,26 +14,26 @@ import java.util.Collections;
  * Created by admin on 2016/12/4.
  */
 
-public class QQAdapter extends BaseRecyclerViewAdapter<QQMessage> implements ItemTouchListener {
+public class InteractiveAdapter extends BaseRecyclerViewAdapter<String> implements ItemTouchListener {
 
     private final ItemDragListener mDragListener;
 
-    public QQAdapter(Context context, ItemDragListener listener) {
+    public InteractiveAdapter(Context context, ItemDragListener listener) {
         super(context);
         this.mDragListener = listener;
     }
 
     @Override
     protected int inflaterItemLayout(int viewType) {
-        return R.layout.item_qq;
+        return R.layout.item_interactive;
     }
 
     @Override
-    protected void bindData(final BaseViewHolder holder, int position, QQMessage qqMessage) {
-        holder.setImageResource(R.id.iv_logo, qqMessage.getLogo());
-        holder.setText(R.id.tv_name, qqMessage.getName());
-        holder.setText(R.id.tv_lastMsg, qqMessage.getLastMsg());
-        holder.setText(R.id.tv_time, qqMessage.getTime());
+    protected void bindData(final BaseViewHolder holder, int position, String str) {
+//        holder.setImageResource(R.id.iv_logo, qqMessage.getLogo());
+        holder.setText(R.id.tv_name, str);
+//        holder.setText(R.id.tv_lastMsg, qqMessage.getLastMsg());
+//        holder.setText(R.id.tv_time, qqMessage.getTime());
 
         //设置logo的拖拽监听
         holder.getView(R.id.iv_logo).setOnTouchListener(new View.OnTouchListener() {
@@ -50,7 +50,7 @@ public class QQAdapter extends BaseRecyclerViewAdapter<QQMessage> implements Ite
     }
 
     @Override
-    protected void onItemClickListener(View itemView, int position, QQMessage qqMessage) {
+    protected void onItemClickListener(View itemView, int position, String str) {
 
     }
 

@@ -14,7 +14,7 @@
         <item name="android:actionMenuTextColor">@android:color/black</item>
         <!--window background-->
         <item name="android:windowBackground">@android:color/white</item>
-        <item name="android:listDivider">@drawable/item_divide_decora</item>
+        <!--<item name="android:listDivider">@drawable/item_divide_decora</item>-->
     </style>
 
     <!--普通应用主题-->

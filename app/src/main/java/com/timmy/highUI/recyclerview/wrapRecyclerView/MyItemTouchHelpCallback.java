@@ -136,7 +136,7 @@ public class MyItemTouchHelpCallback extends ItemTouchHelper.Callback {
         Logger.d("actionState:" + actionState);
         //当item拽或滑动时改变item的背景-->放开时,item背景恢复
         if (actionState != ItemTouchHelper.ACTION_STATE_IDLE) {
-            viewHolder.itemView.setBackgroundColor(Color.RED);
+            viewHolder.itemView.setBackgroundColor(Color.GRAY);
         }
         super.onSelectedChanged(viewHolder, actionState);
     }

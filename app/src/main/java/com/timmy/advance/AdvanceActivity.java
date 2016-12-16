@@ -27,7 +27,7 @@ import com.timmy.advance.customViewGroup.CustomViewPagerActivity;
 import com.timmy.advance.customViewGroup.DragViewActivity;
 import com.timmy.advance.customViewGroup.FlowLayoutActivity;
 import com.timmy.advance.customViewGroup.GestureLockViewActivity;
-import com.timmy.advance.customViewGroup.ReboundScrollViewActivity;
+import com.timmy.highUI.stretchList.ReboundScrollViewActivity;
 import com.timmy.advance.dialog.DialogActivity;
 import com.timmy.advance.motionEvent.MotionEventActivity;
 import com.timmy.advance.screenAdapter.ImageAdapterActivity;

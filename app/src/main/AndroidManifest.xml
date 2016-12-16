@@ -183,7 +183,7 @@
             android:label="自定义ViewGroup--圆形菜单"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".advance.customViewGroup.ReboundScrollViewActivity"
+            android:name=".highUI.stretchList.ReboundScrollViewActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="反弹ScrollView"
             android:screenOrientation="portrait" />
@@ -257,7 +257,7 @@
             android:label="CollapsingToolbarLayout的使用" />
         <activity
             android:name=".highUI.recyclerview.wrapRecyclerView.InteractiveRecyclerView"
-            android:label="RecyclerView的item交互动画" />
+            android:label="RecyclerView条目交互特效" />
         <activity
             android:name=".highUI.recyclerview.autoPoll.AutoPollRecyclerActivity"
             android:label="自动轮询的ReyclerView" />

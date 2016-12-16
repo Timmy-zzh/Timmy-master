@@ -23,14 +23,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
-                android:src="@mipmap/logo_1" />
+                android:src="@mipmap/ic_launcher" />
 
             <TextView
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@+id/iv_logo"
-                android:text="动脑学院"
+                android:text="name"
                 android:textColor="#000"
                 android:textSize="16sp" />
 
@@ -50,7 +50,7 @@
                 android:layout_below="@+id/tv_name"
                 android:layout_marginTop="10dp"
                 android:layout_toRightOf="@+id/iv_logo"
-                android:text="晓敏老师:不对啊"
+                android:text="type"
                 android:textColor="#808080"
                 android:textSize="12sp" />
 

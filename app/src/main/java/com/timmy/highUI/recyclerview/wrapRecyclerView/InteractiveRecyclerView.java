@@ -8,6 +8,9 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import com.timmy.R;
 import com.timmy.base.BaseActivity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -19,8 +22,9 @@ public class InteractiveRecyclerView extends BaseActivity implements ItemDragLis
 
     @Bind(R.id.rv_recycleView)
     RecyclerView mRecyclerView;
-    private QQAdapter adapter;
+    private InteractiveAdapter adapter;
     private ItemTouchHelper touchHelper;
+    private List<String> datas;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +36,14 @@ public class InteractiveRecyclerView extends BaseActivity implements ItemDragLis
     }
 
     private void initRecyclerView() {
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
-        adapter = new QQAdapter(this,this);
-        adapter.setData(DataUtils.init());
+        datas = new ArrayList<>();
+        for (int i = 0; i < 21; ) {
+            datas.add("Item" + ++i);
+        }
+
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        adapter = new InteractiveAdapter(this, this);
+        adapter.setData(datas);
         mRecyclerView.setAdapter(adapter);
 
         //条目触摸辅助类
@@ -51,6 +60,7 @@ public class InteractiveRecyclerView extends BaseActivity implements ItemDragLis
 
     /**
      * Adapter中logo设置了拖拽监听,让ItemTouchHelper去处理
+     *
      * @param viewHolder
      */
     @Override

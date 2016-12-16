@@ -52,7 +52,7 @@ public class StretchListView extends ListView {
      */
     @Override
     protected boolean overScrollBy(int deltaX, int deltaY, int scrollX, int scrollY, int scrollRangeX, int scrollRangeY, int maxOverScrollX, int maxOverScrollY, boolean isTouchEvent) {
-//        Log.d(TAG,"overScrollBy-deltaY:"+deltaY);//主要监听y方向滑动距离
+        Log.d(TAG,"overScrollBy-deltaY:"+deltaY);//主要监听y方向滑动距离
         if (deltaY < 0) {//表示向下滑动过度－》头部的美女图片高度改变->并进行界面绘制
             ViewGroup.LayoutParams params = mImageView.getLayoutParams();
             params.height = params.height - deltaY;

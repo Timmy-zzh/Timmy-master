@@ -1,4 +1,4 @@
-package com.timmy.advance.customViewGroup;
+package com.timmy.highUI.stretchList;
 
 import android.content.Context;
 import android.graphics.Rect;

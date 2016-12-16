@@ -39,10 +39,15 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
         drawHorizontal(c, parent);
     }
 
+    /**
+     * 水平方向分割线
+     * @param c
+     * @param parent
+     */
     public void drawHorizontal(Canvas c, RecyclerView parent) {
         final int childCount = parent.getChildCount();
         for (int i = 0; i < childCount; i++) {
-            if(isLastRow(parent,i,getSpanCount(parent),childCount))
+            if (isLastRow(parent, i, getSpanCount(parent), childCount))//最后一行不绘制
                 continue;
 
             final View child = parent.getChildAt(i);
@@ -61,7 +66,7 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
         final int childCount = parent.getChildCount();
         for (int i = 0; i < childCount; i++) {
             final View child = parent.getChildAt(i);
-            if(isLastColumn(parent,i,getSpanCount(parent),childCount))
+            if (isLastColumn(parent, i, getSpanCount(parent), childCount))//最后一列不绘制
                 continue;
 
             final RecyclerView.LayoutParams params = (RecyclerView.LayoutParams) child
@@ -78,7 +83,6 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
 
     @Override
     public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
-        //处理最后一列和最后一行的分割线问题-->不绘制出来
         int right = mDivider.getIntrinsicWidth();
         int bottom = mDivider.getIntrinsicHeight();
 //        int currChildPos = getCurrentChildPosition(parent, view);
@@ -119,9 +123,16 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
                     return true;
                 }
             } else {
-                itemCount = itemCount - itemCount % spanCount;
-                if (spanCount >= itemCount) {
-                    return true;
+                if (itemCount % spanCount != 0) {
+                    itemCount = itemCount - itemCount % spanCount;
+                    if (currChildPos >= itemCount) {//这种判断方式在item最后一行未填满的情况下可行
+                        return true;
+                    }
+                } else {//最后一行填满的情况处理
+                    itemCount = itemCount - spanCount;
+                    if (currChildPos >= itemCount) {
+                        return true;
+                    }
                 }
             }
         }
@@ -142,17 +153,15 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
         boolean result = false;
         RecyclerView.LayoutManager layoutManager = parent.getLayoutManager();
         if (layoutManager != null && layoutManager instanceof GridLayoutManager) {
-            if (itemCount%spanCount != 0) {
+            if (itemCount % spanCount != 0) {
                 itemCount = itemCount - itemCount % spanCount;
                 if (currChildPos >= itemCount) {//这种判断方式在item最后一行未填满的情况下可行
-                    Logger.d(TAG,"最后一行:"+currChildPos);
-                    result =  true;
+                    return true;
                 }
-            }else{//最后一行填满的情况处理
+            } else {//最后一行填满的情况处理
                 itemCount = itemCount - spanCount;
                 if (currChildPos >= itemCount) {
-                    Logger.d(TAG,"最后一行-----"+currChildPos);
-                    result = true;
+                    return true;
                 }
             }
         } else if (layoutManager != null && layoutManager instanceof StaggeredGridLayoutManager) {
@@ -161,27 +170,24 @@ public class DividerGridItemDecoration extends RecyclerView.ItemDecoration {
             int orientation = staggeredGridLayoutManager.getOrientation();
             if (orientation == StaggeredGridLayoutManager.VERTICAL) {//垂直
 
-                if (itemCount%spanCount != 0) {
+                if (itemCount % spanCount != 0) {
                     itemCount = itemCount - itemCount % spanCount;
                     if (currChildPos >= itemCount) {//这种判断方式在item最后一行未填满的情况下可行
-                        Logger.d(TAG,"最后一行:"+currChildPos);
-                        result =  true;
+                        return true;
                     }
-                }else{//最后一行填满的情况处理
+                } else {//最后一行填满的情况处理
                     itemCount = itemCount - spanCount;
                     if (currChildPos >= itemCount) {
-                        Logger.d(TAG,"最后一行-----"+currChildPos);
-                        result = true;
+                        return true;
                     }
                 }
             } else {
                 if (currChildPos % spanCount == 0) {
-                    result =  true;
+                    return true;
                 }
             }
         }
-        Logger.d(TAG,"Result:"+result);
-        return result;
+        return false;
     }
 
     /**
