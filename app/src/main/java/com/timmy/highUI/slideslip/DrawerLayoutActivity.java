@@ -11,8 +11,6 @@ import android.view.View;
 
 import com.timmy.R;
 import com.timmy.Util;
-import com.timmy.highUI.recyclerview.autoPoll.AutoPollRecyclerActivity;
-import com.timmy.highUI.recyclerview.wrapRecyclerView.InteractiveRecyclerView;
 import com.timmy.library.util.Logger;
 
 public class DrawerLayoutActivity extends AppCompatActivity {
@@ -50,9 +48,19 @@ public class DrawerLayoutActivity extends AppCompatActivity {
             public void onDrawerSlide(View drawerView, float slideOffset) {
                 View content = drawerLayout.findViewById(R.id.content_layout);
                 Logger.d("slideOffset--", slideOffset + "--");
+                Logger.d("slideOffset--",slideOffset+"--");// 0~1
+                View drawer = drawerView;
+                float leftScale = (float) (0.7+0.3*slideOffset); //0.7-1
+                float rightScale = (float) (1 - slideOffset*0.3);// 1-0.7
 
+                drawer.setScaleX(leftScale);
+                drawer.setScaleY(leftScale);
+
+                content.setScaleX(rightScale);
+                content.setScaleY(rightScale);
             }
         });
+
 
         //
 //        drawerLayout.setDrawerShadow();
