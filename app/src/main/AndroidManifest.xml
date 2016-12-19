@@ -264,8 +264,16 @@
         <activity
             android:name=".highUI.slideslip.DrawerLayoutActivity"
             android:label="MD侧滑" />
-        <activity android:name=".technologypoint.Picture9Activity"
-            android:label=".9图片处理"/>
+        <activity
+            android:name=".technologypoint.Picture9Activity"
+            android:label=".9图片处理" />
+        <activity
+            android:name=".highUI.slideslip.NavigationViewActivity"
+            android:label="@string/navigation" />
+        <activity
+            android:name=".highUI.slideslip.NavigationDemoActivity"
+            android:label="@string/title_activity_navigation_demo"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

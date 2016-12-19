@@ -21,5 +21,4 @@ public interface ItemTouchListener {
      * @param targetPos
      */
     boolean onItemMoved(int desPos,int targetPos);
-
 }

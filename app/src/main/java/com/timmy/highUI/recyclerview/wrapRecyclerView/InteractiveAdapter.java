@@ -1,42 +1,60 @@
 package com.timmy.highUI.recyclerview.wrapRecyclerView;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.timmy.R;
 import com.timmy.highUI.recyclerview.adapter.BaseRecyclerViewAdapter;
 import com.timmy.highUI.recyclerview.adapter.BaseViewHolder;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
+
+import butterknife.ButterKnife;
 
 /**
  * Created by admin on 2016/12/4.
  */
-
-public class InteractiveAdapter extends BaseRecyclerViewAdapter<String> implements ItemTouchListener {
+public class InteractiveAdapter extends RecyclerView.Adapter<InteractiveAdapter.InteractiveViewHolder> implements ItemTouchListener {
 
     private final ItemDragListener mDragListener;
+    private final Context mContext;
+    private List<String> mData;
 
     public InteractiveAdapter(Context context, ItemDragListener listener) {
-        super(context);
+        this.mContext = context;
         this.mDragListener = listener;
+        mData = new ArrayList<>();
+    }
+
+    public void setData(List<String> datas) {
+        this.mData = datas;
+    }
+
+
+    private List<String> getRealDatas() {
+        return mData;
     }
 
     @Override
-    protected int inflaterItemLayout(int viewType) {
-        return R.layout.item_interactive;
+    public InteractiveViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        LayoutInflater inflater = LayoutInflater.from(mContext);
+        View itemView = inflater.inflate(R.layout.item_interactive, parent, false);
+        return new InteractiveViewHolder(itemView);
     }
 
     @Override
-    protected void bindData(final BaseViewHolder holder, int position, String str) {
-//        holder.setImageResource(R.id.iv_logo, qqMessage.getLogo());
-        holder.setText(R.id.tv_name, str);
-//        holder.setText(R.id.tv_lastMsg, qqMessage.getLastMsg());
-//        holder.setText(R.id.tv_time, qqMessage.getTime());
-
-        //设置logo的拖拽监听
-        holder.getView(R.id.iv_logo).setOnTouchListener(new View.OnTouchListener() {
+    public void onBindViewHolder(final InteractiveViewHolder holder, int position) {
+        String data = mData.get(position);
+            holder.name.setText(data);
+        holder.logo.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -50,8 +68,20 @@ public class InteractiveAdapter extends BaseRecyclerViewAdapter<String> implemen
     }
 
     @Override
-    protected void onItemClickListener(View itemView, int position, String str) {
+    public int getItemCount() {
+        return mData.size();
+    }
 
+    public class InteractiveViewHolder extends RecyclerView.ViewHolder {
+
+        private final ImageView logo;
+        private final TextView name;
+
+        public InteractiveViewHolder(View itemView) {
+            super(itemView);
+            logo = (ImageView) itemView.findViewById(R.id.iv_logo);
+            name = (TextView) itemView.findViewById(R.id.tv_name);
+        }
     }
 
     @Override

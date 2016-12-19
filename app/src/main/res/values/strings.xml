@@ -17,4 +17,9 @@
     <string name="delete">删除</string>
     <string name="drawer_open">Open</string>
     <string name="drawer_close">Close</string>
+    <string name="navigation">NavigationView</string>
+    <string name="title_activity_navigation_demo">NavigationDemoActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>
