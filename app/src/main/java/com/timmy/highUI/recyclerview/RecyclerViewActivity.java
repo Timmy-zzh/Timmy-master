@@ -16,7 +16,7 @@ import com.timmy.highUI.recyclerview.adapter.SimpleAdapter;
 import com.timmy.highUI.recyclerview.autoPoll.AutoPollRecyclerActivity;
 import com.timmy.highUI.recyclerview.decoration.DividerGridItemDecoration;
 import com.timmy.highUI.recyclerview.decoration.DividerItemDecoration;
-import com.timmy.highUI.recyclerview.wrapRecyclerView.InteractiveRecyclerView;
+import com.timmy.highUI.recyclerview.interactive.InteractiveRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;

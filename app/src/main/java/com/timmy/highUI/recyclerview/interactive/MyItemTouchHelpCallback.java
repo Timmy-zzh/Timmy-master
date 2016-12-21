@@ -1,15 +1,10 @@
-package com.timmy.highUI.recyclerview.wrapRecyclerView;
+package com.timmy.highUI.recyclerview.interactive;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
-import com.timmy.R;
 import com.timmy.library.util.Logger;
 
 /**
@@ -17,7 +12,7 @@ import com.timmy.library.util.Logger;
  */
 public class MyItemTouchHelpCallback extends ItemTouchHelper.Callback {
 
-    private final java.lang.String TAG = this.getClass().getSimpleName();
+    private final String TAG = this.getClass().getSimpleName();
     private final ItemTouchListener mItemTouchListener;
 
     public MyItemTouchHelpCallback(ItemTouchListener listener) {

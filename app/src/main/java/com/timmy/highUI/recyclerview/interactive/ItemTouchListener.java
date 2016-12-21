@@ -1,4 +1,4 @@
-package com.timmy.highUI.recyclerview.wrapRecyclerView;
+package com.timmy.highUI.recyclerview.interactive;
 
 import android.support.v7.widget.RecyclerView;
 
@@ -20,5 +20,5 @@ public interface ItemTouchListener {
      * @param desPos
      * @param targetPos
      */
-    boolean onItemMoved(int desPos,int targetPos);
+    boolean onItemMoved(int desPos, int targetPos);
 }

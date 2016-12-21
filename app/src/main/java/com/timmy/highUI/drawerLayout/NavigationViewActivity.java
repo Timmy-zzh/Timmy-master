@@ -1,4 +1,4 @@
-package com.timmy.highUI.slideslip;
+package com.timmy.highUI.drawerLayout;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

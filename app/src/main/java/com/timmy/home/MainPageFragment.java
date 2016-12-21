@@ -96,6 +96,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListOne.add(new MainModel(MainTag.TAG_QQ_ZONE_STRETCH, "QQ空间可拉伸头部ListView控件"));
                 pageListOne.add(new MainModel(MainTag.TAG_RECYCLER_VIEW, "RecyclerView使用"));
                 pageListOne.add(new MainModel(MainTag.TAG_SLIDESLIP, "MD侧滑"));
+                pageListOne.add(new MainModel(MainTag.TAG_SNACKBAR, "SnackBar解析"));
 
 
                 adapter.setData(pageListOne);

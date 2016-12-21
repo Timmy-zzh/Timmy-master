@@ -1,4 +1,4 @@
-package com.timmy.highUI.slideslip;
+package com.timmy.highUI.drawerLayout;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;

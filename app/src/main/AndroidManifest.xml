@@ -256,24 +256,24 @@
             android:name=".highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity"
             android:label="CollapsingToolbarLayout的使用" />
         <activity
-            android:name=".highUI.recyclerview.wrapRecyclerView.InteractiveRecyclerView"
-            android:label="RecyclerView条目交互特效" />
-        <activity
             android:name=".highUI.recyclerview.autoPoll.AutoPollRecyclerActivity"
             android:label="自动轮询的ReyclerView" />
         <activity
-            android:name=".highUI.slideslip.DrawerLayoutActivity"
+            android:name=".highUI.drawerLayout.DrawerLayoutActivity"
             android:label="MD侧滑" />
         <activity
             android:name=".technologypoint.Picture9Activity"
             android:label=".9图片处理" />
         <activity
-            android:name=".highUI.slideslip.NavigationViewActivity"
+            android:name=".highUI.drawerLayout.NavigationViewActivity"
             android:label="@string/navigation" />
         <activity
-            android:name=".highUI.slideslip.NavigationDemoActivity"
+            android:name=".highUI.drawerLayout.NavigationDemoActivity"
             android:label="@string/title_activity_navigation_demo"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".highUI.snackBar.SnackBarActivity"
+            android:label="SnackBar" />
     </application>
 
 </manifest>

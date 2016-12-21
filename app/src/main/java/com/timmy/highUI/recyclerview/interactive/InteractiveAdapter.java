@@ -1,4 +1,4 @@
-package com.timmy.highUI.recyclerview.wrapRecyclerView;
+package com.timmy.highUI.recyclerview.interactive;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -10,14 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.timmy.R;
-import com.timmy.highUI.recyclerview.adapter.BaseRecyclerViewAdapter;
-import com.timmy.highUI.recyclerview.adapter.BaseViewHolder;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import butterknife.ButterKnife;
 
 /**
  * Created by admin on 2016/12/4.

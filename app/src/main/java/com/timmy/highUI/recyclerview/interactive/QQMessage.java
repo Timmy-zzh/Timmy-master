@@ -1,4 +1,4 @@
-package com.timmy.highUI.recyclerview.wrapRecyclerView;
+package com.timmy.highUI.recyclerview.interactive;
 
 public class QQMessage {
 	private int logo;

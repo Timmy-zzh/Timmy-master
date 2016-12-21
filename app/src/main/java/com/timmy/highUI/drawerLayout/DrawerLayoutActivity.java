@@ -1,4 +1,4 @@
-package com.timmy.highUI.slideslip;
+package com.timmy.highUI.drawerLayout;
 
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -60,12 +60,6 @@ public class DrawerLayoutActivity extends AppCompatActivity {
                 content.setScaleY(rightScale);
             }
         });
-
-
-        //
-//        drawerLayout.setDrawerShadow();
-
-
     }
 
 

@@ -11,7 +11,8 @@ import com.timmy.Util;
 import com.timmy.advance.customView.XiuViewActivity;
 import com.timmy.highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity;
 import com.timmy.highUI.recyclerview.RecyclerViewActivity;
-import com.timmy.highUI.slideslip.DrawerLayoutActivity;
+import com.timmy.highUI.drawerLayout.DrawerLayoutActivity;
+import com.timmy.highUI.snackBar.SnackBarActivity;
 import com.timmy.highUI.stretchList.StretchListActivity;
 import com.timmy.home.model.MainModel;
 import com.timmy.home.model.MainTag;
@@ -65,7 +66,12 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.TAG_SLIDESLIP:
                         Util.gotoNextActivity(context, DrawerLayoutActivity.class);
                         break;
+                    case MainTag.TAG_SNACKBAR:
+                        Util.gotoNextActivity(context, SnackBarActivity.class);
+                        break;
 
+                    default:
+                        break;
                 }
 
             }
