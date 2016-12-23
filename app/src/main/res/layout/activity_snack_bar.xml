@@ -12,13 +12,21 @@
 
         <include layout="@layout/common_toolbar" />
 
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:text="123"
+            android:textColor="@color/Black"
+            android:background="@color/Gray_e"
+            android:layout_marginTop="10dp"
+            android:layout_height="50dp" />
+
         <Button
             android:id="@+id/btn_toast"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/toolbar"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:onClick="toastClick"
             android:text="自定义Toast"
             android:textAllCaps="false" />
@@ -27,8 +35,6 @@
             android:id="@+id/btn_snackbar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_toast"
-            android:layout_centerHorizontal="true"
             android:onClick="snackClick"
             android:text="SnackBar"
             android:textAllCaps="false" />
@@ -38,11 +44,18 @@
             android:id="@+id/btn_dialog"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_snackbar"
-            android:layout_centerHorizontal="true"
             android:onClick="dialogClick"
             android:text="Dialog"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_handler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="handlerClick"
+            android:text="Handler机制"
+            android:textAllCaps="false" />
+
     </LinearLayout>
 
     <android.support.design.widget.FloatingActionButton
