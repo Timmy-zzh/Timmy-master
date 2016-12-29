@@ -46,7 +46,7 @@ public class MainFragment extends BaseFragment {
     }
 
     public class TabPagerAdapter extends FragmentStatePagerAdapter {
-        private String tabTitles[] = new String[]{"高级ui","源码", "框架"};
+        private String tabTitles[] = new String[]{"高级ui","项目技术点", "框架"};
         public TabPagerAdapter(FragmentManager fm) {
             super(fm);
         }

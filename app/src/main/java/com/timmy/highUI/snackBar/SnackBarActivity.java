@@ -73,15 +73,26 @@ public class SnackBarActivity extends BaseActivity {
             @Override
             public void run() {
                 Looper.prepare();
-                handler1 = new Handler();
 
+                handler1 = new Handler(){
+                    @Override
+                    public void handleMessage(Message msg) {
+                        super.handleMessage(msg);
+                        Logger.d(TAG, "handler1" + System.currentTimeMillis());
+                        Logger.d(TAG, "msg:" + msg.what);
+                        com.timmy.library.util.Toast.toastShort("handler1");
+                    }
+                };
+//                Looper.loop();
                 Logger.d(TAG, "start" + System.currentTimeMillis());
                 try {
                     Thread.sleep(3000);
-                    mHandler.sendMessage(Message.obtain(mHandler, 333));
+//                    mHandler.sendMessage(Message.obtain(mHandler, 333));
+                    handler1.sendMessage(Message.obtain(handler1, 333));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                Looper.loop();
             }
         }).start();
     }

@@ -92,7 +92,15 @@
         <item name="android:textColor">#ffffffff</item>
         <item name="android:textSize">16sp</item>
         <item name="android:textStyle">bold</item>
-
     </style>
+
+
+    <style name="WelcomeTheme" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@mipmap/img_beauti</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+
 
 </resources>

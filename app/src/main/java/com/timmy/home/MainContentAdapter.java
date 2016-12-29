@@ -10,12 +10,16 @@ import com.timmy.R;
 import com.timmy.Util;
 import com.timmy.advance.customView.XiuViewActivity;
 import com.timmy.highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity;
+import com.timmy.highUI.linearLayoutCompat.LinearLayoutCompatActivity;
 import com.timmy.highUI.recyclerview.RecyclerViewActivity;
 import com.timmy.highUI.drawerLayout.DrawerLayoutActivity;
+import com.timmy.highUI.searchView.SearchViewActivity;
 import com.timmy.highUI.snackBar.SnackBarActivity;
 import com.timmy.highUI.stretchList.StretchListActivity;
+import com.timmy.highUI.toolbar.ToolbarActivity;
 import com.timmy.home.model.MainModel;
 import com.timmy.home.model.MainTag;
+import com.timmy.project.launch.WelcomeActivity;
 
 import java.util.List;
 
@@ -69,6 +73,22 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.TAG_SNACKBAR:
                         Util.gotoNextActivity(context, SnackBarActivity.class);
                         break;
+                    case MainTag.TAG_TOOLBAR:
+                        Util.gotoNextActivity(context, ToolbarActivity.class);
+                        break;
+                    case MainTag.TAG_SEARCH_VIEW:
+                        Util.gotoNextActivity(context, SearchViewActivity.class);
+                        break;
+                    case MainTag.TAG_LINEAR_LAYOUT_COMPAT:
+                        Util.gotoNextActivity(context, LinearLayoutCompatActivity.class);
+                        break;
+
+
+                    ///////////////////////////
+                    case MainTag.PROJECT.TAG_ACTIVITY_LAUNCH:
+                        Util.gotoNextActivity(context, WelcomeActivity.class);
+                        break;
+
 
                     default:
                         break;

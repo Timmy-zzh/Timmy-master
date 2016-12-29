@@ -18,6 +18,17 @@ android {
     }
 }
 
+
+task makeJar(type: Copy) {
+    delete 'libs/timmyLib.jar'
+    from('build/intermediates/bundles/release/')
+    into('libs/')
+    include('classes.jar')
+    rename ('classes.jar', 'timmyLib.jar')
+}
+
+makeJar.dependsOn(build)
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'

@@ -17,17 +17,24 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <!--android:theme="@style/WelcomeTheme"-->
+        <activity
+            android:name=".project.launch.WelcomeActivity"
+
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".home.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:launchMode="singleTop"
             android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".other.TechnologyPointActivity"
@@ -274,6 +281,12 @@
         <activity
             android:name=".highUI.snackBar.SnackBarActivity"
             android:label="SnackBar" />
+        <activity android:name=".highUI.toolbar.ToolbarActivity" />
+        <activity android:name=".highUI.searchView.SearchViewActivity" />
+        <activity
+            android:name=".highUI.linearLayoutCompat.LinearLayoutCompatActivity"
+            android:label="LinearLayoutCompat解析" />
+
     </application>
 
 </manifest>
