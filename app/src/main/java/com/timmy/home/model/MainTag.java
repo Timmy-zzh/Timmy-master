@@ -12,6 +12,7 @@ public class MainTag {
     public static final int TAG_COLLAPSING_TOOLBAR_LAYOUT = 1 << 3;
     public static final int TAG_SLIDESLIP = 1 << 4;
     public static final int TAG_SNACKBAR = 1 << 5;
+    public static final int TAG_TEXT_INPUT_LAYOUT = 1 << 6;
     public static final int TAG_TOOLBAR = 1 << 7;
     public static final int TAG_SEARCH_VIEW = 1 << 8;
     public static final int TAG_LINEAR_LAYOUT_COMPAT = 1 << 9;

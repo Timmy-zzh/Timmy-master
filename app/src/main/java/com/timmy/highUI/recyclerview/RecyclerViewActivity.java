@@ -84,21 +84,21 @@ public class RecyclerViewActivity extends BaseActivity {
         switch (item.getItemId()) {
             case R.id.menu_add:
                 addItem();
-                break;
+                return true;
             case R.id.menu_remove:
                 removeItem();
-                break;
+                return true;
             case R.id.menu_layout_manager:
                 changeLayoutManager();
-                break;
+                return true;
             case R.id.menu_interactive:
                 Util.gotoNextActivity(this, InteractiveRecyclerView.class);
-                break;
+                return true;
             case R.id.menu_auto_poll:
                 Util.gotoNextActivity(this, AutoPollRecyclerActivity.class);
-                break;
+                return true;
         }
-        return true;
+        return super.onOptionsItemSelected(item);
     }
 
     private void changeLayoutManager() {

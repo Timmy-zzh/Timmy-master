@@ -68,7 +68,7 @@ public class MainPageFragment extends BaseFragment {
         switch (mPage) {
             case 1:
                 layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
-                mDivider = new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL_LIST);
+                mDivider = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL_LIST);
 //                layoutManager = new GridLayoutManager(getActivity(), 2);
 //                mDivider = new DividerGridItemDecoration(getContext());
 
@@ -98,6 +98,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListOne.add(new MainModel(MainTag.TAG_RECYCLER_VIEW, "RecyclerView使用"));
                 pageListOne.add(new MainModel(MainTag.TAG_SLIDESLIP, "MD侧滑"));
                 pageListOne.add(new MainModel(MainTag.TAG_SNACKBAR, "SnackBar解析"));
+                pageListOne.add(new MainModel(MainTag.TAG_TEXT_INPUT_LAYOUT, "TextInputLayout使用"));
                 pageListOne.add(new MainModel(MainTag.TAG_TOOLBAR, "Toolbar源码解析"));
                 pageListOne.add(new MainModel(MainTag.TAG_SEARCH_VIEW, "SearchView源码解析"));
                 pageListOne.add(new MainModel(MainTag.TAG_LINEAR_LAYOUT_COMPAT, "LinearLayoutCompat源码解析"));

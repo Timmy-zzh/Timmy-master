@@ -281,6 +281,9 @@
         <activity
             android:name=".highUI.snackBar.SnackBarActivity"
             android:label="SnackBar" />
+        <activity android:name=".highUI.textInputLayout.TextInputLayoutActivity"
+            android:label="TextInputLayout"/>
+
         <activity android:name=".highUI.toolbar.ToolbarActivity" />
         <activity android:name=".highUI.searchView.SearchViewActivity" />
         <activity
