@@ -12,7 +12,19 @@ import com.timmy.R;
 import com.timmy.base.BaseActivity;
 import com.timmy.util.RegexUtil;
 
+import java.util.regex.Pattern;
+
 public class TextInputLayoutActivity extends BaseActivity {
+
+    /**
+     * 正则表达式：验证密码
+     */
+    public static final String REGEX_PASSWORD = "^[a-zA-Z0-9]{6,16}$";
+
+    /**
+     * 正则表达式：验证手机号
+     */
+    public static final String REGEX_MOBILE = "^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +45,11 @@ public class TextInputLayoutActivity extends BaseActivity {
                 tilUserName.setErrorEnabled(false);
                 tilPassword.setErrorEnabled(false);
 
-                if (!RegexUtil.isMobile(phone)) {//输入的不是手机号
+                if (!isMobile(phone)) {//输入的不是手机号
                     tilUserName.setError("请输入正确的手机号");
                     pass = false;
                 }
-                if (!RegexUtil.isPassword(password)) {
+                if (!isPassword(password)) {
                     tilPassword.setError("密码至少6位");
                     pass = false;
                 }
@@ -61,21 +73,29 @@ public class TextInputLayoutActivity extends BaseActivity {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (s.toString().length() > 11) {
-                    tilUserName.setError("手机号最多11位");
-                } else {
-                    tilUserName.setErrorEnabled(false);
-                }
+
             }
 
             @Override
             public void afterTextChanged(Editable s) {
-
+                if (s.length() > 11) {
+                    tilUserName.setError("手机号最多11位");
+                } else {
+                    tilUserName.setErrorEnabled(false);
+                }
             }
         });
     }
 
     private void doLogin() {
         Toast.makeText(TextInputLayoutActivity.this, "登录验证通过", android.widget.Toast.LENGTH_SHORT).show();
+    }
+
+
+    public static boolean isMobile(String mobile) {
+        return Pattern.matches(REGEX_MOBILE, mobile);
+    }
+    public static boolean isPassword(String password) {
+        return Pattern.matches(REGEX_PASSWORD, password);
     }
 }
