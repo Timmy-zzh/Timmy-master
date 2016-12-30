@@ -20,6 +20,7 @@ import com.timmy.highUI.toolbar.ToolbarActivity;
 import com.timmy.highUI.textInputLayout.TextInputLayoutActivity;
 import com.timmy.home.model.MainModel;
 import com.timmy.home.model.MainTag;
+import com.timmy.project.launch.SplashActivity;
 import com.timmy.project.launch.WelcomeActivity;
 
 import java.util.List;
@@ -92,12 +93,13 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.PROJECT.TAG_ACTIVITY_LAUNCH:
                         Util.gotoNextActivity(context, WelcomeActivity.class);
                         break;
-
+                    case MainTag.PROJECT.TAG_ACTIVITY_SPLASH:
+                        Util.gotoNextActivity(context, SplashActivity.class);
+                        break;
 
                     default:
                         break;
                 }
-
             }
         });
     }

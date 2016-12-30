@@ -106,7 +106,8 @@ public class MainPageFragment extends BaseFragment {
                 adapter.setData(pageListOne);
                 break;
             case 2:
-                pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_ACTIVITY_LAUNCH, "App启动页3秒倒计时处理"));
+                pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_ACTIVITY_LAUNCH, "App广告页3秒倒计时处理"));
+                pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_ACTIVITY_SPLASH, "App闪屏页动画效果"));
 
 
                 adapter.setData(pageListTwo);

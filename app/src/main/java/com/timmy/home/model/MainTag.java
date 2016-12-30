@@ -18,9 +18,8 @@ public class MainTag {
     public static final int TAG_LINEAR_LAYOUT_COMPAT = 1 << 9;
 
     public class PROJECT {
-
         public static final int TAG_ACTIVITY_LAUNCH = 1 << 10;
-
+        public static final int TAG_ACTIVITY_SPLASH = 1 << 11;
 
     }
 }
