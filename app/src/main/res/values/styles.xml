@@ -97,7 +97,7 @@
 
     <style name="WelcomeTheme" parent="AppTheme">
         <item name="android:windowNoTitle">true</item>
-        <item name="android:background">@mipmap/img_beauti</item>
+        <!--<item name="android:background">@mipmap/img_beauti</item>-->
         <item name="android:windowFullscreen">true</item>
     </style>
 

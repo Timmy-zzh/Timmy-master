@@ -8,9 +8,9 @@
     <color name="colorPrimary">#f59926</color>
     <color name="colorPrimaryDark">#aa6c15</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="topic_trans">#aaf59926</color>
 
     <color name="Black">#000000</color>
-
     <color name="actionbar_title">#ffffff</color>
     <color name="primary_text">#212121</color>
     <color name="white">#ffffff</color>
@@ -24,6 +24,8 @@
 
 
     <color name="T_F1">#F1F1F1F1</color>
+    <color name="white_trans">#aaffffff</color>
+    <color name="gray_trans">#aacccccc</color>
 
 
 </resources>
