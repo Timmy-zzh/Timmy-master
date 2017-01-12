@@ -1,5 +1,8 @@
 <resources>>
 
-    <style name="AppTheme" parent="AppTheme.Base" />
+    <style name="AppTheme" parent="AppTheme.Base">
+        <!--导航栏背景色在21版本中进行设置-->
+        <item name="android:navigationBarColor">@color/colorPrimary</item>
+    </style>
 
 </resources>

@@ -8,47 +8,47 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <!--window background-->
         <item name="colorAccent">@color/colorAccent</item>
-        <!--toolbar text color-->
-        <item name="android:textColorPrimary">@color/white</item>
-        <!--toolbar menu text color-->
-        <item name="android:actionMenuTextColor">@android:color/black</item>
+        <!-- text color-->
+        <!--<item name="android:textColorPrimary">@color/white</item>-->
         <!--window background-->
         <item name="android:windowBackground">@android:color/white</item>
+        <!--listview或者recyclerview的item的分割线样式-->
         <!--<item name="android:listDivider">@drawable/item_divide_decora</item>-->
-
+        <!--inputlayout出现错误时控件的样式设置-->
         <item name="textColorError">@color/design_textinput_error_color_light</item>
     </style>
 
     <!--普通应用主题-->
-    <style name="AppTheme" parent="AppTheme.Base">
-        <item name="drawerArrowStyle">@style/AppTheme.TimmyDrawerArrowStyle</item>
-
-    </style>
+    <style name="AppTheme" parent="AppTheme.Base"/>
 
 
-    <style name="ToolbarTheme" parent="Base.ThemeOverlay.AppCompat.ActionBar">
-        <item name="actionMenuTextColor">@color/Black</item>
+    <!--Toolbar-->
+    <!--Toolbar的主题 这里注意parent使用的主题时drak白天，字体时黑底白色字体，用light的话字体时黑色-->
+    <style name="ToolbarTheme" parent="Base.ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
-    </style>
-
+    <!--设置toolbar的menu菜单弹窗的主题-->
     <style name="ToolbarPopupTheme" parent="Theme.AppCompat.Light">
-        <item name="actionMenuTextColor">@color/Black</item>
+        <!--menu菜单的文字颜色设置-->
+        <item name="android:textColorPrimary">@color/red</item>
+        <!--菜单文字的大小-->
+        <item name="android:textSize">12sp</item>
     </style>
 
-    <style name="AppTheme.TimmyDrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">
-        <!--是否开启导航图标的旋转效果-->
-        <item name="spinBars">false</item>
-        <item name="color">@android:color/white</item>
-    </style>
-
-    <!--Toolbar标题文字大小-->
+    <!--Toolbar标题文字的样式-->
     <style name="ToolbarTitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ToolBarTitleText" parent="TextAppearance.AppCompat.Medium">
+        <item name="android:textColor">#ffffffff</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
 
     <!--界面底部弹出Dialog-->
     <style name="BottomSelectDialog" parent="Theme.AppCompat.Light.Dialog">
@@ -90,11 +90,7 @@
 
     </style>
 
-    <style name="ToolBarTitleText" parent="TextAppearance.AppCompat.Medium">
-        <item name="android:textColor">#ffffffff</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
+
 
 
     <style name="WelcomeTheme" parent="AppTheme">
@@ -102,7 +98,6 @@
         <!--<item name="android:background">@mipmap/img_beauti</item>-->
         <item name="android:windowFullscreen">true</item>
     </style>
-
 
 
 </resources>

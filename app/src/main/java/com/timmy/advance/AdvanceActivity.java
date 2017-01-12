@@ -153,13 +153,13 @@ public class AdvanceActivity extends BaseActivity {
                     AdvanceActivity.this.openActivity(FollowWin8Activity.class);
                     break;
                 case 3:
-                    AdvanceActivity.this.openActivity(com.timmy.advance.scrollVertical.VerticalScrollActivity.class);
+//                    AdvanceActivity.this.openActivity(com.timmy.advance.scrollVertical.VerticalScrollActivity.class);
                     break;
                 case 4:
                     AdvanceActivity.this.openActivity(MyToggleButtonActivity.class);
                     break;
                 case 5:
-                    AdvanceActivity.this.openActivity(com.timmy.advance.waterRipple.WaterRippleActivity.class);
+//                    AdvanceActivity.this.openActivity(com.timmy.advance.waterRipple.WaterRippleActivity.class);
                     break;
                 case 6:
                     AdvanceActivity.this.openActivity(CustomViewPagerActivity.class);

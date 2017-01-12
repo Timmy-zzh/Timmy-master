@@ -4,6 +4,8 @@ import android.app.Application;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
 
+import com.timmy.library.util.Toast;
+
 public class TimmyApp extends Application {
 
     public static final String HEADER_DEALER_TOKEN = "token";
@@ -19,10 +21,9 @@ public class TimmyApp extends Application {
     public void onCreate() {
         super.onCreate();
         app = this;
+        Toast.init(this);
 
     }
-
-
 
     public static TimmyApp getInstance() {
         if (app != null) {
@@ -30,7 +31,6 @@ public class TimmyApp extends Application {
         } else {
             return null;
         }
-
     }
 
     public void saveSharedPreferences(String key, String value) {

@@ -287,7 +287,8 @@
         <activity
             android:name=".highUI.textInputLayout.TextInputLayoutActivity"
             android:label="用户登录" />
-        <activity android:name=".highUI.toolbar.ToolbarActivity" />
+        <activity android:name=".highUI.toolbar.ToolbarActivity"
+            android:label="TollobarActivity"/>
         <activity android:name=".highUI.searchView.SearchViewActivity" />
         <activity
             android:name=".highUI.linearLayoutCompat.LinearLayoutCompatActivity"
