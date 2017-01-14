@@ -22,6 +22,7 @@ import com.timmy.home.model.MainModel;
 import com.timmy.home.model.MainTag;
 import com.timmy.project.launch.SplashActivity;
 import com.timmy.project.launch.WelcomeActivity;
+import com.timmy.project.svg.SVGActivity;
 
 import java.util.List;
 
@@ -96,7 +97,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.PROJECT.TAG_ACTIVITY_SPLASH:
                         Util.gotoNextActivity(context, SplashActivity.class);
                         break;
-
+                    case MainTag.PROJECT.TAG_SVG:
+                        Util.gotoNextActivity(context, SVGActivity.class);
+                        break;
                     default:
                         break;
                 }

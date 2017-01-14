@@ -1,4 +1,7 @@
 apply plugin: 'com.android.application'
+//apply tinker插件
+//apply plugin: 'com.tencent.tinker.patch'
+//apply from: 'tinkerpatch.gradle'
 
 android {
     compileSdkVersion 23
@@ -11,7 +14,7 @@ android {
 
     defaultConfig {
         applicationId "com.timmy"
-        minSdkVersion 11
+        minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -37,4 +40,9 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.github.promeg:tinypinyin:1.0.0'
+
+    // 若使用annotation需要单独引用,对于tinker的其他库都无需再引用
+//    provided("com.tencent.tinker:tinker-android-anno:1.7.7")
+//    compile("com.tinkerpatch.sdk:tinkerpatch-android-sdk:1.1.0")
+
 }

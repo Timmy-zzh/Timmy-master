@@ -6,20 +6,21 @@ package com.timmy.home.model;
 
 public class MainTag {
 
-    public static final int TAG_XIUXIU = 1 << 0;
-    public static final int TAG_QQ_ZONE_STRETCH = 1 << 1;
-    public static final int TAG_RECYCLER_VIEW = 1 << 2;
-    public static final int TAG_COLLAPSING_TOOLBAR_LAYOUT = 1 << 3;
-    public static final int TAG_SLIDESLIP = 1 << 4;
-    public static final int TAG_SNACKBAR = 1 << 5;
-    public static final int TAG_TEXT_INPUT_LAYOUT = 1 << 6;
-    public static final int TAG_TOOLBAR = 1 << 7;
-    public static final int TAG_SEARCH_VIEW = 1 << 8;
-    public static final int TAG_LINEAR_LAYOUT_COMPAT = 1 << 9;
+    public static final int TAG_XIUXIU = 0x01;
+    public static final int TAG_QQ_ZONE_STRETCH = 0x02;
+    public static final int TAG_RECYCLER_VIEW = 0x03;
+    public static final int TAG_COLLAPSING_TOOLBAR_LAYOUT = 0x04;
+    public static final int TAG_SLIDESLIP = 0x05;
+    public static final int TAG_SNACKBAR = 0x06;
+    public static final int TAG_TEXT_INPUT_LAYOUT = 0x07;
+    public static final int TAG_TOOLBAR = 0x08;
+    public static final int TAG_SEARCH_VIEW = 0x09;
+    public static final int TAG_LINEAR_LAYOUT_COMPAT = 0x10;
 
     public class PROJECT {
-        public static final int TAG_ACTIVITY_LAUNCH = 1 << 10;
-        public static final int TAG_ACTIVITY_SPLASH = 1 << 11;
+        public static final int TAG_ACTIVITY_LAUNCH = 0x100;
+        public static final int TAG_ACTIVITY_SPLASH = 0x101;
+        public static final int TAG_SVG = 0x102;
 
     }
 }
