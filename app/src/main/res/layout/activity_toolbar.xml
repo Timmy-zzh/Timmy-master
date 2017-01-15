@@ -10,9 +10,12 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
+        app:navigationContentDescription="abccc"
+        app:logoDescription="dddddddddd"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
+        app:buttonGravity="bottom"
         app:logo="@mipmap/ic_launcher"
         app:navigationIcon="@mipmap/icon_back"
         app:popupTheme="@style/ToolbarPopupTheme"
