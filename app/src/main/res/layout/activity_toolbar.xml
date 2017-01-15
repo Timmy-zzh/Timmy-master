@@ -15,10 +15,10 @@
         android:background="?attr/colorPrimary"
         app:logo="@mipmap/ic_launcher"
         app:navigationIcon="@mipmap/icon_back"
-        app:subtitle="subtitle"
         app:popupTheme="@style/ToolbarPopupTheme"
+        app:subtitle="subtitle"
         app:theme="@style/ToolbarTheme"
-        app:titleTextAppearance="@style/ToolBarTitleText"
-        app:title="ToolBar" />
+        app:title="ToolBar"
+        app:titleTextAppearance="@style/ToolBarTitleText" />
 
 </LinearLayout>

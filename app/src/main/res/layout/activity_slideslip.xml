@@ -10,8 +10,7 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
         app:popupTheme="@style/ToolbarPopupTheme"
-        app:theme="@style/ToolbarTheme"
-        app:titleTextAppearance="@style/ToolbarTitle" />
+        app:theme="@style/ToolbarTheme" />
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/drawer_layout"

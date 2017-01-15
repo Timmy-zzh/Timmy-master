@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.timmy.AppManager;
 import com.timmy.R;
 import com.timmy.library.util.Toast;
 import com.timmy.other.AboutActivity;
@@ -35,14 +36,18 @@ public class ToolbarActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
+        switch (item.getItemId()) {
             case R.id.action_settings:
                 Toast.toastShort("Setting");
                 return true;
             case R.id.action_about:
                 Toast.toastShort("action_about");
                 return true;
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
     }
 }
