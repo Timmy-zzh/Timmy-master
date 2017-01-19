@@ -16,6 +16,7 @@ public class MainTag {
     public static final int TAG_TOOLBAR = 0x08;
     public static final int TAG_SEARCH_VIEW = 0x09;
     public static final int TAG_LINEAR_LAYOUT_COMPAT = 0x10;
+    public static final int TAG_TAB_LAYOUT = 0x11;
 
     public class PROJECT {
         public static final int TAG_ACTIVITY_LAUNCH = 0x100;

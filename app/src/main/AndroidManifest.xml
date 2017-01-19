@@ -284,15 +284,19 @@
         <activity
             android:name=".highUI.textInputLayout.TextInputLayoutActivity"
             android:label="用户登录" />
-        <activity android:name=".highUI.toolbar.ToolbarActivity"
-            android:theme="@style/AppToolbarTheme"
-            android:label="TollobarActivity"/>
+        <activity
+            android:name=".highUI.toolbar.ToolbarActivity"
+            android:label="TollobarActivity"
+            android:theme="@style/AppToolbarTheme" />
         <activity android:name=".highUI.searchView.SearchViewActivity" />
         <activity
             android:name=".highUI.linearLayoutCompat.LinearLayoutCompatActivity"
             android:label="LinearLayoutCompat解析" />
         <activity android:name=".project.svg.SVGActivity" />
-        <activity android:name=".project.svg.SVGActivity2"/>
+        <activity android:name=".project.svg.SVGActivity2" />
+        <activity
+            android:name=".highUI.tabLayout.TabLayoutActivity"
+            android:label="TabLayout源码解析" />
     </application>
 
 </manifest>

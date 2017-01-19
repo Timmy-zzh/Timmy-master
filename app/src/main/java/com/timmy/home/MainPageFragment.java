@@ -102,6 +102,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListOne.add(new MainModel(MainTag.TAG_TOOLBAR, "Toolbar源码解析"));
                 pageListOne.add(new MainModel(MainTag.TAG_SEARCH_VIEW, "SearchView源码解析"));
                 pageListOne.add(new MainModel(MainTag.TAG_LINEAR_LAYOUT_COMPAT, "LinearLayoutCompat源码解析"));
+                pageListOne.add(new MainModel(MainTag.TAG_TAB_LAYOUT, "TabLayout源码解析"));
 
                 adapter.setData(pageListOne);
                 break;

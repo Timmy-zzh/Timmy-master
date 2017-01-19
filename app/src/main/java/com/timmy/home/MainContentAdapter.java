@@ -16,6 +16,7 @@ import com.timmy.highUI.drawerLayout.DrawerLayoutActivity;
 import com.timmy.highUI.searchView.SearchViewActivity;
 import com.timmy.highUI.snackBar.SnackBarActivity;
 import com.timmy.highUI.stretchList.StretchListActivity;
+import com.timmy.highUI.tabLayout.TabLayoutActivity;
 import com.timmy.highUI.toolbar.ToolbarActivity;
 import com.timmy.highUI.textInputLayout.TextInputLayoutActivity;
 import com.timmy.home.model.MainModel;
@@ -87,6 +88,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.TAG_LINEAR_LAYOUT_COMPAT:
                         Util.gotoNextActivity(context, LinearLayoutCompatActivity.class);
+                        break;
+                    case MainTag.TAG_TAB_LAYOUT:
+                        Util.gotoNextActivity(context,TabLayoutActivity.class);
                         break;
 
 

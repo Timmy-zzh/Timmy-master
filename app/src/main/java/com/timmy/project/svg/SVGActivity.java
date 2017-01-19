@@ -9,6 +9,9 @@ import com.timmy.R;
 
 /**
  * 5.0以上直接在AS中使用SVG图片
+ * 展示svg图片效果：ImagerView直接引用svg.xml文件
+ * SVG动画效果: svg.xml每段path设置动画,然后展示
+ *
  */
 public class SVGActivity extends AppCompatActivity {
 
