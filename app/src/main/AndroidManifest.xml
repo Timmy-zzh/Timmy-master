@@ -299,8 +299,10 @@
             android:label="TabLayout源码解析" />
         <activity
             android:name=".highUI.palette.PaletteActivity"
-            android:label="Palette调色板"
-            />
+            android:label="Palette调色板" />
+        <activity
+            android:name=".highUI.cardView.CardViewActivity"
+            android:label="CardView的使用" />
     </application>
 
 </manifest>

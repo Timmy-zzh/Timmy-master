@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.timmy.R;
 import com.timmy.Util;
 import com.timmy.advance.customView.XiuViewActivity;
+import com.timmy.highUI.cardView.CardViewActivity;
 import com.timmy.highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity;
 import com.timmy.highUI.linearLayoutCompat.LinearLayoutCompatActivity;
 import com.timmy.highUI.palette.PaletteActivity;
@@ -95,6 +96,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.TAG_PALETTE:
                         Util.gotoNextActivity(context,PaletteActivity.class);
+                        break;
+                    case MainTag.TAG_CARD_VIEW:
+                        Util.gotoNextActivity(context,CardViewActivity.class);
                         break;
 
 
