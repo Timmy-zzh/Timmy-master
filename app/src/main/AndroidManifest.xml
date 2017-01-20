@@ -303,6 +303,8 @@
         <activity
             android:name=".highUI.cardView.CardViewActivity"
             android:label="CardView的使用" />
+        <activity android:name=".highUI.coordinatorLayout.CoordinatorLayoutActivity2" />
+        <activity android:name=".highUI.coordinatorLayout.CoordinatorLayoutActivity3"></activity>
     </application>
 
 </manifest>

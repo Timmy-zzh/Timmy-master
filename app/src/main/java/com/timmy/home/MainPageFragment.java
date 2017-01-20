@@ -105,6 +105,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListOne.add(new MainModel(MainTag.TAG_TAB_LAYOUT, "TabLayout源码解析"));
                 pageListOne.add(new MainModel(MainTag.TAG_PALETTE, "Palette调色板的使用"));
                 pageListOne.add(new MainModel(MainTag.TAG_CARD_VIEW, "CardView的使用"));
+                pageListOne.add(new MainModel(MainTag.TAG_COORDINATOR_LAYOUT, "CoordinatorLayout的使用"));
 
                 adapter.setData(pageListOne);
                 break;
