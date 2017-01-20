@@ -1,6 +1,7 @@
 package com.timmy.highUI.coordinatorLayout;
 
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -34,6 +35,7 @@ public class CoordinatorLayoutActivity3 extends AppCompatActivity {
         CoordinatorLayout coordinatorLayout = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.floating_action_button);
         AppBarLayout appBarLayout = (AppBarLayout) findViewById(R.id.app_bar_layout);
+        CollapsingToolbarLayout collapsingToolbarLayout = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar_layout);
 
 //        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
 //        ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
@@ -41,6 +43,8 @@ public class CoordinatorLayoutActivity3 extends AppCompatActivity {
 //        adapter = new CoordinatorLayoutActivity2.TabPagerAdapter(getSupportFragmentManager());
 //        viewPager.setAdapter(adapter);
 //        tabLayout.setupWithViewPager(viewPager);
+
+//        collapsingToolbarLayout.setContentScrim(getDrawable(R.color.c_xiuxiu));
 
 
         fab.setOnClickListener(new View.OnClickListener() {
