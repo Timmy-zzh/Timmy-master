@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_tab_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,48 +8,46 @@
 
     <include layout="@layout/common_toolbar" />
 
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+
+    <View style="@style/Line"/>
+
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        app:tabTextAppearance="@style/TabTextStyle"
-        >
+        android:background="@color/white"
+        app:tabTextColor="@color/wx_t_c"
+        app:tabIndicatorHeight="0dp"
+        app:tabGravity="fill"
+        app:tabSelectedTextColor="@color/wx_t_c_selected"
+        app:tabMode="fixed"
+        app:tabTextAppearance="@style/TabTextStyle">
 
         <android.support.design.widget.TabItem
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Item1" />
+            android:text="微信"
+            android:layout_height="wrap_content" />
 
         <android.support.design.widget.TabItem
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Item2" />
+            android:text="通讯录"
+            android:layout_height="wrap_content" />
 
         <android.support.design.widget.TabItem
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Item3" />
+            android:text="发现"
+            android:layout_height="wrap_content" />
 
         <android.support.design.widget.TabItem
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Item4" />
+            android:text="我"
+            android:layout_height="wrap_content" />
 
-        <android.support.design.widget.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Item5" />
+        </android.support.design.widget.TabLayout>
 
-        <android.support.design.widget.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Item6" />
-
-    </android.support.design.widget.TabLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/view_pager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 </LinearLayout>

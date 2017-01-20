@@ -26,6 +26,8 @@
     <color name="T_F1">#F1F1F1F1</color>
     <color name="white_trans">#aaffffff</color>
     <color name="gray_trans">#aacccccc</color>
+    <color name="wx_t_c">#a6a6a6</color>
+    <color name="wx_t_c_selected">#46be17</color>
 
 
 </resources>
