@@ -297,6 +297,10 @@
         <activity
             android:name=".highUI.tabLayout.TabLayoutActivity"
             android:label="TabLayout源码解析" />
+        <activity
+            android:name=".highUI.palette.PaletteActivity"
+            android:label="Palette调色板"
+            />
     </application>
 
 </manifest>

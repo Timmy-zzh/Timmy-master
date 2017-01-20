@@ -11,6 +11,7 @@ import com.timmy.Util;
 import com.timmy.advance.customView.XiuViewActivity;
 import com.timmy.highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity;
 import com.timmy.highUI.linearLayoutCompat.LinearLayoutCompatActivity;
+import com.timmy.highUI.palette.PaletteActivity;
 import com.timmy.highUI.recyclerview.RecyclerViewActivity;
 import com.timmy.highUI.drawerLayout.DrawerLayoutActivity;
 import com.timmy.highUI.searchView.SearchViewActivity;
@@ -91,6 +92,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.TAG_TAB_LAYOUT:
                         Util.gotoNextActivity(context,TabLayoutActivity.class);
+                        break;
+                    case MainTag.TAG_PALETTE:
+                        Util.gotoNextActivity(context,PaletteActivity.class);
                         break;
 
 
