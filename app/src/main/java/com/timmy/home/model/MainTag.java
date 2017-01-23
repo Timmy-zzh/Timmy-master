@@ -20,6 +20,8 @@ public class MainTag {
     public static final int TAG_PALETTE = 0x12;
     public static final int TAG_CARD_VIEW = 0x13;
     public static final int TAG_COORDINATOR_LAYOUT = 0x14;
+    public static final int TAG_ANIMATION_VIEW = 0x15;
+
 
     public class PROJECT {
         public static final int TAG_ACTIVITY_LAUNCH = 0x100;

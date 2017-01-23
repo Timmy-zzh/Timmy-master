@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/frame_animation"
+        android:orderInCategory="100"
+        android:title="帧动画"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/property_animation"
+        android:orderInCategory="103"
+        android:title="属性动画"
+        android:icon="@android:drawable/arrow_up_float"
+        app:showAsAction="never" />
+</menu>

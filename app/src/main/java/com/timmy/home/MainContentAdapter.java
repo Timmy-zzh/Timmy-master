@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.timmy.R;
 import com.timmy.Util;
 import com.timmy.advance.customView.XiuViewActivity;
+import com.timmy.highUI.animatoion.ViewAnimationActivity;
 import com.timmy.highUI.cardView.CardViewActivity;
 import com.timmy.highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity;
 import com.timmy.highUI.coordinatorLayout.CoordinatorLayoutActivity2;
@@ -103,6 +104,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.TAG_COORDINATOR_LAYOUT:
                         Util.gotoNextActivity(context,CoordinatorLayoutActivity2.class);
+                        break;
+                    case MainTag.TAG_ANIMATION_VIEW:
+                        Util.gotoNextActivity(context,ViewAnimationActivity.class);
                         break;
 
 

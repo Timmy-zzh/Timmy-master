@@ -14,8 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        android:padding="10dp">
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btn_alpha"
@@ -49,15 +48,22 @@
         <Button
             android:id="@+id/btn_set"
             android:layout_width="0dp"
+            android:textAllCaps="false"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="SET" />
+            android:text="Set" />
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/btn_reset"
+        android:text="重置"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <ImageView
         android:id="@+id/iv_image"
+        android:layout_marginTop="50dp"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@mipmap/ic_launcher" />

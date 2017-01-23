@@ -22,7 +22,7 @@ public class AnimationActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_animation);
+        setContentView(R.layout.activity_view_animation);
         ButterKnife.bind(this);
         initToolBar();
 

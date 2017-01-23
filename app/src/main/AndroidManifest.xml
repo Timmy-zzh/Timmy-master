@@ -304,7 +304,16 @@
             android:name=".highUI.cardView.CardViewActivity"
             android:label="CardView的使用" />
         <activity android:name=".highUI.coordinatorLayout.CoordinatorLayoutActivity2" />
-        <activity android:name=".highUI.coordinatorLayout.CoordinatorLayoutActivity3"></activity>
+        <activity android:name=".highUI.coordinatorLayout.CoordinatorLayoutActivity3" />
+        <activity
+            android:name=".highUI.animatoion.ViewAnimationActivity"
+            android:label="View Animation" />
+        <activity
+            android:name=".highUI.animatoion.FrameAnimationActivity"
+            android:label="帧动画" />
+        <activity
+            android:name=".highUI.animatoion.PropertyAnimationActivity"
+            android:label="属性动画" />
     </application>
 
 </manifest>
