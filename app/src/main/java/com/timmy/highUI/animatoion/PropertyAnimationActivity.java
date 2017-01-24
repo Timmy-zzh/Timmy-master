@@ -1,6 +1,7 @@
 package com.timmy.highUI.animatoion;
 
 import android.animation.Animator;
+import android.animation.AnimatorInflater;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.TypeEvaluator;
@@ -42,7 +43,6 @@ public class PropertyAnimationActivity extends BaseActivity {
 
     //执行属性动画,旋转-一行代码搞定旋转动画
     public void playAnimator(View view) {
-//        imageView.setRotationX();
         ObjectAnimator
                 .ofFloat(imageView, "rotationX", 0f, 360f)
                 .setDuration(300)
@@ -155,5 +155,20 @@ public class PropertyAnimationActivity extends BaseActivity {
 
             }
         });
+    }
+
+
+    public void xmlAnimator(View view){
+//        Animator animator = AnimatorInflater.loadAnimator(this, R.animator.scale_animator);
+//        animator.setTarget(imageView);
+//        animator.start();
+
+//        Animator animator = AnimatorInflater.loadAnimator(this, R.animator.translate_animator);
+//        animator.setTarget(imageView);
+//        animator.start();
+
+        Animator animator = AnimatorInflater.loadAnimator(this, R.animator.set_animator);
+        animator.setTarget(imageView);
+        animator.start();
     }
 }
