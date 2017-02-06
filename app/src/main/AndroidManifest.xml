@@ -314,6 +314,7 @@
         <activity
             android:name=".highUI.animatoion.PropertyAnimationActivity"
             android:label="属性动画" />
+        <activity android:name=".project.inflate.InflateActivity"></activity>
     </application>
 
 </manifest>

@@ -114,6 +114,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_ACTIVITY_LAUNCH, "App广告页3秒倒计时处理"));
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_ACTIVITY_SPLASH, "App闪屏页动画效果"));
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_SVG, "SVG图片效果"));
+                pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_INFLATE, "inflate()方法的使用和详解"));
 
 
                 adapter.setData(pageListTwo);

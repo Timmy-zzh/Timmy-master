@@ -27,7 +27,7 @@ public class MainTag {
         public static final int TAG_ACTIVITY_LAUNCH = 0x100;
         public static final int TAG_ACTIVITY_SPLASH = 0x101;
         public static final int TAG_SVG = 0x102;
-
+        public static final int TAG_INFLATE = 0x103;
     }
 }
 
