@@ -220,7 +220,7 @@
             android:label="自定义ScrollView--显示完成内部的ItemView"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".advance.motionEvent.MotionEventActivity"
+            android:name=".highUI.motionEvent.MotionEventActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="从源码分析事件分发机制"
             android:screenOrientation="portrait" />
@@ -315,6 +315,9 @@
             android:name=".highUI.animatoion.PropertyAnimationActivity"
             android:label="属性动画" />
         <activity android:name=".project.inflate.InflateActivity"></activity>
+        <activity
+            android:name=".highUI.motionEvent.ScrollListViewActivity"
+            android:label="ScrollView嵌套ListView" />
     </application>
 
 </manifest>

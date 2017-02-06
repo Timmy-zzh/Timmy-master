@@ -21,6 +21,7 @@ public class MainTag {
     public static final int TAG_CARD_VIEW = 0x13;
     public static final int TAG_COORDINATOR_LAYOUT = 0x14;
     public static final int TAG_ANIMATION_VIEW = 0x15;
+    public static final int TAG_MOTION_EVENT = 0x16;
 
 
     public class PROJECT {

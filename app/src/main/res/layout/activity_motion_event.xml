@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<com.timmy.highUI.motionEvent.MyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_linear_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
@@ -8,44 +8,20 @@
 
     <include layout="@layout/common_toolbar" />
 
-    <com.timmy.advance.motionEvent.MyButton
+
+    <com.timmy.highUI.motionEvent.MyTextView
+        android:id="@+id/my_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="MyTextView" />
+
+
+    <com.timmy.highUI.motionEvent.MyButton
         android:id="@+id/my_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:text="MyButton" />
+        android:text="inner_button"
+        android:textAllCaps="false" />
 
-
-    <com.timmy.advance.motionEvent.MyTextView
-        android:id="@+id/my_textView"
-        android:layout_width="wrap_content"
-        android:layout_margin="20dp"
-        android:layout_height="wrap_content"
-        android:text="MyTextView" />
-
-    <com.timmy.advance.motionEvent.MyLinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:gravity="center_horizontal">
-
-        <com.timmy.advance.motionEvent.MyButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="inner_button" />
-
-    </com.timmy.advance.motionEvent.MyLinearLayout>
-
-    <com.timmy.advance.motionEvent.MyLinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:gravity="center_horizontal">
-
-        <com.timmy.advance.motionEvent.MyTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="inner_textView" />
-
-    </com.timmy.advance.motionEvent.MyLinearLayout>
-</LinearLayout>
+</com.timmy.highUI.motionEvent.MyLinearLayout>

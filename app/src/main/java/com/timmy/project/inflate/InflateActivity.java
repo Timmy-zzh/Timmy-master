@@ -19,9 +19,12 @@ public class InflateActivity extends AppCompatActivity {
         LinearLayout rootView = (LinearLayout) findViewById(R.id.root_layout);
         //2.通过inflate方法将view_inflate_inner.xml布局添加到activity的根view中
         LayoutInflater layoutInflater = LayoutInflater.from(this);
-        View innerView = layoutInflater.inflate(R.layout.view_inflate_inner, rootView, true);
+//        View inflateView = layoutInflater.inflate(R.layout.view_inflate_inner, rootView, true);
 
-        rootView.addView(innerView);
+
+        View inflateView = layoutInflater.inflate(R.layout.view_inflate_inner, null);
+
+        rootView.addView(inflateView);
 
     }
 }

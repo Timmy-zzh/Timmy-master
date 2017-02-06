@@ -14,6 +14,7 @@ import com.timmy.highUI.cardView.CardViewActivity;
 import com.timmy.highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity;
 import com.timmy.highUI.coordinatorLayout.CoordinatorLayoutActivity2;
 import com.timmy.highUI.linearLayoutCompat.LinearLayoutCompatActivity;
+import com.timmy.highUI.motionEvent.MotionEventActivity;
 import com.timmy.highUI.palette.PaletteActivity;
 import com.timmy.highUI.recyclerview.RecyclerViewActivity;
 import com.timmy.highUI.drawerLayout.DrawerLayoutActivity;
@@ -108,6 +109,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.TAG_ANIMATION_VIEW:
                         Util.gotoNextActivity(context,ViewAnimationActivity.class);
+                        break;
+                    case MainTag.TAG_MOTION_EVENT:
+                        Util.gotoNextActivity(context, MotionEventActivity.class);
                         break;
 
 
