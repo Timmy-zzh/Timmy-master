@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.timmy.R;
 import com.timmy.Util;
 import com.timmy.advance.customView.XiuViewActivity;
+import com.timmy.customeView.clockView.ClockViewActivity;
 import com.timmy.highUI.animatoion.ViewAnimationActivity;
 import com.timmy.highUI.cardView.CardViewActivity;
 import com.timmy.highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity;
@@ -114,8 +115,16 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         Util.gotoNextActivity(context, MotionEventActivity.class);
                         break;
 
+                    ///////////////////////////自定义控件
+                    case MainTag.CUSTOMEVIEW.TAG_CLOCK_VIEW:
+                        Util.gotoNextActivity(context, ClockViewActivity.class);
+                        break;
 
-                    ///////////////////////////
+
+
+
+
+                    ///////////////////////////项目总结
                     case MainTag.PROJECT.TAG_ACTIVITY_LAUNCH:
                         Util.gotoNextActivity(context, WelcomeActivity.class);
                         break;

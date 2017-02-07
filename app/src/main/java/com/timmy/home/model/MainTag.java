@@ -24,11 +24,17 @@ public class MainTag {
     public static final int TAG_MOTION_EVENT = 0x16;
 
 
+    //项目总结
     public class PROJECT {
         public static final int TAG_ACTIVITY_LAUNCH = 0x100;
         public static final int TAG_ACTIVITY_SPLASH = 0x101;
         public static final int TAG_SVG = 0x102;
         public static final int TAG_INFLATE = 0x103;
+    }
+
+    //自定义控件
+    public class CUSTOMEVIEW {
+        public static final int TAG_CLOCK_VIEW = 0X200;
     }
 }
 

@@ -31,7 +31,7 @@ public class MainFragment extends BaseFragment {
     }
 
     @Override
-    public void onViewCreated(View view,  Bundle savedInstanceState) {
+    public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView();
     }
@@ -43,10 +43,12 @@ public class MainFragment extends BaseFragment {
         adapter = new TabPagerAdapter(getActivity().getSupportFragmentManager());
         vp_viewPager.setAdapter(adapter);
         tl_tab.setupWithViewPager(vp_viewPager);
+//        tl_tab.setTabMode(TabLayout.MODE_SCROLLABLE);
     }
 
     public class TabPagerAdapter extends FragmentStatePagerAdapter {
-        private String tabTitles[] = new String[]{"高级ui","项目技术点", "框架"};
+        private String tabTitles[] = new String[]{"高级ui", "自定义控件", "项目技术点", "框架"};
+
         public TabPagerAdapter(FragmentManager fm) {
             super(fm);
         }

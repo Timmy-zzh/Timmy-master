@@ -318,7 +318,8 @@
         <activity
             android:name=".highUI.motionEvent.ScrollListViewActivity"
             android:label="ScrollView嵌套ListView" />
-        <activity android:name=".highUI.recyclerview.wrapRecyclerView.WrapRecyclerViewActivity"></activity>
+        <activity android:name=".highUI.recyclerview.wrapRecyclerView.WrapRecyclerViewActivity" />
+        <activity android:name=".customeView.clockView.ClockViewActivity"></activity>
     </application>
 
 </manifest>

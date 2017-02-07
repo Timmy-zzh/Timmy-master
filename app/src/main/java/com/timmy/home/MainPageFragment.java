@@ -35,6 +35,7 @@ public class MainPageFragment extends BaseFragment {
     private List<MainModel> pageListOne = new ArrayList<>();
     private List<MainModel> pageListTwo = new ArrayList<>();
     private List<MainModel> pageListThree = new ArrayList<>();
+    private List<MainModel> pageListFour = new ArrayList<>();
     private RecyclerView.ItemDecoration mDivider;
 
     public static MainPageFragment newInstance(int page) {
@@ -51,7 +52,7 @@ public class MainPageFragment extends BaseFragment {
     }
 
     @Override
-    public void onCreate( Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPage = getArguments().getInt(KEY_PAGE_TAB);
 
@@ -81,6 +82,10 @@ public class MainPageFragment extends BaseFragment {
                 layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
                 mDivider = new DividerGridItemDecoration(getContext());
                 break;
+            default:
+                layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+                mDivider = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL_LIST);
+                break;
         }
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.removeItemDecoration(mDivider);
@@ -91,7 +96,7 @@ public class MainPageFragment extends BaseFragment {
 
     private void initData() {
         switch (mPage) {
-            case 1:
+            case 1://高级ui
                 pageListOne.add(new MainModel(MainTag.TAG_XIUXIU, "自定义控件--支付宝咻一咻"));
                 pageListOne.add(new MainModel(MainTag.TAG_COLLAPSING_TOOLBAR_LAYOUT, "CollapsingToolbarLayout使用"));
                 pageListOne.add(new MainModel(MainTag.TAG_QQ_ZONE_STRETCH, "QQ空间可拉伸头部ListView控件"));
@@ -111,7 +116,13 @@ public class MainPageFragment extends BaseFragment {
 
                 adapter.setData(pageListOne);
                 break;
-            case 2:
+            case 2://自定义控件
+                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_CLOCK_VIEW, "自定义钟表"));
+
+
+                adapter.setData(pageListFour);
+                break;
+            case 3://项目知识点总结
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_ACTIVITY_LAUNCH, "App广告页3秒倒计时处理"));
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_ACTIVITY_SPLASH, "App闪屏页动画效果"));
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_SVG, "SVG图片效果"));
@@ -120,12 +131,17 @@ public class MainPageFragment extends BaseFragment {
 
                 adapter.setData(pageListTwo);
                 break;
-            case 3:
+            case 4://框架学习
                 pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "下拉刷新，上拉加载更多框架"));
                 pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "网络请求框架"));
                 pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "数据库框架"));
                 pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "图片加载框架"));
+                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "无线轮播"));
+                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "各种左右滑动页面ViewPager效果"));
+                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "动画框架"));
                 pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "热更新-热修复框架"));
+                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "EventBus"));
+                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "RxJava响应式编程"));
 
                 adapter.setData(pageListThree);
                 break;
