@@ -314,10 +314,11 @@
         <activity
             android:name=".highUI.animatoion.PropertyAnimationActivity"
             android:label="属性动画" />
-        <activity android:name=".project.inflate.InflateActivity"></activity>
+        <activity android:name=".project.inflate.InflateActivity" />
         <activity
             android:name=".highUI.motionEvent.ScrollListViewActivity"
             android:label="ScrollView嵌套ListView" />
+        <activity android:name=".highUI.recyclerview.wrapRecyclerView.WarpRecyclerViewActivity"></activity>
     </application>
 
 </manifest>
