@@ -121,16 +121,12 @@ public class MainPageFragment extends BaseFragment {
                 adapter.setData(pageListTwo);
                 break;
             case 3:
-                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "仿腾讯List滑动删除"));
-                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "使用Activity作为Dialog来展示"));
-                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "高仿win8效果的界面展示"));
-                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "Android自定义ViewGroup实现竖向引导界面"));
+                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "下拉刷新，上拉加载更多框架"));
+                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "网络请求框架"));
+                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "数据库框架"));
+                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "图片加载框架"));
                 pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "热更新-热修复框架"));
-                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(二)--水波纹效果"));
-                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "自定义ViewGroup(三)--实现ViewPager效果"));
-                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "自定义View(四)--图片适配"));
-                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "ViewPager指示器"));
-                pageListThree.add(new MainModel(MainTag.TAG_XIUXIU, "城市列表选择"));
+
                 adapter.setData(pageListThree);
                 break;
         }

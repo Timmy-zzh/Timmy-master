@@ -13,21 +13,21 @@ import java.util.List;
  * Created by admin on 2017/2/7.
  * 模仿ListView源码使用代理的方式为ReyclerView添加头部和尾部
  */
-public class WarpRecyclerView extends RecyclerView {
+public class WrapRecyclerView extends RecyclerView {
 
     private List<View> mHeaderViewInfos = new ArrayList<View>();
     private List<View> mFooterViewInfos = new ArrayList<View>();
     private Adapter mAdapter;
 
-    public WarpRecyclerView(Context context) {
+    public WrapRecyclerView(Context context) {
         this(context, null);
     }
 
-    public WarpRecyclerView(Context context, @Nullable AttributeSet attrs) {
+    public WrapRecyclerView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public WarpRecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle) {
+    public WrapRecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 

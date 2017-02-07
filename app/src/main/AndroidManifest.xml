@@ -318,7 +318,7 @@
         <activity
             android:name=".highUI.motionEvent.ScrollListViewActivity"
             android:label="ScrollView嵌套ListView" />
-        <activity android:name=".highUI.recyclerview.wrapRecyclerView.WarpRecyclerViewActivity"></activity>
+        <activity android:name=".highUI.recyclerview.wrapRecyclerView.WrapRecyclerViewActivity"></activity>
     </application>
 
 </manifest>

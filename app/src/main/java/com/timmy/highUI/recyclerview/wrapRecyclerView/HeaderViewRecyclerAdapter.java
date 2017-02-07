@@ -42,6 +42,8 @@ public class HeaderViewRecyclerAdapter extends RecyclerView.Adapter {
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //根据viewType确定返回的viewHolder
         if (viewType == TYPE_HEADER) {
+            //这样处理只能增加一个头部或尾部，当我需要增加多个头部和尾部时-》处理
+            //当LayoutManager为GridLayout时,有怎么处理
             return new HeaderViewHodler(mHeaderViewInfos.get(0));
         } else if (viewType == TYPE_FOOT) {
             return new HeaderViewHodler(mFooterViewInfos.get(0));

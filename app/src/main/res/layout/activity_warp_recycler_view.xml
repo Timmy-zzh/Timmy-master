@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.timmy.highUI.recyclerview.wrapRecyclerView.WarpRecyclerViewActivity">
+    tools:context="com.timmy.highUI.recyclerview.wrapRecyclerView.WrapRecyclerViewActivity">
 
     <include layout="@layout/common_toolbar" />
 
-    <com.timmy.highUI.recyclerview.wrapRecyclerView.WarpRecyclerView
+    <com.timmy.highUI.recyclerview.wrapRecyclerView.WrapRecyclerView
         android:id="@+id/rv_recycleView"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

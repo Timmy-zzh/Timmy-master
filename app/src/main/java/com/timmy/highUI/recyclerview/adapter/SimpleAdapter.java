@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by admin on 2016/11/29.
  */
-public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.SimpleViewHolder> {
+public class SimpleAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
     private final Context mContext;
     private final List<String> mData;
@@ -26,7 +26,7 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.SimpleView
     }
 
     public void addItem(int i) {
-        mData.add(i,"abcd");
+        mData.add(i, "abcd");
         notifyItemInserted(i);
     }
 
@@ -36,9 +36,9 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.SimpleView
     }
 
     @Override
-    public SimpleViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_tab_pager, parent, false);
-        SimpleViewHolder holder = new SimpleViewHolder(view);
+        BaseViewHolder holder = new BaseViewHolder(view);
         return holder;
     }
 
@@ -48,29 +48,30 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.SimpleView
     }
 
     @Override
-    public void onBindViewHolder(SimpleViewHolder holder, int position) {
+    public void onBindViewHolder(BaseViewHolder holder, int position) {
         String data = mData.get(position);
-        holder.tv.setText(data);
+        TextView textView = (TextView) holder.getView(R.id.tv_content);
+        textView.setText(data);
 
         holder.itemView.setOnClickListener(new OnSimpleTestClick(position));
 
     }
 
-    class SimpleViewHolder extends RecyclerView.ViewHolder {
+//    class SimpleViewHolder extends RecyclerView.ViewHolder {
+//
+//        private final TextView tv;
+//
+//        public SimpleViewHolder(View itemView) {
+//            super(itemView);
+//            tv = (TextView) itemView.findViewById(R.id.tv_content);
+//        }
+//    }
 
-        private final TextView tv;
-
-        public SimpleViewHolder(View itemView) {
-            super(itemView);
-            tv = (TextView) itemView.findViewById(R.id.tv_content);
-        }
+    public interface OnSimpleClickListener {
+        void onSimpleClick(String data, int position);
     }
 
-    public interface OnSimpleClickListener{
-        void onSimpleClick(String data,int position);
-    }
-
-    public void setOnSimpleClickListener(OnSimpleClickListener listener){
+    public void setOnSimpleClickListener(OnSimpleClickListener listener) {
         this.mListener = listener;
     }
 
@@ -84,7 +85,7 @@ public class SimpleAdapter extends RecyclerView.Adapter<SimpleAdapter.SimpleView
 
         @Override
         public void onClick(View v) {
-            mListener.onSimpleClick(mData.get(position),position);
+            mListener.onSimpleClick(mData.get(position), position);
         }
     }
 }

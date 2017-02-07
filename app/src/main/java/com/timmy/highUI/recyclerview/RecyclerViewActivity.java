@@ -7,9 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Adapter;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.timmy.R;
@@ -20,7 +17,7 @@ import com.timmy.highUI.recyclerview.autoPoll.AutoPollRecyclerActivity;
 import com.timmy.highUI.recyclerview.decoration.DividerGridItemDecoration;
 import com.timmy.highUI.recyclerview.decoration.DividerItemDecoration;
 import com.timmy.highUI.recyclerview.interactive.InteractiveRecyclerView;
-import com.timmy.highUI.recyclerview.wrapRecyclerView.WarpRecyclerViewActivity;
+import com.timmy.highUI.recyclerview.wrapRecyclerView.WrapRecyclerViewActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -108,7 +105,7 @@ public class RecyclerViewActivity extends BaseActivity {
                 Util.gotoNextActivity(this, AutoPollRecyclerActivity.class);
                 return true;
             case R.id.menu_recycler_warp:
-                Util.gotoNextActivity(this, WarpRecyclerViewActivity.class);
+                Util.gotoNextActivity(this, WrapRecyclerViewActivity.class);
                 return true;
         }
         return super.onOptionsItemSelected(item);
