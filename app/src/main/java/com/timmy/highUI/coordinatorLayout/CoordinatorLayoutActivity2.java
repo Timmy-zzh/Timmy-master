@@ -18,7 +18,9 @@ import android.view.View;
 
 import com.timmy.R;
 import com.timmy.Util;
+import com.timmy.highUI.coordinatorLayout.behavior.baiduMap.BaiduMapBehaviorActivity;
 import com.timmy.highUI.coordinatorLayout.behavior.CustomeBehaviorActivity;
+import com.timmy.highUI.coordinatorLayout.behavior.zhihuHome.ZhihuHomeActivity;
 import com.timmy.library.util.Toast;
 
 public class CoordinatorLayoutActivity2 extends AppCompatActivity {
@@ -75,12 +77,20 @@ public class CoordinatorLayoutActivity2 extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.action_settings) {
-            Util.gotoNextActivity(CoordinatorLayoutActivity2.this, CoordinatorLayoutActivity3.class);
-            return true;
-        } else if (item.getItemId() == R.id.menu_behavior) {
-            Util.gotoNextActivity(CoordinatorLayoutActivity2.this, CustomeBehaviorActivity.class);
-            return true;
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                Util.gotoNextActivity(CoordinatorLayoutActivity2.this, CoordinatorLayoutActivity3.class);
+                return true;
+            case R.id.menu_behavior:
+                Util.gotoNextActivity(CoordinatorLayoutActivity2.this, CustomeBehaviorActivity.class);
+                return true;
+            case R.id.menu_zhihu:
+                Util.gotoNextActivity(CoordinatorLayoutActivity2.this, ZhihuHomeActivity.class);
+                return true;
+            case R.id.menu_baidu_map:
+                Util.gotoNextActivity(CoordinatorLayoutActivity2.this, BaiduMapBehaviorActivity.class);
+                break;
+
         }
         return super.onOptionsItemSelected(item);
     }

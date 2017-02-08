@@ -8,7 +8,20 @@
         app:showAsAction="never" />
     <item
         android:id="@+id/menu_behavior"
-        android:orderInCategory="106"
-        android:title="自定义Behavior"
+        android:orderInCategory="104"
+        android:title="自定义旋转Behavior"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_zhihu"
+        android:orderInCategory="105"
+        android:title="高仿知乎首页"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_baidu_map"
+        android:orderInCategory="106"
+        android:title="高仿百度地址界面"
+        app:showAsAction="never" />
+
 </menu>

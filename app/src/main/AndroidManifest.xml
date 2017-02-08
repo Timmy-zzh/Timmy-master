@@ -326,7 +326,13 @@
         <activity
             android:name=".customeView.clockView.ClockViewActivity"
             android:label="ClockView" />
-        <activity android:name=".highUI.coordinatorLayout.behavior.CustomeBehaviorActivity"></activity>
+        <activity android:name=".highUI.coordinatorLayout.behavior.CustomeBehaviorActivity" />
+        <activity
+            android:name=".highUI.coordinatorLayout.behavior.zhihuHome.ZhihuHomeActivity"
+            android:label="高仿知乎首页" />
+        <activity
+            android:name=".highUI.coordinatorLayout.behavior.baiduMap.BaiduMapBehaviorActivity"
+            android:label="高仿百度地图界面" />
     </application>
 
 </manifest>

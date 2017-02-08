@@ -54,7 +54,6 @@ public class SimpleAdapter extends RecyclerView.Adapter<BaseViewHolder> {
         textView.setText(data);
 
         holder.itemView.setOnClickListener(new OnSimpleTestClick(position));
-
     }
 
 //    class SimpleViewHolder extends RecyclerView.ViewHolder {
@@ -85,7 +84,8 @@ public class SimpleAdapter extends RecyclerView.Adapter<BaseViewHolder> {
 
         @Override
         public void onClick(View v) {
-            mListener.onSimpleClick(mData.get(position), position);
+            if (mListener != null)
+                mListener.onSimpleClick(mData.get(position), position);
         }
     }
 }
