@@ -43,7 +43,6 @@ public class ClockView extends View {
     //日历类,获取当前时间
     private Calendar calendar;
 
-
     public ClockView(Context context) {
         this(context, null);
     }
@@ -152,6 +151,7 @@ public class ClockView extends View {
         int hour = calendar.get(Calendar.HOUR);
         int minute = calendar.get(Calendar.MINUTE);
 
+        //保存当前画布的状态A,然后对画布进行旋转等操作,这个时候的画布状态为B,使用restore()方法将画布状态回退到状态A.
         canvas.save();
         canvas.rotate(hour * 30 + 0.5f * minute, centerX, centerY);
         canvas.drawLine(centerX, centerY - 160, centerX, centerY + 40, hourPaint);
@@ -169,7 +169,7 @@ public class ClockView extends View {
         canvas.rotate(second * 6, centerX, centerY);
         canvas.drawLine(centerX, centerY - 260, centerX, centerY + 60, secondPaint);
         canvas.restore();
-        Logger.d(TAG, "hour:" + hour + ",minute:" + minute + ",second" + second);
+//        Logger.d(TAG, "hour:" + hour + ",minute:" + minute + ",second" + second);
         postInvalidateDelayed(1000);
     }
 }

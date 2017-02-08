@@ -8,8 +8,11 @@ import android.os.Looper;
 import android.os.Message;
 import android.support.design.widget.Snackbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -74,7 +77,7 @@ public class SnackBarActivity extends BaseActivity {
             public void run() {
                 Looper.prepare();
 
-                handler1 = new Handler(){
+                handler1 = new Handler() {
                     @Override
                     public void handleMessage(Message msg) {
                         super.handleMessage(msg);
@@ -109,6 +112,10 @@ public class SnackBarActivity extends BaseActivity {
             }
         });
 
+        setSnackBarColor(snackbar, Color.BLUE, Color.WHITE);
+        snackbarAddView(snackbar,R.layout.view_add,0);
+//        snackbarAddView(snackbar,R.layout.view_delete_btn,2);
+
         snackbar.setCallback(new Snackbar.Callback() {
             @Override
             public void onDismissed(Snackbar snackbar, int event) {
@@ -122,6 +129,38 @@ public class SnackBarActivity extends BaseActivity {
                 Logger.d("onShown");
             }
         });
+    }
+
+    /**
+     * 设置SnackBar颜色
+     *
+     * @param snackbar
+     * @param backgroupColor
+     * @param messageColor
+     */
+    private void setSnackBarColor(Snackbar snackbar, int backgroupColor, int messageColor) {
+        View snackbarView = snackbar.getView();
+        //设置背景色
+        if (snackbarView != null) {
+            snackbarView.setBackgroundColor(backgroupColor);
+            ((TextView) snackbarView.findViewById(R.id.snackbar_text)).setTextColor(messageColor);
+        }
+    }
+
+    /**
+     * 为SnackBar添加布局
+     *
+     * @param snackbar
+     * @param layoutId xml文件id
+     * @param index    添加的布局在那个位置
+     */
+    public static void snackbarAddView(Snackbar snackbar, int layoutId, int index) {
+        Snackbar.SnackbarLayout snackbarLayout = (Snackbar.SnackbarLayout) snackbar.getView();
+        View addView = LayoutInflater.from(snackbarLayout.getContext()).inflate(layoutId, null);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        lp.gravity = Gravity.CENTER_VERTICAL;
+        snackbarLayout.addView(addView, index, lp);
     }
 
     public void FloatActBtnClick(View view) {

@@ -326,6 +326,7 @@
         <activity
             android:name=".customeView.clockView.ClockViewActivity"
             android:label="ClockView" />
+        <activity android:name=".highUI.coordinatorLayout.behavior.CustomeBehaviorActivity"></activity>
     </application>
 
 </manifest>

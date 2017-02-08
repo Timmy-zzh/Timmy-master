@@ -18,9 +18,7 @@ import android.view.View;
 
 import com.timmy.R;
 import com.timmy.Util;
-import com.timmy.base.BaseActivity;
-import com.timmy.home.MainFragment;
-import com.timmy.home.MainPageFragment;
+import com.timmy.highUI.coordinatorLayout.behavior.CustomeBehaviorActivity;
 import com.timmy.library.util.Toast;
 
 public class CoordinatorLayoutActivity2 extends AppCompatActivity {
@@ -71,7 +69,7 @@ public class CoordinatorLayoutActivity2 extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_coordinator, menu);
         return true;
     }
 
@@ -79,6 +77,9 @@ public class CoordinatorLayoutActivity2 extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_settings) {
             Util.gotoNextActivity(CoordinatorLayoutActivity2.this, CoordinatorLayoutActivity3.class);
+            return true;
+        } else if (item.getItemId() == R.id.menu_behavior) {
+            Util.gotoNextActivity(CoordinatorLayoutActivity2.this, CustomeBehaviorActivity.class);
             return true;
         }
         return super.onOptionsItemSelected(item);
