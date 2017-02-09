@@ -10,6 +10,7 @@ import com.timmy.R;
 import com.timmy.Util;
 import com.timmy.advance.customView.XiuViewActivity;
 import com.timmy.customeView.clockView.ClockViewActivity;
+import com.timmy.customeView.hotTag.HotTagActivity;
 import com.timmy.highUI.animatoion.ViewAnimationActivity;
 import com.timmy.highUI.cardView.CardViewActivity;
 import com.timmy.highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity;
@@ -97,19 +98,19 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         Util.gotoNextActivity(context, LinearLayoutCompatActivity.class);
                         break;
                     case MainTag.TAG_TAB_LAYOUT:
-                        Util.gotoNextActivity(context,TabLayoutActivity.class);
+                        Util.gotoNextActivity(context, TabLayoutActivity.class);
                         break;
                     case MainTag.TAG_PALETTE:
-                        Util.gotoNextActivity(context,PaletteActivity.class);
+                        Util.gotoNextActivity(context, PaletteActivity.class);
                         break;
                     case MainTag.TAG_CARD_VIEW:
-                        Util.gotoNextActivity(context,CardViewActivity.class);
+                        Util.gotoNextActivity(context, CardViewActivity.class);
                         break;
                     case MainTag.TAG_COORDINATOR_LAYOUT:
-                        Util.gotoNextActivity(context,CoordinatorLayoutActivity2.class);
+                        Util.gotoNextActivity(context, CoordinatorLayoutActivity2.class);
                         break;
                     case MainTag.TAG_ANIMATION_VIEW:
-                        Util.gotoNextActivity(context,ViewAnimationActivity.class);
+                        Util.gotoNextActivity(context, ViewAnimationActivity.class);
                         break;
                     case MainTag.TAG_MOTION_EVENT:
                         Util.gotoNextActivity(context, MotionEventActivity.class);
@@ -119,9 +120,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.CUSTOMEVIEW.TAG_CLOCK_VIEW:
                         Util.gotoNextActivity(context, ClockViewActivity.class);
                         break;
-
-
-
+                    case MainTag.CUSTOMEVIEW.TAG_HOT_TAG:
+                        Util.gotoNextActivity(context, HotTagActivity.class);
+                        break;
 
 
                     ///////////////////////////项目总结

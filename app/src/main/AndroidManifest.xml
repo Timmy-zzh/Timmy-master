@@ -333,6 +333,9 @@
         <activity
             android:name=".highUI.coordinatorLayout.behavior.baiduMap.BaiduMapBehaviorActivity"
             android:label="高仿百度地图界面" />
+        <activity
+            android:name=".customeView.hotTag.HotTagActivity"
+            android:label="热门标签" />
     </application>
 
 </manifest>

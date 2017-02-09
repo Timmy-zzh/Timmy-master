@@ -35,6 +35,7 @@ public class MainTag {
     //自定义控件
     public class CUSTOMEVIEW {
         public static final int TAG_CLOCK_VIEW = 0X200;
+        public static final int TAG_HOT_TAG = 0X201;
     }
 }
 

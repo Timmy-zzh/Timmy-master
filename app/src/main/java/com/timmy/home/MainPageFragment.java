@@ -118,6 +118,7 @@ public class MainPageFragment extends BaseFragment {
                 break;
             case 2://自定义控件
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_CLOCK_VIEW, "自定义钟表"));
+                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_HOT_TAG, "热门标签"));
 
 
                 adapter.setData(pageListFour);
