@@ -2,10 +2,14 @@ package com.timmy.customeView.letterNavigation;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AbsListView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.timmy.R;
 import com.timmy.base.BaseActivity;
+import com.timmy.library.util.Logger;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -20,7 +24,12 @@ import java.util.List;
  */
 public class LetterNavigationActivity extends BaseActivity {
 
+    private String TAG = "LetterNavigationActivity";
     private List<User> userNameList;
+    private TextView dialogText;
+    private ListView listView;
+    private LetterNavigationView letterNavigationView;
+    private LetterNavAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +38,38 @@ public class LetterNavigationActivity extends BaseActivity {
         initToolBar();
         initData();
 
-        ListView listView = (ListView) findViewById(R.id.list_view);
-        LetterNavAdapter adapter = new LetterNavAdapter(this, userNameList);
+        dialogText = (TextView) findViewById(R.id.tv_dialog);
+        letterNavigationView = (LetterNavigationView) findViewById(R.id.letter_nav_view);
+
+        listView = (ListView) findViewById(R.id.list_view);
+        adapter = new LetterNavAdapter(this, userNameList);
         listView.setAdapter(adapter);
 
+        letterNavigationView.setOnLetterUpdateListener(new LetterNavigationView.OnLetterUpdateListener() {
+            @Override
+            public void letterUpdate(String letter, int position) {
+                int positionForSection = adapter.getPositionForSection(letter.charAt(0));
+                dialogText.setText(letter);
+                listView.setSelection(positionForSection);
+            }
+        });
+
+        //监听listview滑动，左边listview滑动，右侧的字母导航也要随着滑动而有所改变
+        listView.setOnScrollListener(new AbsListView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(AbsListView view, int scrollState) {
+
+            }
+
+            @Override
+            public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+                User item = adapter.getItem(firstVisibleItem);
+                String firstLetter = item.getFirstLetter();//首字母
+                Logger.d(TAG, "firstLetter:" + firstLetter);
+                int position = firstLetter.hashCode() - 65;
+                letterNavigationView.updateLetrer(position);
+            }
+        });
 
     }
 
@@ -74,6 +111,12 @@ public class LetterNavigationActivity extends BaseActivity {
                 }
             }
         });
-
     }
+
+
+    public interface OnListViewScrollListener {
+        void updateLetrer(int position);
+    }
+
+
 }

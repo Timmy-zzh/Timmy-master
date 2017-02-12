@@ -8,11 +8,31 @@
 
     <include layout="@layout/common_toolbar" />
 
+    <com.timmy.customeView.letterNavigation.LetterNavigationView
+        android:id="@+id/letter_nav_view"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/toolbar"
+        android:background="@color/Gray_e"
+        android:clickable="true" />
+
     <ListView
         android:id="@+id/list_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar" />
+        android:layout_below="@+id/toolbar"
+        android:layout_toLeftOf="@+id/letter_nav_view" />
 
+    <TextView
+        android:id="@+id/tv_dialog"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:background="@color/Gray_e"
+        android:gravity="center"
+        android:text="A"
+        android:textColor="@color/red"
+        android:textSize="40sp" />
 
 </RelativeLayout>

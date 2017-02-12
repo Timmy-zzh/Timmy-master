@@ -69,6 +69,16 @@ public class LetterNavAdapter extends BaseAdapter {
         return convertView;
     }
 
+    //传入一个分组值[A....Z],获得该分组的第一项的position
+    public int getPositionForSection(int sectionIndex) {
+        for (int i = 0; i < list.size(); i++) {
+            if (list.get(i).getFirstLetter().charAt(0) == sectionIndex) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
 
     class MyViewHolder {
         TextView letter, userName;
