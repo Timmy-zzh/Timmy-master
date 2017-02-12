@@ -336,6 +336,9 @@
         <activity
             android:name=".customeView.hotTag.HotTagActivity"
             android:label="热门标签" />
+        <activity
+            android:name=".customeView.letterNavigation.LetterNavigationActivity"
+            android:label="字母导航栏" />
     </application>
 
 </manifest>

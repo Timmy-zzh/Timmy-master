@@ -11,6 +11,7 @@ import com.timmy.Util;
 import com.timmy.advance.customView.XiuViewActivity;
 import com.timmy.customeView.clockView.ClockViewActivity;
 import com.timmy.customeView.hotTag.HotTagActivity;
+import com.timmy.customeView.letterNavigation.LetterNavigationActivity;
 import com.timmy.highUI.animatoion.ViewAnimationActivity;
 import com.timmy.highUI.cardView.CardViewActivity;
 import com.timmy.highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity;
@@ -123,9 +124,12 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.CUSTOMEVIEW.TAG_HOT_TAG:
                         Util.gotoNextActivity(context, HotTagActivity.class);
                         break;
-
+                    case MainTag.CUSTOMEVIEW.TAG_LETTER_NAVIGATION:
+                        Util.gotoNextActivity(context,LetterNavigationActivity.class);
+                        break;
 
                     ///////////////////////////项目总结
+
                     case MainTag.PROJECT.TAG_ACTIVITY_LAUNCH:
                         Util.gotoNextActivity(context, WelcomeActivity.class);
                         break;

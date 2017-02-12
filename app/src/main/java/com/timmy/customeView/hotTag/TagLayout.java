@@ -73,7 +73,6 @@ public class TagLayout extends ViewGroup {
 //            measureChild(child, widthMeasureSpec, heightMeasureSpec);
 //            measureChildren(widthMeasureSpec, heightMeasureSpec);
 //            measureChildWithMargins(child, widthMeasureSpec, 0, heightMeasureSpec, 0);
-
             measureChild(child, widthMeasureSpec, heightMeasureSpec);
             //拿到子控件测量后的宽高
             int childWidth = child.getMeasuredWidth();
@@ -102,14 +101,12 @@ public class TagLayout extends ViewGroup {
                     lastChildNextLine = false;
                 }
             }
-
             //最后一行处理
             if (i == childCount - 1 && !lastChildNextLine) {
                 mWidth = Math.max(mWidth, lineWidth);
                 mHeight += (childHeigth + lp.topMargin + lp.bottomMargin);
             }
         }
-
         Logger.d(TAG, "mWidth:" + mWidth + ",mHeight:" + mHeight);
         //最终调用setMeasureDimention();确定自己的宽高-根据父容器给定的Mode进行判断
         mWidth = widhtMode == MeasureSpec.EXACTLY ? widthSize : mWidth;
@@ -147,14 +144,12 @@ public class TagLayout extends ViewGroup {
                 //换行,保存这一行所有的子控件最高的高度
                 lineHeight = Math.max(lineHeight, childHeight + lp.topMargin + lp.bottomMargin);
                 lineHights.add(lineHeight);
-
                 lineWidth = 0;
-
                 views.add(lineViews);
                 lineViews = new ArrayList<>();
             }
 
-            lineHeight = Math.max(lineHeight, childHeight+ lp.topMargin + lp.bottomMargin);
+            lineHeight = Math.max(lineHeight, childHeight + lp.topMargin + lp.bottomMargin);
             lineWidth += (childWidth + lp.leftMargin + lp.rightMargin);
             lineViews.add(child);
             if (i == childCount - 1) {
@@ -184,12 +179,11 @@ public class TagLayout extends ViewGroup {
 
                 MarginLayoutParams lp = (MarginLayoutParams) child.getLayoutParams();
                 lc = lineWidth + lp.leftMargin;
-                rc = lc + childWidth + lp.rightMargin;
+                rc = lc + childWidth;
                 tc = top + lp.topMargin;
-                bc = tc + childHeight + lp.bottomMargin;
+                bc = tc + childHeight;
 
                 Logger.d(TAG, "lc:" + lc + ",rc:" + rc + ",tc:" + tc + ",bc:" + bc);
-
                 child.layout(lc, tc, rc, bc);
                 lineWidth += childWidth + lp.leftMargin + lp.rightMargin;
             }

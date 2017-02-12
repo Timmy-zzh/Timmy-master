@@ -24,7 +24,7 @@ public class HotTagActivity extends BaseActivity {
 
         TagLayout tagLayout = (TagLayout) findViewById(R.id.tag_layout);
 
-        for (int i = 0; i < 11; i++) {
+        for (int i = 0; i < 10; i++) {
             TextView textView = (TextView) LayoutInflater.from(this).inflate(R.layout.item_list, tagLayout, false);
             textView.setText("Item:" + i + temp.substring(0, new Random().nextInt(temp.length())));
             textView.setBackgroundResource(R.drawable.flow_text_bg);

@@ -36,6 +36,7 @@ public class MainTag {
     public class CUSTOMEVIEW {
         public static final int TAG_CLOCK_VIEW = 0X200;
         public static final int TAG_HOT_TAG = 0X201;
+        public static final int TAG_LETTER_NAVIGATION = 0X202;
     }
 }
 
