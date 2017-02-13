@@ -12,6 +12,7 @@ import com.timmy.advance.customView.XiuViewActivity;
 import com.timmy.customeView.clockView.ClockViewActivity;
 import com.timmy.customeView.hotTag.HotTagActivity;
 import com.timmy.customeView.letterNavigation.LetterNavigationActivity;
+import com.timmy.customeView.notePad.NotePadActivity;
 import com.timmy.highUI.animatoion.ViewAnimationActivity;
 import com.timmy.highUI.cardView.CardViewActivity;
 import com.timmy.highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity;
@@ -19,9 +20,11 @@ import com.timmy.highUI.coordinatorLayout.CoordinatorLayoutActivity2;
 import com.timmy.highUI.linearLayoutCompat.LinearLayoutCompatActivity;
 import com.timmy.highUI.motionEvent.MotionEventActivity;
 import com.timmy.highUI.palette.PaletteActivity;
+import com.timmy.highUI.path.PathUseActicity;
 import com.timmy.highUI.recyclerview.RecyclerViewActivity;
 import com.timmy.highUI.drawerLayout.DrawerLayoutActivity;
 import com.timmy.highUI.searchView.SearchViewActivity;
+import com.timmy.highUI.shader.ShaderUseActicity;
 import com.timmy.highUI.snackBar.SnackBarActivity;
 import com.timmy.highUI.stretchList.StretchListActivity;
 import com.timmy.highUI.tabLayout.TabLayoutActivity;
@@ -116,6 +119,13 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.TAG_MOTION_EVENT:
                         Util.gotoNextActivity(context, MotionEventActivity.class);
                         break;
+                    case MainTag.TAG_PATH:
+                        Util.gotoNextActivity(context, PathUseActicity.class);
+                        break;
+                    case MainTag.TAG_SHADER:
+                        Util.gotoNextActivity(context, ShaderUseActicity.class);
+                        break;
+
 
                     ///////////////////////////自定义控件
                     case MainTag.CUSTOMEVIEW.TAG_CLOCK_VIEW:
@@ -125,7 +135,10 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         Util.gotoNextActivity(context, HotTagActivity.class);
                         break;
                     case MainTag.CUSTOMEVIEW.TAG_LETTER_NAVIGATION:
-                        Util.gotoNextActivity(context,LetterNavigationActivity.class);
+                        Util.gotoNextActivity(context, LetterNavigationActivity.class);
+                        break;
+                    case MainTag.CUSTOMEVIEW.TAG_NOTE_PAD:
+                        Util.gotoNextActivity(context, NotePadActivity.class);
                         break;
 
                     ///////////////////////////项目总结

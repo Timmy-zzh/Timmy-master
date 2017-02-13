@@ -185,5 +185,4 @@ public class ChineseToPinyinHelper {
     public String getSpelling() {
         return this.getPinyin(this.getResource());
     }
-
 }

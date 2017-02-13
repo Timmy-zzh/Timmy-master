@@ -22,6 +22,8 @@ public class MainTag {
     public static final int TAG_COORDINATOR_LAYOUT = 0x14;
     public static final int TAG_ANIMATION_VIEW = 0x15;
     public static final int TAG_MOTION_EVENT = 0x16;
+    public static final int TAG_PATH = 0X17;
+    public static final int TAG_SHADER = 0X18;
 
 
     //项目总结
@@ -37,6 +39,7 @@ public class MainTag {
         public static final int TAG_CLOCK_VIEW = 0X200;
         public static final int TAG_HOT_TAG = 0X201;
         public static final int TAG_LETTER_NAVIGATION = 0X202;
+        public static final int TAG_NOTE_PAD = 0X203;
     }
 }
 

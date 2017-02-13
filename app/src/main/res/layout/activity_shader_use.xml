@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_shader_use"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.timmy.highUI.shader.ShaderUseActicity">
+
+    <include layout="@layout/common_toolbar" />
+
+    <com.timmy.highUI.shader.ShaderUseView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/toolbar" />
+
+    <com.timmy.highUI.shader.LinearGradientTextView
+        android:layout_width="match_parent"
+        android:textColor="@color/white"
+        android:background="@color/blue_light"
+        android:text="我是草原的一团火，燃烧青春，燃烧岁月"
+        android:layout_height="100dp" />
+
+</LinearLayout>

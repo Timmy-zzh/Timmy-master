@@ -113,6 +113,8 @@ public class MainPageFragment extends BaseFragment {
                 pageListOne.add(new MainModel(MainTag.TAG_COORDINATOR_LAYOUT, "CoordinatorLayout的使用"));
                 pageListOne.add(new MainModel(MainTag.TAG_ANIMATION_VIEW, "动画的使用"));
                 pageListOne.add(new MainModel(MainTag.TAG_MOTION_EVENT, "事件分发"));
+                pageListOne.add(new MainModel(MainTag.TAG_PATH, "Path高级使用"));
+                pageListOne.add(new MainModel(MainTag.TAG_SHADER, "高级渲染"));
 
                 adapter.setData(pageListOne);
                 break;
@@ -120,6 +122,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_CLOCK_VIEW, "自定义钟表"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_HOT_TAG, "热门标签"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_LETTER_NAVIGATION, "右侧A-Z字母导航栏"));
+                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_NOTE_PAD, "自定义NotePad"));
 
 
                 adapter.setData(pageListFour);

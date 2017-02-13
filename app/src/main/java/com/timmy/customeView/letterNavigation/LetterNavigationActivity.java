@@ -68,6 +68,8 @@ public class LetterNavigationActivity extends BaseActivity {
                 Logger.d(TAG, "firstLetter:" + firstLetter);
                 int position = firstLetter.hashCode() - 65;
                 letterNavigationView.updateLetrer(position);
+                dialogText.setText(firstLetter);
+
             }
         });
 
@@ -113,10 +115,7 @@ public class LetterNavigationActivity extends BaseActivity {
         });
     }
 
-
     public interface OnListViewScrollListener {
         void updateLetrer(int position);
     }
-
-
 }

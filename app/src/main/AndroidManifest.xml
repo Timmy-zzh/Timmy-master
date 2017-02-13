@@ -339,6 +339,13 @@
         <activity
             android:name=".customeView.letterNavigation.LetterNavigationActivity"
             android:label="字母导航栏" />
+        <activity
+            android:name=".customeView.notePad.NotePadActivity"
+            android:label="NotePad" />
+        <activity
+            android:name=".highUI.path.PathUseActicity"
+            android:label="Path高级使用" />
+        <activity android:name=".highUI.shader.ShaderUseActicity"></activity>
     </application>
 
 </manifest>

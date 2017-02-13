@@ -134,5 +134,4 @@ public class LetterNavigationView extends View implements LetterNavigationActivi
     public void setOnLetterUpdateListener(OnLetterUpdateListener listener) {
         this.mListener = listener;
     }
-
 }

@@ -27,7 +27,6 @@
     <string name="warp_recycler">RecyclerView添加头部和尾部封装</string>
 
 
-
     <string-array name="arrUsernames">
         <item>阿妹</item>
         <item>阿郎</item>
