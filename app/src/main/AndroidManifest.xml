@@ -19,9 +19,6 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".project.launch.SplashActivity"
-            android:launchMode="singleTop" />
-        <activity
-            android:name=".project.launch.WelcomeActivity"
             android:launchMode="singleTop"
             android:theme="@style/WelcomeTheme">
             <intent-filter>
@@ -29,6 +26,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".project.launch.WelcomeActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/WelcomeTheme">
+
         </activity>
         <activity
             android:name=".home.MainActivity"
@@ -292,8 +295,12 @@
         <activity
             android:name=".highUI.linearLayoutCompat.LinearLayoutCompatActivity"
             android:label="LinearLayoutCompat解析" />
-        <activity android:name=".project.svg.SVGActivity" />
-        <activity android:name=".project.svg.SVGActivity2" />
+        <activity
+            android:name=".project.svg.SVGActivity"
+            android:label="SVG-5.0以上" />
+        <activity
+            android:name=".project.svg.SVGMergeActivity"
+            android:label="兼容5.0以下版本" />
         <activity
             android:name=".highUI.tabLayout.TabLayoutActivity"
             android:label="TabLayout源码解析" />
@@ -345,7 +352,13 @@
         <activity
             android:name=".highUI.path.PathUseActicity"
             android:label="Path高级使用" />
-        <activity android:name=".highUI.shader.ShaderUseActicity"></activity>
+        <activity
+            android:name=".highUI.shader.ShaderUseActicity"
+            android:label="高级渲染" />
+        <activity
+            android:name=".highUI.animatoion.TranstionAnimationActivity"
+            android:label="转场动画" />
+        <activity android:name=".highUI.animatoion.TranAnimActivityB"></activity>
     </application>
 
 </manifest>

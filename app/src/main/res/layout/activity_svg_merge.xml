@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_svg2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.timmy.project.svg.SVGMergeActivity">
+
+    <include layout="@layout/common_toolbar" />
+
+    <com.timmy.project.svg.PathView
+        android:id="@+id/svg_path"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/red"
+        android:layout_below="@+id/toolbar"
+        app:fill="true"
+        app:pathColor="@android:color/holo_red_dark"
+        app:pathWidth="2dp"
+        app:svg="@raw/ironman_white" />
+
+</RelativeLayout>

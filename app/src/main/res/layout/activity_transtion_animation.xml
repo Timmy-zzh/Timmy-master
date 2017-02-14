@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_transtion_animation"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.timmy.highUI.animatoion.TranstionAnimationActivity">
+
+    <include layout="@layout/common_toolbar" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="oldTransAnimation"
+        android:padding="10dp"
+        android:text="旧的转场动画实现" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="sceneTrans"
+        android:text="转场动画-分解" />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:transitionName="myView"
+        android:layout_height="60dp"
+        android:layout_marginTop="300dp"
+        android:onClick="sharedElement"
+        android:src="@mipmap/ic_14" />
+
+</LinearLayout>

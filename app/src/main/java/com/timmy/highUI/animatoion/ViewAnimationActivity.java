@@ -138,18 +138,22 @@ public class ViewAnimationActivity extends BaseActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_animation,menu);
+        getMenuInflater().inflate(R.menu.menu_animation, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.frame_animation){
-            Util.gotoNextActivity(this,FrameAnimationActivity.class);
-            return true;
-        }else if(item.getItemId() == R.id.property_animation){
-            Util.gotoNextActivity(this,PropertyAnimationActivity.class);
-            return true;
+        switch (item.getItemId()) {
+            case R.id.frame_animation:
+                Util.gotoNextActivity(this, FrameAnimationActivity.class);
+                return true;
+            case R.id.property_animation:
+                Util.gotoNextActivity(this, PropertyAnimationActivity.class);
+                return true;
+            case R.id.transtion_animation:
+                Util.gotoNextActivity(this, TranstionAnimationActivity.class);
+                return true;
         }
         return super.onOptionsItemSelected(item);
     }

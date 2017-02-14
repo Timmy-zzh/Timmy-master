@@ -1,6 +1,5 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/frame_animation"
@@ -14,4 +13,12 @@
         android:title="属性动画"
         android:icon="@android:drawable/arrow_up_float"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/transtion_animation"
+        android:orderInCategory="104"
+        android:title="转场动画"
+        android:icon="@android:drawable/presence_audio_online"
+        app:showAsAction="never" />
+
 </menu>

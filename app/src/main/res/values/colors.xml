@@ -28,6 +28,7 @@
     <color name="gray_trans">#aacccccc</color>
     <color name="wx_t_c">#a6a6a6</color>
     <color name="wx_t_c_selected">#46be17</color>
+    <color name="splash_bg">#2d2c4b</color>
 
 
 </resources>
