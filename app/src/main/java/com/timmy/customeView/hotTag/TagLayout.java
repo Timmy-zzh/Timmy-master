@@ -23,9 +23,11 @@ public class TagLayout extends ViewGroup {
     private String TAG = "TagLayout";
     private List<List<View>> views = new ArrayList<>();
     private List<Integer> lineHights = new ArrayList<>();
-    private int widthSize;
     private List<View> lineViews = new ArrayList<>();
     private boolean lastChildNextLine;
+    //最终确定自己的宽高
+    private int mWidth;
+    private int mHeight;
 
 
     public TagLayout(Context context) {
@@ -52,15 +54,13 @@ public class TagLayout extends ViewGroup {
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         Logger.d(TAG, "onMeasure");
         //父容器给定的宽高
-        widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
 
         int widhtMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
 
-        //最终确定自己的宽高
-        int mWidth = 0;
-        int mHeight = 0;
+
         //子控件确定每行的宽高
         int lineWidth = 0;
         int lineHeight = 0;
@@ -140,7 +140,7 @@ public class TagLayout extends ViewGroup {
             int childWidth = child.getMeasuredWidth();
             int childHeight = child.getMeasuredHeight();
             MarginLayoutParams lp = (MarginLayoutParams) child.getLayoutParams();
-            if (lineWidth + childWidth + lp.leftMargin + lp.rightMargin > widthSize) {
+            if (lineWidth + childWidth + lp.leftMargin + lp.rightMargin > mWidth) {
                 //换行,保存这一行所有的子控件最高的高度
                 lineHeight = Math.max(lineHeight, childHeight + lp.topMargin + lp.bottomMargin);
                 lineHights.add(lineHeight);

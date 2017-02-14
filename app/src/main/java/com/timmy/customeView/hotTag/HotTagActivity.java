@@ -22,6 +22,9 @@ public class HotTagActivity extends BaseActivity {
         setContentView(R.layout.activity_hot_tag);
         initToolBar();
 
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.MATCH_PARENT);
+
         TagLayout tagLayout = (TagLayout) findViewById(R.id.tag_layout);
 
         for (int i = 0; i < 10; i++) {
