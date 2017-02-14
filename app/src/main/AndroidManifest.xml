@@ -30,9 +30,7 @@
         <activity
             android:name=".project.launch.WelcomeActivity"
             android:launchMode="singleTop"
-            android:theme="@style/WelcomeTheme">
-
-        </activity>
+            android:theme="@style/WelcomeTheme"></activity>
         <activity
             android:name=".home.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -358,7 +356,10 @@
         <activity
             android:name=".highUI.animatoion.TranstionAnimationActivity"
             android:label="转场动画" />
-        <activity android:name=".highUI.animatoion.TranAnimActivityB"></activity>
+        <activity android:name=".highUI.animatoion.TranAnimActivityB" />
+        <activity
+            android:name=".highUI.toast.ToastActivity"
+            android:label="Toast源码解析" />
     </application>
 
 </manifest>

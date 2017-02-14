@@ -36,7 +36,7 @@ public class SnackBarActivity extends BaseActivity {
     }
 
     public void toastClick(View view) {
-//        Toast.makeText(this,"Toast000",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,"Toast000",Toast.LENGTH_SHORT).show();
 
         String text = "Custom Toast";
         Toast result = new Toast(this);

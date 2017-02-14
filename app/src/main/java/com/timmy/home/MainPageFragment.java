@@ -103,6 +103,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListOne.add(new MainModel(MainTag.TAG_RECYCLER_VIEW, "RecyclerView使用"));
                 pageListOne.add(new MainModel(MainTag.TAG_SLIDESLIP, "MD侧滑"));
                 pageListOne.add(new MainModel(MainTag.TAG_SNACKBAR, "SnackBar解析"));
+                pageListOne.add(new MainModel(MainTag.TAG_TOAST, "Toast源码解析"));
                 pageListOne.add(new MainModel(MainTag.TAG_TEXT_INPUT_LAYOUT, "TextInputLayout使用"));
                 pageListOne.add(new MainModel(MainTag.TAG_TOOLBAR, "Toolbar源码解析"));
                 pageListOne.add(new MainModel(MainTag.TAG_SEARCH_VIEW, "SearchView源码解析"));

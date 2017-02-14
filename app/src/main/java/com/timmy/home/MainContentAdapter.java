@@ -28,6 +28,7 @@ import com.timmy.highUI.shader.ShaderUseActicity;
 import com.timmy.highUI.snackBar.SnackBarActivity;
 import com.timmy.highUI.stretchList.StretchListActivity;
 import com.timmy.highUI.tabLayout.TabLayoutActivity;
+import com.timmy.highUI.toast.ToastActivity;
 import com.timmy.highUI.toolbar.ToolbarActivity;
 import com.timmy.highUI.textInputLayout.TextInputLayoutActivity;
 import com.timmy.home.model.MainModel;
@@ -88,6 +89,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.TAG_SNACKBAR:
                         Util.gotoNextActivity(context, SnackBarActivity.class);
+                        break;
+                    case MainTag.TAG_TOAST:
+                        Util.gotoNextActivity(context, ToastActivity.class);
                         break;
                     case MainTag.TAG_TEXT_INPUT_LAYOUT:
                         Util.gotoNextActivity(context, TextInputLayoutActivity.class);
