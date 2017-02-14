@@ -17,8 +17,17 @@
     <com.timmy.highUI.shader.LinearGradientTextView
         android:layout_width="match_parent"
         android:textColor="@color/white"
+        android:gravity="center"
         android:background="@color/blue_light"
         android:text="我是草原的一团火，燃烧青春，燃烧岁月"
-        android:layout_height="100dp" />
+        android:layout_height="50dp" />
+
+
+    <com.timmy.highUI.shader.ZoomImageView
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="100dp"
+        android:layout_height="wrap_content" />
+
 
 </LinearLayout>

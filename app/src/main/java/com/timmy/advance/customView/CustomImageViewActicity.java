@@ -10,7 +10,7 @@ public class CustomImageViewActicity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_image_view_acticity);
+        setContentView(R.layout.activity_custom_image_view);
         initToolBar();
     }
 }

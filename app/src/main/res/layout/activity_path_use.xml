@@ -9,7 +9,12 @@
 
     <include layout="@layout/common_toolbar" />
 
-    <com.timmy.highUI.path.PathUseView
+    <!--<com.timmy.highUI.path.PathUseView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent" />-->
+
+    <com.timmy.highUI.path.WaveView
+        android:id="@+id/wave_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

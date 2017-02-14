@@ -57,7 +57,7 @@ public class ShaderUseView extends View {
 //        int radius = Math.min(mWidth/2,mHeight/2);
 //        canvas.drawCircle(mWidth/2,mHeight/2,radius,paint);
 
-        RectF rectOval = new RectF(0,0,mHeight,mWidth);
+        RectF rectOval = new RectF(0,0,mWidth,mHeight);
         canvas.drawOval(rectOval,paint);
 
     }
