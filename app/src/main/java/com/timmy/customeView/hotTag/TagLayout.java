@@ -60,6 +60,8 @@ public class TagLayout extends ViewGroup {
         int widhtMode = MeasureSpec.getMode(widthMeasureSpec);
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
 
+        mWidth = 0;
+        mHeight = 0;
 
         //子控件确定每行的宽高
         int lineWidth = 0;

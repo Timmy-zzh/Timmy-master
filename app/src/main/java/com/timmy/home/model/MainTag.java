@@ -33,6 +33,8 @@ public class MainTag {
         public static final int TAG_ACTIVITY_SPLASH = 0x101;
         public static final int TAG_SVG = 0x102;
         public static final int TAG_INFLATE = 0x103;
+        public static final int TAG_AIDL_BINDER = 0X104;
+        public static final int TAG_SERVICE = 0x105;
     }
 
     //自定义控件

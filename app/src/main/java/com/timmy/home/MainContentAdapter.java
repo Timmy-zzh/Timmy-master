@@ -33,9 +33,11 @@ import com.timmy.highUI.toolbar.ToolbarActivity;
 import com.timmy.highUI.textInputLayout.TextInputLayoutActivity;
 import com.timmy.home.model.MainModel;
 import com.timmy.home.model.MainTag;
+import com.timmy.project.aidlBinder.AIDLActivity;
 import com.timmy.project.inflate.InflateActivity;
 import com.timmy.project.launch.SplashActivity;
 import com.timmy.project.launch.WelcomeActivity;
+import com.timmy.project.service.ServiceActivity;
 import com.timmy.project.svg.SVGActivity;
 
 import java.util.List;
@@ -158,6 +160,12 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.PROJECT.TAG_INFLATE:
                         Util.gotoNextActivity(context, InflateActivity.class);
+                        break;
+                    case MainTag.PROJECT.TAG_SERVICE:
+                        Util.gotoNextActivity(context, ServiceActivity.class);
+                        break;
+                    case MainTag.PROJECT.TAG_AIDL_BINDER:
+                        Util.gotoNextActivity(context, AIDLActivity.class);
                         break;
                     default:
                         break;

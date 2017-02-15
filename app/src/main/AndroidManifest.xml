@@ -30,7 +30,7 @@
         <activity
             android:name=".project.launch.WelcomeActivity"
             android:launchMode="singleTop"
-            android:theme="@style/WelcomeTheme"></activity>
+            android:theme="@style/WelcomeTheme" />
         <activity
             android:name=".home.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -360,6 +360,26 @@
         <activity
             android:name=".highUI.toast.ToastActivity"
             android:label="Toast源码解析" />
+        <activity
+            android:name=".project.aidlBinder.AIDLActivity"
+            android:label="AIDL学习" />
+        <activity
+            android:name=".project.service.ServiceActivity"
+            android:label="Service详解" />
+
+        <service
+            android:name=".project.service.DemoServiceA"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".project.service.DemoIntentService"
+            android:exported="false" />
+        <service
+            android:name=".project.service.DemoBindServiceB"
+            android:enabled="true"
+            android:exported="true" />
+
+
     </application>
 
 </manifest>
