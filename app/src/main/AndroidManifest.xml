@@ -378,8 +378,13 @@
             android:name=".project.service.DemoBindServiceB"
             android:enabled="true"
             android:exported="true" />
-
-
+        <service
+            android:name=".project.aidlBinder.LocalService"
+            android:exported="true">
+            <intent-filter >
+                <action android:name="myService"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
