@@ -16,6 +16,9 @@ import com.timmy.library.util.Toast;
 
 import java.util.Random;
 
+/**
+ * aidl
+ */
 public class AIDLActivity extends BaseActivity {
 
     private IRemoteService remoteService;
