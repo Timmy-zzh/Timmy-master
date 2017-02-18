@@ -34,21 +34,7 @@ public class MyLinearLayout extends LinearLayout {
      */
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
-
         Logger.d(TAG, "--MyLinearLayout--dispatchTouchEvent--"+event.getAction());
-
-//        switch (event.getAction()) {
-//            case MotionEvent.ACTION_DOWN:
-//                Logger.d(TAG, "--dispatchTouchEvent--ACTION_DOWN");
-//                break;
-//            case MotionEvent.ACTION_MOVE:
-//                Logger.d(TAG, "--dispatchTouchEvent--ACTION_MOVE");
-//                break;
-//            case MotionEvent.ACTION_UP:
-//                Logger.d(TAG, "--dispatchTouchEvent--ACTION_UP");
-//                break;
-//        }
-//        Logger.d(TAG, "--super.dispatchTouchEvent(event):" + super.dispatchTouchEvent(event));
         return super.dispatchTouchEvent(event);
     }
 
@@ -60,20 +46,7 @@ public class MyLinearLayout extends LinearLayout {
      */
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-
         Logger.d(TAG, "--MyLinearLayout--onInterceptTouchEvent--"+event.getAction());
-
-//        switch (event.getAction()) {
-//            case MotionEvent.ACTION_DOWN:
-//                Logger.d(TAG, "--onInterceptTouchEvent--ACTION_DOWN");
-//                break;
-//            case MotionEvent.ACTION_MOVE:
-//                Logger.d(TAG, "--onInterceptTouchEvent--ACTION_MOVE");
-//                break;
-//            case MotionEvent.ACTION_UP:
-//                Logger.d(TAG, "--onInterceptTouchEvent--ACTION_UP");
-//                break;
-//        }
         return super.onInterceptTouchEvent(event);
     }
 
@@ -97,19 +70,6 @@ public class MyLinearLayout extends LinearLayout {
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         Logger.d(TAG, "--MyLinearLayout--onTouchEvent--"+event.getAction());
-
-//        switch (event.getAction()) {
-//            case MotionEvent.ACTION_DOWN:
-//                Logger.d(TAG, "--onTouchEvent--ACTION_DOWN");
-//                break;
-//            case MotionEvent.ACTION_MOVE:
-//                Logger.d(TAG, "--onTouchEvent--ACTION_MOVE");
-//                break;
-//            case MotionEvent.ACTION_UP:
-//                Logger.d(TAG, "--onTouchEvent--ACTION_UP");
-//                break;
-//        }
-//        Logger.d(TAG, "--super.onTouchEvent(event):" + super.onTouchEvent(event));
         return super.onTouchEvent(event);
     }
 

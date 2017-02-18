@@ -3,6 +3,7 @@
     android:id="@+id/my_linear_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue_light"
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
@@ -11,16 +12,17 @@
 
     <com.timmy.highUI.motionEvent.MyTextView
         android:id="@+id/my_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:background="@color/red"
+        android:layout_height="150dp"
         android:layout_margin="20dp"
         android:text="MyTextView" />
 
 
     <com.timmy.highUI.motionEvent.MyButton
         android:id="@+id/my_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:text="inner_button"
         android:textAllCaps="false" />
 

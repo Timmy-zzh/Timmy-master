@@ -1,20 +1,16 @@
 package com.timmy.highUI.motionEvent;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.RelativeLayout;
 
 import com.timmy.R;
 import com.timmy.Util;
-import com.timmy.library.util.Logger;
 import com.timmy.base.BaseActivity;
-
-import java.util.ArrayList;
-import java.util.List;
+import com.timmy.library.util.Logger;
 
 public class MotionEventActivity extends BaseActivity implements View.OnTouchListener, View.OnClickListener {
 
@@ -27,19 +23,7 @@ public class MotionEventActivity extends BaseActivity implements View.OnTouchLis
         setContentView(R.layout.activity_motion_event);
         initToolBar();
 
-//        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relative_layout);
-//        Button button = (Button) findViewById(R.id.button);
-//
-//        relativeLayout.setOnTouchListener(this);
-//        button.setOnTouchListener(this);
-//
-//        relativeLayout.setOnClickListener(this);
-//        button.setOnClickListener(this);
-//
-//    }
-
-//}
-
+//        Activity
         MyLinearLayout myLinearLayout = (MyLinearLayout) findViewById(R.id.my_linear_layout);
         MyButton myButton = (MyButton) findViewById(R.id.my_button);
         MyTextView myTextView = (MyTextView) findViewById(R.id.my_textView);
@@ -49,7 +33,11 @@ public class MotionEventActivity extends BaseActivity implements View.OnTouchLis
 //
 //        myLinearLayout.setOnClickListener(this);
 //        myButton.setOnClickListener(this);
+    }
 
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        return super.dispatchTouchEvent(ev);
     }
 
     @Override

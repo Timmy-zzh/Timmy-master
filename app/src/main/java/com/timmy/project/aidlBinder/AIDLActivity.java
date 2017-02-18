@@ -3,10 +3,9 @@ package com.timmy.project.aidlBinder;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 
 import com.timmy.IRemoteService;
