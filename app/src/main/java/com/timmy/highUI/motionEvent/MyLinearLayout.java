@@ -48,6 +48,7 @@ public class MyLinearLayout extends LinearLayout {
     public boolean onInterceptTouchEvent(MotionEvent event) {
         Logger.d(TAG, "--MyLinearLayout--onInterceptTouchEvent--"+event.getAction());
         return super.onInterceptTouchEvent(event);
+//        return true;
     }
 
     /**

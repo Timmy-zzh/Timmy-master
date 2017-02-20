@@ -381,10 +381,12 @@
         <service
             android:name=".project.aidlBinder.LocalService"
             android:exported="true">
-            <intent-filter >
-                <action android:name="myService"/>
+            <intent-filter>
+                <action android:name="myService" />
             </intent-filter>
         </service>
+
+        <activity android:name=".highUI.motionEvent.QQHomeCopyActivity"></activity>
     </application>
 
 </manifest>

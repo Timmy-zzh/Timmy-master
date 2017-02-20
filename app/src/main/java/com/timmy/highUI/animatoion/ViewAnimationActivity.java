@@ -36,6 +36,7 @@ public class ViewAnimationActivity extends BaseActivity {
         setContentView(R.layout.activity_view_animation);
         ButterKnife.bind(this);
         initToolBar();
+//        ImageView
     }
 
     @OnClick({R.id.btn_alpha,

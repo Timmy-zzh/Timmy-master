@@ -1,11 +1,11 @@
 package com.timmy.highUI.motionEvent;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ScrollView;
 
 import com.timmy.R;
 import com.timmy.Util;
@@ -28,6 +28,7 @@ public class MotionEventActivity extends BaseActivity implements View.OnTouchLis
         MyButton myButton = (MyButton) findViewById(R.id.my_button);
         MyTextView myTextView = (MyTextView) findViewById(R.id.my_textView);
 
+//        ScrollView
 //        myLinearLayout.setOnTouchListener(this);
 //        myButton.setOnTouchListener(this);
 //
@@ -62,6 +63,9 @@ public class MotionEventActivity extends BaseActivity implements View.OnTouchLis
         switch (item.getItemId()){
             case  R.id.menu_nest:
                 Util.gotoNextActivity(this,ScrollListViewActivity.class);
+                break;
+            case R.id.menu_qq_main:
+                Util.gotoNextActivity(this,QQHomeCopyActivity.class);
                 break;
         }
         return super.onOptionsItemSelected(item);
