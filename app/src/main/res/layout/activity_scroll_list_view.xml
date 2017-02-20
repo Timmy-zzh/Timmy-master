@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.timmy.highUI.motionEvent.MyScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.timmy.highUI.motionEvent.nest.MyScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_scroll_list_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.timmy.highUI.motionEvent.ScrollListViewActivity">
+    tools:context="com.timmy.highUI.motionEvent.nest.ScrollListViewActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,10 +26,10 @@
             android:gravity="center"
             android:text="TextView"/>
 
-        <ListView
+        <com.timmy.highUI.motionEvent.nest.MyListView
             android:id="@+id/list_view"
             android:layout_width="match_parent"
-            android:background="@color/Gray_e"
+            android:background="@color/blue_light"
             android:layout_height="200dp"/>
 
         <TextView
@@ -58,4 +58,4 @@
 
     </LinearLayout>
 
-</com.timmy.highUI.motionEvent.MyScrollView>
+</com.timmy.highUI.motionEvent.nest.MyScrollView>

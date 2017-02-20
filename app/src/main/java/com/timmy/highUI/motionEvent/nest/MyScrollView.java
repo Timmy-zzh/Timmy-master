@@ -1,4 +1,4 @@
-package com.timmy.highUI.motionEvent;
+package com.timmy.highUI.motionEvent.nest;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -18,6 +18,8 @@ public class MyScrollView extends ScrollView {
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         //不拦截
-        return false;
+        requestDisallowInterceptTouchEvent(true);
+        return super.onInterceptTouchEvent(ev);
+//        return  false;
     }
 }

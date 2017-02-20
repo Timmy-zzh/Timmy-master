@@ -323,7 +323,7 @@
             android:name=".project.inflate.InflateActivity"
             android:label="inflate方法详解" />
         <activity
-            android:name=".highUI.motionEvent.ScrollListViewActivity"
+            android:name=".highUI.motionEvent.nest.ScrollListViewActivity"
             android:label="ScrollView嵌套ListView" />
         <activity
             android:name=".highUI.recyclerview.wrapRecyclerView.WrapRecyclerViewActivity"
@@ -386,7 +386,7 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".highUI.motionEvent.QQHomeCopyActivity"></activity>
+        <activity android:name=".highUI.motionEvent.qqHome.QQHomeCopyActivity"></activity>
     </application>
 
 </manifest>

@@ -5,11 +5,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.ScrollView;
 
 import com.timmy.R;
 import com.timmy.Util;
 import com.timmy.base.BaseActivity;
+import com.timmy.highUI.motionEvent.nest.ScrollListViewActivity;
+import com.timmy.highUI.motionEvent.qqHome.QQHomeCopyActivity;
 import com.timmy.library.util.Logger;
 
 public class MotionEventActivity extends BaseActivity implements View.OnTouchListener, View.OnClickListener {
