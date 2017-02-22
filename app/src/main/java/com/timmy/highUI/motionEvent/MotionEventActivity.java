@@ -8,9 +8,11 @@ import android.view.View;
 
 import com.timmy.R;
 import com.timmy.Util;
+import com.timmy.advance.slideList.SlideDeleteListView;
 import com.timmy.base.BaseActivity;
 import com.timmy.highUI.motionEvent.nest.ScrollListViewActivity;
 import com.timmy.highUI.motionEvent.qqHome.QQHomeCopyActivity;
+import com.timmy.highUI.motionEvent.slideDelete.SlideDeleteActivity;
 import com.timmy.library.util.Logger;
 
 public class MotionEventActivity extends BaseActivity implements View.OnTouchListener, View.OnClickListener {
@@ -67,6 +69,9 @@ public class MotionEventActivity extends BaseActivity implements View.OnTouchLis
                 break;
             case R.id.menu_qq_main:
                 Util.gotoNextActivity(this,QQHomeCopyActivity.class);
+                break;
+            case R.id.menu_item_slide:
+                Util.gotoNextActivity(this,SlideDeleteActivity.class);
                 break;
         }
         return super.onOptionsItemSelected(item);

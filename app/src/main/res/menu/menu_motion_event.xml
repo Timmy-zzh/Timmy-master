@@ -3,13 +3,16 @@
 
     <item
         android:id="@+id/menu_nest"
-        android:icon="@mipmap/composer_button"
-        android:orderInCategory="101"
+        android:orderInCategory="100"
         android:title="ScrollView嵌套ListView" />
 
     <item
         android:id="@+id/menu_qq_main"
-        android:icon="@mipmap/composer_button"
-        android:orderInCategory="100"
+        android:orderInCategory="101"
         android:title="高仿QQ主页" />
+
+    <item
+        android:id="@+id/menu_item_slide"
+        android:orderInCategory="101"
+        android:title="滑动删除" />
 </menu>

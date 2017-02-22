@@ -386,7 +386,10 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".highUI.motionEvent.qqHome.QQHomeCopyActivity"></activity>
+        <activity android:name=".highUI.motionEvent.qqHome.QQHomeCopyActivity" />
+        <activity
+            android:name=".highUI.motionEvent.slideDelete.SlideDeleteActivity"
+            android:label="滑动控件" />
     </application>
 
 </manifest>
