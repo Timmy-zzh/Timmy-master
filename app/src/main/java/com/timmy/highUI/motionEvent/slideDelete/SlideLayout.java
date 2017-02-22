@@ -61,11 +61,11 @@ public class SlideLayout extends LinearLayout {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+//        super.onTouchEvent(event);//为了往子控件传递事件
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 startX = event.getX();
                 startY = event.getY();
-
                 //消费down事件->才能接收到move和up后续事件
                 return true;
             case MotionEvent.ACTION_MOVE:
