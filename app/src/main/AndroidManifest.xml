@@ -390,6 +390,9 @@
         <activity
             android:name=".highUI.motionEvent.slideDelete.SlideDeleteActivity"
             android:label="滑动控件" />
+        <activity
+            android:name=".highUI.motionEvent.slideConflict.SlideConflictActivity"
+            android:label="滑动冲突" />
     </application>
 
 </manifest>
