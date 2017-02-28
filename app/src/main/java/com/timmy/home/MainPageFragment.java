@@ -124,6 +124,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_HOT_TAG, "热门标签"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_LETTER_NAVIGATION, "右侧A-Z字母导航栏"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_NOTE_PAD, "自定义NotePad"));
+                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_MY_VIEWPAGER, "自定义ViewPager"));
 
 
                 adapter.setData(pageListFour);

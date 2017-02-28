@@ -389,10 +389,13 @@
         <activity android:name=".highUI.motionEvent.qqHome.QQHomeCopyActivity" />
         <activity
             android:name=".highUI.motionEvent.slideDelete.SlideDeleteActivity"
-            android:label="滑动控件" />
+            android:label="滑动删除" />
         <activity
             android:name=".highUI.motionEvent.slideConflict.SlideConflictActivity"
             android:label="滑动冲突" />
+        <activity
+            android:name=".customeView.myViewPager.MyViewPagerActivity"
+            android:label="MyViewPager" />
     </application>
 
 </manifest>
