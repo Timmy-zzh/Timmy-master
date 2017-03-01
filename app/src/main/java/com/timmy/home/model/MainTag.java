@@ -44,6 +44,7 @@ public class MainTag {
         public static final int TAG_LETTER_NAVIGATION = 0X202;
         public static final int TAG_NOTE_PAD = 0X203;
         public static final int TAG_MY_VIEWPAGER = 0x204;
+        public static final int TAG_MY_INDICATOR = 0X205;
     }
 }
 

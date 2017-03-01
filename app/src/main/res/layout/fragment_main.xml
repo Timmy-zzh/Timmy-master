@@ -10,10 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabBackground="@color/white"
-        app:tabContentStart="20dp"
+        app:tabContentStart="0dp"
         app:tabIndicatorColor="@color/colorPrimary"
         app:tabIndicatorHeight="3dp"
-        app:tabMinWidth="20dp"
         app:tabMode="fixed"
         app:tabSelectedTextColor="@color/Black"
         app:tabTextColor="@color/Black" />

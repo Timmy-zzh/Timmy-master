@@ -13,7 +13,7 @@ import com.timmy.library.util.Logger;
 
 /**
  * Created by admin on 2017/2/28.
- * 自定义ViewGroup：
+ * 自定义ViewPager：
  * 1.获取到子控件，使用addView()添加/xml文件添加
  * 2.onLayout()方法摆放子控件
  * 3.让图片滑动起来-使用手势控制器

@@ -55,7 +55,6 @@ public class MainPageFragment extends BaseFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPage = getArguments().getInt(KEY_PAGE_TAB);
-
     }
 
     @Override
@@ -125,6 +124,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_LETTER_NAVIGATION, "右侧A-Z字母导航栏"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_NOTE_PAD, "自定义NotePad"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_MY_VIEWPAGER, "自定义ViewPager"));
+                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_MY_INDICATOR, "自定义ViewPager指示器"));
 
 
                 adapter.setData(pageListFour);
