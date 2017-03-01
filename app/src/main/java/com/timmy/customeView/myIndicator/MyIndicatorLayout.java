@@ -21,28 +21,27 @@ import com.timmy.library.util.Logger;
  * 2.指示器与下面的ViewPager进行联动
  * 3.指示器文本和下面的横线标识随着ViewPager改变（文本颜色和下面横线的位置）
  * 4.下面ViewPager滑动时，上面的指示器滑动到中间位置
- *
+ * <p>
  * 处理：
  * 1.指示器继承自HorizaontalScrollView，第一层子控件为一个水平的LinearLayout，然后往里面添加TextView文本
  * （这里可以使用xml文件导入，包含两部分-文本控件LinearLayout和下面的横线滑动指示器LinearLayout）
  * 2.单个指示器TextView文本设置点击事件，在onClick事件中设置ViewPager.setCurrentItem()指定位置
  * 3.持有ViewPager的应用，然后设置ViewPager的滑动监听,在onScroll方法中设置指示器的位置和背景颜色等处理
- *
  */
 public class MyIndicatorLayout extends HorizontalScrollView {
 
-    private String TAG ="MyIndicatorLayout";
+    private String TAG = "MyIndicatorLayout";
     private LinearLayout mIndicatorLayout;//指示器文本容器
     private ViewPager mViewPager;
-    private int defaultColor = Color.BLACK,selectedColor = Color.RED;
+    private int defaultColor = Color.BLACK, selectedColor = Color.RED;
     private int currentPosition = 0;
 
     public MyIndicatorLayout(Context context) {
-        this(context,null);
+        this(context, null);
     }
 
     public MyIndicatorLayout(Context context, AttributeSet attrs) {
-        this(context, attrs,0);
+        this(context, attrs, 0);
     }
 
     public MyIndicatorLayout(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -51,16 +50,16 @@ public class MyIndicatorLayout extends HorizontalScrollView {
         mIndicatorLayout = new LinearLayout(context);
         mIndicatorLayout.setOrientation(LinearLayout.HORIZONTAL);
 
-        addView(mIndicatorLayout,new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        addView(mIndicatorLayout, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
     }
 
-    public void setViewPager(ViewPager viewPager){
-        if (mViewPager == viewPager){
+    public void setViewPager(ViewPager viewPager) {
+        if (mViewPager == viewPager) {
             return;
         }
         mViewPager = viewPager;
         PagerAdapter pagerAdapter = mViewPager.getAdapter();
-        if (pagerAdapter == null){
+        if (pagerAdapter == null) {
             throw new IllegalArgumentException("ViewPager must setAdapter first");
         }
 
@@ -69,26 +68,27 @@ public class MyIndicatorLayout extends HorizontalScrollView {
         for (int i = 0; i < itemCount; i++) {
             String itemTitle = (String) pagerAdapter.getPageTitle(i);
             //往指示器容器中添加view
-            Logger.d(TAG,"title:"+itemTitle);
-            TextView tabTextView = getItemTabTextView(itemTitle,i);
+            Logger.d(TAG, "title:" + itemTitle);
+            TextView tabTextView = getItemTabTextView(itemTitle, i);
             mIndicatorLayout.addView(tabTextView);
         }
 
         mViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                Logger.d(TAG,"onPageScrolled--position:"+position+",positionOffset:"+positionOffset+",positionOffsetPixels:"+positionOffsetPixels);
+                Logger.d(TAG, "onPageScrolled--position:" + position + ",positionOffset:" + positionOffset + ",positionOffsetPixels:" + positionOffsetPixels);
 
 
             }
 
             @Override
             public void onPageSelected(int position) {
-                Logger.d(TAG,"onPageSelected--position:"+position);
+                Logger.d(TAG, "onPageSelected--position:" + position);
                 currentPosition = position;
                 setSelectedTextColor(position);
                 //在ViewPager滑动到摸个页面时，顶部的HorizontalScrollView也要滑动到可以查看的位置
 //                smoothScrollTo();
+                scrollToSelectedIndicator(position);
             }
 
             @Override
@@ -96,7 +96,14 @@ public class MyIndicatorLayout extends HorizontalScrollView {
 
             }
         });
+    }
 
+    private void scrollToSelectedIndicator(int position) {
+        View childView = mIndicatorLayout.getChildAt(position);
+        int left = childView.getLeft();//子控件距离ScrollView左边界的距离
+        int scrollPos = left - (getWidth() - childView.getWidth()) / 2;
+        Logger.d(TAG, "left:" + left+",scrollPos:"+scrollPos);
+        smoothScrollTo(scrollPos, 0);
     }
 
     private void setSelectedTextColor(int position) {
@@ -105,7 +112,7 @@ public class MyIndicatorLayout extends HorizontalScrollView {
             TextView childView = (TextView) mIndicatorLayout.getChildAt(i);
             if (i != position) {
                 childView.setTextColor(defaultColor);
-            }else{
+            } else {
                 childView.setTextColor(selectedColor);
             }
         }
@@ -114,13 +121,13 @@ public class MyIndicatorLayout extends HorizontalScrollView {
     private TextView getItemTabTextView(String title, int i) {
         TextView textView = new TextView(getContext());
         textView.setTextColor(defaultColor);
-        if (i == currentPosition){
+        if (i == currentPosition) {
             textView.setTextColor(selectedColor);
         }
         textView.setGravity(Gravity.CENTER);
         textView.setText(title);
         textView.setTextSize(20);
-        textView.setPadding(20,10,20,10);
+        textView.setPadding(20, 10, 20, 10);
         textView.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.MATCH_PARENT));
         textView.setOnClickListener(new TabTextClickListener(i));
         return textView;
