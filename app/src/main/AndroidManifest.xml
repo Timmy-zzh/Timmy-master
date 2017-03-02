@@ -396,7 +396,8 @@
         <activity
             android:name=".customeView.myViewPager.MyViewPagerActivity"
             android:label="MyViewPager" />
-        <activity android:name=".customeView.myIndicator.MyIndicatorActivity"></activity>
+        <activity android:name=".customeView.myIndicator.MyIndicatorActivity" />
+        <activity android:name=".customeView.guaguaWinning.GuaGuaWinningActivity"></activity>
     </application>
 
 </manifest>
