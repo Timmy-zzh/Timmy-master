@@ -3,6 +3,7 @@ package com.timmy.customeView.myIndicator;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ListView;
 import android.widget.ScrollView;
 
 import com.timmy.R;
@@ -27,7 +28,7 @@ public class MyIndicatorActivity extends AppCompatActivity {
         MyIndicatorLayout indicatorLayout = (MyIndicatorLayout) findViewById(R.id.indicator_layout);
         SimpleFragmentPagerAdapter pagerAdapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager(),mData);
         viewPager.setAdapter(pagerAdapter);
-
+//        ListView
         indicatorLayout.setViewPager(viewPager);
     }
 }

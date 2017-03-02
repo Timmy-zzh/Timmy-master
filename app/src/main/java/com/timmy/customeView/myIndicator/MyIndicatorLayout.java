@@ -198,5 +198,4 @@ public class MyIndicatorLayout extends HorizontalScrollView {
             mViewPager.setCurrentItem(index);
         }
     }
-
 }
