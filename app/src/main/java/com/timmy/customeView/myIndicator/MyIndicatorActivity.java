@@ -14,7 +14,7 @@ import java.util.List;
 
 public class MyIndicatorActivity extends AppCompatActivity {
 
-    private static String[] titleStrArr = {"天空之城","音乐魅力","生命意义","树木成荫","深圳","卡农D"};
+    private static String[] titleStrArr = {"天空之城","音乐魅力","生命意义","树木成荫","深圳多少","卡农上课"};
     private static List<String> mData = Arrays.asList(titleStrArr);
 
 

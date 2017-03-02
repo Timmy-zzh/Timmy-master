@@ -73,9 +73,9 @@ public class MyIndicatorLayout extends HorizontalScrollView {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        Logger.d(TAG,"onSizeChanged");
         childCount = mIndicatorLayout.getChildCount();
-        mPreWidth = getMeasuredWidth() / childCount;
+        mPreWidth = mIndicatorLayout.getMeasuredWidth() / childCount;
+        Logger.d(TAG,"onSizeChanged-getWidth():"+mIndicatorLayout.getWidth()+",getMeasuredWidth:"+mIndicatorLayout.getMeasuredWidth());
     }
 
     @Override
