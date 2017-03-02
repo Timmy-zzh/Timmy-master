@@ -1,7 +1,10 @@
 package com.timmy.customeView.myIndicator;
 
 import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Rect;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
@@ -35,6 +38,11 @@ public class MyIndicatorLayout extends HorizontalScrollView {
     private ViewPager mViewPager;
     private int defaultColor = Color.BLACK, selectedColor = Color.RED;
     private int currentPosition = 0;
+    private int mIndicatorHeight = 5;//指示符高度
+    private Paint paint;
+    private int left = 0;
+    private int mPreWidth;
+    private int childCount;
 
     public MyIndicatorLayout(Context context) {
         this(context, null);
@@ -51,6 +59,43 @@ public class MyIndicatorLayout extends HorizontalScrollView {
         mIndicatorLayout.setOrientation(LinearLayout.HORIZONTAL);
 
         addView(mIndicatorLayout, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+
+        initPaint();
+    }
+
+    private void initPaint() {
+        paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setStyle(Paint.Style.FILL);
+        paint.setColor(Color.RED);
+//        paint.setStrokeWidth();
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        Logger.d(TAG,"onSizeChanged");
+        childCount = mIndicatorLayout.getChildCount();
+        mPreWidth = getMeasuredWidth() / childCount;
+    }
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+        Logger.d(TAG,"onMeasure");
+
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        //画出文本下面的横线指示符
+        int top = getHeight() - mIndicatorHeight;
+        int right = left + mPreWidth;
+        int bottom = getHeight();
+        Logger.d(TAG, "left:" + left + ",top:" + top + ",right:" + right + ",right:" + right+",preWidth:"+mPreWidth);
+        Rect rect = new Rect(left, top, right, bottom);
+        canvas.drawRect(rect, paint);
+
     }
 
     public void setViewPager(ViewPager viewPager) {
@@ -77,7 +122,8 @@ public class MyIndicatorLayout extends HorizontalScrollView {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 Logger.d(TAG, "onPageScrolled--position:" + position + ",positionOffset:" + positionOffset + ",positionOffsetPixels:" + positionOffsetPixels);
-
+                //根据ViewPager滑动的位置,确定指示符左侧的位置
+                setIndicatorViewPosition(position, positionOffset);
 
             }
 
@@ -98,11 +144,17 @@ public class MyIndicatorLayout extends HorizontalScrollView {
         });
     }
 
+    private void setIndicatorViewPosition(int position, float positionOffset) {
+        View childView = mIndicatorLayout.getChildAt(position);
+        left = (int) (childView.getLeft() + childView.getWidth() * positionOffset);
+        invalidate();
+    }
+
     private void scrollToSelectedIndicator(int position) {
         View childView = mIndicatorLayout.getChildAt(position);
         int left = childView.getLeft();//子控件距离ScrollView左边界的距离
         int scrollPos = left - (getWidth() - childView.getWidth()) / 2;
-        Logger.d(TAG, "left:" + left+",scrollPos:"+scrollPos);
+        Logger.d(TAG, "left:" + left + ",scrollPos:" + scrollPos);
         smoothScrollTo(scrollPos, 0);
     }
 
