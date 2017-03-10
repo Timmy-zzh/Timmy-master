@@ -5,7 +5,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.3'
+        classpath 'com.android.tools.build:gradle:2.3.0'
         //Android hotfix  TinkerPatch 插件
 //        classpath "com.tinkerpatch.sdk:tinkerpatch-gradle-plugin:1.1.0"
 

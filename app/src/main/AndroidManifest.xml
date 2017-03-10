@@ -397,7 +397,9 @@
             android:name=".customeView.myViewPager.MyViewPagerActivity"
             android:label="MyViewPager" />
         <activity android:name=".customeView.myIndicator.MyIndicatorActivity" />
-        <activity android:name=".customeView.guaguaWinning.GuaGuaWinningActivity"></activity>
+        <activity
+            android:name=".customeView.guaguaWinning.GuaGuaWinningActivity"
+            android:label="刮刮乐效果" />
     </application>
 
 </manifest>
