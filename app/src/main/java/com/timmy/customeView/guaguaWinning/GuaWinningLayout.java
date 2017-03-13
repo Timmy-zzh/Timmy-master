@@ -7,8 +7,12 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
+import android.graphics.Xfermode;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 
 import com.timmy.R;
@@ -31,8 +35,13 @@ public class GuaWinningLayout extends View {
     private final String TAG = GuaWinningLayout.this.getClass().getSimpleName();
     private Bitmap redPackagerBitmap;
     private Paint paint;
-    private float paintWidht = 10;
+    private float paintWidht = 50;
     private Path path;
+    private Canvas mForeBitCanvas;
+    private int downY;
+    private int downX;
+    private Bitmap foreBitmap;
+    private boolean openWin;
 
     public GuaWinningLayout(Context context) {
         this(context, null);
@@ -46,7 +55,6 @@ public class GuaWinningLayout extends View {
         super(context, attrs, defStyleAttr);
         //1.获取背景图片
         redPackagerBitmap = BitmapFactory.decodeResource(getResources(), R.mipmap.img_red_package);
-
         //2.初始化画笔
         initPaint();
     }
@@ -57,32 +65,65 @@ public class GuaWinningLayout extends View {
         //画笔
         paint = new Paint();
         paint.setAntiAlias(true);
-        paint.setStyle(Paint.Style.FILL);
+        //设置画笔透明
+        paint.setAlpha(0);
+        paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(paintWidht);
-        paint.setColor(Color.GREEN);
         //笔帽
         paint.setStrokeCap(Paint.Cap.ROUND);
         //线条交集样式
         paint.setStrokeJoin(Paint.Join.ROUND);
+        //设置画笔交集样式
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
 
         Logger.d(TAG, "redPackagerBitmap widht:" + redPackagerBitmap.getWidth() + ",redPackagerBitmap height:" + redPackagerBitmap.getHeight());
-        //根据背景图
+        //根据背景图-创建同样大小的顶层图片
+//        Bitmap foreBitmap = Bitmap.createBitmap(redPackagerBitmap,0,0,redPackagerBitmap.getWidth(),redPackagerBitmap.getHeight());
+        foreBitmap = Bitmap.createBitmap(redPackagerBitmap.getWidth(), redPackagerBitmap.getHeight(), Bitmap.Config.ARGB_8888);
+        //创建顶层画布--绘制灰色
+        mForeBitCanvas = new Canvas(foreBitmap);
+        mForeBitCanvas.drawColor(Color.GRAY);
+    }
 
+    private int offsetX, offsetY;//x,y方向路径的总长度
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                downX = (int) event.getX();
+                downY = (int) event.getY();
+                path.moveTo(downX, downY);
+                break;
+            case MotionEvent.ACTION_MOVE:
+                //滑动一段,就绘制一段
+                path.lineTo(event.getX(), event.getY());
+                mForeBitCanvas.drawPath(path, paint);
+                invalidate();
+
+                int dx = (int) (event.getX() - downX);
+                int dy = (int) (event.getY() - downY);
+                offsetX += Math.abs(dx);
+                offsetY += Math.abs(dy);
+                Logger.d(TAG, "dx:" + dx + ",offsetX:" + offsetX + ",dy:" + dy + ",offsetY:" + offsetY);
+                break;
+            case MotionEvent.ACTION_UP:
+                if (offsetX > redPackagerBitmap.getWidth() * 10
+                        || offsetY > redPackagerBitmap.getWidth() * 10) {
+                    openWin = true;
+                }
+                break;
+        }
+        return true;
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
-        Logger.d(TAG, "canvas widht:" + canvas.getWidth() + ",canvas height:" + canvas.getHeight());
-
+//        Logger.d(TAG, "canvas widht:" + canvas.getWidth() + ",canvas height:" + canvas.getHeight());
         //画背景图
         canvas.drawBitmap(redPackagerBitmap, 0, 0, null);
-
-        //画覆盖灰色图片
-        Rect rect = new Rect(0,0,redPackagerBitmap.getWidth(),redPackagerBitmap.getHeight());
-        canvas.drawRect(rect,paint);
-
+        if (!openWin) {//画顶层图片
+            canvas.drawBitmap(foreBitmap, 0, 0, null);
+        }
     }
-
-
-
 }

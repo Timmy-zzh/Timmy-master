@@ -12,7 +12,6 @@ import android.view.View;
 
 import com.timmy.library.util.Logger;
 
-import static android.support.v7.widget.StaggeredGridLayoutManager.TAG;
 
 /**
  * RecyclerView网格布局的分割线－需要同时绘制水平和垂直方向的
