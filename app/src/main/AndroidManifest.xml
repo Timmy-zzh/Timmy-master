@@ -400,6 +400,8 @@
         <activity
             android:name=".customeView.guaguaWinning.GuaGuaWinningActivity"
             android:label="刮刮乐效果" />
+        <activity android:name=".customeView.myPhotoView.MyPhotoViewActivity"
+            android:label="高仿今日头条图片"/>
     </application>
 
 </manifest>

@@ -14,6 +14,7 @@ import com.timmy.customeView.guaguaWinning.GuaGuaWinningActivity;
 import com.timmy.customeView.hotTag.HotTagActivity;
 import com.timmy.customeView.letterNavigation.LetterNavigationActivity;
 import com.timmy.customeView.myIndicator.MyIndicatorActivity;
+import com.timmy.customeView.myPhotoView.MyPhotoViewActivity;
 import com.timmy.customeView.myViewPager.MyViewPagerActivity;
 import com.timmy.customeView.notePad.NotePadActivity;
 import com.timmy.highUI.animatoion.ViewAnimationActivity;
@@ -157,6 +158,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.CUSTOMEVIEW.TAG_GUAGUA_WINNING:
                         Util.gotoNextActivity(context, GuaGuaWinningActivity.class);
+                        break;
+                    case MainTag.CUSTOMEVIEW.TAG_PHOTO_VIEW:
+                        Util.gotoNextActivity(context, MyPhotoViewActivity.class);
                         break;
 
 

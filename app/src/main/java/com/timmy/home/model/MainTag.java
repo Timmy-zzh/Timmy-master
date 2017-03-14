@@ -46,6 +46,7 @@ public class MainTag {
         public static final int TAG_MY_VIEWPAGER = 0x204;
         public static final int TAG_MY_INDICATOR = 0X205;
         public static final int TAG_GUAGUA_WINNING = 0X206;
+        public static final int TAG_PHOTO_VIEW = 0X207;
     }
 }
 
