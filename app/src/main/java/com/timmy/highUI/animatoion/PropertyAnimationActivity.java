@@ -2,6 +2,7 @@ package com.timmy.highUI.animatoion;
 
 import android.animation.Animator;
 import android.animation.AnimatorInflater;
+import android.animation.IntEvaluator;
 import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.TypeEvaluator;
@@ -9,7 +10,9 @@ import android.animation.ValueAnimator;
 import android.graphics.PointF;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 
@@ -24,6 +27,7 @@ import com.timmy.library.util.ScreenUtils;
  */
 public class PropertyAnimationActivity extends BaseActivity {
 
+    private String TAG = this.getClass().getSimpleName();
     private ImageView imageView;
     private View point;
 
@@ -37,16 +41,76 @@ public class PropertyAnimationActivity extends BaseActivity {
         point = findViewById(R.id.view_point);
     }
 
+    public void animator(){
+        ObjectAnimator rotationX = ObjectAnimator
+                .ofFloat(imageView, "rotationX", 0f, 360f)
+                .setDuration(300);
+        //重复次数
+        rotationX.setRepeatCount(ValueAnimator.INFINITE);
+        //重复执行方式
+        rotationX.setRepeatMode(ValueAnimator.REVERSE);
+
+        //设置插值器-->计算执行的百分比
+//        rotationX.setInterpolator(new LinearInterpolator());
+        rotationX.setInterpolator(new AccelerateDecelerateInterpolator());
+        //设置估值器
+        rotationX.setEvaluator(new IntEvaluator());
+        rotationX.setEvaluator(new TypeEvaluator() {
+            @Override
+            public Object evaluate(float fraction, Object startValue, Object endValue) {
+                return null;
+            }
+        });
+        rotationX.start();
+
+        //设置动画更新监听
+        rotationX.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+
+            }
+        });
+
+        //设置动画监听
+        rotationX.addListener(new Animator.AnimatorListener() {
+            @Override
+            public void onAnimationStart(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationEnd(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationCancel(Animator animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animator animation) {
+
+            }
+        });
+    }
+
     public void reset(View view) {
         imageView.clearAnimation();
     }
 
     //执行属性动画,旋转-一行代码搞定旋转动画
     public void playAnimator(View view) {
-        ObjectAnimator
-                .ofFloat(imageView, "rotationX", 0f, 360f)
-                .setDuration(300)
-                .start();
+        ValueAnimator animator = ValueAnimator.ofFloat(0f,1f);
+        animator.setDuration(1000);
+        animator.start();
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float value = (float) animation.getAnimatedValue();
+                Logger.d(TAG,"value:"+value);
+            }
+        });
     }
 
     //想让控件同时执行 缩放和透明度变化的动画（scaleX ,scaleY,alpha）
@@ -58,6 +122,7 @@ public class PropertyAnimationActivity extends BaseActivity {
 
         //设置动画变化监听，回调方法里面可以获取到动画执行的到什么程度
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 //这个value值就是1.0～0.1变化的值

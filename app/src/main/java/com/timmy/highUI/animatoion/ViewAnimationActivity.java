@@ -87,7 +87,6 @@ public class ViewAnimationActivity extends BaseActivity {
     private void scaleAnimationXml() {
         Animation scaleAnimation = AnimationUtils.loadAnimation(this, R.anim.scale_animation);
         image.startAnimation(scaleAnimation);
-
     }
 
     //通过xml文件设置动画－》开启动画
@@ -106,8 +105,10 @@ public class ViewAnimationActivity extends BaseActivity {
         //动画重复执行
         alphaAnimation.setRepeatCount(2);
         //动画重置执行的方式：重新开始执行／反转执行
-//        alphaAnimation.setRepeatMode(Animation.RESTART);
+        //alphaAnimation.setRepeatMode(Animation.RESTART);
         alphaAnimation.setRepeatMode(Animation.REVERSE);
+        //设置插值器
+        alphaAnimation.setInterpolator(new AccelerateDecelerateInterpolator());
         //开始动画
         image.startAnimation(alphaAnimation);
     }
