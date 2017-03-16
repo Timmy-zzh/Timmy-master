@@ -17,6 +17,7 @@ public class ScrollListViewActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scroll_list_view);
+//        setContentView(R.layout.activity_scroll_list_view2);
         initToolBar();
 
         initView();
@@ -25,6 +26,8 @@ public class ScrollListViewActivity extends BaseActivity {
 
     private void initView() {
         ListView listView = (ListView) findViewById(R.id.list_view);
+//        ExpandedListView listView = (ExpandedListView) findViewById(R.id.list_view);
+//        listView.setFocusable(false);
 
         List<String> dataList = new ArrayList();
         for (int i = 0; i < 30; i++) {

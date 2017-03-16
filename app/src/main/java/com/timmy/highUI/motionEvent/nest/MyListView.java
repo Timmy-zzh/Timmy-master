@@ -22,6 +22,7 @@ public class MyListView extends ListView implements AbsListView.OnScrollListener
     private float downY;
     private int itemCount;
     private String TAG = this.getClass().getSimpleName();
+    private int mOverScrollY = -1;
 
     public MyListView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -53,22 +54,24 @@ public class MyListView extends ListView implements AbsListView.OnScrollListener
                 //滚动到最后一行，且还在往上拉
                 int lastVisiblePosition = getLastVisiblePosition();
                 int firstVisiblePosition = getFirstVisiblePosition();
-                Logger.d(TAG, "------------firstVisiblePosition:" + firstVisiblePosition + ",lastVisiblePosition:" + lastVisiblePosition);
+//                Logger.d(TAG, "------------firstVisiblePosition:" + firstVisiblePosition + ",lastVisiblePosition:" + lastVisiblePosition);
 
                 if (dy < 0) {
-                    if (lastVisiblePosition == itemCount - 1 && itemCount > 0) {
+                    if (lastVisiblePosition == itemCount - 1 && itemCount > 0 && mOverScrollY == 0) {
                         //让父容器拦截
                         getParent().getParent().requestDisallowInterceptTouchEvent(false);
+                        mOverScrollY = -1;
                         return false;
                     }
                 } else if (dy > 0) {
                     int scrollY = getScrollY();
                     int top = getTop();
 
-                    Logger.d(TAG,"scrollY:"+scrollY+",top:"+top);
-                    if (firstVisiblePosition == 0) {
+//                    Logger.d(TAG,"scrollY:"+scrollY+",top:"+top);
+                    if (firstVisiblePosition == 0 && mOverScrollY == 0) {
                         //让父容器拦截
                         getParent().getParent().requestDisallowInterceptTouchEvent(false);
+                        mOverScrollY = -1;
                         return false;
                     }
                 }
@@ -100,7 +103,14 @@ public class MyListView extends ListView implements AbsListView.OnScrollListener
     @Override
     public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
 
-        Logger.d(TAG,"firstVisibleItem:"+firstVisibleItem+",visibleItemCount:"+visibleItemCount+",totalItemCount:"+totalItemCount);
+//        Logger.d(TAG,"firstVisibleItem:"+firstVisibleItem+",visibleItemCount:"+visibleItemCount+",totalItemCount:"+totalItemCount);
 //        getLastVisiblePosition() -visibleItemCount
+    }
+
+    @Override
+    protected void onOverScrolled(int scrollX, int scrollY, boolean clampedX, boolean clampedY) {
+        super.onOverScrolled(scrollX, scrollY, clampedX, clampedY);
+        Logger.d(TAG, "scrollY:" + scrollY + ",clampedY:" + clampedY);
+        mOverScrollY = scrollY;
     }
 }
