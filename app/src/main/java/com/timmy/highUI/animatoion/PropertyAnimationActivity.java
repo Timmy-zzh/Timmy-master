@@ -7,12 +7,16 @@ import android.animation.ObjectAnimator;
 import android.animation.PropertyValuesHolder;
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
+import android.content.Context;
 import android.graphics.PointF;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.BounceInterpolator;
 import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 
@@ -41,7 +45,18 @@ public class PropertyAnimationActivity extends BaseActivity {
         point = findViewById(R.id.view_point);
     }
 
-    public void animator(){
+    public void animator() {
+        ValueAnimator animator = ValueAnimator.ofFloat(0f, 1f);
+        animator.setDuration(1000);
+        animator.start();
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                float value = (float) animation.getAnimatedValue();
+                Logger.d(TAG, "value:" + value);
+            }
+        });
+
         ObjectAnimator rotationX = ObjectAnimator
                 .ofFloat(imageView, "rotationX", 0f, 360f)
                 .setDuration(300);
@@ -101,22 +116,17 @@ public class PropertyAnimationActivity extends BaseActivity {
 
     //执行属性动画,旋转-一行代码搞定旋转动画
     public void playAnimator(View view) {
-        ValueAnimator animator = ValueAnimator.ofFloat(0f,1f);
-        animator.setDuration(1000);
-        animator.start();
-        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator animation) {
-                float value = (float) animation.getAnimatedValue();
-                Logger.d(TAG,"value:"+value);
-            }
-        });
+        ObjectAnimator
+                .ofFloat(imageView, "rotationX", 0f, 360f)
+                .setDuration(300)
+                .start();
     }
 
     //想让控件同时执行 缩放和透明度变化的动画（scaleX ,scaleY,alpha）
     public void manyAnimator(View view) {
 
-        ObjectAnimator animator = ObjectAnimator.ofFloat(imageView, "timmy", 1.0f, 0.1f);
+//        ObjectAnimator animator = ObjectAnimator.ofFloat(imageView, "timmy", 1.0f, 0.1f);
+        ValueAnimator animator = ValueAnimator.ofFloat( 1.0f, 0.1f);
         animator.setDuration(500);
         animator.start();
 
@@ -143,16 +153,21 @@ public class PropertyAnimationActivity extends BaseActivity {
     }
 
     //小球垂直降落
-    public void vertical(View view){
-        int screenHeight = ScreenUtils.getScreenHeight(this);
+    public void vertical(View view) {
+        WindowManager wm = (WindowManager) this
+                .getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(outMetrics);
+        int screenHeight = outMetrics.heightPixels;
         //小球距屏幕顶部的距离
         final int pointHeight = point.getTop();
 //        final int pointHeight = point.getHeight();//获取的是小球本身的高度
-        Logger.d("screenHeight:"+screenHeight+" pointHeight:"+pointHeight);
-        int offset = screenHeight - pointHeight-200;//降落距离
-        ValueAnimator valueAnimator = ValueAnimator.ofFloat(0,offset);
+        Logger.d("screenHeight:" + screenHeight + " pointHeight:" + pointHeight);
+        int offset = screenHeight - pointHeight - 200;//降落距离
+        ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, offset);
         valueAnimator.setTarget(point);
         valueAnimator.setDuration(2000).start();
+        valueAnimator.setInterpolator(new BounceInterpolator());
 
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -167,22 +182,23 @@ public class PropertyAnimationActivity extends BaseActivity {
 
 
     //抛物线
-    public void curve(View view){
+    public void curve(View view) {
         ValueAnimator valueAnimator = new ValueAnimator();
         valueAnimator.setDuration(2000);
-        valueAnimator.setObjectValues(new PointF(0,0));
+        //设置object属性,和translateX等一样
+        valueAnimator.setObjectValues(new PointF(0, 0));
         valueAnimator.setInterpolator(new LinearInterpolator());
 
         //设置估值器
         valueAnimator.setEvaluator(new TypeEvaluator<PointF>() {
             @Override
             public PointF evaluate(float fraction, PointF startValue, PointF endValue) {
-                Logger.d("数率 fraction:"+fraction);
+                Logger.d("数率 fraction:" + fraction);
                 PointF pointF = new PointF();
                 //水平方向 s = vt
-                pointF.x = 200 * (fraction *3);
+                pointF.x = 200 * (fraction * 3);
                 //垂直方向 h = 0.5 * g * t*t
-                pointF.y = (float) (0.5 *200 * (fraction *3)*(fraction *3));
+                pointF.y = (float) (0.5 * 200 * (fraction * 3) * (fraction * 3));
                 return pointF;
             }
         });
@@ -197,41 +213,10 @@ public class PropertyAnimationActivity extends BaseActivity {
                 point.setY(pointF.y);
             }
         });
-
-        //设置动画的执行监听
-        valueAnimator.addListener(new Animator.AnimatorListener() {
-            @Override
-            public void onAnimationStart(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationCancel(Animator animation) {
-
-            }
-
-            @Override
-            public void onAnimationRepeat(Animator animation) {
-
-            }
-        });
     }
 
 
-    public void xmlAnimator(View view){
-//        Animator animator = AnimatorInflater.loadAnimator(this, R.animator.scale_animator);
-//        animator.setTarget(imageView);
-//        animator.start();
-
-//        Animator animator = AnimatorInflater.loadAnimator(this, R.animator.translate_animator);
-//        animator.setTarget(imageView);
-//        animator.start();
-
+    public void xmlAnimator(View view) {
         Animator animator = AnimatorInflater.loadAnimator(this, R.animator.set_animator);
         animator.setTarget(imageView);
         animator.start();

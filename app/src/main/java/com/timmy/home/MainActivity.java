@@ -1,5 +1,7 @@
 package com.timmy.home;
 
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -77,7 +79,16 @@ public class MainActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()){
             case R.id.action_settings:
-                Toast.toastShort("Setting");
+                Toast.toastShort("打开其他应用");
+                ComponentName componentName = new ComponentName(
+                        "com.geometry", "com.geometry.pay.member.RechargeWebViewActivity");
+                Intent intent = new Intent();
+                intent.putExtra("appId", "123");
+                intent.putExtra("token", "456");
+                intent.setAction("com.geometry.pay.member.RechargeWebViewActivity");
+                intent.setComponent(componentName);
+                startActivity(intent);
+
                 return true;
             case R.id.action_about:
                 openActivity(AboutActivity.class);

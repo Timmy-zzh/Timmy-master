@@ -13,6 +13,7 @@ import com.timmy.customeView.clockView.ClockViewActivity;
 import com.timmy.customeView.guaguaWinning.GuaGuaWinningActivity;
 import com.timmy.customeView.hotTag.HotTagActivity;
 import com.timmy.customeView.letterNavigation.LetterNavigationActivity;
+import com.timmy.customeView.loadingLayout.LoadingLayoutActivity;
 import com.timmy.customeView.myIndicator.MyIndicatorActivity;
 import com.timmy.customeView.myPhotoView.MyPhotoViewActivity;
 import com.timmy.customeView.myViewPager.MyViewPagerActivity;
@@ -162,7 +163,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.CUSTOMEVIEW.TAG_PHOTO_VIEW:
                         Util.gotoNextActivity(context, MyPhotoViewActivity.class);
                         break;
-
+                    case MainTag.CUSTOMEVIEW.TAG_LOADING_LAYOUT:
+                        Util.gotoNextActivity(context, LoadingLayoutActivity.class);
+                        break;
 
                     ///////////////////////////项目总结
 
