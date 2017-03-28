@@ -403,7 +403,8 @@
         <activity
             android:name=".customeView.myPhotoView.MyPhotoViewActivity"
             android:label="高仿今日头条图片" />
-        <activity android:name=".customeView.loadingLayout.LoadingLayoutActivity"></activity>
+        <activity android:name=".customeView.loadingLayout.LoadingLayoutActivity" />
+        <activity android:name=".customeView.radarView.RadarViewActivity"></activity>
     </application>
 
 </manifest>

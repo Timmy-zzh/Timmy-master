@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.Scroller;
 
 import com.timmy.library.util.Logger;
+import com.timmy.library.util.Toast;
 
 /**
  * Created by admin on 2017/2/22.
@@ -21,7 +22,7 @@ import com.timmy.library.util.Logger;
  * up事件处理最后的展示效果（是否大于阈值）
  * 3.使用Scroll来进行滑动处理
  */
-public class SlideLayout extends LinearLayout {
+public class SlideLayout extends LinearLayout implements View.OnClickListener {
 
     private String TAG = this.getClass().getSimpleName();
     private View leftChild;
@@ -57,6 +58,7 @@ public class SlideLayout extends LinearLayout {
         leftChild = getChildAt(0);
         rightChild = getChildAt(1);
 //        rightWidth = rightChild.getWidth();
+        rightChild.setOnClickListener(this);
     }
 
     @Override
@@ -104,4 +106,9 @@ public class SlideLayout extends LinearLayout {
     }
 
 
+    @Override
+    public void onClick(View v) {
+        Toast.toastShort("点击删除");
+
+    }
 }

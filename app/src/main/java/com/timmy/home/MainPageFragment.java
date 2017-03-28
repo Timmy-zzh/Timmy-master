@@ -128,6 +128,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_GUAGUA_WINNING, "刮刮乐"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_PHOTO_VIEW, "高仿今日头条图片功能"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_LOADING_LAYOUT, "加载控件"));
+                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_RADAR_VIEW, "雷达展示控件"));
 
 
                 adapter.setData(pageListFour);

@@ -36,6 +36,11 @@ dependencies {
 //    provided("com.tencent.tinker:tinker-android-anno:1.7.7")
     //    compile("com.tinkerpatch.sdk:tinkerpatch-android-sdk:1.1.0")
 
+//    compile 'com.android.support:appcompat-v7:19.1.0'
+//    compile 'com.android.support:design:19.1.0'
+//    compile 'com.android.support:cardview-v7:19.1.0'
+//    compile 'com.android.support:support-v4:19.1.0'
+//    compile 'com.android.support:palette-v7:19.1.0'
 
     compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'com.android.support:design:25.2.0'

@@ -18,6 +18,7 @@ import com.timmy.customeView.myIndicator.MyIndicatorActivity;
 import com.timmy.customeView.myPhotoView.MyPhotoViewActivity;
 import com.timmy.customeView.myViewPager.MyViewPagerActivity;
 import com.timmy.customeView.notePad.NotePadActivity;
+import com.timmy.customeView.radarView.RadarViewActivity;
 import com.timmy.highUI.animatoion.ViewAnimationActivity;
 import com.timmy.highUI.cardView.CardViewActivity;
 import com.timmy.highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity;
@@ -165,6 +166,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.CUSTOMEVIEW.TAG_LOADING_LAYOUT:
                         Util.gotoNextActivity(context, LoadingLayoutActivity.class);
+                        break;
+                    case MainTag.CUSTOMEVIEW.TAG_RADAR_VIEW:
+                        Util.gotoNextActivity(context, RadarViewActivity.class);
                         break;
 
                     ///////////////////////////项目总结

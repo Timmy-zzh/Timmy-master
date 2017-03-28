@@ -58,8 +58,9 @@ public class PropertyAnimationActivity extends BaseActivity {
         });
 
         ObjectAnimator rotationX = ObjectAnimator
-                .ofFloat(imageView, "rotationX", 0f, 360f)
-                .setDuration(300);
+                .ofFloat(imageView, "rotationX", 0f, 360f);
+
+        rotationX.setDuration(300);
         //重复次数
         rotationX.setRepeatCount(ValueAnimator.INFINITE);
         //重复执行方式

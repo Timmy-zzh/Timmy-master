@@ -48,6 +48,7 @@ public class MainTag {
         public static final int TAG_GUAGUA_WINNING = 0X206;
         public static final int TAG_PHOTO_VIEW = 0X207;
         public static final int TAG_LOADING_LAYOUT = 0X208;
+        public static final int TAG_RADAR_VIEW = 0X209;
     }
 }
 
