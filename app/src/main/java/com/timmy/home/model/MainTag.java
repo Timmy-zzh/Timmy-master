@@ -64,6 +64,7 @@ public class MainTag {
         public static final int TAG_EVENT_BUS = 0X308;
         public static final int TAG_RAJAVA = 0X309;
         public static final int TAG_TENCENT_TINKER = 0X310;
+        public static final int TAG_ANNOTATIONS = 0X311;
     }
 }
 

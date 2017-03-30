@@ -404,7 +404,8 @@
             android:name=".customeView.myPhotoView.MyPhotoViewActivity"
             android:label="高仿今日头条图片" />
         <activity android:name=".customeView.loadingLayout.LoadingLayoutActivity" />
-        <activity android:name=".customeView.radarView.RadarViewActivity"></activity>
+        <activity android:name=".customeView.radarView.RadarViewActivity" />
+        <activity android:name=".framework.annotationsFramework.AnnotationsActivity"></activity>
     </application>
 
 </manifest>

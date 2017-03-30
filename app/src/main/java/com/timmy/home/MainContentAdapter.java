@@ -19,6 +19,7 @@ import com.timmy.customeView.myPhotoView.MyPhotoViewActivity;
 import com.timmy.customeView.myViewPager.MyViewPagerActivity;
 import com.timmy.customeView.notePad.NotePadActivity;
 import com.timmy.customeView.radarView.RadarViewActivity;
+import com.timmy.framework.annotationsFramework.AnnotationsActivity;
 import com.timmy.highUI.animatoion.ViewAnimationActivity;
 import com.timmy.highUI.cardView.CardViewActivity;
 import com.timmy.highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity;
@@ -172,7 +173,6 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
 
                     ///////////////////////////项目总结
-
                     case MainTag.PROJECT.TAG_ACTIVITY_LAUNCH:
                         Util.gotoNextActivity(context, WelcomeActivity.class);
                         break;
@@ -191,6 +191,14 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.PROJECT.TAG_AIDL_BINDER:
                         Util.gotoNextActivity(context, AIDLActivity.class);
                         break;
+
+
+                    ///////////////////////////框架学习
+                    case MainTag.FRAMEWORK.TAG_ANNOTATIONS:
+                        Util.gotoNextActivity(context, AnnotationsActivity.class);
+                        break;
+
+
                     default:
                         break;
                 }

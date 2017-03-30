@@ -146,6 +146,7 @@ public class MainPageFragment extends BaseFragment {
                 break;
             case 4://框架学习
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_PULL_DOWN_REFRESH, "下拉刷新，上拉加载更多框架"));
+                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_ANNOTATIONS, "自己实现注解框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_NETWORK_REQUEST, "网络请求框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_DATABASE, "数据库框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_IMAGE_LOADER, "图片加载框架"));
