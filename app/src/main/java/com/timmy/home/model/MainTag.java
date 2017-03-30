@@ -50,5 +50,20 @@ public class MainTag {
         public static final int TAG_LOADING_LAYOUT = 0X208;
         public static final int TAG_RADAR_VIEW = 0X209;
     }
+
+    //框架学习
+    public class FRAMEWORK {
+        public static final int TAG_PULL_DOWN_REFRESH = 0X300;
+        public static final int TAG_NETWORK_REQUEST = 0X301;
+        public static final int TAG_DATABASE = 0X302;
+        public static final int TAG_IMAGE_LOADER = 0X303;
+        public static final int TAG_AUTO_RECYCLER = 0X304;
+        public static final int TAG_VIEWPAGER_SCROLL = 0X305;
+        public static final int TAG_ANIMATOR = 0X306;
+        public static final int TAG_HOT_FIX = 0X307;
+        public static final int TAG_EVENT_BUS = 0X308;
+        public static final int TAG_RAJAVA = 0X309;
+        public static final int TAG_TENCENT_TINKER = 0X310;
+    }
 }
 
