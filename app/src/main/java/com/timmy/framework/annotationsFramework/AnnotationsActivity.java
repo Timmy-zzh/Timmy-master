@@ -8,8 +8,11 @@ import android.widget.TextView;
 
 import com.timmy.R;
 import com.timmy.framework.annotationsFramework.annotations.ContentView;
+import com.timmy.framework.annotationsFramework.annotations.OnViewClick;
 import com.timmy.framework.annotationsFramework.annotations.ViewInject;
 import com.timmy.library.util.Toast;
+
+import butterknife.OnClick;
 
 /**
  * 注解:通过学习注解和反射,实现运行时代码注解框架
@@ -41,13 +44,25 @@ public class AnnotationsActivity extends AppCompatActivity {
 
         textView.setText("修改后的文本");
         //注解实现点击交互功能
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.toastShort("按钮点击");
-            }
-        });
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.toastShort("按钮点击");
+//            }
+//        });
 
+    }
+
+    @OnViewClick({R.id.tv_text,R.id.btn})
+    public void viewClick(View view){
+        switch (view.getId()){
+            case R.id.tv_text:
+                Toast.toastShort("文本点击");
+                break;
+            case R.id.btn:
+                Toast.toastShort("按钮点击");
+                break;
+        }
     }
 
 }
