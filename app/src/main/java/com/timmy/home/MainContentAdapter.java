@@ -20,6 +20,7 @@ import com.timmy.customeView.myViewPager.MyViewPagerActivity;
 import com.timmy.customeView.notePad.NotePadActivity;
 import com.timmy.customeView.radarView.RadarViewActivity;
 import com.timmy.framework.annotationsFramework.AnnotationsActivity;
+import com.timmy.framework.netFw.NetWorkRequestActivity;
 import com.timmy.highUI.animatoion.ViewAnimationActivity;
 import com.timmy.highUI.cardView.CardViewActivity;
 import com.timmy.highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity;
@@ -196,6 +197,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     ///////////////////////////框架学习
                     case MainTag.FRAMEWORK.TAG_ANNOTATIONS:
                         Util.gotoNextActivity(context, AnnotationsActivity.class);
+                        break;
+                    case MainTag.FRAMEWORK.TAG_NETWORK_REQUEST:
+                        Util.gotoNextActivity(context,NetWorkRequestActivity.class);
                         break;
 
 

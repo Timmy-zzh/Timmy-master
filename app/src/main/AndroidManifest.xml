@@ -405,7 +405,8 @@
             android:label="高仿今日头条图片" />
         <activity android:name=".customeView.loadingLayout.LoadingLayoutActivity" />
         <activity android:name=".customeView.radarView.RadarViewActivity" />
-        <activity android:name=".framework.annotationsFramework.AnnotationsActivity"></activity>
+        <activity android:name=".framework.annotationsFramework.AnnotationsActivity" />
+        <activity android:name=".framework.netFw.NetWorkRequestActivity"></activity>
     </application>
 
 </manifest>

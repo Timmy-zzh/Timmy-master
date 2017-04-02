@@ -69,19 +69,21 @@ public class ViewInjectUtils {
         for (Field field : fields) {
             //判断该变量是否设置了ViewInject注解
             ViewInject annotation = field.getAnnotation(ViewInject.class);
-            int viewId = annotation.value();
-            if (viewId != -1) {
-                /**
-                 * 反射实现方法
-                 * 先获取该类上的方法->反射实现
-                 */
-                try {
-                    Method method = aClass.getMethod(METHOD_FIND_VIEW_BY_ID, int.class);
-                    Object resView = method.invoke(activity, viewId);
-                    field.setAccessible(true);
-                    field.set(activity, resView);
-                } catch (Exception e) {
-                    e.printStackTrace();
+            if (annotation != null) {
+                int viewId = annotation.value();
+                if (viewId != -1) {
+                    /**
+                     * 反射实现方法
+                     * 先获取该类上的方法->反射实现
+                     */
+                    try {
+                        Method method = aClass.getMethod(METHOD_FIND_VIEW_BY_ID, int.class);
+                        Object resView = method.invoke(activity, viewId);
+                        field.setAccessible(true);
+                        field.set(activity, resView);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
