@@ -1,10 +1,12 @@
 package com.timmy.framework.netFw;
 
+import android.graphics.Color;
 import android.os.Handler;
 import android.support.v4.widget.TextViewCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.timmy.R;
@@ -13,18 +15,27 @@ import com.timmy.framework.annotationsFramework.ViewInjectUtils;
 import com.timmy.framework.annotationsFramework.annotations.ContentView;
 import com.timmy.framework.annotationsFramework.annotations.OnViewClick;
 import com.timmy.framework.annotationsFramework.annotations.ViewInject;
+import com.timmy.framework.netFw.http.MyVolley;
+import com.timmy.framework.netFw.http.listener.IDataListener;
+import com.timmy.framework.netFw.model.GankResult;
 import com.timmy.framework.netFw.utils.AsyncNetUtils;
 import com.timmy.framework.netFw.utils.NetUtils;
 import com.timmy.framework.netFw.utils.NetWorkCallback;
+import com.timmy.library.util.Logger;
 import com.timmy.library.util.Toast;
 
 @ContentView(R.layout.activity_net_work)
 public class NetWorkRequestActivity extends BaseActivity {
 
-//    private static final String URL_BAIDU = "http://www.baidu.com";
+    //    private static final String URL_BAIDU = "http://www.baidu.com";
     private static final String URL_BAIDU = "http://gank.io/api/data/Android/10/1";
-    @ViewInject(R.id.tv_reault)
+    private static final String URL_GANK = "http://gank.io/api/data/Android/10/1";
+    @ViewInject(R.id.tv_result)
     TextView mResult;//网络访问请求结果展示
+
+    @ViewInject(R.id.ll_reault)
+    LinearLayout mResultCon;//
+
     private Handler handler = new Handler();
 
     @Override
@@ -34,12 +45,11 @@ public class NetWorkRequestActivity extends BaseActivity {
 
         ViewInjectUtils.inject(this);
         initToolBar();
-
     }
 
-    @OnViewClick({R.id.btn_normal,R.id.btn_framework})
-    public void onButtonClick(View view){
-        switch (view.getId()){
+    @OnViewClick({R.id.btn_normal, R.id.btn_framework})
+    public void onButtonClick(View view) {
+        switch (view.getId()) {
             case R.id.btn_normal:
                 networkRequestNarmal();
                 break;
@@ -74,6 +84,7 @@ public class NetWorkRequestActivity extends BaseActivity {
         AsyncNetUtils.get(URL_BAIDU, new NetWorkCallback() {
             @Override
             public void onSuccess(String response) {
+                Logger.d(response);
                 mResult.setText(response);
             }
 
@@ -82,12 +93,32 @@ public class NetWorkRequestActivity extends BaseActivity {
 
             }
         });
-
     }
 
+    /**
+     * 自己写的网络框架实现网络请求
+     */
     private void networkRequestFramework() {
         Toast.toastShort("网络框架请求");
+        for (int i = 0; i < 50; i++) {
+            final int finalI = i;
+            MyVolley.sendRequest(null, URL_GANK, GankResult.class, new IDataListener<GankResult>() {
+                @Override
+                public void onSuccess(GankResult gankResult) {
+                    TextView textView = new TextView(NetWorkRequestActivity.this);
+                    textView.setLines(1);
+                    textView.setTextColor(Color.BLUE);
+                    String msg = gankResult.toString();
+                    Logger.d("Item:"+ finalI +"--"+msg);
+                    textView.setText("Item:"+ finalI +"--"+msg);
+                    mResultCon.addView(textView);
+                }
 
+                @Override
+                public void onError(int state) {
 
+                }
+            });
+        }
     }
 }

@@ -24,6 +24,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    //使用httpclient需要加上这行代码
+    useLibrary 'org.apache.http.legacy'
 }
 
 dependencies {
@@ -51,4 +54,10 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
     testCompile 'junit:junit:4.12'
     provided 'com.tencent.tinker:tinker-android-anno:1.7.7'
+
+    compile 'com.alibaba:fastjson:1.2.23'
+    compile 'httpcomponents-httpcore:httpcore:4.0-alpha6'
+
+
+
 }
