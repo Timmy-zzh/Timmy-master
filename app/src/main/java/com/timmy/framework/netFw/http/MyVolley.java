@@ -22,6 +22,7 @@ public class MyVolley {
         //1.将所有参数封装到RequestHolder
         RequestHolder<M> requestHolder = new RequestHolder();
         requestHolder.setUrl(url);
+        requestHolder.setRequestInfo(requestInf);
         IHttpService httpService = new JsonHttpService();
 
         requestHolder.setHttpService(httpService);
