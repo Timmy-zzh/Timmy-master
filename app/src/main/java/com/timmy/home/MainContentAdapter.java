@@ -21,6 +21,7 @@ import com.timmy.customeView.notePad.NotePadActivity;
 import com.timmy.customeView.radarView.RadarViewActivity;
 import com.timmy.framework.annotationsFramework.AnnotationsActivity;
 import com.timmy.framework.netFw.NetWorkRequestActivity;
+import com.timmy.framework.tinker.TinkerActivity;
 import com.timmy.highUI.animatoion.ViewAnimationActivity;
 import com.timmy.highUI.cardView.CardViewActivity;
 import com.timmy.highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity;
@@ -201,7 +202,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.FRAMEWORK.TAG_NETWORK_REQUEST:
                         Util.gotoNextActivity(context,NetWorkRequestActivity.class);
                         break;
-
+                    case MainTag.FRAMEWORK.TAG_TENCENT_TINKER:
+                        Util.gotoNextActivity(context,TinkerActivity.class);
+                        break;
 
                     default:
                         break;

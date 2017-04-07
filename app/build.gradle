@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 //apply tinker插件
-//apply plugin: 'com.tencent.tinker.patch'
+apply plugin: 'com.tencent.tinker.patch'
 
 android {
     compileSdkVersion 25
@@ -11,6 +11,19 @@ android {
 //        useNewCruncher = fasle
 //    }
 
+    signingConfigs {
+        release {
+            try {
+                storeFile file("release.keystore")
+                storePassword "testres"
+                keyAlias "testres"
+                keyPassword "testres"
+            } catch (ex) {
+                throw new InvalidUserDataException(ex.toString())
+            }
+        }
+    }
+
     defaultConfig {
         applicationId "com.timmy"
         minSdkVersion 14
@@ -18,9 +31,23 @@ android {
         versionCode 1
         versionName "1.0"
     }
+//    buildTypes {
+//        release {
+//            minifyEnabled false
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+//        }
+//    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable true
+            minifyEnabled true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -31,33 +58,30 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
     compile project(':library_timmy')
-
-    //可选，用于生成application类
-    //tinker的核心库
-
-//    compile 'com.android.support:appcompat-v7:19.1.0'
-//    compile 'com.android.support:design:19.1.0'
-//    compile 'com.android.support:cardview-v7:19.1.0'
-//    compile 'com.android.support:support-v4:19.1.0'
-//    compile 'com.android.support:palette-v7:19.1.0'
-
-    compile 'com.tencent.tinker:tinker-android-lib:1.7.7'
     compile 'com.android.support:appcompat-v7:25.2.0'
     compile 'com.android.support:design:25.2.0'
     compile 'com.android.support:cardview-v7:25.2.0'
     compile 'com.android.support:support-v4:25.2.0'
     compile 'com.android.support:palette-v7:25.2.0'
-    compile 'com.jakewharton:butterknife:7.0.1'
+
+//  compile 'com.android.support:appcompat-v7:19.1.0'
+//    compile 'com.android.support:design:19.1.0'
+//    compile 'com.android.support:cardview-v7:19.1.0'
+//    compile 'com.android.support:support-v4:19.1.0'
+//    compile 'com.android.support:palette-v7:19.1.0'
+
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.github.promeg:tinypinyin:1.0.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
-    testCompile 'junit:junit:4.12'
-    provided 'com.tencent.tinker:tinker-android-anno:1.7.7'
-
     compile 'com.alibaba:fastjson:1.2.23'
+    //HttpClient库
     compile 'httpcomponents-httpcore:httpcore:4.0-alpha6'
 
-
+    //可选，用于生成application类
+    provided('com.tencent.tinker:tinker-android-anno:1.7.7')
+    //tinker的核心库
+    compile('com.tencent.tinker:tinker-android-lib:1.7.7')
 
 }

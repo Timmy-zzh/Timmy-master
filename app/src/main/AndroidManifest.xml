@@ -7,8 +7,9 @@
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:name=".TimmyApp"
@@ -17,6 +18,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
         <activity
             android:name=".project.launch.SplashActivity"
             android:launchMode="singleTop"
@@ -406,7 +409,10 @@
         <activity android:name=".customeView.loadingLayout.LoadingLayoutActivity" />
         <activity android:name=".customeView.radarView.RadarViewActivity" />
         <activity android:name=".framework.annotationsFramework.AnnotationsActivity" />
-        <activity android:name=".framework.netFw.NetWorkRequestActivity"></activity>
+        <activity android:name=".framework.netFw.NetWorkRequestActivity" />
+
+        <meta-data android:name="TINKER_ID" android:value="tinker"/>
+        <activity android:name=".framework.tinker.TinkerActivity"></activity>
     </application>
 
 </manifest>

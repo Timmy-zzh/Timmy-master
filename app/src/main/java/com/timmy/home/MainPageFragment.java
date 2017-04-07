@@ -150,7 +150,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_NETWORK_REQUEST, "网络请求框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_DATABASE, "数据库框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_IMAGE_LOADER, "图片加载框架"));
-                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_AUTO_RECYCLER, "无线轮播"));
+                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_AUTO_RECYCLER, "无限轮播"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_VIEWPAGER_SCROLL, "各种左右滑动页面ViewPager效果"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_ANIMATOR, "动画框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_HOT_FIX, "热更新-热修复框架"));
