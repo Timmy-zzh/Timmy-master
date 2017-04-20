@@ -20,6 +20,7 @@ import com.timmy.customeView.myViewPager.MyViewPagerActivity;
 import com.timmy.customeView.notePad.NotePadActivity;
 import com.timmy.customeView.radarView.RadarViewActivity;
 import com.timmy.framework.annotationsFramework.AnnotationsActivity;
+import com.timmy.framework.database.DataBaseActivity;
 import com.timmy.framework.netFw.NetWorkRequestActivity;
 import com.timmy.framework.tinker.TinkerActivity;
 import com.timmy.highUI.animatoion.ViewAnimationActivity;
@@ -204,6 +205,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.FRAMEWORK.TAG_TENCENT_TINKER:
                         Util.gotoNextActivity(context,TinkerActivity.class);
+                        break;
+                    case MainTag.FRAMEWORK.TAG_DATABASE:
+                        Util.gotoNextActivity(context,DataBaseActivity.class);
                         break;
 
                     default:

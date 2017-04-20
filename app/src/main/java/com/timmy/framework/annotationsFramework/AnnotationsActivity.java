@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.timmy.R;
+import com.timmy.base.BaseActivity;
 import com.timmy.framework.annotationsFramework.annotations.ContentView;
 import com.timmy.framework.annotationsFramework.annotations.OnViewClick;
 import com.timmy.framework.annotationsFramework.annotations.ViewInject;
@@ -28,7 +29,7 @@ import butterknife.OnClick;
  * 4.在方法上添加注解-设置点击事件的注解
  */
 @ContentView(R.layout.activity_annotations)
-public class AnnotationsActivity extends AppCompatActivity {
+public class AnnotationsActivity extends BaseActivity {
 
     @ViewInject(R.id.tv_text)
     TextView textView;
@@ -42,6 +43,7 @@ public class AnnotationsActivity extends AppCompatActivity {
 //        setContentView(R.layout.activity_annotations);
         ViewInjectUtils.inject(this);
 
+        initToolBar();
         textView.setText("修改后的文本");
         //注解实现点击交互功能
 //        button.setOnClickListener(new View.OnClickListener() {
