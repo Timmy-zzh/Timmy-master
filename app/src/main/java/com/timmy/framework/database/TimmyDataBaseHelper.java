@@ -1,8 +1,6 @@
 package com.timmy.framework.database;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -31,6 +29,8 @@ public class TimmyDataBaseHelper extends SQLiteOpenHelper {
         super(context, name, null, version);
     }
 
+
+
     /**
      * 创建数据库表 person
      * @param db
@@ -38,7 +38,7 @@ public class TimmyDataBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         LogUtils.d("SQLiteDatabase 创建数据库表");
-        db.execSQL("create table if not exists person (persionid integer primary key autoincrement, name varchar(20),age integer");
+        db.execSQL("create table if not exists person (persionId integer primary key autoincrement, name varchar(20),age integer)");
     }
 
     /**
@@ -53,32 +53,4 @@ public class TimmyDataBaseHelper extends SQLiteOpenHelper {
         //新增一个字段
         db.execSQL("alter table person add phone varchar(12)");
     }
-
-    /**
-     * 往数据库表中插入一条记录
-     * @param name
-     * @param age
-     * @param phone
-     */
-    public void insert(String name,int age,String phone){
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name",name);
-        contentValues.put("age",age);
-        contentValues.put("phone",phone);
-
-        /**
-         * getWritableDatabase()方法以读写方式打开数据库,一旦数据库的磁盘空间满了,数据库只能读不能写,
-         * 倘若使用getWritableDatabase()打开数据库就会出错
-         */
-        SQLiteDatabase writableDatabase = getWritableDatabase();
-        /**
-         * getReadableDatabase()方法以读写方式打开数据库,如果数据库的磁盘空间满了,就会打开失败,
-         * 当打开失败后会继续以只读方式打开数据库
-         */
-//        SQLiteDatabase readableDatabase = getReadableDatabase();
-
-        writableDatabase.insert("person","name",contentValues);
-    }
-
-
 }
