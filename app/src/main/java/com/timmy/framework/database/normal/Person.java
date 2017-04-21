@@ -1,4 +1,4 @@
-package com.timmy.framework.database;
+package com.timmy.framework.database.normal;
 
 /**
  * Created by admin on 2017/4/21.

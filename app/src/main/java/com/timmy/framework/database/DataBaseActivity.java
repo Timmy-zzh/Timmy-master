@@ -10,6 +10,8 @@ import com.timmy.base.BaseActivity;
 import com.timmy.framework.annotationsFramework.ViewInjectUtils;
 import com.timmy.framework.annotationsFramework.annotations.ContentView;
 import com.timmy.framework.annotationsFramework.annotations.ViewInject;
+import com.timmy.framework.database.normal.DbDao;
+import com.timmy.framework.database.normal.Person;
 
 /**
  * 数据库操作 SQLite

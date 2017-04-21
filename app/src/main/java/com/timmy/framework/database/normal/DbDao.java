@@ -1,4 +1,4 @@
-package com.timmy.framework.database;
+package com.timmy.framework.database.normal;
 
 import android.content.ContentValues;
 import android.content.Context;

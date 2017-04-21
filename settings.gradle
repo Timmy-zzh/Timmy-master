@@ -1,1 +1,1 @@
-include ':app', ':rxjavademo',':library_timmy'
+include ':app', ':rxjavademo', ':library_timmy', ':JPushExample(396426)'
