@@ -10,6 +10,7 @@ import com.timmy.base.BaseActivity;
 import com.timmy.framework.annotationsFramework.ViewInjectUtils;
 import com.timmy.framework.annotationsFramework.annotations.ContentView;
 import com.timmy.framework.annotationsFramework.annotations.ViewInject;
+import com.timmy.framework.database.db.BaseDaoFactory;
 import com.timmy.framework.database.normal.DbDao;
 import com.timmy.framework.database.normal.Person;
 
@@ -27,15 +28,20 @@ public class DataBaseActivity extends BaseActivity {
     TextView tvContent;
 
     DbDao dbDao;
+    private UserDao userDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ViewInjectUtils.inject(this);
 
-        dbDao = new DbDao(this);
+//        dbDao = new DbDao(this);
+//
+//        showDataBaseData();
 
-        showDataBaseData();
+
+        userDao = BaseDaoFactory.getInstance().getDataBaseHelper(UserDao.class, User.class);
+
     }
 
     private void showDataBaseData() {
@@ -48,12 +54,16 @@ public class DataBaseActivity extends BaseActivity {
      * @param view
      */
     public void insert(View view) {
-        String name = etName.getText().toString();
-        String age = etAge.getText().toString();
-        int ageInt = Integer.parseInt(age);
-        dbDao.insert(new Person(name, ageInt, null));
+//        String name = etName.getText().toString();
+//        String age = etAge.getText().toString();
+//        int ageInt = Integer.parseInt(age);
+//        dbDao.insert(new Person(name, ageInt, null));
+//
+//        tvContent.setText(dbDao.findAll().toString());
 
-        tvContent.setText(dbDao.findAll().toString());
+        User user = new User("timmy","123456");
+
+        userDao.insert(user);
     }
 
     public void delete(View view) {
