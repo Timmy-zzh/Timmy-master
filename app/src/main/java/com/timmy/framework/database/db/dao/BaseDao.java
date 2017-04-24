@@ -77,7 +77,8 @@ public abstract class BaseDao<T> implements IBaseDao<T> {
             /**
              * 拿到所有的属性，和上面的注解－》进行比较后保存对应关系
              */
-            Field[] fields = entityClass.getFields();
+//            Field[] fields = entityClass.getFields();
+            Field[] fields = entityClass.getDeclaredFields();
             for (Field field : fields) {
                 field.setAccessible(true);
             }

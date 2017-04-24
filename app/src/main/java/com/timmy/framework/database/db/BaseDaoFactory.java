@@ -20,7 +20,7 @@ public class BaseDaoFactory {
 
     private BaseDaoFactory() {
         //创建数据库－》数据库位置在sd卡
-        String sqliteDbPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "timmydb.db";
+        String sqliteDbPath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/timmydb.db";
         sqLiteDatabase = SQLiteDatabase.openOrCreateDatabase(sqliteDbPath, null);
     }
 
