@@ -14,6 +14,6 @@ public class UserDao extends BaseDao {
      */
     @Override
     public String createTable() {
-        return "create table if not exists tb_user(name varchar(20),password varchar(10))";
+        return "create table if not exists tb_user(id integer primary key autoincrement,name varchar(20),password varchar(10))";
     }
 }

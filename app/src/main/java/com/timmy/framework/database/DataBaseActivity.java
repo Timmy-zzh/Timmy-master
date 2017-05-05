@@ -13,6 +13,9 @@ import com.timmy.framework.annotationsFramework.annotations.ViewInject;
 import com.timmy.framework.database.db.BaseDaoFactory;
 import com.timmy.framework.database.normal.DbDao;
 import com.timmy.framework.database.normal.Person;
+import com.timmy.library.util.Toast;
+
+import java.util.List;
 
 /**
  * 数据库操作 SQLite
@@ -61,31 +64,54 @@ public class DataBaseActivity extends BaseActivity {
 //
 //        tvContent.setText(dbDao.findAll().toString());
 
-        User user = new User("timmy","123456");
-
-        userDao.insert(user);
+        for (int i = 0; i < 20; i++) {
+            User user;
+            if (i % 2 == 0) {
+                user = new User("timmy", "111-"+i);
+            } else {
+                user = new User("timmy" + i, "111-" + i);
+            }
+            userDao.insert(user);
+        }
     }
 
     public void delete(View view) {
-        String age = etAge.getText().toString();
-        int ageInt = Integer.parseInt(age);
-        dbDao.delete(ageInt);
-        tvContent.setText(dbDao.findAll().toString());
+//        String age = etAge.getText().toString();
+//        int ageInt = Integer.parseInt(age);
+//        dbDao.delete(ageInt);
+//        tvContent.setText(dbDao.findAll().toString());
+
+        User user = new User();
+        user.setName("timmy" + 1);
+        long count = userDao.delete(user);
+        Toast.toastShort("count:" + count);
     }
 
     public void update(View view) {
-        String name = etName.getText().toString();
-        String age = etAge.getText().toString();
-        int ageInt = Integer.parseInt(age);
-        dbDao.updata(new Person(name, ageInt, null));
-        tvContent.setText(dbDao.findAll().toString());
+//        String name = etName.getText().toString();
+//        String age = etAge.getText().toString();
+//        int ageInt = Integer.parseInt(age);
+//        dbDao.updata(new Person(name, ageInt, null));
+//        tvContent.setText(dbDao.findAll().toString());
+
+        User newUser = new User("xxx", "12545");
+        User where = new User();
+        where.setName("timmy" + 7);
+        long count = userDao.update(newUser, where);
+        Toast.toastShort("count:" + count);
     }
 
     public void search(View view) {
-        String age = etAge.getText().toString();
-        int ageInt = Integer.parseInt(age);
+//        String age = etAge.getText().toString();
+//        int ageInt = Integer.parseInt(age);
+//
+//        tvContent.setText("条件:" + dbDao.find(ageInt).toString() + ",全部:" + dbDao.findAll().toString());
 
-        tvContent.setText("条件:" + dbDao.find(ageInt).toString() + ",全部:" + dbDao.findAll().toString());
+        User user = new User();
+        user.setName("timmy");
+        List<User> list = userDao.query(user);
+        tvContent.setText("条件,全部:" + list.toString());
+
     }
 
 }

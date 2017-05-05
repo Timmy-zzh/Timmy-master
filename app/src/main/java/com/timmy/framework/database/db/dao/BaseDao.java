@@ -241,12 +241,93 @@ public abstract class BaseDao<T> implements IBaseDao<T> {
 
     /**
      * 查找：
-     * @param t
+     * dataBase.query(tableName,columns,selection,selectionArgs,groupBy,having,orderBy,limit);
+     *
+     * @param where
      * @return
      */
     @Override
-    public List<T> query(T t) {
-        return null;
+    public List<T> query(T where) {
+        return query(where, null, null, null);
+    }
+
+    /**
+     * @param where      查询条件
+     * @param orderBy
+     * @param startIndex
+     * @param limit
+     * @return
+     */
+    private List<T> query(T where, String orderBy, String startIndex, String limit) {
+        HashMap<String, String> conditionMapValues = getConditionMapValues(where);
+        Condition condition = new Condition(conditionMapValues);
+
+        String limitStr = null;
+        if (startIndex != null && limit != null) {
+            limitStr = startIndex + " , " + limit;
+        }
+
+        Cursor cursor = dataBase.query(tableName, null, condition.getWhereClause(), condition.getWhereArgs(), null, null, orderBy, limitStr);
+
+        List<T> result = getResultByCursor(cursor, where);
+        cursor.close();
+        return result;
+    }
+
+    /**
+     * 根据游标获取需要的数据集合
+     *
+     * @param cursor
+     * @param where
+     * @return
+     */
+    private List<T> getResultByCursor(Cursor cursor, T where) {
+        List result = new ArrayList<>();
+
+        //轮询游标(一行)-> 遍历一行中各列的保存的数据
+        Object item;
+        while (cursor.moveToNext()) {
+
+            try {
+                item = where.getClass().newInstance();
+
+                Iterator<Map.Entry<String, Field>> iterator = cacheMap.entrySet().iterator();
+                while (iterator.hasNext()) {
+                    Map.Entry<String, Field> next = iterator.next();
+                    //列名
+                    String columnName = next.getKey();
+                    //根据列名拿到游标 列的位置
+                    int columnIndex = cursor.getColumnIndex(columnName);
+
+                    //属性->属性类型
+                    Field field = next.getValue();
+                    Class<?> type = field.getType();
+                    if (columnIndex != -1) {
+                        //通过反射方式,拿到属性值
+                        if (type == String.class) {
+                            field.set(item, cursor.getString(columnIndex));
+                        } else if (type == Double.class) {
+                            field.set(item, cursor.getDouble(columnIndex));
+                        } else if (type == Integer.class) {
+                            field.set(item, cursor.getInt(columnIndex));
+                        } else if (type == Long.class) {
+                            field.set(item, cursor.getLong(columnIndex));
+                        } else if (type == byte[].class) {
+                            field.set(item, cursor.getBlob(columnIndex));
+                        } else {
+//                            不支持的类型
+                            continue;
+                        }
+                    }
+                }
+                result.add(item);
+            } catch (InstantiationException e) {
+                e.printStackTrace();
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
     }
 
 
