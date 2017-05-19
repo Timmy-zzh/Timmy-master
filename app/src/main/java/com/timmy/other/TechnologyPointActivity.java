@@ -1,7 +1,6 @@
 package com.timmy.other;
 
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
@@ -11,7 +10,7 @@ import com.timmy.advance.animation.AnimationActivity;
 import com.timmy.technologypoint.AutoPlayPicturesActivity;
 import com.timmy.technologypoint.CameraPictureActivity;
 import com.timmy.technologypoint.ClipToOutlineActivity;
-import com.timmy.technologypoint.DialogActivity;
+import com.timmy.highUI.dialog.DialogActivity;
 import com.timmy.technologypoint.GlideImageActivity;
 import com.timmy.technologypoint.Picture9Activity;
 import com.timmy.technologypoint.RecycleHeaderViewActivity;

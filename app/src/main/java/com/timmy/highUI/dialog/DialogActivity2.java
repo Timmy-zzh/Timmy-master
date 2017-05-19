@@ -1,4 +1,4 @@
-package com.timmy.advance.dialog;
+package com.timmy.highUI.dialog;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import com.timmy.R;
  * 使用Activity展示提示框Dialog效果
  * 需要处理Activity主题--没有Title-背景透明
  */
-public class DialogActivity extends AppCompatActivity {
+public class DialogActivity2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

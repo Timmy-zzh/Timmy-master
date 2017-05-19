@@ -49,6 +49,7 @@ import com.timmy.project.launch.SplashActivity;
 import com.timmy.project.launch.WelcomeActivity;
 import com.timmy.project.service.ServiceActivity;
 import com.timmy.project.svg.SVGActivity;
+import com.timmy.highUI.dialog.DialogActivity;
 
 import java.util.List;
 
@@ -141,9 +142,13 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.TAG_SHADER:
                         Util.gotoNextActivity(context, ShaderUseActicity.class);
                         break;
+                    case MainTag.TAG_DIALOG:
+                        Util.gotoNextActivity(context, DialogActivity.class);
+                        break;
 
 
                     ///////////////////////////自定义控件
+
                     case MainTag.CUSTOMEVIEW.TAG_CLOCK_VIEW:
                         Util.gotoNextActivity(context, ClockViewActivity.class);
                         break;

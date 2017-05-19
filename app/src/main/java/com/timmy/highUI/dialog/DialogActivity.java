@@ -1,6 +1,7 @@
-package com.timmy.technologypoint;
+package com.timmy.highUI.dialog;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -29,7 +30,7 @@ public class DialogActivity extends BaseActivity {
 
     @OnClick({R.id.btn_ok, R.id.btn_choice_double, R.id.btn_choice_three,
             R.id.btn_choice_only, R.id.btn_choice_only2, R.id.btn_choice_more,
-            R.id.btn_custom})
+            R.id.btn_custom, R.id.btn_dialog_theme})
     public void alertDialog(View view) {
         switch (view.getId()) {
             case R.id.btn_ok:
@@ -183,6 +184,9 @@ public class DialogActivity extends BaseActivity {
                         })
                         .create();
                 customDialog.show();
+                break;
+            case R.id.btn_dialog_theme:
+                startActivity(new Intent(this, DialogThemeActivity.class));
                 break;
         }
     }

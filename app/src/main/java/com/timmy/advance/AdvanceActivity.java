@@ -28,7 +28,7 @@ import com.timmy.advance.customViewGroup.DragViewActivity;
 import com.timmy.advance.customViewGroup.FlowLayoutActivity;
 import com.timmy.advance.customViewGroup.GestureLockViewActivity;
 import com.timmy.highUI.stretchList.ReboundScrollViewActivity;
-import com.timmy.advance.dialog.DialogActivity;
+import com.timmy.highUI.dialog.DialogActivity2;
 import com.timmy.highUI.motionEvent.MotionEventActivity;
 import com.timmy.advance.screenAdapter.ImageAdapterActivity;
 import com.timmy.advance.slideList.FollowSlideListActivity;
@@ -118,7 +118,7 @@ public class AdvanceActivity extends BaseActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.menu_dialog) {
-            startActivity(new Intent(this, DialogActivity.class));
+            startActivity(new Intent(this, DialogActivity2.class));
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -147,7 +147,7 @@ public class AdvanceActivity extends BaseActivity {
                     AdvanceActivity.this.openActivity(FollowSlideListActivity.class);
                     break;
                 case 1:
-                    AdvanceActivity.this.openActivity(DialogActivity.class);
+                    AdvanceActivity.this.openActivity(DialogActivity2.class);
                     break;
                 case 2:
                     AdvanceActivity.this.openActivity(FollowWin8Activity.class);

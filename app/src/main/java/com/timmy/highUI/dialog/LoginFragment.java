@@ -1,4 +1,4 @@
-package com.timmy.advance.dialog;
+package com.timmy.highUI.dialog;
 
 import android.app.Dialog;
 import android.app.DialogFragment;

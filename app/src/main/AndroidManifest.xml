@@ -37,7 +37,17 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="首页"
             android:launchMode="singleTask"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="com.timmy.ACTION_MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="80"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".other.TechnologyPointActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -72,7 +82,7 @@
             android:label="setClipToOutline"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".technologypoint.DialogActivity"
+            android:name=".highUI.dialog.DialogActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="Dialog"
             android:screenOrientation="portrait" />
@@ -112,7 +122,7 @@
             android:label="高仿腾讯ListView滑动删除"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".advance.dialog.DialogActivity"
+            android:name=".highUI.dialog.DialogActivity2"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait"
             android:theme="@style/MyDialogTopRight" />
@@ -412,6 +422,7 @@
         <activity
             android:name=".framework.netFw.NetWorkRequestActivity"
             android:label="网络框架" />
+
         <meta-data
             android:name="TINKER_ID"
             android:value="tinker" />
@@ -419,8 +430,11 @@
         <activity
             android:name=".framework.tinker.TinkerActivity"
             android:label="Tinker热修复接入" />
-        <activity android:name=".framework.database.DataBaseActivity"
-            android:label="数据库框架"/>
+        <activity
+            android:name=".framework.database.DataBaseActivity"
+            android:label="数据库框架" />
+        <activity android:name=".highUI.dialog.DialogThemeActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light.Dialog"></activity>
     </application>
 
 </manifest>

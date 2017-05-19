@@ -25,6 +25,7 @@ public class MainTag {
     public static final int TAG_PATH = 0X17;
     public static final int TAG_SHADER = 0X18;
     public static final int TAG_TOAST = 0X19;
+    public static final int TAG_DIALOG = 0X20;
 
 
     //项目总结
