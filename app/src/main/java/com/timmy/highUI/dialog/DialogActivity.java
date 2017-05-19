@@ -3,6 +3,7 @@ package com.timmy.highUI.dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -186,9 +187,28 @@ public class DialogActivity extends BaseActivity {
                 customDialog.show();
                 break;
             case R.id.btn_dialog_theme:
-                startActivity(new Intent(this, DialogThemeActivity.class));
+                Intent intent = new Intent(this, DialogThemeActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("key","timmy");
+
+                intent.putExtra("key",bundle);
+                startActivity(intent);
                 break;
         }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        //当Activity因内存底被系统回收或者其他异常问题导致Activity销毁前,
+        // 会调用该方法,可以在方法的参数Bundle中保存我们的临时数据
+        //再次回到这个界面时,可以再onCreate方法中获取到该数据
+        outState.putString("name","timmy");
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState, PersistableBundle outPersistentState) {
+        super.onSaveInstanceState(outState, outPersistentState);
     }
 
     @Override
