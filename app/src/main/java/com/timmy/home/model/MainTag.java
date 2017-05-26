@@ -36,6 +36,7 @@ public class MainTag {
         public static final int TAG_INFLATE = 0x103;
         public static final int TAG_AIDL_BINDER = 0X104;
         public static final int TAG_SERVICE = 0x105;
+        public static final int TAG_TWOCODE_DOWNLOAD = 0X106;
     }
 
     //自定义控件

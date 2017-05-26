@@ -433,8 +433,15 @@
         <activity
             android:name=".framework.database.DataBaseActivity"
             android:label="数据库框架" />
-        <activity android:name=".highUI.dialog.DialogThemeActivity"
-            android:theme="@style/Base.Theme.AppCompat.Light.Dialog"></activity>
+        <activity
+            android:name=".highUI.dialog.DialogThemeActivity"
+            android:theme="@style/Base.Theme.AppCompat.Light.Dialog" />
+        <activity android:name=".project.twoCode.downLoad.TCDownLoadActivity" />
+
+        <service
+            android:name=".project.twoCode.downLoad.DownLoadService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

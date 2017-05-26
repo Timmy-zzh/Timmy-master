@@ -141,6 +141,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_INFLATE, "inflate()方法的使用和详解"));
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_SERVICE, "Service组件详解"));
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_AIDL_BINDER, "AIDL(Binder机制)"));
+                pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_TWOCODE_DOWNLOAD, "第二行代码实例-通过服务进行下载"));
 
 
                 adapter.setData(pageListTwo);

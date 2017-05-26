@@ -50,6 +50,7 @@ import com.timmy.project.launch.WelcomeActivity;
 import com.timmy.project.service.ServiceActivity;
 import com.timmy.project.svg.SVGActivity;
 import com.timmy.highUI.dialog.DialogActivity;
+import com.timmy.project.twoCode.downLoad.TCDownLoadActivity;
 
 import java.util.List;
 
@@ -198,6 +199,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.PROJECT.TAG_AIDL_BINDER:
                         Util.gotoNextActivity(context, AIDLActivity.class);
+                        break;
+                    case MainTag.PROJECT.TAG_TWOCODE_DOWNLOAD:
+                        Util.gotoNextActivity(context, TCDownLoadActivity.class);
                         break;
 
 
