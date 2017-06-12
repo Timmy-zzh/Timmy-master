@@ -13,10 +13,22 @@ android {
         versionCode 2
         versionName "1.0"
     }
+
+//    apk打包信息
+    signingConfigs {
+        config {
+            storeFile rootProject.file(KEY_PATH)
+            storePassword KEY_PASS
+            keyAlias ALIAS_NAME
+            keyPassword ALIAS_PASS
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false //是否对项目进行混淆
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 
