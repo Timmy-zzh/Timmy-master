@@ -147,18 +147,18 @@ public class MainPageFragment extends BaseFragment {
                 adapter.setData(pageListTwo);
                 break;
             case 4://框架学习
-                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_PULL_DOWN_REFRESH, "下拉刷新，上拉加载更多框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_ANNOTATIONS, "自己实现注解框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_NETWORK_REQUEST, "网络请求框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_DATABASE, "数据库框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_IMAGE_LOADER, "图片加载框架"));
-                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_AUTO_RECYCLER, "无限轮播"));
-                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_VIEWPAGER_SCROLL, "各种左右滑动页面ViewPager效果"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_ANIMATOR, "动画框架"));
+                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_RAJAVA, "RxJava响应式编程"));
+                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_EVENT_BUS, "EventBus"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_HOT_FIX, "热更新-热修复框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_TENCENT_TINKER, "腾讯Tinker框架"));
-                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_EVENT_BUS, "EventBus"));
-                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_RAJAVA, "RxJava响应式编程"));
+                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_AUTO_RECYCLER, "无限轮播"));
+                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_PULL_DOWN_REFRESH, "下拉刷新，上拉加载更多框架"));
+                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_VIEWPAGER_SCROLL, "各种左右滑动页面ViewPager效果"));
 
                 adapter.setData(pageListThree);
                 break;

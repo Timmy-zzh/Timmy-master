@@ -25,8 +25,12 @@ android {
     }
 
     buildTypes {
+        debug{
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'),'proguard-rules.pro'
+        }
         release {
-            minifyEnabled false //是否对项目进行混淆
+            minifyEnabled true //是否对项目进行混淆
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.config
         }

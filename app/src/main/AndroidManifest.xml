@@ -441,7 +441,9 @@
         <service
             android:name=".project.twoCode.downLoad.DownLoadService"
             android:enabled="true"
-            android:exported="true"/>
+            android:exported="true" />
+
+        <activity android:name=".framework.imageLoaderFw.ImageLoaderActivity"></activity>
     </application>
 
 </manifest>
