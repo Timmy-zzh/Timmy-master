@@ -17,7 +17,8 @@ android {
 //    apk打包信息
     signingConfigs {
         config {
-            storeFile rootProject.file(KEY_PATH)
+//            storeFile rootProject.file(KEY_PATH)
+            storeFile rootProject.file("app/keystore/timmy.jks")
             storePassword KEY_PASS
             keyAlias ALIAS_NAME
             keyPassword ALIAS_PASS
