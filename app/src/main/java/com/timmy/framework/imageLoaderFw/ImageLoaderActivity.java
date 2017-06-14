@@ -12,6 +12,7 @@ import com.timmy.framework.annotationsFramework.ViewInjectUtils;
 import com.timmy.framework.annotationsFramework.annotations.ContentView;
 import com.timmy.framework.annotationsFramework.annotations.OnViewClick;
 import com.timmy.framework.annotationsFramework.annotations.ViewInject;
+import com.timmy.framework.imageLoaderFw.TimmyImageLoader.TimmyImageLoader;
 import com.timmy.framework.imageLoaderFw.TimmyImageLoader.cache.BitmapCache;
 import com.timmy.framework.imageLoaderFw.TimmyImageLoader.config.DisplayConfig;
 import com.timmy.framework.imageLoaderFw.TimmyImageLoader.config.ImageLoaderConfig;
@@ -38,6 +39,7 @@ public class ImageLoaderActivity extends BaseActivity {
     }
 
     private void initImageLoad() {
+//        TimmyImageLoader.getInstance().displayImage();
         ImageLoaderConfig config = new ImageLoaderConfig();
 
         BitmapCache mBitmapCache = config.mBitmapCache;

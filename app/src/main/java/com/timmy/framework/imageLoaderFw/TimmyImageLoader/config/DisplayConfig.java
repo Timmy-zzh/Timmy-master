@@ -7,8 +7,8 @@ package com.timmy.framework.imageLoaderFw.TimmyImageLoader.config;
  */
 public class DisplayConfig {
 
-    public int loadingImg;
+    public int loadingImg = -1;
 
-    public int errorImg;
+    public int errorImg = -1;
 
 }

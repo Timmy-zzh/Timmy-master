@@ -11,7 +11,7 @@ public class LoaderManager {
         return null;
     }
 
-    public LoadPolicy getLoader(String schema) {
+    public Loader getLoader(String schema) {
         return null;
     }
 }

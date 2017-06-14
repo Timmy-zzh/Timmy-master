@@ -5,11 +5,7 @@ import com.timmy.framework.imageLoaderFw.TimmyImageLoader.request.BitmapRequest;
 /**
  * Created by timmy1 on 17/6/13.
  */
+public interface Loader {
 
-public class LoadPolicy {
-
-    public void loadImager(BitmapRequest bitmapRequest) {
-
-    }
-
+     void loadImager(BitmapRequest bitmapRequest);
 }

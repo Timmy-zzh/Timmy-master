@@ -2,8 +2,9 @@ package com.timmy.framework.imageLoaderFw.TimmyImageLoader.config;
 
 import com.timmy.framework.imageLoaderFw.TimmyImageLoader.cache.BitmapCache;
 import com.timmy.framework.imageLoaderFw.TimmyImageLoader.cache.MemoryCache;
-import com.timmy.framework.imageLoaderFw.TimmyImageLoader.loader.LoadPolicy;
-import com.timmy.framework.imageLoaderFw.TimmyImageLoader.loader.SerialPolicy;
+import com.timmy.framework.imageLoaderFw.TimmyImageLoader.loader.Loader;
+import com.timmy.framework.imageLoaderFw.TimmyImageLoader.policy.LoadPolicy;
+import com.timmy.framework.imageLoaderFw.TimmyImageLoader.policy.SerialPolicy;
 
 /**
  * Created by timmy1 on 17/6/13.

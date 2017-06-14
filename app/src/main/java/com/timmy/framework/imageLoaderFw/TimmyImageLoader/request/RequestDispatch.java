@@ -2,7 +2,7 @@ package com.timmy.framework.imageLoaderFw.TimmyImageLoader.request;
 
 import android.util.Log;
 
-import com.timmy.framework.imageLoaderFw.TimmyImageLoader.loader.LoadPolicy;
+import com.timmy.framework.imageLoaderFw.TimmyImageLoader.loader.Loader;
 import com.timmy.framework.imageLoaderFw.TimmyImageLoader.loader.LoaderManager;
 
 import java.util.concurrent.BlockingQueue;
@@ -36,7 +36,7 @@ public class RequestDispatch extends Thread {
                  * 还是本地加载
                  */
                 String schema = parseSchema(bitmapRequest.mImageUrl);
-                LoadPolicy loader = LoaderManager.getInstance().getLoader(schema);
+                Loader loader = LoaderManager.getInstance().getLoader(schema);
                 loader.loadImager(bitmapRequest);
 
             }

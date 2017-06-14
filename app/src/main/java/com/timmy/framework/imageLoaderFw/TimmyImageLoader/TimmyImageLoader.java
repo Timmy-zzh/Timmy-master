@@ -72,8 +72,11 @@ public class TimmyImageLoader {
         mRequestQueue.addRequest(request);
     }
 
-    public static interface ImageListener {
+    public  interface ImageListener {
         void onComplete(ImageView imageView, Bitmap bitmap, String url);
     }
 
+    public ImageLoaderConfig getImageLoaderConfig() {
+        return mLoaderConfig;
+    }
 }
