@@ -8,9 +8,13 @@ import android.widget.ImageView;
 
 import com.timmy.R;
 import com.timmy.base.BaseActivity;
+import com.timmy.framework.annotationsFramework.ViewInjectUtils;
 import com.timmy.framework.annotationsFramework.annotations.ContentView;
 import com.timmy.framework.annotationsFramework.annotations.OnViewClick;
 import com.timmy.framework.annotationsFramework.annotations.ViewInject;
+import com.timmy.framework.imageLoaderFw.TimmyImageLoader.cache.BitmapCache;
+import com.timmy.framework.imageLoaderFw.TimmyImageLoader.config.DisplayConfig;
+import com.timmy.framework.imageLoaderFw.TimmyImageLoader.config.ImageLoaderConfig;
 
 @ContentView(R.layout.activity_image_loader)
 public class ImageLoaderActivity extends BaseActivity {
@@ -27,14 +31,18 @@ public class ImageLoaderActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        ViewInjectUtils.inject(this);
         initToolBar();
 
         initImageLoad();
-
     }
 
     private void initImageLoad() {
+        ImageLoaderConfig config = new ImageLoaderConfig();
+
+        BitmapCache mBitmapCache = config.mBitmapCache;
+        DisplayConfig mDisplayConfig = config.mDisplayConfig;
+
 
     }
 
@@ -49,6 +57,4 @@ public class ImageLoaderActivity extends BaseActivity {
                 break;
         }
     }
-
-
 }
