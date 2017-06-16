@@ -4,13 +4,12 @@ import com.timmy.framework.imageLoaderFw.TimmyImageLoader.request.BitmapRequest;
 
 /**
  * Created by timmy1 on 17/6/13.
- * 串行加载策略FIFO
- * 可以按照队列的序列号顺序来执行
+ * 逆序加载,先执行后加入到请求队列的请求
  */
-public class SerialPolicy implements LoadPolicy {
+public class ReversePolicy implements LoadPolicy {
 
     @Override
     public int compare(BitmapRequest request1, BitmapRequest request2) {
-        return request1.serialNum - request2.serialNum;
+        return request2.serialNum - request1.serialNum;
     }
 }

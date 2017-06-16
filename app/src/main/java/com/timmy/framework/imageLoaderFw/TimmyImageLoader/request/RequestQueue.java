@@ -13,7 +13,9 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 2.使用BlockingQueue设置为请求队列
  *
  * 请求队列保存了所有的请求,start()方法不断轮询从请求队列中拿到单个的BitmapRequest请求
- * 开启三个线程作为分发器,分发器从请求队列中拿到BitmapRequest请求后
+ * 开启三个线程作为分发器,分发器从请求队列中拿到BitmapRequest请求后--
+ *  -- 每个线程都持有请求队列,都从这个请求队列中去获取请求
+ *
  * 进行分发:判断是加载网络图片还是本地图片
  *
  */

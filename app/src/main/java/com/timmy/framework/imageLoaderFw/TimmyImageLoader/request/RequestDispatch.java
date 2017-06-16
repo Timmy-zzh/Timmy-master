@@ -30,7 +30,6 @@ public class RequestDispatch extends Thread {
                 if(bitmapRequest.isCancel()){
                     continue;
                 }
-
                 /**
                  * 拿到请求中的图片Url,进行解析判断是需要网络加载
                  * 还是本地加载
@@ -38,7 +37,6 @@ public class RequestDispatch extends Thread {
                 String schema = parseSchema(bitmapRequest.mImageUrl);
                 Loader loader = LoaderManager.getInstance().getLoader(schema);
                 loader.loadImager(bitmapRequest);
-
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -47,6 +45,11 @@ public class RequestDispatch extends Thread {
     }
 
     private String parseSchema(String mImageUrl) {
+        if (mImageUrl.contains("://")){
+            return mImageUrl.split("://")[0];
+        }else{
+            Log.i("RequestDispatch","不支持的url类型");
+        }
         return null;
     }
 }

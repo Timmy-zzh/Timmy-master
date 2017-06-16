@@ -15,10 +15,24 @@ import com.timmy.framework.imageLoaderFw.TimmyImageLoader.request.BitmapRequest;
  */
 public interface BitmapCache {
 
-    Bitmap get(BitmapRequest key);
-
+    /**
+     * 缓存Bitmap
+     * @param key
+     * @param bitmap
+     */
     void put(BitmapRequest key,Bitmap bitmap);
 
+    /**
+     * 通过请求,获取Bitmap
+     * @param key
+     * @return
+     */
+    Bitmap get(BitmapRequest key);
+
+    /**
+     * 从缓存中移除
+     * @param key
+     */
     void remove(BitmapRequest key);
 
 }

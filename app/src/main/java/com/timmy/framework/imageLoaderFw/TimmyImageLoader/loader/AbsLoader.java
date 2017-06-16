@@ -20,7 +20,7 @@ import java.lang.ref.WeakReference;
  */
 public abstract class AbsLoader implements Loader {
 
-    BitmapCache bitmapCache = TimmyImageLoader.getInstance().getImageLoaderConfig().mBitmapCache;
+    private static BitmapCache bitmapCache = TimmyImageLoader.getInstance().getImageLoaderConfig().mBitmapCache;
     DisplayConfig displayConfig = TimmyImageLoader.getInstance().getImageLoaderConfig().mDisplayConfig;
 
     @Override
@@ -67,16 +67,33 @@ public abstract class AbsLoader implements Loader {
         }
     }
 
-    private void displayOnUiThread(BitmapRequest bitmapRequest, final Bitmap bitmap) {
+    private void displayOnUiThread(final BitmapRequest bitmapRequest, final Bitmap bitmap) {
         WeakReference<ImageView> mImageViewRef = bitmapRequest.mImageViewRef;
         if (mImageViewRef.get() != null) {
             final ImageView imageView = mImageViewRef.get();
             imageView.post(new Runnable() {
                 @Override
                 public void run() {
-                    imageView.setImageBitmap(bitmap);
+                    updateImageView(bitmapRequest, bitmap);
                 }
             });
+        }
+    }
+
+    private void updateImageView(BitmapRequest bitmapRequest, Bitmap bitmap) {
+        ImageView imageView = bitmapRequest.mImageViewRef.get();
+        //加载成功,根据tag,加载防止错位
+        if (bitmap != null && imageView.getTag().equals(bitmapRequest.mImageUrl)) {
+            imageView.setImageBitmap(bitmap);
+        }
+
+        //加载失败
+        if (bitmap == null && displayConfig != null && displayConfig.errorImg > 0) {
+            imageView.setImageResource(displayConfig.errorImg);
+        }
+        //监听,回调
+        if (bitmapRequest.mImageListener != null) {
+            bitmapRequest.mImageListener.onComplete(imageView, bitmap, bitmapRequest.mImageUrl);
         }
     }
 

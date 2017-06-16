@@ -54,7 +54,7 @@ public class TimmyImageLoader {
             throw new RuntimeException("使用前请先设置ImageLoaderConfig");
         }
         //到这一步ImageLoaderConfig对象不为空,里面有默认的加载策略和缓存策略
-        mDisplayConfig= mLoaderConfig.mDisplayConfig;
+        mDisplayConfig = mLoaderConfig.mDisplayConfig;
     }
 
 
@@ -64,15 +64,14 @@ public class TimmyImageLoader {
 
     public void displayImage(ImageView imageView, String url,
                              DisplayConfig displayConfig, ImageListener listener) {
-
         //一条图片展示，就是一个图片请求-->放入到请求队列中
         BitmapRequest request = new BitmapRequest(imageView, url, displayConfig, listener);
-        request.mDisplayConfig = displayConfig==null?mDisplayConfig:displayConfig;
+        request.mDisplayConfig = displayConfig == null ? mDisplayConfig : displayConfig;
 
         mRequestQueue.addRequest(request);
     }
 
-    public  interface ImageListener {
+    public interface ImageListener {
         void onComplete(ImageView imageView, Bitmap bitmap, String url);
     }
 
