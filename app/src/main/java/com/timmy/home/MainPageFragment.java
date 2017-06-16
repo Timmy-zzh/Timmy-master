@@ -130,6 +130,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_PHOTO_VIEW, "高仿今日头条图片功能"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_LOADING_LAYOUT, "加载控件"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_RADAR_VIEW, "雷达展示控件"));
+                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_IMOOC_RIPPLE, "仿慕课网下拉刷新水波纹"));
 
 
                 adapter.setData(pageListFour);

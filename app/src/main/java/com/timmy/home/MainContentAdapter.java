@@ -12,6 +12,7 @@ import com.timmy.advance.customView.XiuViewActivity;
 import com.timmy.customeView.clockView.ClockViewActivity;
 import com.timmy.customeView.guaguaWinning.GuaGuaWinningActivity;
 import com.timmy.customeView.hotTag.HotTagActivity;
+import com.timmy.customeView.imoocRipple.IMoocWaterRippleActivity;
 import com.timmy.customeView.letterNavigation.LetterNavigationActivity;
 import com.timmy.customeView.loadingLayout.LoadingLayoutActivity;
 import com.timmy.customeView.myIndicator.MyIndicatorActivity;
@@ -180,6 +181,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.CUSTOMEVIEW.TAG_RADAR_VIEW:
                         Util.gotoNextActivity(context, RadarViewActivity.class);
+                        break;
+                    case MainTag.CUSTOMEVIEW.TAG_IMOOC_RIPPLE:
+                        Util.gotoNextActivity(context, IMoocWaterRippleActivity.class);
                         break;
 
                     ///////////////////////////项目总结

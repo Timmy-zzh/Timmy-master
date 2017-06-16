@@ -443,7 +443,8 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".framework.imageLoaderFw.ImageLoaderActivity"></activity>
+        <activity android:name=".framework.imageLoaderFw.ImageLoaderActivity" />
+        <activity android:name=".customeView.imoocRipple.IMoocWaterRippleActivity"></activity>
     </application>
 
 </manifest>
