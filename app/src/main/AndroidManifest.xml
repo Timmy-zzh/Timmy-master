@@ -444,7 +444,9 @@
             android:exported="true" />
 
         <activity android:name=".framework.imageLoaderFw.ImageLoaderActivity" />
-        <activity android:name=".customeView.imoocRipple.IMoocWaterRippleActivity"></activity>
+        <activity android:name=".customeView.imoocRipple.IMoocWaterRippleActivity" />
+        <activity android:name=".framework.eventBusFw.EventBusActivity" />
+        <activity android:name=".framework.eventBusFw.SendEventActivity"></activity>
     </application>
 
 </manifest>

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
@@ -83,5 +84,7 @@ public class WrapRecyclerViewActivity extends BaseActivity {
         wrapAdapter.addFooterView(footerView);
 
         recyclerView.setAdapter(wrapAdapter);
+
+
     }
 }
