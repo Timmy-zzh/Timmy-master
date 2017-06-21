@@ -131,6 +131,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_LOADING_LAYOUT, "加载控件"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_RADAR_VIEW, "雷达展示控件"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_IMOOC_RIPPLE, "仿慕课网下拉刷新水波纹"));
+                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_COUNT_DOWN_TIME, "广告页倒计时控件"));
 
 
                 adapter.setData(pageListFour);

@@ -52,6 +52,7 @@ public class MainTag {
         public static final int TAG_LOADING_LAYOUT = 208;
         public static final int TAG_RADAR_VIEW = 209;
         public static final int TAG_IMOOC_RIPPLE = 210;
+        public static final int TAG_COUNT_DOWN_TIME = 211;
     }
 
     //框架学习

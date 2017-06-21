@@ -10,6 +10,7 @@ import com.timmy.R;
 import com.timmy.Util;
 import com.timmy.advance.customView.XiuViewActivity;
 import com.timmy.customeView.clockView.ClockViewActivity;
+import com.timmy.customeView.countdownTime.CountDownTimeActivity;
 import com.timmy.customeView.guaguaWinning.GuaGuaWinningActivity;
 import com.timmy.customeView.hotTag.HotTagActivity;
 import com.timmy.customeView.imoocRipple.IMoocWaterRippleActivity;
@@ -152,7 +153,6 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
 
 
                     ///////////////////////////自定义控件
-
                     case MainTag.CUSTOMEVIEW.TAG_CLOCK_VIEW:
                         Util.gotoNextActivity(context, ClockViewActivity.class);
                         break;
@@ -185,6 +185,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.CUSTOMEVIEW.TAG_IMOOC_RIPPLE:
                         Util.gotoNextActivity(context, IMoocWaterRippleActivity.class);
+                        break;
+                    case MainTag.CUSTOMEVIEW.TAG_COUNT_DOWN_TIME:
+                        Util.gotoNextActivity(context, CountDownTimeActivity.class);
                         break;
 
                     ///////////////////////////项目总结

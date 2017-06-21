@@ -446,7 +446,8 @@
         <activity android:name=".framework.imageLoaderFw.ImageLoaderActivity" />
         <activity android:name=".customeView.imoocRipple.IMoocWaterRippleActivity" />
         <activity android:name=".framework.eventBusFw.EventBusActivity" />
-        <activity android:name=".framework.eventBusFw.SendEventActivity"></activity>
+        <activity android:name=".framework.eventBusFw.SendEventActivity" />
+        <activity android:name=".customeView.countdownTime.CountDownTimeActivity"></activity>
     </application>
 
 </manifest>

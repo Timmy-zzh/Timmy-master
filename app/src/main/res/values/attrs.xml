@@ -150,4 +150,21 @@
         <attr name="matProg_linearProgress" format="boolean" />
     </declare-styleable>
 
+    <!--广告倒计时控件:属性
+        圆盘的背景色
+        圆环颜色
+        圆环宽度
+        文字内容
+        文字颜色
+        文字大小
+    -->
+    <declare-styleable name="CountDownTimeView">
+        <attr name="background_color" format="color"/>
+        <attr name="progress_color" format="color"/>
+        <attr name="progress_width" format="dimension"/>
+        <attr name="text" format="string"/>
+        <attr name="text_color" format="color"/>
+        <attr name="text_size" format="dimension"/>
+    </declare-styleable>
+
 </resources>
