@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.text.Layout;
 import android.text.StaticLayout;
@@ -47,6 +48,7 @@ public class CountDownTimeView extends View {
     private static final int TEXT_COLOR = 0xffffffff;
     private static final int TAG_WIDTH = 0;
     private static final int TAG_HEIGHT = 1;
+    private static final int COUNT_DOWN_TIME = 3600;
 
     private float mTextSize;
     private int mProgressColor;
@@ -62,6 +64,11 @@ public class CountDownTimeView extends View {
     private int mHeight;
     private int min;
     private RectF mOval;
+    private CountDownTimer mCountDownTimer;
+    private int mRadio = COUNT_DOWN_TIME / 100;
+    private int mCountDownTime;
+    private int mCurrProgress;
+    private OnCountDownTimeListener mListener;
 
     public CountDownTimeView(Context context) {
         this(context, null);
@@ -84,6 +91,7 @@ public class CountDownTimeView extends View {
          文字内容
          文字颜色
          文字大小
+         倒计时时间
          */
         mBackgroundColor = typedArray.getColor(R.styleable.CountDownTimeView_background_color, BACKGROUND_COLOR);
         mProgressColor = typedArray.getColor(R.styleable.CountDownTimeView_progress_color, PROGRESS_COLOR);
@@ -94,6 +102,9 @@ public class CountDownTimeView extends View {
         }
         mTextSize = typedArray.getDimension(R.styleable.CountDownTimeView_text_size, TEXT_SIZE);
         mTextColor = typedArray.getColor(R.styleable.CountDownTimeView_text_color, TEXT_COLOR);
+        mCountDownTime = typedArray.getInt(R.styleable.CountDownTimeView_count_down_timer, COUNT_DOWN_TIME);
+
+        Log.d(TAG, "mCountDownTime:" + mCountDownTime);
         typedArray.recycle();
 
         initConf();
@@ -134,7 +145,9 @@ public class CountDownTimeView extends View {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         Log.d(TAG, "onMeasure");
-        setMeasuredDimension(setSuitableDimension(widthMeasureSpec, TAG_WIDTH), setSuitableDimension(heightMeasureSpec, TAG_HEIGHT));
+        setMeasuredDimension(setSuitableDimension(widthMeasureSpec, TAG_WIDTH),
+                setSuitableDimension(heightMeasureSpec, TAG_HEIGHT)
+        );
     }
 
     private int setSuitableDimension(int measureSpec, int tag) {
@@ -160,7 +173,7 @@ public class CountDownTimeView extends View {
         mWidth = getMeasuredWidth();
         mHeight = getMeasuredHeight();
         min = Math.min(mWidth, mHeight);
-        Log.d(TAG, "onSizeChanged  mWidth:"+mWidth+",mHeight:"+mHeight);
+        Log.d(TAG, "onSizeChanged  mWidth:" + mWidth + ",mHeight:" + mHeight);
         //绘制圆弧的矩形范围
         if (mWidth > mHeight) {
             mOval = new RectF(mWidth / 2 - min / 2 + mProgressWidht / 2,
@@ -182,9 +195,60 @@ public class CountDownTimeView extends View {
         //画背景圆
         canvas.drawCircle(mWidth / 2, mHeight / 2, min / 2, mCirclePaint);
         //画圆弧
-        canvas.drawArc(mOval, -90, 100, false, mProgressPaint);
+        canvas.drawArc(mOval, -90, 3.6f * (100 - mCurrProgress), false, mProgressPaint);
         //画文字-->画布居中,左上角为控制点
-        canvas.translate(mWidth/2,mHeight/2-mStaticLayout.getHeight()/2);
+        canvas.translate(mWidth / 2, mHeight / 2 - mStaticLayout.getHeight() / 2);
         mStaticLayout.draw(canvas);
     }
+
+    /**
+     * 开始倒计时
+     */
+    public void startCountDown() {
+        mCountDownTimer = new CountDownTimer(mCountDownTime, mRadio) {
+            //倒计时执行了多长时间-->根据millisUntilFinished值计算执行百分比
+            @Override
+            public void onTick(long millisUntilFinished) {
+                mCurrProgress = (int) ( (mCountDownTime -millisUntilFinished) * 100.0f/ mCountDownTime );
+                Log.d(TAG, "onTick--millisUntilFinished:" + millisUntilFinished +
+                        ",mCurrProgress:" + mCurrProgress+
+                        ",--:"+(int) (millisUntilFinished* 100.0f / mCountDownTime ));
+                invalidate();
+                if (mListener != null) {
+                    mListener.onProgress(mCurrProgress);
+                }
+            }
+
+            @Override
+            public void onFinish() {
+                if (mListener != null) {
+                    mListener.onFinish();
+                }
+                endCountDown();
+            }
+        }.start();
+    }
+
+    /**
+     * 结束倒计时->性能考虑,置空
+     */
+    public void endCountDown() {
+        if (mCountDownTimer != null) {
+            mCountDownTimer.cancel();
+            mCountDownTimer = null;
+        }
+    }
+
+    public void setOnCountDownTimeListener(OnCountDownTimeListener listener) {
+        this.mListener = listener;
+    }
+
+    public interface OnCountDownTimeListener {
+        //倒计时执行百分比
+        void onProgress(int progress);
+
+        //倒计时结束
+        void onFinish();
+    }
+
 }

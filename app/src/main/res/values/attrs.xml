@@ -165,6 +165,7 @@
         <attr name="text" format="string"/>
         <attr name="text_color" format="color"/>
         <attr name="text_size" format="dimension"/>
+        <attr name="count_down_timer" format="integer"/>
     </declare-styleable>
 
 </resources>
