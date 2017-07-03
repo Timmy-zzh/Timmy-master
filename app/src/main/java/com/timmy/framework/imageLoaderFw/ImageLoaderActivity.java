@@ -86,11 +86,12 @@ public class ImageLoaderActivity extends BaseActivity {
     }
 
     private void initImageLoad() {
-        ImageLoaderConfig config = new ImageLoaderConfig()
+        ImageLoaderConfig config = new ImageLoaderConfig.Builder()
 //                .setBitmapCache(new DoubleCache(this))
                 .setErrorPlaceholder(R.mipmap.composer_place)
                 .setLoadingPlaceholder(R.mipmap.ic_good)
-                .setLoadPolicy(new ReversePolicy());
+                .setLoadPolicy(new ReversePolicy())
+                .create();
         TimmyImageLoader.getInstance().init(config);
 
         TimmyImageLoader.getInstance().displayImage(mImageView,imageThumbUrls[0]);
