@@ -25,6 +25,7 @@ import com.timmy.framework.annotationsFramework.AnnotationsActivity;
 import com.timmy.framework.database.DataBaseActivity;
 import com.timmy.framework.eventBusFw.EventBusActivity;
 import com.timmy.framework.imageLoaderFw.ImageLoaderActivity;
+import com.timmy.framework.mvp.MVPActivity;
 import com.timmy.framework.netFw.NetWorkRequestActivity;
 import com.timmy.framework.tinker.TinkerActivity;
 import com.timmy.highUI.animatoion.ViewAnimationActivity;
@@ -232,6 +233,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.FRAMEWORK.TAG_EVENT_BUS:
                         Util.gotoNextActivity(context, EventBusActivity.class);
+                        break;
+                    case MainTag.FRAMEWORK.TAG_MVP:
+                        Util.gotoNextActivity(context, MVPActivity.class);
                         break;
 
                     default:

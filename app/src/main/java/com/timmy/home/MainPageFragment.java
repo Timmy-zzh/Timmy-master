@@ -157,6 +157,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_TENCENT_TINKER, "腾讯Tinker框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_RAJAVA, "RxJava响应式编程"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_HOT_FIX, "热更新-热修复框架"));
+                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_MVP, "设计模式MVP"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_ANIMATOR, "动画框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_AUTO_RECYCLER, "无限轮播"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_PULL_DOWN_REFRESH, "下拉刷新，上拉加载更多框架"));

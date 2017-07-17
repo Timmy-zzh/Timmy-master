@@ -14,18 +14,18 @@ import com.timmy.framework.imageLoaderFw.TimmyImageLoader.policy.SerialPolicy;
 public class ImageLoaderConfig {
 
     //图片缓存
-    private BitmapCache mBitmapCache = new MemoryCache();
+    public BitmapCache mBitmapCache = new MemoryCache();
 
     //线程池个数
-    private int mThreadCount = Runtime.getRuntime().availableProcessors() + 1;
+    public int mThreadCount = Runtime.getRuntime().availableProcessors() + 1;
 
     //显示参数设置
-    private DisplayConfig mDisplayConfig = new DisplayConfig();
+    public DisplayConfig mDisplayConfig = new DisplayConfig();
 
     //加载策略
-    private LoadPolicy mLoadPolicy = new SerialPolicy();
+    public LoadPolicy mLoadPolicy = new SerialPolicy();
 
-    private ImageLoaderConfig(){}
+    public ImageLoaderConfig(){}
 
 
     public BitmapCache getBitmapCache() {

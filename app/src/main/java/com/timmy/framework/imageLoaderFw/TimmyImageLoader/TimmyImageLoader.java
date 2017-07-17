@@ -21,9 +21,9 @@ import com.timmy.framework.imageLoaderFw.TimmyImageLoader.request.RequestQueue;
 public class TimmyImageLoader {
 
     public static TimmyImageLoader instance;
-    private ImageLoaderConfig mLoaderConfig;
-    private DisplayConfig mDisplayConfig;
-    private RequestQueue mRequestQueue;
+    public ImageLoaderConfig mLoaderConfig;
+    public DisplayConfig mDisplayConfig;
+    public RequestQueue mRequestQueue;
 
     private TimmyImageLoader() {
     }

@@ -69,6 +69,7 @@ public class MainTag {
         public static final int TAG_RAJAVA = 309;
         public static final int TAG_TENCENT_TINKER = 310;
         public static final int TAG_ANNOTATIONS = 311;
+        public static final int TAG_MVP = 312;
     }
 }
 
