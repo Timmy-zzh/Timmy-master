@@ -25,7 +25,7 @@ public class BitmapRequest implements Comparable<BitmapRequest> {
     public TimmyImageLoader.ImageListener mImageListener;
     public WeakReference<ImageView> mImageViewRef;
     public int serialNum;//请求序列号
-    public LoadPolicy loadPolicy = TimmyImageLoader.getInstance().getImageLoaderConfig().mLoadPolicy;
+    public LoadPolicy loadPolicy = TimmyImageLoader.getInstance().getImageLoaderConfig().getLoadPolicy();
 
     public BitmapRequest(ImageView imageView, String url, DisplayConfig displayConfig, TimmyImageLoader.ImageListener listener) {
         mImageUrl = url;

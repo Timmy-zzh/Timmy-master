@@ -5,12 +5,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.support.v7.app.AlertDialog;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
 import com.timmy.R;
 import com.timmy.base.BaseActivity;
+import com.timmy.library.util.Logger;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -35,17 +37,44 @@ public class DialogActivity extends BaseActivity {
     public void alertDialog(View view) {
         switch (view.getId()) {
             case R.id.btn_ok:
-                AlertDialog okDialog = new AlertDialog.Builder(this)
+//                AlertDialog alertDialog = new AlertDialog();
+//                AlertDialog okDialog =
+                View customTitle = LayoutInflater.from(this).inflate(R.layout.view_simple_text,null);
+                new AlertDialog.Builder(this)
                         .setTitle("标题")
                         .setMessage("内容")
+                        .setCustomTitle(customTitle)
+//                        .setCancelable(true)
+                        .setOnCancelListener(new DialogInterface.OnCancelListener() {
+                            @Override
+                            public void onCancel(DialogInterface dialog) {
+                                com.timmy.library.util.Toast.toastShort("setOnCancelListener");
+                                Logger.d("setOnCancelListener");
+                            }
+                        })
+                        .setOnDismissListener(new DialogInterface.OnDismissListener() {
+                            @Override
+                            public void onDismiss(DialogInterface dialog) {
+                                com.timmy.library.util.Toast.toastShort("setOnDismissListener");
+                                Logger.d("setOnDismissListener");
+                            }
+                        })
+                        .setOnKeyListener(new DialogInterface.OnKeyListener() {
+                            @Override
+                            public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
+                                Logger.d("setOnKeyListener keyCode:"+keyCode);
+                                return false;
+                            }
+                        })
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int i) {
                                 dialog.dismiss();
                             }
                         })
-                        .create();
-                okDialog.show();
+                        .create()
+                        .show();
+//                okDialog.show();
 
                 break;
             case R.id.btn_choice_double:
@@ -189,9 +218,9 @@ public class DialogActivity extends BaseActivity {
             case R.id.btn_dialog_theme:
                 Intent intent = new Intent(this, DialogThemeActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("key","timmy");
+                bundle.putString("key", "timmy");
 
-                intent.putExtra("key",bundle);
+                intent.putExtra("key", bundle);
                 startActivity(intent);
                 break;
         }
@@ -203,7 +232,7 @@ public class DialogActivity extends BaseActivity {
         //当Activity因内存底被系统回收或者其他异常问题导致Activity销毁前,
         // 会调用该方法,可以在方法的参数Bundle中保存我们的临时数据
         //再次回到这个界面时,可以再onCreate方法中获取到该数据
-        outState.putString("name","timmy");
+        outState.putString("name", "timmy");
     }
 
     @Override

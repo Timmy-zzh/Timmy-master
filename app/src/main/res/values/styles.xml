@@ -8,8 +8,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <!--window background-->
         <item name="colorAccent">@color/colorAccent</item>
-        <!-- toolbar title color-->
-        <item name="android:textColorPrimary">@color/white</item>
+        <!-- toolbar title color  app文字默认颜色-->
+        <item name="android:textColorPrimary">@color/Black</item>
         <!--window background-->
         <item name="android:windowBackground">@android:color/white</item>
         <!--listview或者recyclerview的item的分割线样式-->
@@ -20,7 +20,6 @@
 
     <!--普通应用主题-->
     <style name="AppTheme" parent="AppTheme.Base" />
-
 
     <!--Toolbar-->
     <style name="AppToolbarTheme" parent="ToolbarTheme.Base" />

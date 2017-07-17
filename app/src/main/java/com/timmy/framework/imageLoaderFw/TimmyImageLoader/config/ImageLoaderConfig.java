@@ -28,6 +28,22 @@ public class ImageLoaderConfig {
     private ImageLoaderConfig(){}
 
 
+    public BitmapCache getBitmapCache() {
+        return mBitmapCache;
+    }
+
+    public int getThreadCount() {
+        return mThreadCount;
+    }
+
+    public DisplayConfig getDisplayConfig() {
+        return mDisplayConfig;
+    }
+
+    public LoadPolicy getLoadPolicy() {
+        return mLoadPolicy;
+    }
+
     public static class Builder {
 
         //图片缓存

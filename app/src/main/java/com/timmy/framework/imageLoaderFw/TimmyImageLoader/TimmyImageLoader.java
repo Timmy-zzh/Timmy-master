@@ -42,7 +42,7 @@ public class TimmyImageLoader {
     public void init(ImageLoaderConfig config) {
         mLoaderConfig = config;
         checkConfig();
-        mRequestQueue = new RequestQueue(config.mThreadCount);
+        mRequestQueue = new RequestQueue(config.getThreadCount());
         //请求队列开启轮询
         mRequestQueue.start();
     }
@@ -54,7 +54,7 @@ public class TimmyImageLoader {
             throw new RuntimeException("使用前请先设置ImageLoaderConfig");
         }
         //到这一步ImageLoaderConfig对象不为空,里面有默认的加载策略和缓存策略
-        mDisplayConfig = mLoaderConfig.mDisplayConfig;
+        mDisplayConfig = mLoaderConfig.getDisplayConfig();
     }
 
 

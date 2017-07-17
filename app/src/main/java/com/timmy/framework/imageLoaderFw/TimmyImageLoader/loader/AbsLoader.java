@@ -20,8 +20,8 @@ import java.lang.ref.WeakReference;
  */
 public abstract class AbsLoader implements Loader {
 
-    private static BitmapCache bitmapCache = TimmyImageLoader.getInstance().getImageLoaderConfig().mBitmapCache;
-    DisplayConfig displayConfig = TimmyImageLoader.getInstance().getImageLoaderConfig().mDisplayConfig;
+    private static BitmapCache bitmapCache = TimmyImageLoader.getInstance().getImageLoaderConfig().getBitmapCache();
+    DisplayConfig displayConfig = TimmyImageLoader.getInstance().getImageLoaderConfig().getDisplayConfig();
 
     @Override
     public void loadImager(BitmapRequest bitmapRequest) {
