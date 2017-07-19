@@ -7,7 +7,7 @@ package com.timmy.framework.mvp.view;
  * 2.登录成功
  * 3.登录失败
  */
-public interface ILoginView extends BaseMvpView {
+public interface ILoginView{
 
     void logining();
 

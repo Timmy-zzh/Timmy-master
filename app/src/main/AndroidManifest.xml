@@ -448,7 +448,9 @@
         <activity android:name=".framework.eventBusFw.EventBusActivity" />
         <activity android:name=".framework.eventBusFw.SendEventActivity" />
         <activity android:name=".customeView.countdownTime.CountDownTimeActivity" />
-        <activity android:name=".framework.mvp.MVPActivity"></activity>
+        <activity
+            android:name=".framework.mvp.MVPActivity"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
