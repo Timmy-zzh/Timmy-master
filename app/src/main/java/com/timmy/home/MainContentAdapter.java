@@ -53,6 +53,7 @@ import com.timmy.project.inflate.InflateActivity;
 import com.timmy.project.launch.SplashActivity;
 import com.timmy.project.launch.WelcomeActivity;
 import com.timmy.project.service.ServiceActivity;
+import com.timmy.project.softKeyboard.SoftKeyboardActivity;
 import com.timmy.project.svg.SVGActivity;
 import com.timmy.highUI.dialog.DialogActivity;
 import com.timmy.project.twoCode.downLoad.TCDownLoadActivity;
@@ -212,6 +213,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.PROJECT.TAG_TWOCODE_DOWNLOAD:
                         Util.gotoNextActivity(context, TCDownLoadActivity.class);
+                        break;
+                    case MainTag.PROJECT.TAG_SOFT_KEYBOARD:
+                        Util.gotoNextActivity(context, SoftKeyboardActivity.class);
                         break;
 
 

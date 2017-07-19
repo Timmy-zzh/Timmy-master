@@ -37,6 +37,7 @@ public class MainTag {
         public static final int TAG_AIDL_BINDER = 104;
         public static final int TAG_SERVICE = 105;
         public static final int TAG_TWOCODE_DOWNLOAD = 106;
+        public static final int TAG_SOFT_KEYBOARD = 107;
     }
 
     //自定义控件

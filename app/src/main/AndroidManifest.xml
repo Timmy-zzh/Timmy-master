@@ -450,7 +450,11 @@
         <activity android:name=".customeView.countdownTime.CountDownTimeActivity" />
         <activity
             android:name=".framework.mvp.MVPActivity"
+            android:label="MVP设计模式"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".project.softKeyboard.SoftKeyboardActivity"
+            android:label="虚拟键盘使用" />
     </application>
 
 </manifest>
