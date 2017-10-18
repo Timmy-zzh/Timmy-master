@@ -1,19 +1,16 @@
-package com.timmy.framework.annotationsFramework;
+package com.timmy.framework.annotationRuntime;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import com.timmy.R;
 import com.timmy.base.BaseActivity;
-import com.timmy.framework.annotationsFramework.annotations.ContentView;
-import com.timmy.framework.annotationsFramework.annotations.OnViewClick;
-import com.timmy.framework.annotationsFramework.annotations.ViewInject;
+import com.timmy.framework.annotationRuntime.annotations.ContentView;
+import com.timmy.framework.annotationRuntime.annotations.OnViewClick;
+import com.timmy.framework.annotationRuntime.annotations.ViewInject;
 import com.timmy.library.util.Toast;
-
-import butterknife.OnClick;
 
 /**
  * 注解:通过学习注解和反射,实现运行时代码注解框架

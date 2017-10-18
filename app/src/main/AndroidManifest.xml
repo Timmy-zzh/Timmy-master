@@ -417,7 +417,7 @@
         <activity android:name=".customeView.loadingLayout.LoadingLayoutActivity" />
         <activity android:name=".customeView.radarView.RadarViewActivity" />
         <activity
-            android:name=".framework.annotationsFramework.AnnotationsActivity"
+            android:name=".framework.annotationRuntime.AnnotationsActivity"
             android:label="注解" />
         <activity
             android:name=".framework.netFw.NetWorkRequestActivity"
@@ -455,6 +455,10 @@
         <activity
             android:name=".project.softKeyboard.SoftKeyboardActivity"
             android:label="虚拟键盘使用" />
+        <activity android:name=".framework.annotationCompile.CompileAnnotationActivity" />
+        <activity android:name=".framework.retrofit2.CustomRetrofit2Activity" />
+        <activity android:name=".project.dataPersist.DataPersistActivity"
+            android:label="数据持久化"/>
     </application>
 
 </manifest>

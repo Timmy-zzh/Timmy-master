@@ -21,12 +21,14 @@ import com.timmy.customeView.myPhotoView.MyPhotoViewActivity;
 import com.timmy.customeView.myViewPager.MyViewPagerActivity;
 import com.timmy.customeView.notePad.NotePadActivity;
 import com.timmy.customeView.radarView.RadarViewActivity;
-import com.timmy.framework.annotationsFramework.AnnotationsActivity;
+import com.timmy.framework.annotationCompile.CompileAnnotationActivity;
+import com.timmy.framework.annotationRuntime.AnnotationsActivity;
 import com.timmy.framework.database.DataBaseActivity;
 import com.timmy.framework.eventBusFw.EventBusActivity;
 import com.timmy.framework.imageLoaderFw.ImageLoaderActivity;
 import com.timmy.framework.mvp.MVPActivity;
 import com.timmy.framework.netFw.NetWorkRequestActivity;
+import com.timmy.framework.retrofit2.CustomRetrofit2Activity;
 import com.timmy.framework.tinker.TinkerActivity;
 import com.timmy.highUI.animatoion.ViewAnimationActivity;
 import com.timmy.highUI.cardView.CardViewActivity;
@@ -49,6 +51,7 @@ import com.timmy.highUI.textInputLayout.TextInputLayoutActivity;
 import com.timmy.home.model.MainModel;
 import com.timmy.home.model.MainTag;
 import com.timmy.project.aidlBinder.AIDLActivity;
+import com.timmy.project.dataPersist.DataPersistActivity;
 import com.timmy.project.inflate.InflateActivity;
 import com.timmy.project.launch.SplashActivity;
 import com.timmy.project.launch.WelcomeActivity;
@@ -217,14 +220,23 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.PROJECT.TAG_SOFT_KEYBOARD:
                         Util.gotoNextActivity(context, SoftKeyboardActivity.class);
                         break;
+                    case MainTag.PROJECT.TAG_DATA_PERSIST:
+                        Util.gotoNextActivity(context, DataPersistActivity.class);
+                        break;
 
 
                     ///////////////////////////框架学习
                     case MainTag.FRAMEWORK.TAG_ANNOTATIONS:
                         Util.gotoNextActivity(context, AnnotationsActivity.class);
                         break;
+                    case MainTag.FRAMEWORK.TAG_COMPILE_ANNOTATIONS:
+                        Util.gotoNextActivity(context, CompileAnnotationActivity.class);
+                        break;
                     case MainTag.FRAMEWORK.TAG_NETWORK_REQUEST:
                         Util.gotoNextActivity(context,NetWorkRequestActivity.class);
+                        break;
+                    case MainTag.FRAMEWORK.TAG_CUSTOME_RETROFIT2:
+                        Util.gotoNextActivity(context,CustomRetrofit2Activity.class);
                         break;
                     case MainTag.FRAMEWORK.TAG_TENCENT_TINKER:
                         Util.gotoNextActivity(context,TinkerActivity.class);
@@ -259,7 +271,7 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
         @Bind(R.id.tv_desc)
         TextView mContent;
 
-        public TabHolder(View itemView) {
+        private TabHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
         }

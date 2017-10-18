@@ -1,18 +1,14 @@
 package com.timmy.home.model;
 
-/**
- * Created by timmy1 on 16/11/8.
- */
-
 public class MainTag {
 
-    public static final int TAG_XIUXIU = 01;
-    public static final int TAG_QQ_ZONE_STRETCH = 02;
-    public static final int TAG_RECYCLER_VIEW = 03;
-    public static final int TAG_COLLAPSING_TOOLBAR_LAYOUT = 04;
-    public static final int TAG_SLIDESLIP = 05;
-    public static final int TAG_SNACKBAR = 06;
-    public static final int TAG_TEXT_INPUT_LAYOUT = 07;
+    public static final int TAG_XIUXIU = 1;
+    public static final int TAG_QQ_ZONE_STRETCH = 2;
+    public static final int TAG_RECYCLER_VIEW = 3;
+    public static final int TAG_COLLAPSING_TOOLBAR_LAYOUT = 4;
+    public static final int TAG_SLIDESLIP = 5;
+    public static final int TAG_SNACKBAR = 6;
+    public static final int TAG_TEXT_INPUT_LAYOUT = 7;
     public static final int TAG_TOOLBAR = 8;
     public static final int TAG_SEARCH_VIEW = 9;
     public static final int TAG_LINEAR_LAYOUT_COMPAT = 10;
@@ -38,6 +34,7 @@ public class MainTag {
         public static final int TAG_SERVICE = 105;
         public static final int TAG_TWOCODE_DOWNLOAD = 106;
         public static final int TAG_SOFT_KEYBOARD = 107;
+        public static final int TAG_DATA_PERSIST = 108;
     }
 
     //自定义控件
@@ -71,6 +68,9 @@ public class MainTag {
         public static final int TAG_TENCENT_TINKER = 310;
         public static final int TAG_ANNOTATIONS = 311;
         public static final int TAG_MVP = 312;
+        public static final int TAG_COMPILE_ANNOTATIONS = 313;
+        public static final int TAG_CUSTOME_RETROFIT2 = 314;
     }
 }
+
 

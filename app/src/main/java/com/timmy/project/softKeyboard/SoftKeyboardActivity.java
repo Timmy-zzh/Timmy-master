@@ -23,27 +23,25 @@ public class SoftKeyboardActivity extends BaseActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-//        setContentView(R.layout.activity_soft_keyboard);
-        setContentView(R.layout.activity_weixin);
+        setContentView(R.layout.activity_soft_keyboard);
+//        setContentView(R.layout.activity_weixin);
         initToolBar();
 
 //        Button mBtnLogin = (Button) findViewById(R.id.btn_login);
 //        mBtnLogin.setOnClickListener(this);
 //        showKeyboard(mBtnLogin);
-        initView();
+//        initView();
     }
 
-    private void initView() {
-        List<String> lists = new ArrayList<>();
-        for (int i = 1; i <= 25; i++) {
-            lists.add("Item " + i);// + "-" + str.substring(random.nextInt(str.length())));
-        }
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_recycleView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new SimpleAdapter(this,lists ));
-
-    }
+//    private void initView() {
+//        List<String> lists = new ArrayList<>();
+//        for (int i = 1; i <= 25; i++) {
+//            lists.add("Item " + i);// + "-" + str.substring(random.nextInt(str.length())));
+//        }
+//        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_recycleView);
+//        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+//        recyclerView.setAdapter(new SimpleAdapter(this,lists ));
+//    }
 
     /**
      * 关闭虚拟键盘

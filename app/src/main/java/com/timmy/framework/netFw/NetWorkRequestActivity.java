@@ -2,8 +2,6 @@ package com.timmy.framework.netFw;
 
 import android.graphics.Color;
 import android.os.Handler;
-import android.support.v4.widget.TextViewCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -11,15 +9,14 @@ import android.widget.TextView;
 
 import com.timmy.R;
 import com.timmy.base.BaseActivity;
-import com.timmy.framework.annotationsFramework.ViewInjectUtils;
-import com.timmy.framework.annotationsFramework.annotations.ContentView;
-import com.timmy.framework.annotationsFramework.annotations.OnViewClick;
-import com.timmy.framework.annotationsFramework.annotations.ViewInject;
+import com.timmy.framework.annotationRuntime.ViewInjectUtils;
+import com.timmy.framework.annotationRuntime.annotations.ContentView;
+import com.timmy.framework.annotationRuntime.annotations.OnViewClick;
+import com.timmy.framework.annotationRuntime.annotations.ViewInject;
 import com.timmy.framework.netFw.http.MyVolley;
 import com.timmy.framework.netFw.http.listener.IDataListener;
 import com.timmy.framework.netFw.model.GankResult;
 import com.timmy.framework.netFw.utils.AsyncNetUtils;
-import com.timmy.framework.netFw.utils.NetUtils;
 import com.timmy.framework.netFw.utils.NetWorkCallback;
 import com.timmy.library.util.Logger;
 import com.timmy.library.util.Toast;

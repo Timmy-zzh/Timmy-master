@@ -1,11 +1,11 @@
-package com.timmy.framework.annotationsFramework;
+package com.timmy.framework.annotationRuntime;
 
 import android.app.Activity;
 import android.view.View;
 
-import com.timmy.framework.annotationsFramework.annotations.ContentView;
-import com.timmy.framework.annotationsFramework.annotations.EventBase;
-import com.timmy.framework.annotationsFramework.annotations.ViewInject;
+import com.timmy.framework.annotationRuntime.annotations.ContentView;
+import com.timmy.framework.annotationRuntime.annotations.EventBase;
+import com.timmy.framework.annotationRuntime.annotations.ViewInject;
 import com.timmy.library.util.Logger;
 
 import java.lang.annotation.Annotation;

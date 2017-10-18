@@ -1,6 +1,6 @@
-package com.timmy.framework.annotationsFramework;
+package com.timmy.framework.annotationRuntime;
 
-import com.timmy.framework.annotationsFramework.annotations.TestAnno;
+import com.timmy.framework.annotationRuntime.annotations.TestAnno;
 
 /**
  * Created by admin on 2017/3/30.

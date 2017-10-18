@@ -9,25 +9,19 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 
 import com.timmy.R;
 import com.timmy.base.BaseActivity;
-import com.timmy.framework.annotationsFramework.ViewInjectUtils;
-import com.timmy.framework.annotationsFramework.annotations.ContentView;
-import com.timmy.framework.annotationsFramework.annotations.OnViewClick;
-import com.timmy.framework.annotationsFramework.annotations.ViewInject;
+import com.timmy.framework.annotationRuntime.ViewInjectUtils;
+import com.timmy.framework.annotationRuntime.annotations.ContentView;
+import com.timmy.framework.annotationRuntime.annotations.OnViewClick;
+import com.timmy.framework.annotationRuntime.annotations.ViewInject;
 import com.timmy.framework.imageLoaderFw.TimmyImageLoader.TimmyImageLoader;
-import com.timmy.framework.imageLoaderFw.TimmyImageLoader.cache.BitmapCache;
-import com.timmy.framework.imageLoaderFw.TimmyImageLoader.cache.DoubleCache;
-import com.timmy.framework.imageLoaderFw.TimmyImageLoader.config.DisplayConfig;
 import com.timmy.framework.imageLoaderFw.TimmyImageLoader.config.ImageLoaderConfig;
 import com.timmy.framework.imageLoaderFw.TimmyImageLoader.policy.ReversePolicy;
 import com.timmy.library.util.Toast;
-import com.timmy.project.twoCode.downLoad.TCDownLoadActivity;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 @ContentView(R.layout.activity_image_loader)

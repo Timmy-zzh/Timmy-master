@@ -133,7 +133,6 @@ public class MainPageFragment extends BaseFragment {
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_IMOOC_RIPPLE, "仿慕课网下拉刷新水波纹"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_COUNT_DOWN_TIME, "广告页倒计时控件"));
 
-
                 adapter.setData(pageListFour);
                 break;
             case 3://项目知识点总结
@@ -145,12 +144,15 @@ public class MainPageFragment extends BaseFragment {
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_AIDL_BINDER, "AIDL(Binder机制)"));
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_TWOCODE_DOWNLOAD, "第二行代码实例-通过服务进行下载"));
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_SOFT_KEYBOARD, "虚拟键盘使用"));
+                pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_DATA_PERSIST, "数据持久化"));
 
                 adapter.setData(pageListTwo);
                 break;
             case 4://框架学习
-                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_ANNOTATIONS, "自己实现注解框架"));
+                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_ANNOTATIONS, "运行时注解框架"));
+                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_COMPILE_ANNOTATIONS, "编译时时注解框架(注解处理器使用)"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_NETWORK_REQUEST, "网络请求框架"));
+                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_CUSTOME_RETROFIT2, "自定义网络请求Retrofit2.0"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_DATABASE, "数据库框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_IMAGE_LOADER, "图片加载框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_EVENT_BUS, "EventBus"));

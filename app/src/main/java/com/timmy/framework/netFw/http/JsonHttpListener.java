@@ -67,7 +67,7 @@ public class JsonHttpListener<T> implements IHttpListener {
         BufferedReader reader = new BufferedReader(
                 new InputStreamReader(inputStream));
         StringBuilder sb = new StringBuilder();
-        String line = null;
+        String line;
         try {
             while ((line = reader.readLine()) != null) {
                 sb.append(line + "\n");

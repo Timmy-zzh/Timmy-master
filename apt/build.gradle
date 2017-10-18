@@ -1,0 +1,19 @@
+apply plugin: 'java'
+
+sourceCompatibility = "1.7"
+targetCompatibility = "1.7"
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':anno')
+
+    //auto-service用于注解后自动在特定路径下生成配置文件
+    compile 'com.google.auto.service:auto-service:1.0-rc2'
+    //用于配合apt边界生成java文件的工具
+    compile 'com.squareup:javapoet:1.9.0'
+}
+

@@ -1,4 +1,4 @@
-package com.timmy.framework.annotationsFramework;
+package com.timmy.framework.annotationRuntime;
 
 import java.lang.ref.WeakReference;
 import java.lang.reflect.InvocationHandler;

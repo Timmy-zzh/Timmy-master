@@ -7,12 +7,11 @@ import android.widget.TextView;
 
 import com.timmy.R;
 import com.timmy.base.BaseActivity;
-import com.timmy.framework.annotationsFramework.ViewInjectUtils;
-import com.timmy.framework.annotationsFramework.annotations.ContentView;
-import com.timmy.framework.annotationsFramework.annotations.ViewInject;
+import com.timmy.framework.annotationRuntime.ViewInjectUtils;
+import com.timmy.framework.annotationRuntime.annotations.ContentView;
+import com.timmy.framework.annotationRuntime.annotations.ViewInject;
 import com.timmy.framework.database.db.BaseDaoFactory;
 import com.timmy.framework.database.normal.DbDao;
-import com.timmy.framework.database.normal.Person;
 import com.timmy.library.util.Toast;
 
 import java.util.List;

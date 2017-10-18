@@ -1,4 +1,4 @@
-package com.timmy.framework.annotationsFramework.annotations;
+package com.timmy.framework.annotationRuntime.annotations;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,4 +1,4 @@
-package com.timmy.framework.annotationsFramework.annotations;
+package com.timmy.framework.annotationRuntime.annotations;
 
 import android.view.View;
 
