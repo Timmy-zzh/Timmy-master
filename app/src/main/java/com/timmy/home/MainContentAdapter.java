@@ -54,6 +54,7 @@ import com.timmy.highUI.textInputLayout.TextInputLayoutActivity;
 import com.timmy.home.model.MainModel;
 import com.timmy.home.model.MainTag;
 import com.timmy.project.aidlBinder.AIDLActivity;
+import com.timmy.project.countdown.CountDownActivity;
 import com.timmy.project.dataPersist.DataPersistActivity;
 import com.timmy.project.inflate.InflateActivity;
 import com.timmy.project.launch.SplashActivity;
@@ -228,6 +229,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.PROJECT.TAG_DATA_PERSIST:
                         Util.gotoNextActivity(context, DataPersistActivity.class);
+                        break;
+                    case MainTag.PROJECT.TAG_COUNT_DOWN:
+                        Util.gotoNextActivity(context, CountDownActivity.class);
                         break;
 
 

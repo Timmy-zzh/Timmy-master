@@ -62,16 +62,13 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
     compile 'com.alibaba:fastjson:1.2.23'
     compile 'httpcomponents-httpcore:httpcore:4.0-alpha6'
-    //optional, help to generate the final application
-//    provided('com.tencent.tinker:tinker-android-anno:1.9.1')
-    //tinker's main Android lib
-//    compile('com.tencent.tinker:tinker-android-lib:1.9.1')
-
-//    compile 'com.tencent.tinker:tinker-android-lib:1.7.7'
     testCompile 'junit:junit:4.12'
-//    provided 'com.tencent.tinker:tinker-android-anno:1.7.7'
     //v-layout
     compile('com.alibaba.android:vlayout:1.2.2@aar') {
         transitive = true
     }
+
+    compile 'io.reactivex.rxjava2:rxjava:2.1.8'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
 }

@@ -147,6 +147,9 @@ public class MainPageFragment extends BaseFragment {
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_TWOCODE_DOWNLOAD, "第二行代码实例-通过服务进行下载"));
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_SOFT_KEYBOARD, "虚拟键盘使用"));
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_DATA_PERSIST, "数据持久化"));
+                pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_COUNT_DOWN, "倒计时实现方案"));
+
+
 
                 adapter.setData(pageListTwo);
                 break;

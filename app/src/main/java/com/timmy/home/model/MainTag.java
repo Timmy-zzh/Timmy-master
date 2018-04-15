@@ -35,6 +35,7 @@ public class MainTag {
         public static final int TAG_TWOCODE_DOWNLOAD = 106;
         public static final int TAG_SOFT_KEYBOARD = 107;
         public static final int TAG_DATA_PERSIST = 108;
+        public static final int TAG_COUNT_DOWN = 109;
     }
 
     //自定义控件
