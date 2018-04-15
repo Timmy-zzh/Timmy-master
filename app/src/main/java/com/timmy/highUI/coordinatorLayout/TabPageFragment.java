@@ -18,14 +18,14 @@ import com.timmy.home.model.MainTag;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * TabLayout+ViewPager+Fragment
  */
 public class TabPageFragment extends BaseFragment {
 
-    @Bind(R.id.rv_recycleView)
+    @BindView(R.id.rv_recycleView)
     RecyclerView mRecyclerView;
 
     private static final String KEY_PAGE_TAB = "key_page_tab";

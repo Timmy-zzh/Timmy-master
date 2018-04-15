@@ -7,14 +7,14 @@ import com.timmy.R;
 import com.timmy.library.util.ImageUtil;
 import com.timmy.base.BaseActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class GlideImageActivity extends BaseActivity {
 
-    @Bind(R.id.iv_image)
+    @BindView(R.id.iv_image)
     ImageView iv_image;
-    @Bind(R.id.iv_image2)
+    @BindView(R.id.iv_image2)
     ImageView iv_image2;
 
     private static final String url = "http://7xoop6.com2.z0.glb.qiniucdn.com/images/deal/deal20151125/D101037.jpg!thumbnail";
@@ -49,7 +49,6 @@ public class GlideImageActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 
 }

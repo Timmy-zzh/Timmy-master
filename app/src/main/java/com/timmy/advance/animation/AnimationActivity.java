@@ -9,14 +9,14 @@ import android.widget.ImageView;
 import com.timmy.R;
 import com.timmy.base.BaseActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class AnimationActivity extends BaseActivity {
 
     private static final long TIME_DURATION = 1000;
-    @Bind(R.id.iv_image)
+    @BindView(R.id.iv_image)
     ImageView iv_image;
 
     @Override
@@ -83,7 +83,6 @@ public class AnimationActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 
 }

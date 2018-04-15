@@ -457,8 +457,14 @@
             android:label="虚拟键盘使用" />
         <activity android:name=".framework.annotationCompile.CompileAnnotationActivity" />
         <activity android:name=".framework.retrofit2.CustomRetrofit2Activity" />
-        <activity android:name=".project.dataPersist.DataPersistActivity"
-            android:label="数据持久化"/>
+        <activity
+            android:name=".project.dataPersist.DataPersistActivity"
+            android:label="数据持久化" />
+        <activity android:name=".framework.vlayout.VLayoutActivity" />
+        <activity android:name=".framework.downRefresh.DownRefreshActivity" />
+        <activity android:name=".framework.downRefresh.SwipeRefreshActivity" />
+        <activity android:name=".framework.downRefresh.CustomRefreshActivity" />
+        <activity android:name=".customeView.circleMenu.CircleMenuLayoutActivity"></activity>
     </application>
 
 </manifest>

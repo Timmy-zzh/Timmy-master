@@ -18,7 +18,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -31,15 +31,15 @@ import butterknife.ButterKnife;
  */
 public class CitySelectActivity extends BaseActivity implements CityAdapter.onItemClickListener, MySlideView.onTouchListener {
 
-    @Bind(R.id.rv_recycleView)
+    @BindView(R.id.rv_recycleView)
     RecyclerView recyclerView;
-    @Bind(R.id.rv_hot_city)
+    @BindView(R.id.rv_hot_city)
     RecyclerView mHotCity;
-    @Bind(R.id.my_slide_view)
+    @BindView(R.id.my_slide_view)
     MySlideView slideView;
-    @Bind(R.id.tv_sticky_header_view)
+    @BindView(R.id.tv_sticky_header_view)
     TextView tvStickyHeaderView;
-    @Bind(R.id.my_circle_view)
+    @BindView(R.id.my_circle_view)
     CircleTextView circleTxt;
 
     private List<City> cityList = new ArrayList<>();
@@ -141,7 +141,6 @@ public class CitySelectActivity extends BaseActivity implements CityAdapter.onIt
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 
     @Override

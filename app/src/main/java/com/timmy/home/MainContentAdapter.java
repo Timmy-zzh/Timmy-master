@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.timmy.R;
 import com.timmy.Util;
 import com.timmy.advance.customView.XiuViewActivity;
+import com.timmy.customeView.circleMenu.CircleMenuLayoutActivity;
 import com.timmy.customeView.clockView.ClockViewActivity;
 import com.timmy.customeView.countdownTime.CountDownTimeActivity;
 import com.timmy.customeView.guaguaWinning.GuaGuaWinningActivity;
@@ -24,12 +25,14 @@ import com.timmy.customeView.radarView.RadarViewActivity;
 import com.timmy.framework.annotationCompile.CompileAnnotationActivity;
 import com.timmy.framework.annotationRuntime.AnnotationsActivity;
 import com.timmy.framework.database.DataBaseActivity;
+import com.timmy.framework.downRefresh.DownRefreshActivity;
 import com.timmy.framework.eventBusFw.EventBusActivity;
 import com.timmy.framework.imageLoaderFw.ImageLoaderActivity;
 import com.timmy.framework.mvp.MVPActivity;
 import com.timmy.framework.netFw.NetWorkRequestActivity;
 import com.timmy.framework.retrofit2.CustomRetrofit2Activity;
 import com.timmy.framework.tinker.TinkerActivity;
+import com.timmy.framework.vlayout.VLayoutActivity;
 import com.timmy.highUI.animatoion.ViewAnimationActivity;
 import com.timmy.highUI.cardView.CardViewActivity;
 import com.timmy.highUI.collapsingToolbarLayout.CollapsingToolbarLayoutActivity;
@@ -63,7 +66,7 @@ import com.timmy.project.twoCode.downLoad.TCDownLoadActivity;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.TabHolder> {
@@ -194,6 +197,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.CUSTOMEVIEW.TAG_COUNT_DOWN_TIME:
                         Util.gotoNextActivity(context, CountDownTimeActivity.class);
                         break;
+                    case MainTag.CUSTOMEVIEW.TAG_CIRCLE_MENU:
+                        Util.gotoNextActivity(context, CircleMenuLayoutActivity.class);
+                        break;
 
                     ///////////////////////////项目总结
                     case MainTag.PROJECT.TAG_ACTIVITY_LAUNCH:
@@ -253,6 +259,12 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                     case MainTag.FRAMEWORK.TAG_MVP:
                         Util.gotoNextActivity(context, MVPActivity.class);
                         break;
+                    case MainTag.FRAMEWORK.TAG_ALIBABA_V_LAYOUT:
+                        Util.gotoNextActivity(context, VLayoutActivity.class);
+                        break;
+                    case MainTag.FRAMEWORK.TAG_PULL_DOWN_REFRESH://下拉刷新
+                        Util.gotoNextActivity(context, DownRefreshActivity.class);
+                        break;
 
                     default:
                         break;
@@ -268,7 +280,7 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
 
     public static class TabHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.tv_desc)
+        @BindView(R.id.tv_desc)
         TextView mContent;
 
         private TabHolder(View itemView) {

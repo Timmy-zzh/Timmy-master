@@ -11,17 +11,17 @@ import android.view.View;
 import com.timmy.R;
 import com.timmy.base.BaseFragment;
 
-import butterknife.Bind;
-import butterknife.ButterKnife;
+import butterknife.BindView;
+
 
 /**
  * Created by Administrator on 2016/3/21 0021.
  */
 public class MainFragment extends BaseFragment {
 
-    @Bind(R.id.tl_tab)
+    @BindView(R.id.tl_tab)
     TabLayout tl_tab;
-    @Bind(R.id.vp_viewPage)
+    @BindView(R.id.vp_viewPage)
     ViewPager vp_viewPager;
     private TabPagerAdapter adapter;
 

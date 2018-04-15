@@ -5,19 +5,19 @@ import android.view.View;
 import android.widget.Button;
 
 import com.timmy.R;
-import com.timmy.base.BaseActivity;
 import com.timmy.advance.animation.AnimationActivity;
+import com.timmy.base.BaseActivity;
+import com.timmy.highUI.dialog.DialogActivity;
 import com.timmy.technologypoint.AutoPlayPicturesActivity;
 import com.timmy.technologypoint.CameraPictureActivity;
 import com.timmy.technologypoint.ClipToOutlineActivity;
-import com.timmy.highUI.dialog.DialogActivity;
 import com.timmy.technologypoint.GlideImageActivity;
 import com.timmy.technologypoint.Picture9Activity;
 import com.timmy.technologypoint.RecycleHeaderViewActivity;
 import com.timmy.technologypoint.TimmyHealthActivity;
 import com.timmy.technologypoint.ToolBarActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -29,7 +29,7 @@ public class TechnologyPointActivity extends BaseActivity {
 
 //    @Bind(R.id.toolbar)
 //    Toolbar toolbar;
-    @Bind(R.id.btn_auto_images)
+    @BindView(R.id.btn_auto_images)
     Button btn_autoImg;
 
     @Override
@@ -89,6 +89,5 @@ public class TechnologyPointActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 }

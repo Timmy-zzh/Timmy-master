@@ -20,6 +20,5 @@ public class CoordinatorLayoutActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 }

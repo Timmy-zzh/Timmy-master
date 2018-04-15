@@ -18,7 +18,7 @@ import com.timmy.Util;
 import com.timmy.base.BaseActivity;
 import com.timmy.library.util.Toast;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -27,7 +27,7 @@ import butterknife.OnClick;
  */
 public class ViewAnimationActivity extends BaseActivity {
 
-    @Bind(R.id.iv_image)
+    @BindView(R.id.iv_image)
     ImageView image;
 
     @Override
@@ -163,6 +163,5 @@ public class ViewAnimationActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 }

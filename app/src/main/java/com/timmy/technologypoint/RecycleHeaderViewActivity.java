@@ -13,7 +13,7 @@ import com.timmy.base.BaseActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
  */
 public class RecycleHeaderViewActivity extends BaseActivity {
 
-    @Bind(R.id.rv_recycleView)
+    @BindView(R.id.rv_recycleView)
     RecyclerView mRecyclerView;
     private int mPage = 1;
     private RecyclerView.LayoutManager layoutManager;
@@ -67,6 +67,5 @@ public class RecycleHeaderViewActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 }

@@ -7,9 +7,9 @@ import android.widget.TextView;
 
 import com.timmy.R;
 import com.timmy.base.BaseFragment;
-import com.timmy.home.MainPageFragment;
 
-import butterknife.Bind;
+import butterknife.BindView;
+
 
 /**
  * Created by admin on 2017/3/1.
@@ -21,7 +21,7 @@ public class SimplePagerFragment extends BaseFragment {
     private static final String KEY_PAGER_TITLE = "pager_title";
     private int pagerPosition;
     private String mTitle;
-    @Bind(R.id.tv_text)
+    @BindView(R.id.tv_text)
     TextView title;
 
     public static Fragment newInstance(int position, String s) {

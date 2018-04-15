@@ -1,5 +1,6 @@
 package com.timmy.highUI.collapsingToolbarLayout;
 
+import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
@@ -8,18 +9,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import com.timmy.R;
 import com.timmy.base.BaseActivity;
-import com.timmy.home.MainFragment;
 import com.timmy.home.MainPageFragment;
 
-import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class CollapsingToolbarLayoutActivity extends BaseActivity {
@@ -94,7 +91,6 @@ public class CollapsingToolbarLayoutActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 
     /**

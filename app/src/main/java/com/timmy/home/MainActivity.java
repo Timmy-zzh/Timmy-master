@@ -14,25 +14,23 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.timmy.R;
-import com.timmy.anno.AnnoTest;
-import com.timmy.framework.annotationRuntime.annotations.TestAnno;
+import com.timmy.base.BaseActivity;
 import com.timmy.library.util.Toast;
 import com.timmy.other.AboutActivity;
-import com.timmy.base.BaseActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
  * 主页-实现主界面加侧滑界面
  * 使用V4包中的DrawerLayout控件
  */
-@AnnoTest("timmy")
+//@AnnoTest("timmy")
 public class MainActivity extends BaseActivity {
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.drawer_layout)
+    @BindView(R.id.drawer_layout)
     DrawerLayout mDrawerLayout;
 
     @Override
@@ -120,6 +118,5 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 }

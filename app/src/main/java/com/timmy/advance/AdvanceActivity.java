@@ -43,12 +43,12 @@ import com.timmy.advance.animation.AnimationActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class AdvanceActivity extends BaseActivity {
 
-    @Bind(R.id.rv_recycleView)
+    @BindView(R.id.rv_recycleView)
     RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private BaseRecyclerViewAdapter adapter;
@@ -238,6 +238,5 @@ public class AdvanceActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 }

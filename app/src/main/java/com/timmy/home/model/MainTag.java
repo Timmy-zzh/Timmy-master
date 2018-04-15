@@ -51,6 +51,7 @@ public class MainTag {
         public static final int TAG_RADAR_VIEW = 209;
         public static final int TAG_IMOOC_RIPPLE = 210;
         public static final int TAG_COUNT_DOWN_TIME = 211;
+        public static final int TAG_CIRCLE_MENU = 212;
     }
 
     //框架学习
@@ -70,6 +71,7 @@ public class MainTag {
         public static final int TAG_MVP = 312;
         public static final int TAG_COMPILE_ANNOTATIONS = 313;
         public static final int TAG_CUSTOME_RETROFIT2 = 314;
+        public static final int TAG_ALIBABA_V_LAYOUT = 315;
     }
 }
 

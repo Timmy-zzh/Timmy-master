@@ -23,13 +23,13 @@ import com.timmy.widget.BottomSelectDialog;
 import java.io.File;
 import java.io.IOException;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class CameraPictureActivity extends BaseActivity {
 
-    @Bind(R.id.iv_image)
+    @BindView(R.id.iv_image)
     ImageView iv_image;
 
 
@@ -252,6 +252,5 @@ public class CameraPictureActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 }

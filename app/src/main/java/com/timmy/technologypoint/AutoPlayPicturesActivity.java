@@ -17,7 +17,7 @@ import com.timmy.base.BaseActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -29,11 +29,11 @@ import butterknife.ButterKnife;
 public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
 
     private static final String TAG = "AutoPlayPicturesActivity";
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
-    @Bind(R.id.vp_viewPage)
+    @BindView(R.id.vp_viewPage)
     ViewPager vp_viewPager;
-    @Bind(R.id.ll_point_container)
+    @BindView(R.id.ll_point_container)
     LinearLayout ll_pointCon;
     //图片资源-本地
     private int[] imageData = new int[]{R.drawable.a,
@@ -219,6 +219,5 @@ public class AutoPlayPicturesActivity extends BaseActivity implements ViewPager.
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 }

@@ -18,7 +18,7 @@ import com.timmy.highUI.recyclerview.adapter.BaseViewHolder;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class FloatWindowActivity extends BaseActivity implements View.OnTouchListener, View.OnClickListener {
@@ -32,7 +32,7 @@ public class FloatWindowActivity extends BaseActivity implements View.OnTouchLis
     int bottom;
     private boolean isMoved;
 
-    @Bind(R.id.rv_recycleView)
+    @BindView(R.id.rv_recycleView)
     RecyclerView mRecyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private BaseRecyclerViewAdapter adapter;
@@ -115,11 +115,6 @@ public class FloatWindowActivity extends BaseActivity implements View.OnTouchLis
         adapter.setData(mData);
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        ButterKnife.unbind(this);
-    }
 
     /**
      * touch事件处理,实现效果为控件随着手指滑动而滑动

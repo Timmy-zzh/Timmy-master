@@ -1,10 +1,11 @@
 apply plugin: 'com.android.application'
 //apply tinker插件
 //apply plugin: 'com.tencent.tinker.patch'
+//apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion project.ANDROID_COMPILE_SDK_VERSION as int
-    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
+//    buildToolsVersion project.ANDROID_BUILD_TOOLS_VERSION
 
     defaultConfig {
         applicationId "com.timmy"
@@ -39,27 +40,38 @@ android {
 
     //使用httpclient需要加上这行代码
     useLibrary 'org.apache.http.legacy'
+    buildToolsVersion '26.0.2'
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':library_timmy')
-    compile project(':anno')
-    compile project(':apt')
-
+//    compile project(':anno')
+//    compile project(':apt')
 
     compile "com.android.support:appcompat-v7:${SUPPORT_LIBRARY}"
     compile "com.android.support:design:${SUPPORT_LIBRARY}"
     compile "com.android.support:cardview-v7:${SUPPORT_LIBRARY}"
     compile "com.android.support:support-v4:${SUPPORT_LIBRARY}"
     compile "com.android.support:palette-v7:${SUPPORT_LIBRARY}"
-    compile 'com.jakewharton:butterknife:7.0.1'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
     compile 'com.github.promeg:tinypinyin:1.0.0'
     compile 'com.squareup.okhttp3:okhttp:3.8.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.1'
     compile 'com.alibaba:fastjson:1.2.23'
     compile 'httpcomponents-httpcore:httpcore:4.0-alpha6'
-    compile 'com.tencent.tinker:tinker-android-lib:1.7.7'
+    //optional, help to generate the final application
+//    provided('com.tencent.tinker:tinker-android-anno:1.9.1')
+    //tinker's main Android lib
+//    compile('com.tencent.tinker:tinker-android-lib:1.9.1')
+
+//    compile 'com.tencent.tinker:tinker-android-lib:1.7.7'
     testCompile 'junit:junit:4.12'
-    provided 'com.tencent.tinker:tinker-android-anno:1.7.7'
+//    provided 'com.tencent.tinker:tinker-android-anno:1.7.7'
+    //v-layout
+    compile('com.alibaba.android:vlayout:1.2.2@aar') {
+        transitive = true
+    }
 }

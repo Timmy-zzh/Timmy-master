@@ -7,12 +7,12 @@ import android.support.v7.widget.Toolbar;
 import com.timmy.R;
 import com.timmy.base.BaseActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class ToolBarActivity extends BaseActivity {
 
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar mToolbar;
 
     @Override

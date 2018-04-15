@@ -1,6 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
+    <!--<style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">-->
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
         <!--action bar color-->
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -15,7 +16,7 @@
         <!--listview或者recyclerview的item的分割线样式-->
         <!--<item name="android:listDivider">@drawable/item_divide_decora</item>-->
         <!--inputlayout出现错误时控件的样式设置-->
-        <item name="textColorError">@color/design_textinput_error_color_light</item>
+        <!--<item name="textColorError">@color/design_textinput_error_color_light</item>-->
     </style>
 
     <!--普通应用主题-->
@@ -71,10 +72,10 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
     <!--界面地图弹出Dialog动画设置-->
-    <style name="BottomSelectDialogAnimation" parent="android:Animation">
-        <item name="@android:windowEnterAnimation">@anim/push_bottom_in</item>
-        <item name="@android:windowExitAnimation">@anim/push_bottom_out</item>
-    </style>
+    <!--<style name="BottomSelectDialogAnimation" parent="android:Animation">-->
+        <!--<item name="@android:windowEnterAnimation">@anim/push_bottom_in</item>-->
+        <!--<item name="@android:windowExitAnimation">@anim/push_bottom_out</item>-->
+    <!--</style>-->
 
 
     <style name="Line">

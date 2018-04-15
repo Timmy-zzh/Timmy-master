@@ -31,7 +31,7 @@ public class Util {
                 R.style.BottomSelectDialog, view);
         Window window = dialog.getWindow();
         window.setGravity(Gravity.BOTTOM); // 此处可以设置dialog显示的位置
-        window.setWindowAnimations(R.style.BottomSelectDialogAnimation); // 添加动画
+//        window.setWindowAnimations(R.style.BottomSelectDialogAnimation); // 添加动画
         dialog.show();
 
         WindowManager windowManager = activity.getWindowManager();

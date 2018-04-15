@@ -12,7 +12,7 @@ import com.timmy.base.BaseActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -21,7 +21,7 @@ import butterknife.ButterKnife;
  */
 public class InteractiveRecyclerView extends BaseActivity implements ItemDragListener {
 
-    @Bind(R.id.rv_recycleView)
+    @BindView(R.id.rv_recycleView)
     RecyclerView mRecyclerView;
     private InteractiveAdapter adapter;
     private ItemTouchHelper touchHelper;
@@ -56,7 +56,6 @@ public class InteractiveRecyclerView extends BaseActivity implements ItemDragLis
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 
     /**

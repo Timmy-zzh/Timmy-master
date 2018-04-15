@@ -168,4 +168,26 @@
         <attr name="count_down_timer" format="integer"/>
     </declare-styleable>
 
+    <declare-styleable name="TRefreshLayout">
+        <!--Loading视图背景颜色-->
+        <attr name="load_view_bg_color" format="color|reference"/>
+        <!--进度条颜色-->
+        <attr name="progress_bar_color" format="color|reference"/>
+        <!--进度条背景色-->
+        <attr name="progress_bg_color" format="color|reference"/>
+        <!--Loading视图中文字颜色-->
+        <attr name="load_text_color" format="color|reference"/>
+        <!--下拉刷新问题描述-->
+        <attr name="pull_refresh_text" format="string|reference"/>
+        <!--上拉加载文字描述-->
+        <attr name="pull_load_text" format="string|reference"/>
+        <!--是否自动触发加载更多-->
+        <attr name="auto_load_more" format="boolean"/>
+        <!--下拉刷新是否可用-->
+        <attr name="pull_refresh_enable" format="boolean"/>
+        <!--上拉加载是否可用-->
+        <attr name="pull_load_enable" format="boolean"/>
+    </declare-styleable>
+    
+    
 </resources>

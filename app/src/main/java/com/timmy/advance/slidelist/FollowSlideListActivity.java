@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -20,7 +20,7 @@ import butterknife.ButterKnife;
  */
 public class FollowSlideListActivity extends BaseActivity {
 
-    @Bind(R.id.slide_listview)
+    @BindView(R.id.slide_listview)
     SlideDeleteListView mListView;
     private List<String> mDatas;
     private String[] strLists = new String[]{"HelloWorld", "Welcome", "Java", "Android", "Servlet", "Struts",
@@ -71,6 +71,5 @@ public class FollowSlideListActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 }

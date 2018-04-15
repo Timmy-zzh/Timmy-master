@@ -46,6 +46,5 @@ public class ClipToOutlineActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 }

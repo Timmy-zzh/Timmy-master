@@ -18,14 +18,15 @@ import com.timmy.home.model.MainTag;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
+
 
 /**
  * TabLayout+ViewPager+Fragment
  */
 public class MainPageFragment extends BaseFragment {
 
-    @Bind(R.id.rv_recycleView)
+    @BindView(R.id.rv_recycleView)
     RecyclerView mRecyclerView;
 
     private static final String KEY_PAGE_TAB = "key_page_tab";
@@ -132,6 +133,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_RADAR_VIEW, "雷达展示控件"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_IMOOC_RIPPLE, "仿慕课网下拉刷新水波纹"));
                 pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_COUNT_DOWN_TIME, "广告页倒计时控件"));
+                pageListFour.add(new MainModel(MainTag.CUSTOMEVIEW.TAG_CIRCLE_MENU, "圆形菜单"));
 
                 adapter.setData(pageListFour);
                 break;
@@ -164,6 +166,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_AUTO_RECYCLER, "无限轮播"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_PULL_DOWN_REFRESH, "下拉刷新，上拉加载更多框架"));
                 pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_VIEWPAGER_SCROLL, "各种左右滑动页面ViewPager效果"));
+                pageListThree.add(new MainModel(MainTag.FRAMEWORK.TAG_ALIBABA_V_LAYOUT, "Alibaba V-Layout框架使用"));
 
                 adapter.setData(pageListThree);
                 break;

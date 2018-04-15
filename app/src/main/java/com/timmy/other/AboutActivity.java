@@ -10,21 +10,21 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.timmy.R;
-import com.timmy.other.adapter.CustomAdapter;
 import com.timmy.base.BaseActivity;
+import com.timmy.other.adapter.CustomAdapter;
 
 import java.util.ArrayList;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class AboutActivity extends BaseActivity {
 
-    @Bind(R.id.cl_root)
+    @BindView(R.id.cl_root)
     CoordinatorLayout mRootCL;
-    @Bind(R.id.rv_content)
+    @BindView(R.id.rv_content)
     RecyclerView mContentRV;
-    @Bind(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
 
     @Override
@@ -52,7 +52,6 @@ public class AboutActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ButterKnife.unbind(this);
     }
 
     public void onClick(View v) {
