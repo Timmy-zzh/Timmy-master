@@ -59,6 +59,7 @@ import com.timmy.project.dataPersist.DataPersistActivity;
 import com.timmy.project.inflate.InflateActivity;
 import com.timmy.project.launch.SplashActivity;
 import com.timmy.project.launch.WelcomeActivity;
+import com.timmy.project.screenAdapter.ScreenAdapterActivity;
 import com.timmy.project.service.ServiceActivity;
 import com.timmy.project.softKeyboard.SoftKeyboardActivity;
 import com.timmy.project.svg.SVGActivity;
@@ -232,6 +233,9 @@ public class MainContentAdapter extends RecyclerView.Adapter<MainContentAdapter.
                         break;
                     case MainTag.PROJECT.TAG_COUNT_DOWN:
                         Util.gotoNextActivity(context, CountDownActivity.class);
+                        break;
+                    case MainTag.PROJECT.TAG_SCREEN_ADAPTER:
+                        Util.gotoNextActivity(context, ScreenAdapterActivity.class);
                         break;
 
 

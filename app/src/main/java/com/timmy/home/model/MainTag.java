@@ -36,6 +36,8 @@ public class MainTag {
         public static final int TAG_SOFT_KEYBOARD = 107;
         public static final int TAG_DATA_PERSIST = 108;
         public static final int TAG_COUNT_DOWN = 109;
+        public static final int TAG_SCREEN_ADAPTER = 110;
+        
     }
 
     //自定义控件

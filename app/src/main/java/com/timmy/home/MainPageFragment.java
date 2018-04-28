@@ -148,7 +148,7 @@ public class MainPageFragment extends BaseFragment {
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_SOFT_KEYBOARD, "虚拟键盘使用"));
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_DATA_PERSIST, "数据持久化"));
                 pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_COUNT_DOWN, "倒计时实现方案"));
-
+                pageListTwo.add(new MainModel(MainTag.PROJECT.TAG_SCREEN_ADAPTER, "屏幕适配方案"));
 
 
                 adapter.setData(pageListTwo);

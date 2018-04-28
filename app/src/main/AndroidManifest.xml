@@ -465,7 +465,9 @@
         <activity android:name=".framework.downRefresh.SwipeRefreshActivity" />
         <activity android:name=".framework.downRefresh.CustomRefreshActivity" />
         <activity android:name=".customeView.circleMenu.CircleMenuLayoutActivity" />
-        <activity android:name=".project.countdown.CountDownActivity"></activity>
+        <activity android:name=".project.countdown.CountDownActivity" />
+        <activity android:name=".project.screenAdapter.ScreenAdapterActivity" />
+        <activity android:name=".project.screenAdapter.SecondActivity"></activity>
     </application>
 
 </manifest>
